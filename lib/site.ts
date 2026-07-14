@@ -95,6 +95,12 @@ export const SITE_URL = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
 ).replace(/\/$/, "");
 
+/**
+ * Blocks search indexing until the clinic's real content (§1–4 of
+ * HANDOFF.md) replaces the placeholders. Flip to "true" at go-live.
+ */
+export const ALLOW_INDEXING = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
+
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
 
 export const FORMSPREE_ENDPOINT =

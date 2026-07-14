@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { SITE, SITE_URL } from "@/lib/site";
+import { ALLOW_INDEXING, SITE, SITE_URL } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   description: SITE.description,
   applicationName: SITE.name,
   authors: [{ name: SITE.name }],
-  robots: { index: true, follow: true },
+  robots: { index: ALLOW_INDEXING, follow: ALLOW_INDEXING },
 };
 
 export function generateStaticParams() {
