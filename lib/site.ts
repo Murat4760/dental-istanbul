@@ -24,11 +24,11 @@ export type OpeningHour = {
 export const SITE = {
   // ─── Identity ─────────────────────────────────────────────────────────────
   // Real name/handle/phone/address below are from the client's own public
-  // Instagram bio (@ramadentallclinic). legalName is still a placeholder —
-  // that needs the registered company name, not the trading name.
+  // Instagram bio (@ramadentallclinic). legalName is from the client's
+  // 2026-07-14 intake form.
   name: "Rama Dental Clinic",
   shortName: "Rama Dental",
-  legalName: "[PLACEHOLDER: registered legal entity name]",
+  legalName: "RAMADENT AĞIZ VE DİŞ SAĞLIĞI HİZMETLERİ LİMİTED ŞİRKETİ",
   tagline: "Your Smile, Our Expertise",
   description:
     "Dental care for international patients in Istanbul — smile design, dental implants and orthodontics, serving patients from Turkey, France, Germany, Bulgaria and Iran.",
@@ -39,24 +39,23 @@ export const SITE = {
   countryCode: "TR",
   address: {
     street: "Oğuzhan Cd. No:23/D",
-    district: "Kavaklı, Büyükçekmece",
+    district: "Kavaklı, Beylikdüzü",
     city: "Istanbul",
     region: "İstanbul",
     postalCode: "34520",
     country: "Turkey",
   },
-  /** Approximate — Büyükçekmece district centre, not the exact building.
+  /** Approximate — Beylikdüzü district centre, not the exact building.
    *  [PLACEHOLDER] Replace with the clinic's precise coordinates. */
-  geo: { lat: 41.0245, lng: 28.5855 },
+  geo: { lat: 41.0035, lng: 28.6425 },
 
   // ─── Contact ───────────────────────────────────────────────────────────────
   // Phone is the number listed in the clinic's Instagram bio for contact.
-  // [PLACEHOLDER] Confirm this is also the WhatsApp Business number before
-  // setting NEXT_PUBLIC_WHATSAPP_NUMBER — Instagram only showed a DM button,
-  // not a WhatsApp button, so that hasn't been confirmed.
+  // Confirmed via the 2026-07-14 intake form as also the WhatsApp number
+  // (NEXT_PUBLIC_WHATSAPP_NUMBER) — see .env.local.
   phoneDisplay: "+90 506 774 34 34",
   phoneHref: "tel:+905067743434",
-  email: "[PLACEHOLDER: clinic email]",
+  email: "info@ramadent.com",
 
   // ─── Opening hours (display + schema use this) ─────────────────────────────
   // [PLACEHOLDER] Not confirmed with the client — Instagram bio has no hours.

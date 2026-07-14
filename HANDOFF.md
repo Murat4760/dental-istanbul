@@ -11,14 +11,16 @@ data edit, not a rebuild.
 ## 1. Clinic details — `lib/site.ts`
 - [x] `name`, `shortName` — "Rama Dental Clinic" / "Rama Dental", from the
       client's public Instagram bio (@ramadentallclinic)
-- [ ] `legalName` — still needs the registered company name (KVKK notice needs this)
-- [x] `address` (street, district, postal code) — from Instagram bio
-- [ ] `geo` (lat/lng) — currently the Büyükçekmece district centre, not the
+- [x] `legalName` — RAMADENT AĞIZ VE DİŞ SAĞLIĞI HİZMETLERİ LİMİTED ŞİRKETİ,
+      from the 2026-07-14 client intake form
+- [x] `address` (street, district, postal code) — district corrected to
+      Beylikdüzü (was wrongly Büyükçekmece) per the 2026-07-14 intake form
+- [ ] `geo` (lat/lng) — currently the Beylikdüzü district centre, not the
       exact building; get precise coordinates before enabling the map embed
 - [x] `phoneDisplay` **and** `phoneHref` — from Instagram bio
-- [ ] Confirm the same number is the **WhatsApp** number before setting
-      `NEXT_PUBLIC_WHATSAPP_NUMBER` — Instagram only showed a DM button
-- [ ] `email`
+- [x] Confirmed the same number is the **WhatsApp** number (2026-07-14 intake
+      form) — set in `.env.local`; still needs setting on Vercel prod too
+- [x] `email` — info@ramadent.com, from the 2026-07-14 intake form
 - [ ] `hours` (opening times) — not on Instagram; confirm with client, then
       **also update `lib/schema.ts`** `openingHoursSpecification`
 - [x] `socials.instagram`
@@ -26,7 +28,12 @@ data edit, not a rebuild.
 - [ ] `stats` — years, patients treated, countries, rating, review count
       ⚠️ **Do not publish unverified numbers.** These feed the trust strip *and*
       the `AggregateRating` schema. Use real, defensible figures only.
+      (2026-07-14 intake form left all of these blank and the client
+      explicitly answered "No" to being ready to verify/publish them.)
 - [ ] `accreditations` — list **only** ones the clinic actually holds
+      (2026-07-14 intake form: no accreditations held, not a HealthTürkiye
+      member, no international health-tourism authorisation, no complication
+      insurance — do not claim any of these anywhere on the site)
 - [ ] Confirm whether **Orthodontics** (advertised in the Instagram bio) should
       be added as a 6th procedure in `lib/procedures.ts` — not added yet
 
@@ -35,8 +42,10 @@ data edit, not a rebuild.
 - [ ] Review copy for accuracy against how the clinic actually works
 
 ## 3. People & proof
-- [ ] `lib/doctors.ts` — real dentists: names, titles, credentials, registration
-      numbers, bios (no invented practitioners)
+- [~] `lib/doctors.ts` — real dentists: names, titles, credentials, registration
+      numbers, bios (no invented practitioners). `d1` (Ferhat Ramazani, Sicil
+      No: 20190201022/51734) confirmed via the 2026-07-14 intake form; bio
+      still pending. `d2`/`d3` remain placeholder slots for additional staff.
 - [ ] `lib/reviews.ts` — replace the **sample** testimonials with real,
       permission-cleared patient reviews (or wire a Google reviews feed)
       ⚠️ The client's Instagram has real testimonial posts (Molly, Mathew,

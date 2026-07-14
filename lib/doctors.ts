@@ -18,10 +18,10 @@ export type Doctor = {
 export const doctors: Doctor[] = [
   {
     id: "d1",
-    name: "[PLACEHOLDER: Dr. Full Name]",
-    title: "Implantology & Oral Surgery",
-    credentials: "[PLACEHOLDER: DDS, qualifications & registration no.]",
-    specialties: ["Dental implants", "All-on-4", "Bone grafting"],
+    name: "Ferhat Ramazani",
+    title: "Dentist",
+    credentials: "Diş Hekimi — Sicil No: 20190201022/51734",
+    specialties: [],
     bio: "[PLACEHOLDER] A short professional biography — years of experience, university, memberships, and areas of focus. Keep to real, verifiable facts.",
   },
   {
