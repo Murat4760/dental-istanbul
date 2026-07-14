@@ -23,34 +23,43 @@ export type OpeningHour = {
 
 export const SITE = {
   // ─── Identity ─────────────────────────────────────────────────────────────
-  name: "Auralis Dental Clinic", // [PLACEHOLDER] real clinic name
-  shortName: "Auralis", // [PLACEHOLDER] wordmark / short brand
-  legalName: "Auralis Dental Clinic", // [PLACEHOLDER] registered legal entity
-  tagline: "World-class dentistry in the heart of Istanbul",
+  // Real name/handle/phone/address below are from the client's own public
+  // Instagram bio (@ramadentallclinic). legalName is still a placeholder —
+  // that needs the registered company name, not the trading name.
+  name: "Rama Dental Clinic",
+  shortName: "Rama Dental",
+  legalName: "[PLACEHOLDER: registered legal entity name]",
+  tagline: "Your Smile, Our Expertise",
   description:
-    "Accredited dental care for international patients in Istanbul — dental implants, veneers, All-on-4 and full smile makeovers, with all-inclusive packages and English-speaking coordinators.",
+    "Dental care for international patients in Istanbul — smile design, dental implants and orthodontics, serving patients from Turkey, France, Germany, Bulgaria and Iran.",
 
   // ─── Location (city locked to Istanbul) ────────────────────────────────────
   city: "Istanbul",
   country: "Turkey",
   countryCode: "TR",
   address: {
-    street: "[PLACEHOLDER: Street address]",
-    district: "[PLACEHOLDER: District, e.g. Nişantaşı, Şişli]",
+    street: "Oğuzhan Cd. No:23/D",
+    district: "Kavaklı, Büyükçekmece",
     city: "Istanbul",
     region: "İstanbul",
-    postalCode: "[PLACEHOLDER]",
+    postalCode: "34520",
     country: "Turkey",
   },
-  /** [PLACEHOLDER] clinic coordinates — currently Istanbul city centre. */
-  geo: { lat: 41.0369, lng: 28.9857 },
+  /** Approximate — Büyükçekmece district centre, not the exact building.
+   *  [PLACEHOLDER] Replace with the clinic's precise coordinates. */
+  geo: { lat: 41.0245, lng: 28.5855 },
 
   // ─── Contact ───────────────────────────────────────────────────────────────
-  phoneDisplay: "[PLACEHOLDER: +90 5xx xxx xx xx]",
-  phoneHref: "tel:+900000000000", // [PLACEHOLDER]
-  email: "hello@auralisdental.com", // [PLACEHOLDER]
+  // Phone is the number listed in the clinic's Instagram bio for contact.
+  // [PLACEHOLDER] Confirm this is also the WhatsApp Business number before
+  // setting NEXT_PUBLIC_WHATSAPP_NUMBER — Instagram only showed a DM button,
+  // not a WhatsApp button, so that hasn't been confirmed.
+  phoneDisplay: "+90 506 774 34 34",
+  phoneHref: "tel:+905067743434",
+  email: "[PLACEHOLDER: clinic email]",
 
   // ─── Opening hours (display + schema use this) ─────────────────────────────
+  // [PLACEHOLDER] Not confirmed with the client — Instagram bio has no hours.
   hours: [
     { days: "Monday – Friday", open: "09:00", close: "19:00" },
     { days: "Saturday", open: "09:00", close: "17:00" },
@@ -59,7 +68,7 @@ export const SITE = {
 
   // ─── Socials ───────────────────────────────────────────────────────────────
   socials: {
-    instagram: "https://instagram.com/", // [PLACEHOLDER]
+    instagram: "https://instagram.com/ramadentallclinic",
     facebook: "https://facebook.com/", // [PLACEHOLDER]
     youtube: "", // [PLACEHOLDER] optional
     tiktok: "", // [PLACEHOLDER] optional

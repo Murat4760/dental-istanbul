@@ -9,16 +9,26 @@ data edit, not a rebuild.
 > `grep -rn "PLACEHOLDER" app components lib`
 
 ## 1. Clinic details — `lib/site.ts`
-- [ ] `name`, `shortName`, `legalName` (currently the placeholder brand "Auralis")
-- [ ] `address` (street, district, postal code) and `geo` (lat/lng)
-- [ ] `phoneDisplay` **and** `phoneHref` (e.g. `tel:+90...`)
+- [x] `name`, `shortName` — "Rama Dental Clinic" / "Rama Dental", from the
+      client's public Instagram bio (@ramadentallclinic)
+- [ ] `legalName` — still needs the registered company name (KVKK notice needs this)
+- [x] `address` (street, district, postal code) — from Instagram bio
+- [ ] `geo` (lat/lng) — currently the Büyükçekmece district centre, not the
+      exact building; get precise coordinates before enabling the map embed
+- [x] `phoneDisplay` **and** `phoneHref` — from Instagram bio
+- [ ] Confirm the same number is the **WhatsApp** number before setting
+      `NEXT_PUBLIC_WHATSAPP_NUMBER` — Instagram only showed a DM button
 - [ ] `email`
-- [ ] `hours` (opening times) — **also update `lib/schema.ts`** `openingHoursSpecification`
-- [ ] `socials` (Instagram / Facebook / etc.)
+- [ ] `hours` (opening times) — not on Instagram; confirm with client, then
+      **also update `lib/schema.ts`** `openingHoursSpecification`
+- [x] `socials.instagram`
+- [ ] `socials` (Facebook / etc.)
 - [ ] `stats` — years, patients treated, countries, rating, review count
       ⚠️ **Do not publish unverified numbers.** These feed the trust strip *and*
       the `AggregateRating` schema. Use real, defensible figures only.
 - [ ] `accreditations` — list **only** ones the clinic actually holds
+- [ ] Confirm whether **Orthodontics** (advertised in the Instagram bio) should
+      be added as a 6th procedure in `lib/procedures.ts` — not added yet
 
 ## 2. Treatments & prices — `lib/procedures.ts`
 - [ ] `priceFrom` / `priceNote` for each of the 5 procedures (or keep quote-only)
@@ -29,6 +39,10 @@ data edit, not a rebuild.
       numbers, bios (no invented practitioners)
 - [ ] `lib/reviews.ts` — replace the **sample** testimonials with real,
       permission-cleared patient reviews (or wire a Google reviews feed)
+      ⚠️ The client's Instagram has real testimonial posts (Molly, Mathew,
+      Hanna, Chris), but those were posted for Instagram, not confirmed as
+      cleared for reuse on this site — don't copy them in without the
+      client's direct, explicit go-ahead alongside the actual photo files.
 
 ## 4. Photography
 All photo slots render as branded placeholders via `components/ui/Media.tsx`.
