@@ -51,13 +51,9 @@ export function dentistSchema() {
         closes: "17:00",
       },
     ],
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: SITE.stats.rating,
-      reviewCount: SITE.stats.reviewCount,
-      bestRating: 5,
-      worstRating: 1,
-    },
+    // No aggregateRating block: SITE.stats is still placeholder, not a real,
+    // verifiable figure — don't emit it as structured data. Add it back once
+    // the clinic supplies real, sourced numbers.
     sameAs: [
       SITE.socials.instagram,
       SITE.socials.facebook,

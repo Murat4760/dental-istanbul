@@ -4,7 +4,6 @@ import { SITE } from "@/lib/site";
 import { reviews } from "@/lib/reviews";
 import { buildMetadata } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Stars } from "@/components/ui/Stars";
 import { Reveal } from "@/components/ui/Reveal";
 import { ReviewCard } from "@/components/ReviewCard";
 import { CTABand } from "@/components/CTABand";
@@ -35,18 +34,11 @@ export default async function ReviewsPage({
             title="What our patients say"
             description="[PLACEHOLDER] Sample reviews are shown for layout — replace with real, permission-cleared patient testimonials before going live."
           />
-          <div className="mt-8 flex items-center gap-4">
-            <span className="font-display text-5xl font-semibold text-ink">
-              {SITE.stats.rating}
-            </span>
-            <div>
-              <Stars rating={SITE.stats.rating} />
-              <p className="mt-1 text-sm text-muted">
-                Based on {SITE.stats.reviewCount.toLocaleString("en-US")}+ patient
-                reviews [PLACEHOLDER]
-              </p>
-            </div>
-          </div>
+          {/*
+            Aggregate rating ("4.9 based on 840+ reviews") removed — SITE.stats
+            is still placeholder, not a real, verifiable figure. Re-enable
+            once the clinic supplies real, sourced numbers.
+          */}
         </div>
       </section>
 

@@ -134,13 +134,11 @@ export default async function HomePage({
                 {t("cta.whatsapp")}
               </Button>
             </div>
-            <div className="mt-8 flex items-center gap-3">
-              <Stars rating={SITE.stats.rating} />
-              <p className="text-sm text-ink-soft">
-                Rated {SITE.stats.rating} by{" "}
-                {SITE.stats.reviewCount.toLocaleString("en-US")}+ patients
-              </p>
-            </div>
+            {/*
+              Aggregate rating ("Rated 4.9 by 840+ patients") hidden for the
+              same reason as TrustStrip below — SITE.stats is still
+              placeholder, not a real, verifiable figure. Re-enable once real.
+            */}
           </div>
 
           {/* Hero visual */}
