@@ -134,6 +134,12 @@ export function BeforeAfter({
           </button>
         </div>
       </div>
+      {(pair.procedureDate || pair.photoDate) && (
+        <div className="flex flex-wrap gap-x-4 gap-y-1 border-t border-line px-4 py-2.5 text-xs text-muted">
+          {pair.procedureDate && <span>Procedure: {pair.procedureDate}</span>}
+          {pair.photoDate && <span>Photo taken: {pair.photoDate}</span>}
+        </div>
+      )}
     </div>
   );
 }

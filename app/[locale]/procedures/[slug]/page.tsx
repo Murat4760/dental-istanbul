@@ -230,6 +230,7 @@ export default async function ProcedurePage({
               [PLACEHOLDER] Demonstration slots — replace with the clinic&rsquo;s
               own before/after photography (patient consent required).
             </p>
+            <p className="mt-3 text-xs text-muted">{t("footer.disclaimer")}</p>
           </div>
         </section>
       )}

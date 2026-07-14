@@ -9,7 +9,6 @@ import {
   Play,
   Check,
 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
 import { SITE, whatsappUrl } from "@/lib/site";
 import { procedures } from "@/lib/procedures";
 import { reviews } from "@/lib/reviews";
@@ -23,7 +22,6 @@ import { Media } from "@/components/ui/Media";
 import { Stars } from "@/components/ui/Stars";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { TrustStrip } from "@/components/TrustStrip";
 import { ProcedureCard } from "@/components/ProcedureCard";
 import { BeforeAfter } from "@/components/BeforeAfter";
 import { Timeline } from "@/components/Timeline";
@@ -61,8 +59,8 @@ const WHY = [
   },
   {
     icon: PiggyBank,
-    title: "Significant savings",
-    body: "High-quality treatment at a fraction of typical UK and EU prices — without cutting corners.",
+    title: "Transparent pricing",
+    body: "A clear, itemised quote for your treatment plan before you travel — no hidden extras.",
   },
   {
     icon: PackageCheck,
@@ -172,12 +170,14 @@ export default async function HomePage({
           </div>
         </div>
 
-        {/* Trust strip */}
-        <div className="border-y border-line bg-surface/60">
-          <div className="container-page py-10">
-            <TrustStrip />
+        {/*
+          Trust strip (years/patients/countries/rating) is hidden until the
+          clinic supplies real, verifiable figures — see the "do NOT publish"
+          warning on SITE.stats in lib/site.ts. Re-enable by restoring:
+          <div className="border-y border-line bg-surface/60">
+            <div className="container-page py-10"><TrustStrip /></div>
           </div>
-        </div>
+        */}
       </section>
 
       {/* ── Why us ───────────────────────────────────────────── */}
@@ -278,22 +278,15 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── Savings teaser ───────────────────────────────────── */}
+      {/* ── Pricing teaser ───────────────────────────────────── */}
       <section className="section">
         <div className="container-page">
           <div className="grid items-center gap-10 rounded-[2rem] border border-line bg-primary-tint/50 p-8 sm:p-12 lg:grid-cols-2">
             <div>
               <SectionHeading
-                eyebrow="The savings"
-                title={
-                  <>
-                    Save up to{" "}
-                    <span className="text-primary">50–70%</span>
-                    <span className="align-super text-xl text-muted">*</span>{" "}
-                    versus UK &amp; EU prices
-                  </>
-                }
-                description="Istanbul is one of the world's leading destinations for high-quality, affordable dentistry. Your exact saving depends on your treatment plan."
+                eyebrow="Pricing"
+                title="A clear, itemised quote before you travel"
+                description="Every mouth is different, so we quote per case rather than publishing one-size-fits-all prices — no hidden extras."
               />
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <Button href="/pricing" rightIcon={<ArrowRight className="h-4 w-4" />}>
@@ -303,10 +296,6 @@ export default async function HomePage({
                   {t("cta.freeQuote")}
                 </Button>
               </div>
-              <p className="mt-5 text-xs text-muted">
-                *Compared with typical private UK/EU pricing. [PLACEHOLDER]
-                Confirm current comparison figures before publishing.
-              </p>
             </div>
             <div className="grid gap-4">
               {[

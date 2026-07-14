@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Check, Percent } from "lucide-react";
-import { SITE } from "@/lib/site";
+import { Check } from "lucide-react";
 import { procedures } from "@/lib/procedures";
 import { buildMetadata } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -12,7 +11,7 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: "Pricing & Packages",
     description:
-      "Transparent, personalised dental pricing in Istanbul. Get a free itemised quote and save significantly versus UK and EU prices — with all-inclusive packages.",
+      "Transparent, personalised dental pricing in Istanbul. Get a free itemised quote before you travel — with all-inclusive packages.",
     path: "/pricing",
     keywords: [
       "dental prices Turkey",
@@ -51,38 +50,6 @@ export default async function PricingPage({
             title="Transparent pricing, personalised quotes"
             description="Every mouth is different, so we quote per case rather than publishing one-size-fits-all prices. You get a clear, itemised quote before you travel — with no hidden extras."
           />
-        </div>
-      </section>
-
-      {/* Savings callout */}
-      <section className="section pb-0">
-        <div className="container-page">
-          <div className="flex flex-col items-start gap-6 rounded-[2rem] bg-primary px-8 py-10 text-white sm:flex-row sm:items-center sm:justify-between sm:px-12">
-            <div className="flex items-center gap-4">
-              <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl bg-white/15">
-                <Percent className="h-7 w-7" />
-              </span>
-              <div>
-                <p className="font-display text-2xl font-semibold">
-                  Save up to 50–70%*
-                </p>
-                <p className="text-white/75">
-                  versus typical private UK &amp; EU prices
-                </p>
-              </div>
-            </div>
-            <Button
-              href="/contact"
-              size="lg"
-              className="bg-white text-primary hover:bg-white/90"
-            >
-              {t("cta.freeQuote")}
-            </Button>
-          </div>
-          <p className="mt-3 text-xs text-muted">
-            *Illustrative market range. [PLACEHOLDER] Confirm current comparison
-            figures and your clinic&rsquo;s own prices before publishing.
-          </p>
         </div>
       </section>
 

@@ -72,10 +72,11 @@ export default async function PrivacyPage({
               Sharing
             </h2>
             <p className="mt-2">
-              Enquiries submitted through our form are processed by our form
-              provider on our behalf. [PLACEHOLDER] Name your form/email
-              processor and any other third parties, and confirm their
-              safeguards.
+              Enquiries submitted through our contact/quote form are processed
+              by Formspree, our form-submission provider, on our behalf.
+              [PLACEHOLDER] Confirm Formspree&rsquo;s current data-processing
+              terms and list any other third parties (e.g. email or CRM
+              tools) once they are in use.
             </p>
           </div>
 

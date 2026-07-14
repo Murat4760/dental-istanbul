@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { procedures } from "@/lib/procedures";
 import { buildMetadata } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -23,6 +23,7 @@ export default async function BeforeAfterPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations();
 
   const pairs = procedures.flatMap((p) =>
     p.beforeAfter.map((ba) => ({ ba, procedure: p })),
@@ -60,6 +61,7 @@ export default async function BeforeAfterPage({
             before/after photography. Written patient consent is required before
             publishing any real result.
           </p>
+          <p className="mt-3 text-xs text-muted">{t("footer.disclaimer")}</p>
         </div>
       </section>
 

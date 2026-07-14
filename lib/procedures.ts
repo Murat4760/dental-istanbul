@@ -19,6 +19,10 @@ export type BeforeAfterPair = {
   alt: string;
   beforeSrc?: string;
   afterSrc?: string;
+  /** Date the procedure was performed, e.g. "March 2026". Set alongside real photos. */
+  procedureDate?: string;
+  /** Date the after-photo was taken, e.g. "June 2026". Set alongside real photos. */
+  photoDate?: string;
 };
 
 export type ProcedureCategory =
