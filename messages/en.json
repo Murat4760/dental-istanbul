@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "procedures": "Procedures",
+    "beforeAfter": "Before & After",
+    "about": "About",
+    "journey": "Patient Journey",
+    "pricing": "Pricing",
+    "reviews": "Reviews",
+    "faq": "FAQ",
+    "contact": "Contact"
+  },
+  "cta": {
+    "freeQuote": "Get a free quote",
+    "freeQuoteShort": "Free quote",
+    "whatsapp": "Chat on WhatsApp",
+    "viewProcedures": "Explore procedures",
+    "seePricing": "See pricing",
+    "bookConsult": "Book free consultation",
+    "viewAll": "View all",
+    "readMore": "Read more",
+    "learnMore": "Learn more"
+  },
+  "whatsapp": {
+    "aria": "Chat with us on WhatsApp",
+    "label": "WhatsApp",
+    "prefill": "Hello, I'd like to ask about dental treatment in Istanbul."
+  },
+  "form": {
+    "eyebrow": "Free quote",
+    "title": "Get your free treatment plan & quote",
+    "subtitle": "Send your details and our patient coordinator replies within 24 hours — no obligation.",
+    "name": "Full name",
+    "email": "Email",
+    "phone": "Phone / WhatsApp",
+    "procedure": "Procedure of interest",
+    "procedurePlaceholder": "Select a procedure",
+    "procedureOther": "Not sure yet",
+    "message": "Tell us about your case (optional)",
+    "consent": "I agree to be contacted about my enquiry.",
+    "submit": "Request my free quote",
+    "sending": "Sending…",
+    "successTitle": "Thank you — your request is in.",
+    "successBody": "Our patient coordinator will reply within 24 hours, usually much sooner.",
+    "errorTitle": "Something went wrong.",
+    "errorBody": "Please try again, or message us directly on WhatsApp.",
+    "privacy": "Your details are used only to respond to your enquiry. We never sell your data.",
+    "required": "This field is required.",
+    "invalidEmail": "Please enter a valid email address."
+  },
+  "footer": {
+    "about": "Premium dental care for international patients — accredited clinical standards and all-inclusive treatment packages in Istanbul.",
+    "quickLinks": "Quick links",
+    "procedures": "Popular procedures",
+    "contact": "Contact",
+    "hours": "Opening hours",
+    "followUs": "Follow us",
+    "disclaimer": "Results vary from patient to patient. Information on this website is for general guidance only and is not medical advice — always consult a qualified dental professional before making treatment decisions.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "language": {
+    "label": "Language",
+    "en": "English",
+    "ar": "العربية",
+    "ru": "Русский",
+    "tr": "Türkçe",
+    "de": "Deutsch",
+    "comingSoon": "Coming soon"
+  },
+  "common": {
+    "menu": "Menu",
+    "close": "Close",
+    "skipToContent": "Skip to content"
+  }
+}

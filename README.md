@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dental Istanbul — Dental Tourism Marketing Site
 
-## Getting Started
+A fast, trust-heavy marketing site for a dental clinic serving international
+patients. Its one job: turn ad/organic traffic into **WhatsApp + quote-form
+leads**. Mobile-first, English now, more languages later without a rebuild.
 
-First, run the development server:
+> ⚠️ This is a **real-client scaffold**. Every clinic-specific fact (name, prices,
+> photos, doctors, reviews, accreditations) is a clearly-marked `[PLACEHOLDER]`.
+> See **[HANDOFF.md](./HANDOFF.md)** for the go-live checklist.
+
+## Stack
+
+| | |
+|---|---|
+| Framework | **Next.js 16** (App Router) + **React 19** + **TypeScript** |
+| Styling | **Tailwind CSS v4** (tokens in `app/globals.css` `@theme`) |
+| i18n | **next-intl** — EN shipped, AR/RU/TR/DE scaffolded |
+| Forms | **react-hook-form + zod** → **Formspree** (no backend, no DB) |
+| Images | `next/image` + optional **Cloudinary** (`f_auto,q_auto`) |
+| Icons | `lucide-react` (+ inline brand SVGs) |
+| Deploy | **Vercel** |
+
+> **Next.js 16 note:** the `middleware` convention is now **`proxy.ts`**, route
+> `params` are **async** (`await params`), and Tailwind is **v4** (no
+> `tailwind.config.js`). Read the local guides in `node_modules/next/dist/docs/`
+> before large changes — this is not the Next.js older models remember.
+
+## Quick start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # fill in the values (already stubbed for local dev)
+npm run dev                  # http://localhost:3000
+npm run build && npm start   # production build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Set these in `.env.local` (dev) and in **Vercel → Project → Settings → Environment
+Variables** (prod). See `.env.example`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+NEXT_PUBLIC_SITE_URL           # https://www.yourclinic.com (canonical/OG/sitemap)
+NEXT_PUBLIC_WHATSAPP_NUMBER    # intl format, digits only, e.g. 905551112233
+NEXT_PUBLIC_FORMSPREE_ENDPOINT # https://formspree.io/f/xxxxxxx
+NEXT_PUBLIC_CLOUDINARY_CLOUD   # optional image CDN cloud name
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+  [locale]/            # every page lives here (proxy hides the /en prefix)
+    layout.tsx         # fonts, next-intl provider, header/footer/whatsapp
+    page.tsx           # home (9 sections)
+    procedures/[slug]/ # data-driven procedure template
+    about · pricing · faq · reviews · contact · before-after · patient-journey · privacy
+  api/og/route.tsx     # dynamic OpenGraph image
+  sitemap.ts · robots.ts
+components/             # Header, Footer, QuoteForm, ProcedureCard, BeforeAfter, …
+  ui/                  # Button, SectionHeading, Arc (signature), Media, Reveal, …
+i18n/                  # routing.ts · navigation.ts · request.ts (next-intl)
+lib/                   # ← ALL CONTENT + CONFIG lives here
+  site.ts              # single source of truth (clinic name, contact, hours, …)
+  procedures.ts faqs.ts reviews.ts doctors.ts journey.ts
+  schema.ts metadata.ts image.ts
+messages/              # en.json (full) + ar/ru/tr/de.json (stubs)
+proxy.ts               # next-intl locale routing (Next 16 "proxy", not middleware)
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Content model — changes are data, not code
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Add a procedure** → add one object to `lib/procedures.ts`. It automatically
+  gets a `/procedures/<slug>` page, a grid card, `MedicalProcedure` schema, and a
+  sitemap entry. No page code.
+- **Add a language** → add `messages/<locale>.json` and include the locale in
+  `i18n/routing.ts`. Until translated, the locale renders in English. Enable it
+  in `components/layout/LanguageSwitcher.tsx` when ready.
+- **Change any clinic fact** → edit `lib/site.ts` (name, address, phone, hours,
+  socials, stats). Everything on the site reads from there.
 
-## Deploy on Vercel
+## Design system
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Defined once in `app/globals.css` (`@theme`): warm-clinical palette (deep teal
+`#0E5C57` + terracotta `#C46A3F` + cream `#FBFAF8`), Fraunces (display) + Inter
+(body), and a recurring **arc / tooth-crown motif** (`components/ui/Arc.tsx`).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy (Vercel)
+
+1. Push this repo to GitHub.
+2. Import it in Vercel (framework auto-detected as Next.js).
+3. Add the environment variables above.
+4. Deploy. Lighthouse Performance/SEO should be 90+ on the preview URL.
