@@ -59,7 +59,9 @@ export default async function ProcedurePage({
 
   return (
     <>
-      <JsonLd data={medicalProcedureSchema(procedure)} />
+      {procedure.status !== "comingSoon" && (
+        <JsonLd data={medicalProcedureSchema(procedure)} />
+      )}
       <JsonLd
         data={breadcrumbSchema([
           { name: "Home", path: "/" },
@@ -98,6 +100,14 @@ export default async function ProcedurePage({
             <p className="mt-5 text-pretty text-lg leading-relaxed text-ink-soft">
               {procedure.heroTagline} {procedure.summary}
             </p>
+            {procedure.status === "comingSoon" && (
+              <p className="mt-4 rounded-card border border-line bg-sand/60 px-4 py-3 text-sm text-ink-soft">
+                <strong className="text-ink">This page is still being finalised.</strong>{" "}
+                We offer {procedure.name.toLowerCase()} — exact pricing, timelines
+                and photos are being confirmed with our team before this page is
+                complete. Get in touch and we&rsquo;ll answer directly.
+              </p>
+            )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button href="#quote" size="lg" rightIcon={<ArrowRight className="h-4 w-4" />}>
                 {t("cta.freeQuote")}

@@ -29,7 +29,8 @@ export type ProcedureCategory =
   | "Restorative"
   | "Cosmetic"
   | "Full-arch"
-  | "Whitening";
+  | "Whitening"
+  | "Orthodontics";
 
 export type Procedure = {
   slug: string;
@@ -52,6 +53,13 @@ export type Procedure = {
   /** slugs into lib/faqs.ts */
   faqSlugs: string[];
   seo: { title: string; description: string; keywords: string[] };
+  /**
+   * "comingSoon" = the clinic offers this (per their own marketing) but we
+   * don't yet have their specific details confirmed — shows a "Coming soon"
+   * badge instead of presenting unconfirmed specifics as settled fact, and
+   * skips the MedicalProcedure schema until it's filled in for real.
+   */
+  status?: "comingSoon";
 };
 
 export const procedures: Procedure[] = [
@@ -366,6 +374,70 @@ export const procedures: Procedure[] = [
         "crowns abroad",
       ],
     },
+  },
+  {
+    slug: "orthodontics",
+    name: "Orthodontics",
+    shortName: "Orthodontics",
+    category: "Orthodontics",
+    icon: "Smile",
+    heroTagline: "Straighter teeth with braces or clear aligners.",
+    summary:
+      "Traditional braces or clear aligners that gradually move teeth into a straighter, more even position over a monitored treatment plan.",
+    whatItIs:
+      "Orthodontic treatment uses fixed braces or a series of clear aligners to apply gentle, controlled pressure that moves teeth into a straighter position over time. Unlike most other treatments here, it isn't a single-visit fix — it runs over several months, with the plan set in Istanbul and progress checked at intervals, in person or remotely, until the final result is reached.",
+    whoItsFor: [
+      "Your teeth are crowded, gapped or unevenly spaced",
+      "You have a bite misalignment (overbite, underbite or crossbite)",
+      "You've tried whitening or veneers but the underlying issue is alignment",
+      "You want a longer-term, non-surgical way to straighten your smile",
+    ],
+    processSteps: [
+      {
+        title: "Consultation & scan",
+        description:
+          "Photos, X-rays and a clinical exam confirm whether braces or aligners suit your case, with an indicative plan and quote.",
+      },
+      {
+        title: "Treatment plan",
+        description:
+          "Your dentist maps out the full course of movement and the expected timeline before any appliance is fitted.",
+      },
+      {
+        title: "Fitting",
+        description:
+          "Braces are bonded to your teeth, or your first set of clear aligners is issued, during your visit to Istanbul.",
+      },
+      {
+        title: "Ongoing adjustment",
+        description:
+          "Progress is checked at intervals over the following months — in person on return visits or remotely between them — with adjustments or new aligner sets as needed.",
+      },
+      {
+        title: "Retention",
+        description:
+          "Once treatment is complete, a retainer holds your teeth in their new position long-term.",
+      },
+    ],
+    daysInIstanbul:
+      "[PLACEHOLDER: confirm — treatment plan is set in Istanbul, then monitored over several months rather than completed in one visit]",
+    priceFrom: "[PLACEHOLDER: from £xxx]",
+    priceNote:
+      "Cost depends on whether braces or clear aligners are used and the length of treatment. Request a free consultation and quote.",
+    beforeAfter: [],
+    faqSlugs: ["orthodontics-braces-vs-aligners", "orthodontics-duration"],
+    seo: {
+      title: "Orthodontics in Istanbul, Turkey",
+      description:
+        "Braces and clear aligners in Istanbul for international patients. Free consultation and quote — page and pricing being finalised.",
+      keywords: [
+        "orthodontics Turkey",
+        "braces Istanbul",
+        "clear aligners Turkey",
+        "invisalign Istanbul",
+      ],
+    },
+    status: "comingSoon",
   },
 ];
 

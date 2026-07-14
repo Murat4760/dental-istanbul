@@ -126,6 +126,22 @@ export const faqs: Faq[] = [
     tags: ["teeth-whitening"],
   },
 
+  // ── Orthodontics ────────────────────────────────────────────────────────
+  {
+    slug: "orthodontics-braces-vs-aligners",
+    question: "Should I get braces or clear aligners?",
+    answer:
+      "It depends on your case. Fixed braces suit more complex movements and don't rely on wear-time, while clear aligners are removable and less visible but need discipline to wear as prescribed. Your dentist recommends the right option after reviewing your scan.",
+    tags: ["orthodontics"],
+  },
+  {
+    slug: "orthodontics-duration",
+    question: "How long does orthodontic treatment take?",
+    answer:
+      "Most courses of treatment run from several months to around two years depending on how much movement is needed. Your plan is set in Istanbul, with progress checked at intervals in person or remotely rather than requiring you to stay for the full duration.",
+    tags: ["orthodontics"],
+  },
+
   // ── Crowns ──────────────────────────────────────────────────────────────
   {
     slug: "crowns-material",

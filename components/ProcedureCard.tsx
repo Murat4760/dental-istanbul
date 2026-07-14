@@ -13,7 +13,13 @@ export function ProcedureCard({ procedure }: { procedure: Procedure }) {
         <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary-tint text-primary">
           <Icon name={procedure.icon} className="h-6 w-6" />
         </span>
-        <ArrowUpRight className="h-5 w-5 text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+        {procedure.status === "comingSoon" ? (
+          <span className="rounded-full bg-sand px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wide text-ink-soft">
+            Coming soon
+          </span>
+        ) : (
+          <ArrowUpRight className="h-5 w-5 text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />
+        )}
       </div>
       <h3 className="mt-5 font-display text-xl font-semibold text-ink">
         {procedure.name}

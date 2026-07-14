@@ -12,13 +12,14 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: `Dental Procedures in ${SITE.city}, ${SITE.country}`,
     description:
-      "Explore our dental treatments for international patients in Istanbul — implants, veneers, All-on-4, crowns and teeth whitening, with all-inclusive packages.",
+      "Explore our dental treatments for international patients in Istanbul — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening, with all-inclusive packages.",
     path: "/procedures",
     keywords: [
       "dental procedures Turkey",
       "dental treatments Istanbul",
       "dental implants Turkey",
       "veneers Istanbul",
+      "orthodontics Turkey",
     ],
   });
 }

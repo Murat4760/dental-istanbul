@@ -11,6 +11,7 @@ import {
   BedDouble,
   MapPin,
   HeartPulse,
+  Smile,
 } from "lucide-react";
 
 type IconProps = { className?: string; strokeWidth?: number };
@@ -28,6 +29,7 @@ const map: Record<string, ComponentType<IconProps>> = {
   BedDouble,
   MapPin,
   HeartPulse,
+  Smile,
 };
 
 export function Icon({
