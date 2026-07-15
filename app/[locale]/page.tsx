@@ -22,7 +22,6 @@ import { Media } from "@/components/ui/Media";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProcedureCard } from "@/components/ProcedureCard";
-import { Timeline } from "@/components/Timeline";
 import { FaqAccordion } from "@/components/FaqAccordion";
 
 export function generateMetadata(): Metadata {
@@ -208,21 +207,6 @@ export default async function HomePage({
                 <ProcedureCard procedure={p} />
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Patient journey ──────────────────────────────────── */}
-      <section className="section bg-ink text-canvas">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="How it works"
-            title="Your journey, step by step"
-            description="From first message to follow-up back home — we handle the details so you can focus on your smile."
-            className="[&_h2]:text-canvas [&_p]:text-canvas/70"
-          />
-          <div className="mt-14 [&_.text-ink]:text-canvas [&_.text-ink-soft]:text-canvas/70 [&_.bg-line]:bg-canvas/15">
-            <Timeline />
           </div>
         </div>
       </section>

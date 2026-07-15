@@ -12,7 +12,6 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV = [
   { href: "/procedures", key: "procedures" },
-  { href: "/patient-journey", key: "journey" },
   { href: "/about", key: "about" },
   { href: "/reviews", key: "reviews" },
   { href: "/faq", key: "faq" },

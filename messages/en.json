@@ -3,7 +3,6 @@
     "home": "Home",
     "procedures": "Procedures",
     "about": "About",
-    "journey": "Patient Journey",
     "reviews": "Reviews",
     "faq": "FAQ",
     "contact": "Contact"
@@ -41,10 +40,10 @@
   "language": {
     "label": "Language",
     "en": "English",
+    "tr": "Türkçe",
     "ar": "العربية",
     "ru": "Русский",
-    "de": "Deutsch",
-    "comingSoon": "Coming soon"
+    "de": "Deutsch"
   },
   "common": {
     "menu": "Menu",

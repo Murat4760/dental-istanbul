@@ -17,7 +17,7 @@ Mobile-first, English now, more languages later without a rebuild.
 |---|---|
 | Framework | **Next.js 16** (App Router) + **React 19** + **TypeScript** |
 | Styling | **Tailwind CSS v4** (tokens in `app/globals.css` `@theme`) |
-| i18n | **next-intl** — EN shipped, AR/RU/DE scaffolded (no TR — see i18n/routing.ts) |
+| i18n | **next-intl** — EN/TR/AR/RU/DE, UI chrome translated (deep content still EN-only) |
 | Contact | WhatsApp / phone / email links only — no form, no backend, no DB |
 | Images | `next/image` + optional **Cloudinary** (`f_auto,q_auto`) |
 | Icons | `lucide-react` (+ inline brand SVGs) |
@@ -57,7 +57,7 @@ app/
     layout.tsx         # fonts, next-intl provider, header/footer/whatsapp
     page.tsx           # home
     procedures/[slug]/ # data-driven procedure template
-    about · faq · reviews · contact · patient-journey · privacy
+    about · faq · reviews · contact · privacy
   api/og/route.tsx     # dynamic OpenGraph image
   sitemap.ts · robots.ts
 components/             # Header, Footer, ProcedureCard, DoctorCard, …
@@ -65,9 +65,10 @@ components/             # Header, Footer, ProcedureCard, DoctorCard, …
 i18n/                  # routing.ts · navigation.ts · request.ts (next-intl)
 lib/                   # ← ALL CONTENT + CONFIG lives here
   site.ts              # single source of truth (clinic name, contact, hours, …)
-  procedures.ts faqs.ts reviews.ts doctors.ts journey.ts
+  procedures.ts faqs.ts reviews.ts doctors.ts
   schema.ts metadata.ts image.ts
-messages/              # en.json (full) + ar/ru/de.json (stubs, render as English until translated)
+messages/              # en.json (full) + tr/ar/ru/de.json — UI chrome translated;
+                       # deep content (procedures/faqs/doctors) is still English-only
 proxy.ts               # next-intl locale routing (Next 16 "proxy", not middleware)
 ```
 

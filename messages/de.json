@@ -1,1 +1,53 @@
-{}
+{
+  "nav": {
+    "home": "Startseite",
+    "procedures": "Behandlungen",
+    "about": "Über uns",
+    "reviews": "Bewertungen",
+    "faq": "FAQ",
+    "contact": "Kontakt"
+  },
+  "cta": {
+    "whatsapp": "Per WhatsApp schreiben",
+    "viewProcedures": "Behandlungen entdecken",
+    "viewAll": "Alle ansehen",
+    "readMore": "Mehr lesen",
+    "learnMore": "Mehr erfahren"
+  },
+  "whatsapp": {
+    "aria": "Chatten Sie mit uns auf WhatsApp",
+    "label": "WhatsApp",
+    "prefill": "Hallo, ich möchte mich über eine Zahnbehandlung in Istanbul informieren."
+  },
+  "contactCard": {
+    "title": "Schreiben Sie uns direkt",
+    "body": "Kein Formular, keine Wartezeit — WhatsApp ist der schnellste Weg, uns zu erreichen, oder rufen Sie an bzw. schreiben Sie eine E-Mail, wenn Sie das bevorzugen."
+  },
+  "footer": {
+    "about": "Zahnmedizinische Versorgung für internationale Patienten — Implantate, Veneers, All-on-4 und Smile-Makeover in Istanbul.",
+    "quickLinks": "Schnellzugriff",
+    "procedures": "Beliebte Behandlungen",
+    "contact": "Kontakt",
+    "hours": "Öffnungszeiten",
+    "hoursPending": "Öffnungszeiten noch nicht bestätigt — schreiben Sie uns, um nachzufragen.",
+    "noDataCollected": "Diese Website sammelt oder speichert keine personenbezogenen Daten. Jeder Kontaktlink oben öffnet direkt WhatsApp, Ihre Telefon-App oder Ihr E-Mail-Programm.",
+    "followUs": "Folgen Sie uns",
+    "disclaimer": "Die Ergebnisse können von Patient zu Patient variieren. Die Informationen auf dieser Website dienen nur der allgemeinen Orientierung und stellen keine medizinische Beratung dar — konsultieren Sie vor einer Behandlungsentscheidung immer einen qualifizierten Zahnarzt.",
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutz",
+    "terms": "AGB"
+  },
+  "language": {
+    "label": "Sprache",
+    "en": "English",
+    "tr": "Türkçe",
+    "ar": "العربية",
+    "ru": "Русский",
+    "de": "Deutsch"
+  },
+  "common": {
+    "menu": "Menü",
+    "close": "Schließen",
+    "skipToContent": "Zum Inhalt springen"
+  }
+}

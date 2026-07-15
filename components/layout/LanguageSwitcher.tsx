@@ -3,17 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Globe, Check, ChevronDown } from "lucide-react";
+import { Link, usePathname } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { cn } from "@/lib/utils";
 
-/**
- * Only EN ships content today, so other locales render as "coming soon".
- * When a locale is ready, switch its row to a next-intl <Link href={pathname}
- * locale={loc}> and drop the `disabled` flag — no other change needed.
- */
 export function LanguageSwitcher() {
   const t = useTranslations("language");
   const locale = useLocale();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -56,34 +53,23 @@ export function LanguageSwitcher() {
         >
           {routing.locales.map((loc) => {
             const isCurrent = loc === locale;
-            const enabled = loc === "en";
             return (
               <li key={loc}>
-                <button
-                  type="button"
-                  disabled={!enabled}
+                <Link
+                  href={pathname}
+                  locale={loc}
                   aria-current={isCurrent}
+                  onClick={() => setOpen(false)}
                   className={cn(
                     "flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm",
                     isCurrent
                       ? "bg-primary-tint font-medium text-primary"
-                      : "text-ink-soft",
-                    enabled
-                      ? "hover:bg-sand"
-                      : "cursor-not-allowed opacity-55",
+                      : "text-ink-soft hover:bg-sand",
                   )}
                 >
                   <span>{t(loc)}</span>
-                  {isCurrent ? (
-                    <Check className="h-4 w-4" />
-                  ) : (
-                    !enabled && (
-                      <span className="text-[0.6rem] font-semibold uppercase tracking-wide text-muted">
-                        {t("comingSoon")}
-                      </span>
-                    )
-                  )}
-                </button>
+                  {isCurrent && <Check className="h-4 w-4" />}
+                </Link>
               </li>
             );
           })}

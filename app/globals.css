@@ -35,6 +35,14 @@
   --shadow-lift: 0 12px 32px -12px rgba(14, 92, 87, 0.28);
 }
 
+/* Arabic: neither Fraunces nor Inter cover Arabic script — swap both display
+   and body fonts to Noto Sans Arabic (loaded in app/[locale]/layout.tsx) so
+   /ar never falls back to tofu or a generic system font. */
+html[lang="ar"] {
+  --font-display: var(--font-arabic), system-ui, sans-serif;
+  --font-body: var(--font-arabic), system-ui, sans-serif;
+}
+
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;

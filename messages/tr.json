@@ -1,0 +1,53 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "procedures": "Tedaviler",
+    "about": "Hakkımızda",
+    "reviews": "Yorumlar",
+    "faq": "SSS",
+    "contact": "İletişim"
+  },
+  "cta": {
+    "whatsapp": "WhatsApp'tan Yazın",
+    "viewProcedures": "Tedavileri İncele",
+    "viewAll": "Tümünü Gör",
+    "readMore": "Devamını Oku",
+    "learnMore": "Daha Fazla Bilgi"
+  },
+  "whatsapp": {
+    "aria": "WhatsApp'tan bizimle sohbet edin",
+    "label": "WhatsApp",
+    "prefill": "Merhaba, İstanbul'da diş tedavisi hakkında bilgi almak istiyorum."
+  },
+  "contactCard": {
+    "title": "Doğrudan bize yazın",
+    "body": "Form yok, bekleme yok — bize ulaşmanın en hızlı yolu WhatsApp; tercih ederseniz arayabilir veya e-posta gönderebilirsiniz."
+  },
+  "footer": {
+    "about": "Uluslararası hastalar için diş sağlığı hizmeti — İstanbul'da implant, veneer, All-on-4 ve gülüş tasarımı.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "procedures": "Popüler Tedaviler",
+    "contact": "İletişim",
+    "hours": "Çalışma Saatleri",
+    "hoursPending": "Çalışma saatleri henüz onaylanmadı — öğrenmek için bize yazın.",
+    "noDataCollected": "Bu web sitesi hiçbir kişisel veri toplamaz veya saklamaz. Yukarıdaki her iletişim bağlantısı doğrudan WhatsApp'ı, telefon çevirici uygulamanızı veya e-posta uygulamanızı açar.",
+    "followUs": "Bizi Takip Edin",
+    "disclaimer": "Sonuçlar hastadan hastaya değişiklik gösterir. Bu web sitesindeki bilgiler yalnızca genel bilgilendirme amaçlıdır ve tıbbi tavsiye niteliği taşımaz — tedavi kararı vermeden önce her zaman kalifiye bir diş hekimine danışın.",
+    "rights": "Tüm hakları saklıdır.",
+    "privacy": "Gizlilik",
+    "terms": "Şartlar"
+  },
+  "language": {
+    "label": "Dil",
+    "en": "English",
+    "tr": "Türkçe",
+    "ar": "العربية",
+    "ru": "Русский",
+    "de": "Deutsch"
+  },
+  "common": {
+    "menu": "Menü",
+    "close": "Kapat",
+    "skipToContent": "İçeriğe geç"
+  }
+}

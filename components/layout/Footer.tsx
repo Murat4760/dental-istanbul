@@ -8,7 +8,6 @@ import { Arc } from "@/components/ui/Arc";
 
 const NAV = [
   { href: "/procedures", key: "procedures" },
-  { href: "/patient-journey", key: "journey" },
   { href: "/about", key: "about" },
   { href: "/reviews", key: "reviews" },
   { href: "/faq", key: "faq" },

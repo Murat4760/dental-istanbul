@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Fraunces, Inter, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
@@ -10,15 +10,24 @@ import { Footer } from "@/components/layout/Footer";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 import "../globals.css";
 
+// latin-ext covers Turkish (ğ ı ş ö ü ç). Fraunces has no cyrillic subset —
+// Russian headings fall through to the Georgia fallback in --font-display,
+// which does cover Cyrillic.
 const fraunces = Fraunces({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   variable: "--font-fraunces",
   display: "swap",
 });
 
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext", "cyrillic"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const notoSansArabic = Noto_Sans_Arabic({
+  subsets: ["arabic"],
+  variable: "--font-arabic",
   display: "swap",
 });
 
@@ -56,7 +65,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
-      className={`${fraunces.variable} ${inter.variable} h-full`}
+      className={`${fraunces.variable} ${inter.variable} ${notoSansArabic.variable} h-full`}
     >
       <body className="flex min-h-full flex-col bg-canvas text-ink">
         <noscript>

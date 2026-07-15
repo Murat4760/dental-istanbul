@@ -95,24 +95,36 @@ from this site's own data handling.
       form: no accreditations held) — both were previously present in SEO
       meta, hero copy and an FAQ answer and have been corrected.
 - [ ] **Health-tourism positioning vs. missing certificate**: this site is
-      built as the abroad-facing property (no `tr` locale, by design — see
-      `i18n/routing.ts`), but the clinic does not yet hold the
-      *Uluslararası Sağlık Turizmi Yetki Belgesi* (2026-07-14 intake form).
-      `NEXT_PUBLIC_ALLOW_INDEXING` is off, so this isn't search-indexed yet,
-      but the abroad-facing marketing framing (patient journey, "for
-      international patients" copy) is otherwise live as-is — confirm this is
-      fine to keep once the certificate lands, or scope down before indexing.
+      built as the abroad-facing property, but the clinic does not yet hold
+      the *Uluslararası Sağlık Turizmi Yetki Belgesi* (2026-07-14 intake
+      form). `NEXT_PUBLIC_ALLOW_INDEXING` is off, so this isn't
+      search-indexed yet, but the abroad-facing marketing framing ("for
+      international patients" copy) is otherwise live as-is — confirm this
+      is fine to keep once the certificate lands, or scope down before
+      indexing. `tr` was added as a locale on 2026-07-16 on explicit
+      request, which reopens the domestic/abroad-facing separation question
+      the original `i18n/routing.ts` comment raised — worth a real answer,
+      not just a flag, before this locale is indexed.
 - [ ] Confirm no medical claim on the site overstates outcomes
 
-## 7. Enable more languages (optional, later)
-- [ ] Translate `messages/<locale>.json` (currently `{}` → English fallback)
-- [ ] Localise `lib/*` content for that locale (procedures, FAQs, journey,
-      reviews all currently live as English-only TypeScript, not per-locale
-      JSON — translating the UI chrome alone would produce a half-translated
-      page)
-- [ ] Un-disable the locale row in `components/layout/LanguageSwitcher.tsx`
-- Note: `tr` is deliberately not a locale on this domain — see the comment in
-  `i18n/routing.ts`.
+## 7. Languages
+- [x] UI chrome (nav, buttons, footer, language switcher) translated into
+      TR/AR/RU/DE as of 2026-07-16 — see `messages/<locale>.json`. All five
+      locales (`en`, `tr`, `ar`, `ru`, `de`) are live in
+      `components/layout/LanguageSwitcher.tsx`, no more "coming soon" gating.
+- [ ] **Deep content is still English-only.** `lib/procedures.ts`,
+      `lib/faqs.ts`, `lib/doctors.ts` are plain English TypeScript with no
+      per-locale variant mechanism — so every non-English locale currently
+      shows translated nav/buttons/footer around English procedure
+      descriptions, FAQ answers and doctor bios. Fixing this properly means
+      either (a) adding a translated field per locale to each data file, or
+      (b) moving this content into `messages/<locale>.json` — a real content
+      task, not a config flip.
+- [x] AR renders `dir="rtl"` with Noto Sans Arabic (Fraunces/Inter don't
+      cover Arabic script — see the `html[lang="ar"]` override in
+      `app/globals.css`). TR/RU use Inter's `latin-ext`/`cyrillic` subsets;
+      Fraunces has no Cyrillic subset, so RU headings fall through to the
+      Georgia fallback in `--font-display` — acceptable, not tofu.
 
 ## 8. Deploy
 1. Push to GitHub → import in **Vercel**.
