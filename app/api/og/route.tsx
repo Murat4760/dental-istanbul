@@ -35,7 +35,7 @@ export function GET() {
         <div style={{ display: "flex", alignItems: "center" }}>
           <div style={{ width: 64, height: 8, borderRadius: 9999, background: "#C46A3F" }} />
           <div style={{ display: "flex", marginLeft: 20, fontSize: 26, color: "rgba(255,255,255,0.9)" }}>
-            {SITE.city}, {SITE.country} · Free quote &amp; consultation
+            {SITE.city}, {SITE.country} · Message us on WhatsApp
           </div>
         </div>
       </div>

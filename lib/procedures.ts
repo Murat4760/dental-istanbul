@@ -6,24 +6,14 @@
  *
  * Adding a procedure = adding one object below. No page code changes.
  *
- * Prices are intentionally [PLACEHOLDER]: exact figures come from the clinic and
- * are quoted per-case. The pricing page converts on "get a free quote" rather
- * than publishing unverified numbers.
+ * No prices: this site does not advertise dental prices. Booking runs
+ * through WhatsApp/phone/email instead of a quote request.
+ * No before/after photos: no case has written patient consent on file yet
+ * (2026-07-14 intake form) — never add real or placeholder result photos
+ * here without it.
  */
 
 export type ProcessStep = { title: string; description: string };
-
-export type BeforeAfterPair = {
-  /** Descriptive alt text; the media itself is a labelled placeholder until the
-   *  clinic supplies real, consented patient photos. */
-  alt: string;
-  beforeSrc?: string;
-  afterSrc?: string;
-  /** Date the procedure was performed, e.g. "March 2026". Set alongside real photos. */
-  procedureDate?: string;
-  /** Date the after-photo was taken, e.g. "June 2026". Set alongside real photos. */
-  photoDate?: string;
-};
 
 export type ProcedureCategory =
   | "Restorative"
@@ -46,10 +36,6 @@ export type Procedure = {
   processSteps: ProcessStep[];
   /** Typical time on the ground in Istanbul. */
   daysInIstanbul: string;
-  /** [PLACEHOLDER] exact price — quoted per case. */
-  priceFrom: string;
-  priceNote: string;
-  beforeAfter: BeforeAfterPair[];
   /** slugs into lib/faqs.ts */
   faqSlugs: string[];
   seo: { title: string; description: string; keywords: string[] };
@@ -84,7 +70,7 @@ export const procedures: Procedure[] = [
       {
         title: "Free online consultation",
         description:
-          "Send photos and any recent X-rays. Our dentists review your case and send an indicative plan and quote before you travel.",
+          "Send photos and any recent X-rays. Our dentists review your case and send an indicative plan before you travel.",
       },
       {
         title: "Examination & 3D scan",
@@ -108,13 +94,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "3–5 days per visit (usually two visits)",
-    priceFrom: "[PLACEHOLDER: from £xxx per implant]",
-    priceNote:
-      "Final cost depends on the number of implants, any grafting, and crown material. Request a free personalised quote.",
-    beforeAfter: [
-      { alt: "Single front-tooth implant, before and after" },
-      { alt: "Multiple implants restoring a full smile, before and after" },
-    ],
     faqSlugs: [
       "implants-pain",
       "implants-lifespan",
@@ -124,7 +103,7 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Dental Implants in Istanbul, Turkey",
       description:
-        "Permanent dental implants in Istanbul with accredited dentists and all-inclusive packages. Free online consultation and quote for international patients.",
+        "Permanent dental implants in Istanbul with a registered dental team. Free online consultation for international patients.",
       keywords: [
         "dental implants Turkey",
         "dental implants Istanbul",
@@ -174,18 +153,11 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "5–7 days",
-    priceFrom: "[PLACEHOLDER: from £xxx per veneer]",
-    priceNote:
-      "Cost depends on the number of veneers and porcelain type. Request a free smile-design quote.",
-    beforeAfter: [
-      { alt: "Discoloured teeth transformed with porcelain veneers" },
-      { alt: "Gaps and chips corrected with a full veneer set" },
-    ],
     faqSlugs: ["veneers-lifespan", "veneers-natural", "how-many-trips"],
     seo: {
       title: "Porcelain Veneers in Istanbul, Turkey",
       description:
-        "Natural-looking porcelain veneers in Istanbul. Digital smile design, accredited dentists and all-inclusive packages for international patients.",
+        "Natural-looking porcelain veneers in Istanbul. Digital smile design with a registered dental team for international patients.",
       keywords: [
         "veneers Turkey",
         "veneers Istanbul",
@@ -235,18 +207,11 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "5–7 days per visit (usually two visits)",
-    priceFrom: "[PLACEHOLDER: from £xxxx per arch]",
-    priceNote:
-      "Cost depends on materials and whether one or both arches are treated. Request a free full-arch quote.",
-    beforeAfter: [
-      { alt: "Failing upper teeth replaced with an All-on-4 bridge" },
-      { alt: "Full lower arch restored with fixed implant bridge" },
-    ],
     faqSlugs: ["all-on-4-vs-dentures", "implants-lifespan", "how-many-trips"],
     seo: {
       title: "All-on-4 Dental Implants in Istanbul, Turkey",
       description:
-        "Fixed full-arch teeth with All-on-4 implants in Istanbul. Accredited implantologists and all-inclusive packages for international patients.",
+        "Fixed full-arch teeth with All-on-4 implants in Istanbul, with a registered dental team for international patients.",
       keywords: [
         "All-on-4 Turkey",
         "All on 4 Istanbul",
@@ -296,12 +261,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "1–2 days",
-    priceFrom: "[PLACEHOLDER: from £xxx]",
-    priceNote:
-      "Often combined with a hygiene visit or smile makeover. Request a free quote.",
-    beforeAfter: [
-      { alt: "Coffee-stained teeth brightened with professional whitening" },
-    ],
     faqSlugs: ["whitening-sensitivity", "whitening-lasts"],
     seo: {
       title: "Teeth Whitening in Istanbul, Turkey",
@@ -355,18 +314,11 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "3–5 days",
-    priceFrom: "[PLACEHOLDER: from £xxx per crown]",
-    priceNote:
-      "Cost depends on the crown material (e.g. zirconia, E-max). Request a free quote.",
-    beforeAfter: [
-      { alt: "Cracked molar restored with a zirconia crown" },
-      { alt: "Discoloured front tooth matched with an all-ceramic crown" },
-    ],
     faqSlugs: ["crowns-material", "crowns-lifespan", "how-many-trips"],
     seo: {
       title: "Dental Crowns in Istanbul, Turkey",
       description:
-        "Zirconia and porcelain dental crowns in Istanbul. Accredited dentists, natural-looking results and all-inclusive packages for international patients.",
+        "Zirconia and porcelain dental crowns in Istanbul. Natural-looking results from a registered dental team, for international patients.",
       keywords: [
         "dental crowns Turkey",
         "dental crowns Istanbul",
@@ -396,7 +348,7 @@ export const procedures: Procedure[] = [
       {
         title: "Consultation & scan",
         description:
-          "Photos, X-rays and a clinical exam confirm whether braces or aligners suit your case, with an indicative plan and quote.",
+          "Photos, X-rays and a clinical exam confirm whether braces or aligners suit your case, with an indicative treatment plan.",
       },
       {
         title: "Treatment plan",
@@ -421,15 +373,11 @@ export const procedures: Procedure[] = [
     ],
     daysInIstanbul:
       "[PLACEHOLDER: confirm — treatment plan is set in Istanbul, then monitored over several months rather than completed in one visit]",
-    priceFrom: "[PLACEHOLDER: from £xxx]",
-    priceNote:
-      "Cost depends on whether braces or clear aligners are used and the length of treatment. Request a free consultation and quote.",
-    beforeAfter: [],
     faqSlugs: ["orthodontics-braces-vs-aligners", "orthodontics-duration"],
     seo: {
       title: "Orthodontics in Istanbul, Turkey",
       description:
-        "Braces and clear aligners in Istanbul for international patients. Free consultation and quote — page and pricing being finalised.",
+        "Braces and clear aligners in Istanbul for international patients. Full details on this treatment are being finalised — get in touch to ask directly.",
       keywords: [
         "orthodontics Turkey",
         "braces Istanbul",

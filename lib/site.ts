@@ -58,7 +58,10 @@ export const SITE = {
   email: "info@ramadent.com",
 
   // ─── Opening hours (display + schema use this) ─────────────────────────────
-  // [PLACEHOLDER] Not confirmed with the client — Instagram bio has no hours.
+  // Not confirmed with the client — the 2026-07-14 intake form left this
+  // blank. `hoursConfirmed: false` means every consumer must render an
+  // honest "hours pending" note instead of these placeholder times.
+  hoursConfirmed: false,
   hours: [
     { days: "Monday – Friday", open: "09:00", close: "19:00" },
     { days: "Saturday", open: "09:00", close: "17:00" },
@@ -68,33 +71,15 @@ export const SITE = {
   // ─── Socials ───────────────────────────────────────────────────────────────
   socials: {
     instagram: "https://instagram.com/ramadentallclinic",
-    facebook: "https://facebook.com/", // [PLACEHOLDER]
+    facebook: "", // [PLACEHOLDER] not confirmed
     youtube: "", // [PLACEHOLDER] optional
     tiktok: "", // [PLACEHOLDER] optional
   },
 
-  // ─── Trust stats — [PLACEHOLDER] replace with REAL, verifiable figures ──────
-  stats: {
-    yearsActive: 15,
-    patientsTreated: 12000,
-    countriesServed: 45,
-    rating: 4.9,
-    reviewCount: 840,
-  },
-
-  /** Google price-range style indicator for schema.org (not a real price). */
-  priceRange: "££",
-
-  // ─── Accreditations — only display ones the clinic actually holds ──────────
-  accreditations: [
-    {
-      name: "[PLACEHOLDER: Ministry of Health licensed]",
-      note: "Turkish Ministry of Health authorisation number",
-    },
-    { name: "[PLACEHOLDER: ISO 9001]", note: "Quality management" },
-    { name: "[PLACEHOLDER: Accreditation 3]", note: "" },
-    { name: "[PLACEHOLDER: Accreditation 4]", note: "" },
-  ],
+  // ─── Trust stats & accreditations ───────────────────────────────────────────
+  // The 2026-07-14 intake form: no accreditations held, no stats cleared for
+  // publication. Do not add fabricated figures or claimed certifications —
+  // this site advertises medical/dental services and must not invent them.
 } as const;
 
 // ─── Environment-derived values ───────────────────────────────────────────────
@@ -110,9 +95,6 @@ export const SITE_URL = (
 export const ALLOW_INDEXING = process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
 
 export const WHATSAPP_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER ?? "";
-
-export const FORMSPREE_ENDPOINT =
-  process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ?? "";
 
 /** Build a wa.me link, optionally with a prefilled message. */
 export function whatsappUrl(message?: string): string {

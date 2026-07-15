@@ -15,6 +15,9 @@ export type Doctor = {
   bio: string;
 };
 
+// Only one dentist is confirmed via the 2026-07-14 intake form. Do not add
+// invented practitioners — add a d2/d3 entry only once the clinic supplies
+// another real, verifiable dentist's name and registration number.
 export const doctors: Doctor[] = [
   {
     id: "d1",
@@ -23,21 +26,5 @@ export const doctors: Doctor[] = [
     credentials: "Diş Hekimi — Sicil No: 20190201022/51734",
     specialties: [],
     bio: "[PLACEHOLDER] A short professional biography — years of experience, university, memberships, and areas of focus. Keep to real, verifiable facts.",
-  },
-  {
-    id: "d2",
-    name: "[PLACEHOLDER: Dr. Full Name]",
-    title: "Cosmetic & Restorative Dentistry",
-    credentials: "[PLACEHOLDER: DDS, qualifications & registration no.]",
-    specialties: ["Porcelain veneers", "Smile design", "Crowns"],
-    bio: "[PLACEHOLDER] A short professional biography focusing on aesthetic and restorative expertise.",
-  },
-  {
-    id: "d3",
-    name: "[PLACEHOLDER: Dr. Full Name]",
-    title: "Prosthodontics",
-    credentials: "[PLACEHOLDER: DDS, qualifications & registration no.]",
-    specialties: ["Full-arch rehabilitation", "Crowns & bridges"],
-    bio: "[PLACEHOLDER] A short professional biography focusing on prosthetic and full-arch work.",
   },
 ];

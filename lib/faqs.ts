@@ -16,7 +16,7 @@ export const faqs: Faq[] = [
     slug: "is-it-safe",
     question: "Is getting dental treatment in Istanbul safe?",
     answer:
-      "Reputable Istanbul clinics work to international clinical standards with qualified, experienced dentists and modern equipment. Look for clear accreditation, transparent treatment plans, and dentists who take the time to review your case before you travel — all of which we provide. Always choose a clinic that shares its credentials openly.",
+      "Reputable Istanbul clinics work with qualified, registered dentists, modern equipment and transparent treatment plans, and take the time to review your case properly before any procedure. Always choose a clinic that shares its dentists' real names and registration numbers openly — our lead dentist's registration number is listed on our About page.",
     tags: ["general", "safety"],
   },
   {
@@ -44,7 +44,7 @@ export const faqs: Faq[] = [
     slug: "payment-methods",
     question: "How does payment work?",
     answer:
-      "You'll receive a clear, itemised quote before you travel with no hidden extras. Accepted payment methods and any deposit are confirmed in writing in advance. [PLACEHOLDER: confirm accepted payment methods and deposit policy.]",
+      "We don't publish prices online — every treatment plan is different, so cost is discussed directly with you before anything is agreed. Message us on WhatsApp or call to ask. [PLACEHOLDER: confirm accepted payment methods and deposit policy.]",
     tags: ["general", "payment"],
   },
   {
@@ -81,7 +81,7 @@ export const faqs: Faq[] = [
     slug: "bone-graft",
     question: "What if I don't have enough bone for an implant?",
     answer:
-      "If there isn't enough jawbone to support an implant, a bone graft or sinus lift can rebuild the area first. Your dentist assesses this from your 3D scan and includes any grafting in your plan and quote up front.",
+      "If there isn't enough jawbone to support an implant, a bone graft or sinus lift can rebuild the area first. Your dentist assesses this from your 3D scan and explains it as part of your treatment plan up front.",
     tags: ["dental-implants"],
   },
 

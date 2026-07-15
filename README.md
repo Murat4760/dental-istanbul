@@ -1,12 +1,15 @@
 # Dental Istanbul — Dental Tourism Marketing Site
 
 A fast, trust-heavy marketing site for a dental clinic serving international
-patients. Its one job: turn ad/organic traffic into **WhatsApp + quote-form
-leads**. Mobile-first, English now, more languages later without a rebuild.
+patients. Its one job: turn ad/organic traffic into **WhatsApp leads** — no
+contact form, no backend, no personal data collected by this site at all.
+Mobile-first, English now, more languages later without a rebuild.
 
-> ⚠️ This is a **real-client scaffold**. Every clinic-specific fact (name, prices,
-> photos, doctors, reviews, accreditations) is a clearly-marked `[PLACEHOLDER]`.
-> See **[HANDOFF.md](./HANDOFF.md)** for the go-live checklist.
+> ⚠️ This is a **real-client scaffold**. Every clinic-specific fact (name,
+> photos, doctors, reviews, accreditations) is either real (from the
+> 2026-07-14 intake form) or a clearly-marked `[PLACEHOLDER]`. This site does
+> not advertise prices anywhere. See **[HANDOFF.md](./HANDOFF.md)** for the
+> go-live checklist.
 
 ## Stack
 
@@ -14,8 +17,8 @@ leads**. Mobile-first, English now, more languages later without a rebuild.
 |---|---|
 | Framework | **Next.js 16** (App Router) + **React 19** + **TypeScript** |
 | Styling | **Tailwind CSS v4** (tokens in `app/globals.css` `@theme`) |
-| i18n | **next-intl** — EN shipped, AR/RU/TR/DE scaffolded |
-| Forms | **react-hook-form + zod** → **Formspree** (no backend, no DB) |
+| i18n | **next-intl** — EN shipped, AR/RU/DE scaffolded (no TR — see i18n/routing.ts) |
+| Contact | WhatsApp / phone / email links only — no form, no backend, no DB |
 | Images | `next/image` + optional **Cloudinary** (`f_auto,q_auto`) |
 | Icons | `lucide-react` (+ inline brand SVGs) |
 | Deploy | **Vercel** |
@@ -42,8 +45,8 @@ Variables** (prod). See `.env.example`.
 ```
 NEXT_PUBLIC_SITE_URL           # https://www.yourclinic.com (canonical/OG/sitemap)
 NEXT_PUBLIC_WHATSAPP_NUMBER    # intl format, digits only, e.g. 905551112233
-NEXT_PUBLIC_FORMSPREE_ENDPOINT # https://formspree.io/f/xxxxxxx
 NEXT_PUBLIC_CLOUDINARY_CLOUD   # optional image CDN cloud name
+NEXT_PUBLIC_ALLOW_INDEXING     # "true" to let search engines index the site
 ```
 
 ## Project structure
@@ -52,19 +55,19 @@ NEXT_PUBLIC_CLOUDINARY_CLOUD   # optional image CDN cloud name
 app/
   [locale]/            # every page lives here (proxy hides the /en prefix)
     layout.tsx         # fonts, next-intl provider, header/footer/whatsapp
-    page.tsx           # home (9 sections)
+    page.tsx           # home
     procedures/[slug]/ # data-driven procedure template
-    about · pricing · faq · reviews · contact · before-after · patient-journey · privacy
+    about · faq · reviews · contact · patient-journey · privacy
   api/og/route.tsx     # dynamic OpenGraph image
   sitemap.ts · robots.ts
-components/             # Header, Footer, QuoteForm, ProcedureCard, BeforeAfter, …
+components/             # Header, Footer, ProcedureCard, DoctorCard, …
   ui/                  # Button, SectionHeading, Arc (signature), Media, Reveal, …
 i18n/                  # routing.ts · navigation.ts · request.ts (next-intl)
 lib/                   # ← ALL CONTENT + CONFIG lives here
   site.ts              # single source of truth (clinic name, contact, hours, …)
   procedures.ts faqs.ts reviews.ts doctors.ts journey.ts
   schema.ts metadata.ts image.ts
-messages/              # en.json (full) + ar/ru/tr/de.json (stubs)
+messages/              # en.json (full) + ar/ru/de.json (stubs, render as English until translated)
 proxy.ts               # next-intl locale routing (Next 16 "proxy", not middleware)
 ```
 

@@ -7,13 +7,19 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Media } from "@/components/ui/Media";
 import { Reveal } from "@/components/ui/Reveal";
 import { DoctorCard } from "@/components/DoctorCard";
-import { AccreditationBadges } from "@/components/AccreditationBadges";
 import { CTABand } from "@/components/CTABand";
+
+const GALLERY = [
+  { src: "/images/clinic/treatment-room-1.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-2.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-3.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-4.jpg", alt: "Treatment room at Rama Dental Clinic" },
+];
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: `About ${SITE.name}`,
-    description: `Meet the team behind ${SITE.name} — accredited dentists providing implants, veneers and smile makeovers for international patients in Istanbul.`,
+    description: `Meet the team behind ${SITE.name} — a registered dental team providing implants, veneers and smile makeovers for international patients in Istanbul.`,
     path: "/about",
   });
 }
@@ -43,17 +49,34 @@ export default async function AboutPage({
               patients cared for, the technology used, and what makes the
               patient experience different. Keep to real, verifiable facts.
             </p>
-            <div className="mt-8">
-              <AccreditationBadges />
-            </div>
           </div>
           <Media
+            src="/images/clinic/reception.jpg"
             aspect="4 / 3"
             tone="teal"
-            alt={`Inside ${SITE.name} in ${SITE.city}`}
-            label="[PLACEHOLDER] Clinic interior photo"
+            alt={`Reception at ${SITE.name} in ${SITE.city}`}
             className="shadow-card"
           />
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-page">
+          <SectionHeading
+            eyebrow="Our clinic"
+            title="Inside Rama Dental Clinic"
+            description="A look at our clinic in Beylikdüzü, Istanbul."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {GALLERY.map((photo) => (
+              <Media
+                key={photo.src}
+                src={photo.src}
+                aspect="4 / 3"
+                alt={photo.alt}
+              />
+            ))}
+          </div>
         </div>
       </section>
 

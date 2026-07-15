@@ -32,23 +32,29 @@ export default async function ReviewsPage({
             as="h1"
             eyebrow="Patient stories"
             title="What our patients say"
-            description="[PLACEHOLDER] Sample reviews are shown for layout — replace with real, permission-cleared patient testimonials before going live."
+            description="We only publish real, permission-cleared patient reviews."
           />
-          {/*
-            Aggregate rating ("4.9 based on 840+ reviews") removed — SITE.stats
-            is still placeholder, not a real, verifiable figure. Re-enable
-            once the clinic supplies real, sourced numbers.
-          */}
         </div>
       </section>
 
       <section className="section">
-        <div className="container-page grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((r, i) => (
-            <Reveal key={r.id} delay={(i % 3) * 60}>
-              <ReviewCard review={r} className="h-full" />
-            </Reveal>
-          ))}
+        <div className="container-page">
+          {reviews.length > 0 ? (
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {reviews.map((r, i) => (
+                <Reveal key={r.id} delay={(i % 3) * 60}>
+                  <ReviewCard review={r} className="h-full" />
+                </Reveal>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-card border border-dashed border-line bg-surface p-10 text-center">
+              <p className="text-ink-soft">
+                Reviews will appear here once we have real, consented patient
+                testimonials to share.
+              </p>
+            </div>
+          )}
         </div>
       </section>
 

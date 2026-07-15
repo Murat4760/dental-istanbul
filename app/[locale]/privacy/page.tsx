@@ -26,8 +26,7 @@ export default async function PrivacyPage({
           Privacy Policy
         </h1>
         <p className="mt-3 text-sm text-muted">
-          [PLACEHOLDER] Last updated: add date. Have this reviewed for your
-          jurisdiction (e.g. GDPR / KVKK) before publishing.
+          [PLACEHOLDER] Last updated: add date.
         </p>
 
         <div className="mt-8 space-y-6 leading-relaxed text-ink-soft">
@@ -38,73 +37,63 @@ export default async function PrivacyPage({
             <p className="mt-2">
               This website is operated by {SITE.legalName} (&ldquo;we&rdquo;,
               &ldquo;us&rdquo;), a dental clinic based in {SITE.city},{" "}
-              {SITE.country}. [PLACEHOLDER] Add your registered company details and
-              a data-protection contact.
+              {SITE.country}.
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-ink">
-              What we collect
+              This website does not collect personal data
             </h2>
             <p className="mt-2">
-              When you contact us or submit an enquiry form, we collect the
-              details you provide — such as your name, email address, phone
-              number, procedure of interest and any message. We do not knowingly
-              collect more than we need to respond to your enquiry.
+              There is no contact form, quote form, newsletter signup or
+              tracking on this site. Every contact path — WhatsApp, phone,
+              email — hands you off directly to that platform (WhatsApp,
+              your phone&rsquo;s dialler, your email client) rather than
+              submitting anything to us through this website. We do not
+              receive, store or process any personal data as a result of you
+              browsing or using the contact links on this site.
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-ink">
-              How we use it
+              If you contact us directly
             </h2>
             <p className="mt-2">
-              We use your information solely to respond to your enquiry, prepare
-              an indicative treatment plan and quote, and communicate with you
-              about your potential treatment. We do not sell your data, and we do
-              not use it for unrelated marketing without your consent.
+              If you message us on WhatsApp, call, or email, any information
+              you choose to share (such as your name, contact details or
+              photos) is handled by us as part of responding to your
+              enquiry, under the privacy terms of WhatsApp or your email
+              provider for that channel. We use it only to respond to you
+              and do not sell it or use it for unrelated marketing.
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-ink">
-              Sharing
+              Cookies &amp; tracking
             </h2>
             <p className="mt-2">
-              Enquiries submitted through our contact/quote form are processed
-              by Formspree, our form-submission provider, on our behalf.
-              [PLACEHOLDER] Confirm Formspree&rsquo;s current data-processing
-              terms and list any other third parties (e.g. email or CRM
-              tools) once they are in use.
+              This site does not use analytics, advertising or tracking
+              cookies, and does not use local/session storage to store
+              personal data.
             </p>
           </div>
 
           <div>
             <h2 className="font-display text-xl font-semibold text-ink">
-              Your rights
+              Questions
             </h2>
             <p className="mt-2">
-              You may ask us to access, correct or delete the personal
-              information you have shared with us. To do so, contact us at{" "}
+              If you have a question about this policy, contact us at{" "}
               <a
                 href={`mailto:${SITE.email}`}
                 className="text-primary underline underline-offset-2"
               >
                 {SITE.email}
               </a>
-              . [PLACEHOLDER] Add the specific rights and response times required
-              in your jurisdiction.
-            </p>
-          </div>
-
-          <div>
-            <h2 className="font-display text-xl font-semibold text-ink">
-              Cookies
-            </h2>
-            <p className="mt-2">
-              This site does not currently use analytics or advertising cookies.
-              If that changes, we will add a cookie/consent notice here.
+              .
             </p>
           </div>
         </div>

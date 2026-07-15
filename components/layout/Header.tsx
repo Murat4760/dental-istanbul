@@ -5,15 +5,13 @@ import { useTranslations } from "next-intl";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { SITE } from "@/lib/site";
+import { SITE, whatsappUrl } from "@/lib/site";
 import { Arc } from "@/components/ui/Arc";
 import { Button } from "@/components/ui/Button";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const NAV = [
   { href: "/procedures", key: "procedures" },
-  { href: "/before-after", key: "beforeAfter" },
-  { href: "/pricing", key: "pricing" },
   { href: "/patient-journey", key: "journey" },
   { href: "/about", key: "about" },
   { href: "/reviews", key: "reviews" },
@@ -98,8 +96,8 @@ export function Header() {
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher />
           <div className="hidden sm:block">
-            <Button href="/contact" size="sm">
-              {t("cta.freeQuoteShort")}
+            <Button href={whatsappUrl(t("whatsapp.prefill"))} external size="sm">
+              {t("cta.whatsapp")}
             </Button>
           </div>
           <button
@@ -137,8 +135,8 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-5 flex flex-col gap-3">
-              <Button href="/contact" size="lg" className="w-full">
-                {t("cta.freeQuote")}
+              <Button href={whatsappUrl(t("whatsapp.prefill"))} external size="lg" className="w-full">
+                {t("cta.whatsapp")}
               </Button>
               <a
                 href={SITE.phoneHref}

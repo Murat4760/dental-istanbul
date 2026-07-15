@@ -6,12 +6,12 @@ import { buildMetadata } from "@/lib/metadata";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Media } from "@/components/ui/Media";
-import { QuoteForm } from "@/components/QuoteForm";
+import { Button } from "@/components/ui/Button";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: "Contact Us",
-    description: `Get in touch with ${SITE.name} in Istanbul. Message us on WhatsApp or request a free treatment plan and quote.`,
+    description: `Get in touch with ${SITE.name} in Istanbul. Message us on WhatsApp, call, or email — no forms, no waiting.`,
     path: "/contact",
   });
 }
@@ -33,7 +33,7 @@ export default async function ContactPage({
             as="h1"
             eyebrow="Contact"
             title="Let's plan your smile"
-            description="Send your details for a free, no-obligation quote, or reach us directly — we reply within 24 hours, usually much sooner."
+            description="Message us on WhatsApp, call, or email — we reply quickly, usually the same day."
           />
         </div>
       </section>
@@ -87,14 +87,18 @@ export default async function ContactPage({
                 </li>
                 <li className="flex gap-3">
                   <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                  <span className="text-ink-soft">
-                    {SITE.hours.map((h) => (
-                      <span key={h.days} className="block">
-                        {h.days}:{" "}
-                        {h.open === "Closed" ? "Closed" : `${h.open}–${h.close}`}
-                      </span>
-                    ))}
-                  </span>
+                  {SITE.hoursConfirmed ? (
+                    <span className="text-ink-soft">
+                      {SITE.hours.map((h) => (
+                        <span key={h.days} className="block">
+                          {h.days}:{" "}
+                          {h.open === "Closed" ? "Closed" : `${h.open}–${h.close}`}
+                        </span>
+                      ))}
+                    </span>
+                  ) : (
+                    <span className="text-ink-soft">{t("footer.hoursPending")}</span>
+                  )}
                 </li>
               </ul>
 
@@ -132,8 +136,35 @@ export default async function ContactPage({
             </div>
           </div>
 
-          {/* Form */}
-          <QuoteForm />
+          {/* WhatsApp-first contact card — no form, no data collected */}
+          <div className="rounded-card border border-line bg-surface p-6 shadow-card sm:p-8">
+            <h2 className="font-display text-2xl font-semibold text-ink">
+              {t("contactCard.title")}
+            </h2>
+            <p className="mt-2 text-ink-soft">{t("contactCard.body")}</p>
+            <div className="mt-6 flex flex-col gap-3">
+              <Button href={whatsappUrl(t("whatsapp.prefill"))} external size="lg" className="w-full">
+                {t("cta.whatsapp")}
+              </Button>
+              <a
+                href={SITE.phoneHref}
+                className="flex items-center justify-center gap-2 rounded-btn border border-line-strong bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
+              >
+                <Phone className="h-4 w-4" />
+                {SITE.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="flex items-center justify-center gap-2 rounded-btn border border-line-strong bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
+              >
+                <Mail className="h-4 w-4" />
+                {SITE.email}
+              </a>
+            </div>
+            <p className="mt-6 text-center text-xs leading-relaxed text-muted">
+              {t("footer.noDataCollected")}
+            </p>
+          </div>
         </div>
       </section>
     </>

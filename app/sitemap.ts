@@ -6,10 +6,8 @@ import { procedureSlugs } from "@/lib/procedures";
 const STATIC_PATHS = [
   "",
   "/procedures",
-  "/before-after",
   "/about",
   "/patient-journey",
-  "/pricing",
   "/reviews",
   "/faq",
   "/contact",

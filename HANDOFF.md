@@ -37,66 +37,102 @@ data edit, not a rebuild.
 - [ ] Confirm whether **Orthodontics** (advertised in the Instagram bio) should
       be added as a 6th procedure in `lib/procedures.ts` — not added yet
 
-## 2. Treatments & prices — `lib/procedures.ts`
-- [ ] `priceFrom` / `priceNote` for each of the 5 procedures (or keep quote-only)
+## 2. Treatments — `lib/procedures.ts`
+- [x] No prices anywhere on this site (deliberate — see §6). `priceFrom` /
+      `priceNote` fields were removed entirely, not left as placeholders.
 - [ ] Review copy for accuracy against how the clinic actually works
 
 ## 3. People & proof
 - [~] `lib/doctors.ts` — real dentists: names, titles, credentials, registration
       numbers, bios (no invented practitioners). `d1` (Ferhat Ramazani, Sicil
       No: 20190201022/51734) confirmed via the 2026-07-14 intake form; bio
-      still pending. `d2`/`d3` remain placeholder slots for additional staff.
-- [ ] `lib/reviews.ts` — replace the **sample** testimonials with real,
-      permission-cleared patient reviews (or wire a Google reviews feed)
+      still pending. Add a second/third entry only once the clinic supplies
+      another real, verifiable dentist.
+- [ ] `lib/reviews.ts` — currently an empty array (was sample/fake testimonials —
+      removed, never invent reviews). Add real, permission-cleared patient
+      reviews here (or wire a Google reviews feed) once they exist.
       ⚠️ The client's Instagram has real testimonial posts (Molly, Mathew,
       Hanna, Chris), but those were posted for Instagram, not confirmed as
       cleared for reuse on this site — don't copy them in without the
       client's direct, explicit go-ahead alongside the actual photo files.
 
 ## 4. Photography
-All photo slots render as branded placeholders via `components/ui/Media.tsx`.
-Supply the clinic's real, consented images and pass a `src` (Cloudinary id or URL):
-- [ ] Home hero visual
-- [ ] Clinic interior (About)
+All photo slots render as branded placeholders via `components/ui/Media.tsx`
+until a `src` is passed. Real, consented clinic interior photos are already
+wired in (`public/images/clinic/*.jpg`, from the client 2026-07-16) on the
+home hero and the About page gallery.
+- [x] Home hero visual — reception photo
+- [x] Clinic interior gallery (About) — 5 real photos
 - [ ] Doctor headshots
-- [ ] **Before/after** pairs — set `beforeSrc`/`afterSrc` in `lib/procedures.ts`
-      (⚠️ written patient consent required)
-- [ ] A featured video testimonial (home)
-- [ ] Map embed (Contact) — swap the placeholder for a real map
+- [ ] **Before/after photos — do not add.** No case has written patient
+      consent on file (2026-07-14 intake form). The before/after feature
+      (component, `/before-after` page, `beforeAfter` data field) was removed
+      entirely rather than left as an empty placeholder — re-add only once a
+      real, consented case exists.
+- [ ] Map embed (Contact) — swap the placeholder for a real map once precise
+      coordinates are confirmed
 - [ ] `favicon` / logo — replace `app/favicon.ico`
 
 ## 5. Environment variables (Vercel)
 - [ ] `NEXT_PUBLIC_SITE_URL` — the production domain
 - [ ] `NEXT_PUBLIC_WHATSAPP_NUMBER` — intl format, digits only
-- [ ] `NEXT_PUBLIC_FORMSPREE_ENDPOINT` — the clinic's real Formspree form
 - [ ] `NEXT_PUBLIC_CLOUDINARY_CLOUD` — optional, if using Cloudinary for images
+- [ ] `NEXT_PUBLIC_ALLOW_INDEXING` — leave unset/false until go-live content is confirmed
+
+There is no Formspree/form env var — the contact form (`QuoteForm`, `react-hook-form`,
+`zod`, Formspree) was removed entirely. Every "get in touch" action opens
+WhatsApp, the phone dialler, or an email client directly. This is deliberate:
+**this site collects no personal data of its own** (see the rewritten
+`/privacy` page) — nothing to configure, nothing to secure, no KVKK exposure
+from this site's own data handling.
 
 ## 6. Legal & claims
-- [ ] `app/[locale]/privacy/page.tsx` — have it reviewed for the clinic's
-      jurisdiction (GDPR / KVKK): company details, data processor, rights
-- [ ] Verify the "**Save up to 50–70%**" figure on `/pricing` and the home teaser,
-      or reword — it is currently an illustrative market range
+- [x] `app/[locale]/privacy/page.tsx` — rewritten to state plainly that this
+      site collects no personal data (no form, no analytics, no tracking).
+      Still worth a jurisdiction-specific legal read before go-live.
+- [x] No pricing anywhere (`/pricing` page removed, all "quote"/price copy
+      rewritten) and no fabricated "accredited" claims (the 2026-07-14 intake
+      form: no accreditations held) — both were previously present in SEO
+      meta, hero copy and an FAQ answer and have been corrected.
+- [ ] **Health-tourism positioning vs. missing certificate**: this site is
+      built as the abroad-facing property (no `tr` locale, by design — see
+      `i18n/routing.ts`), but the clinic does not yet hold the
+      *Uluslararası Sağlık Turizmi Yetki Belgesi* (2026-07-14 intake form).
+      `NEXT_PUBLIC_ALLOW_INDEXING` is off, so this isn't search-indexed yet,
+      but the abroad-facing marketing framing (patient journey, "for
+      international patients" copy) is otherwise live as-is — confirm this is
+      fine to keep once the certificate lands, or scope down before indexing.
 - [ ] Confirm no medical claim on the site overstates outcomes
 
 ## 7. Enable more languages (optional, later)
 - [ ] Translate `messages/<locale>.json` (currently `{}` → English fallback)
-- [ ] Localise `lib/*` content for that locale
+- [ ] Localise `lib/*` content for that locale (procedures, FAQs, journey,
+      reviews all currently live as English-only TypeScript, not per-locale
+      JSON — translating the UI chrome alone would produce a half-translated
+      page)
 - [ ] Un-disable the locale row in `components/layout/LanguageSwitcher.tsx`
+- Note: `tr` is deliberately not a locale on this domain — see the comment in
+  `i18n/routing.ts`.
 
 ## 8. Deploy
 1. Push to GitHub → import in **Vercel**.
 2. Add the env vars from §5.
 3. Deploy, then check the preview:
-   - `npm run build` is clean locally (already verified).
-   - `wa.me` button + quote form both work with the real env values.
+   - `npm run build` is clean locally.
+   - `wa.me` button + `tel:`/`mailto:` links all work with the real env values.
    - Run Lighthouse (mobile) — target Performance & SEO ≥ 90.
-   - Submit `/sitemap.xml` in Google Search Console.
+   - Submit `/sitemap.xml` in Google Search Console (only once `ALLOW_INDEXING=true`).
 
 ---
 
-### What's already done
-Clean production build (81 static pages, all locales), full SEO plumbing
-(per-page metadata, `Dentist` + `MedicalProcedure` + `BreadcrumbList` JSON-LD,
-hreflang, sitemap, robots, OG images), one `<h1>` per page, WhatsApp + Formspree
-quote form wired via env, responsive with no horizontal scroll at 375/1280,
-reduced-motion support, and a distinctive teal/terracotta design system.
+### What's already done (as of 2026-07-16)
+Clean production build, full SEO plumbing (per-page metadata, `Dentist` +
+`MedicalProcedure` + `BreadcrumbList` JSON-LD — no fabricated `priceRange`,
+`openingHoursSpecification` or `aggregateRating`), hreflang, sitemap, robots,
+OG images, one `<h1>` per page, responsive with no horizontal scroll at
+375/1280, reduced-motion support, and a distinctive teal/terracotta design
+system. No pricing anywhere. No contact form — WhatsApp/phone/email only, and
+the site collects no personal data of its own. No before/after photos (none
+have written consent). Real clinic interior photos wired in. Only one real
+dentist listed (no invented colleagues). Reviews section is an honest empty
+state (no fake testimonials).

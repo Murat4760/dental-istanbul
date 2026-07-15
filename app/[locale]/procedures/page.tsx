@@ -46,7 +46,7 @@ export default async function ProceduresPage({
                 <span className="text-primary">{SITE.country}</span>
               </>
             }
-            description="Each treatment is planned around your individual case and confirmed with a clear, itemised quote before you travel — no surprises."
+            description="Each treatment is planned around your individual case, with everything explained clearly before you travel — no surprises."
           />
         </div>
       </section>

@@ -13,7 +13,7 @@ export const journey: JourneyStep[] = [
     step: 1,
     title: "Free online consultation",
     description:
-      "Share photos and any X-rays through WhatsApp or the form. Our dentists review your case and send an indicative plan and quote — no cost, no obligation.",
+      "Share photos and any X-rays with us on WhatsApp. Our dentists review your case and get back to you with an indicative treatment plan — no cost, no obligation.",
     icon: "MessageCircle",
   },
   {

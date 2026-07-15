@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Clock, Tag, Wallet, Check, ArrowRight, ChevronRight } from "lucide-react";
+import { Clock, Tag, Check, ArrowRight, ChevronRight, Phone, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SITE, whatsappUrl } from "@/lib/site";
 import {
@@ -15,10 +15,7 @@ import { medicalProcedureSchema, breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { Reveal } from "@/components/ui/Reveal";
-import { BeforeAfter } from "@/components/BeforeAfter";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { QuoteForm } from "@/components/QuoteForm";
 import { ProcedureCard } from "@/components/ProcedureCard";
 
 export function generateStaticParams() {
@@ -109,18 +106,18 @@ export default async function ProcedurePage({
               </p>
             )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="#quote" size="lg" rightIcon={<ArrowRight className="h-4 w-4" />}>
-                {t("cta.freeQuote")}
-              </Button>
               <Button
                 href={whatsappUrl(
                   `Hello, I'd like to ask about ${procedure.name} in Istanbul.`,
                 )}
                 external
                 size="lg"
-                variant="outline"
+                rightIcon={<ArrowRight className="h-4 w-4" />}
               >
                 {t("cta.whatsapp")}
+              </Button>
+              <Button href={SITE.phoneHref} size="lg" variant="outline">
+                {SITE.phoneDisplay}
               </Button>
             </div>
           </div>
@@ -198,52 +195,21 @@ export default async function ProcedurePage({
                       </dd>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <Wallet className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <div>
-                      <dt className="text-muted">Price</dt>
-                      <dd className="font-medium text-ink">
-                        {procedure.priceFrom}
-                      </dd>
-                      <p className="mt-1 text-xs text-muted">
-                        {procedure.priceNote}
-                      </p>
-                    </div>
-                  </div>
                 </dl>
-                <Button href="#quote" className="mt-6 w-full">
-                  {t("cta.freeQuote")}
+                <Button
+                  href={whatsappUrl(
+                    `Hello, I'd like to ask about ${procedure.name} in Istanbul.`,
+                  )}
+                  external
+                  className="mt-6 w-full"
+                >
+                  {t("cta.whatsapp")}
                 </Button>
               </div>
             </div>
           </aside>
         </div>
       </section>
-
-      {/* Before / after */}
-      {procedure.beforeAfter.length > 0 && (
-        <section className="section bg-sand/60">
-          <div className="container-page">
-            <SectionHeading
-              eyebrow="Before & after"
-              title={`${procedure.shortName} results`}
-              description="Drag to compare. We only publish real, consented patient photography."
-            />
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {procedure.beforeAfter.map((ba, i) => (
-                <Reveal key={i} delay={i * 60}>
-                  <BeforeAfter pair={ba} />
-                </Reveal>
-              ))}
-            </div>
-            <p className="mt-6 text-xs text-muted">
-              [PLACEHOLDER] Demonstration slots — replace with the clinic&rsquo;s
-              own before/after photography (patient consent required).
-            </p>
-            <p className="mt-3 text-xs text-muted">{t("footer.disclaimer")}</p>
-          </div>
-        </section>
-      )}
 
       {/* Related FAQs */}
       {faqs.length > 0 && (
@@ -275,17 +241,47 @@ export default async function ProcedurePage({
         </div>
       </section>
 
-      {/* Quote */}
+      {/* Contact — WhatsApp/phone/email, no form, no data collected */}
       <section className="section">
         <div className="container-page grid items-start gap-12 lg:grid-cols-2">
-          <div className="lg:sticky lg:top-28">
+          <div>
             <SectionHeading
-              eyebrow="Free quote"
-              title={`Get a plan for your ${procedure.shortName.toLowerCase()}`}
-              description="Send your details or a few photos and our patient coordinator will reply within 24 hours with an indicative plan and quote."
+              eyebrow="Get in touch"
+              title={`Ask about ${procedure.shortName.toLowerCase()}`}
+              description="Message us on WhatsApp, call, or email — our team replies quickly, usually the same day."
             />
           </div>
-          <QuoteForm id="quote" defaultProcedure={procedure.name} showHeader={false} />
+          <div className="rounded-card border border-line bg-surface p-6 shadow-card sm:p-8">
+            <div className="flex flex-col gap-3">
+              <Button
+                href={whatsappUrl(
+                  `Hello, I'd like to ask about ${procedure.name} in Istanbul.`,
+                )}
+                external
+                size="lg"
+                className="w-full"
+              >
+                {t("cta.whatsapp")}
+              </Button>
+              <a
+                href={SITE.phoneHref}
+                className="flex items-center justify-center gap-2 rounded-btn border border-line-strong bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
+              >
+                <Phone className="h-4 w-4" />
+                {SITE.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${SITE.email}`}
+                className="flex items-center justify-center gap-2 rounded-btn border border-line-strong bg-surface px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-primary hover:text-primary"
+              >
+                <Mail className="h-4 w-4" />
+                {SITE.email}
+              </a>
+            </div>
+            <p className="mt-6 text-center text-xs leading-relaxed text-muted">
+              {t("footer.noDataCollected")}
+            </p>
+          </div>
         </div>
       </section>
     </>

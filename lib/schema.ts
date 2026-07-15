@@ -3,8 +3,10 @@ import type { Procedure } from "./procedures";
 
 /**
  * JSON-LD builders. Rendered via <JsonLd> on the relevant pages.
- * Note: aggregateRating and opening hours mirror lib/site.ts placeholders —
- * keep them in sync with the clinic's real, verifiable data before launch.
+ * No aggregateRating, no openingHoursSpecification, no priceRange: none of
+ * these are real, client-confirmed figures — don't emit fabricated
+ * structured data for a medical/dental business. Add each back only once
+ * the clinic supplies and confirms the real value.
  */
 
 export function dentistSchema() {
@@ -17,9 +19,7 @@ export function dentistSchema() {
     url: SITE_URL,
     telephone: SITE.phoneDisplay,
     email: SITE.email,
-    priceRange: SITE.priceRange,
     medicalSpecialty: "Dentistry",
-    currenciesAccepted: "GBP, EUR, USD, TRY",
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.address.street,
@@ -37,23 +37,18 @@ export function dentistSchema() {
       "@type": "AdministrativeArea",
       name: "International patients worldwide",
     },
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "19:00",
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: "Saturday",
-        opens: "09:00",
-        closes: "17:00",
-      },
-    ],
-    // No aggregateRating block: SITE.stats is still placeholder, not a real,
-    // verifiable figure — don't emit it as structured data. Add it back once
-    // the clinic supplies real, sourced numbers.
+    ...(SITE.hoursConfirmed
+      ? {
+          openingHoursSpecification: SITE.hours
+            .filter((h) => h.open !== "Closed")
+            .map((h) => ({
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: h.days,
+              opens: h.open,
+              closes: h.close,
+            })),
+        }
+      : {}),
     sameAs: [
       SITE.socials.instagram,
       SITE.socials.facebook,

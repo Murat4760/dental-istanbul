@@ -1,11 +1,11 @@
 import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/Button";
 import { Arc } from "@/components/ui/Arc";
-import { whatsappUrl } from "@/lib/site";
+import { SITE, whatsappUrl } from "@/lib/site";
 
 export async function CTABand({
   title = "Ready to start your smile journey?",
-  subtitle = "Send your details or a few photos and get a free, no-obligation treatment plan and quote — usually within 24 hours.",
+  subtitle = "Message us on WhatsApp or give us a call — no forms, no waiting.",
 }: {
   title?: string;
   subtitle?: string;
@@ -27,17 +27,21 @@ export async function CTABand({
               {subtitle}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-              <Button href="/contact" size="lg">
-                {t("cta.freeQuote")}
-              </Button>
               <Button
                 href={whatsappUrl(t("whatsapp.prefill"))}
                 external
                 size="lg"
+                className="bg-white text-primary hover:bg-white/90"
+              >
+                {t("cta.whatsapp")}
+              </Button>
+              <Button
+                href={SITE.phoneHref}
+                size="lg"
                 variant="outline"
                 className="border-white/30 bg-transparent text-white hover:border-white hover:bg-white/10 hover:text-white"
               >
-                {t("cta.whatsapp")}
+                {SITE.phoneDisplay}
               </Button>
             </div>
           </div>

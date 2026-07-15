@@ -8,8 +8,6 @@ import { Arc } from "@/components/ui/Arc";
 
 const NAV = [
   { href: "/procedures", key: "procedures" },
-  { href: "/before-after", key: "beforeAfter" },
-  { href: "/pricing", key: "pricing" },
   { href: "/patient-journey", key: "journey" },
   { href: "/about", key: "about" },
   { href: "/reviews", key: "reviews" },
@@ -125,13 +123,17 @@ export async function Footer() {
             </li>
             <li className="flex gap-3">
               <Clock className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-              <span>
-                {SITE.hours.map((h) => (
-                  <span key={h.days} className="block">
-                    {h.days}: {h.open === "Closed" ? "Closed" : `${h.open}–${h.close}`}
-                  </span>
-                ))}
-              </span>
+              {SITE.hoursConfirmed ? (
+                <span>
+                  {SITE.hours.map((h) => (
+                    <span key={h.days} className="block">
+                      {h.days}: {h.open === "Closed" ? "Closed" : `${h.open}–${h.close}`}
+                    </span>
+                  ))}
+                </span>
+              ) : (
+                <span>{t("footer.hoursPending")}</span>
+              )}
             </li>
           </ul>
         </div>
