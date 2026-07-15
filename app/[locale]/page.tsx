@@ -211,23 +211,6 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* ── Testimonials ─────────────────────────────────────── */}
-      <section className="section bg-sand/60">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow="Patient stories"
-            title="Trusted by patients from around the world"
-            description="We only publish real, permission-cleared patient reviews — none are live yet."
-          />
-          <div className="mt-12 rounded-card border border-dashed border-line bg-surface p-10 text-center">
-            <p className="text-ink-soft">
-              Patient reviews will appear here once we have real, consented
-              testimonials to share.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ preview ──────────────────────────────────────── */}
       <section className="section">
         <div className="container-page grid gap-12 lg:grid-cols-5">

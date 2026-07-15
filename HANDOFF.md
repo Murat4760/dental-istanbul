@@ -48,9 +48,11 @@ data edit, not a rebuild.
       No: 20190201022/51734) confirmed via the 2026-07-14 intake form; bio
       still pending. Add a second/third entry only once the clinic supplies
       another real, verifiable dentist.
-- [ ] `lib/reviews.ts` — currently an empty array (was sample/fake testimonials —
-      removed, never invent reviews). Add real, permission-cleared patient
-      reviews here (or wire a Google reviews feed) once they exist.
+- [ ] **Reviews/testimonials** — the whole feature (`/reviews` page,
+      `ReviewCard`, `lib/reviews.ts`, the home page section) was removed
+      entirely on 2026-07-17 rather than left as an empty state (was
+      sample/fake testimonials before that — never invent reviews). Re-add
+      only once real, permission-cleared patient reviews exist.
       ⚠️ The client's Instagram has real testimonial posts (Molly, Mathew,
       Hanna, Chris), but those were posted for Instagram, not confirmed as
       cleared for reuse on this site — don't copy them in without the
@@ -137,7 +139,7 @@ from this site's own data handling.
 
 ---
 
-### What's already done (as of 2026-07-16)
+### What's already done (as of 2026-07-17)
 Clean production build, full SEO plumbing (per-page metadata, `Dentist` +
 `MedicalProcedure` + `BreadcrumbList` JSON-LD — no fabricated `priceRange`,
 `openingHoursSpecification` or `aggregateRating`), hreflang, sitemap, robots,
@@ -146,5 +148,6 @@ OG images, one `<h1>` per page, responsive with no horizontal scroll at
 system. No pricing anywhere. No contact form — WhatsApp/phone/email only, and
 the site collects no personal data of its own. No before/after photos (none
 have written consent). Real clinic interior photos wired in. Only one real
-dentist listed (no invented colleagues). Reviews section is an honest empty
-state (no fake testimonials).
+dentist listed (no invented colleagues). No Patient Journey and no
+reviews/testimonials features — both removed entirely (2026-07-17) rather
+than left as empty placeholders. UI chrome translated into TR/AR/RU/DE.
