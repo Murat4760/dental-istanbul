@@ -13,7 +13,6 @@ import { LanguageSwitcher } from "./LanguageSwitcher";
 const NAV = [
   { href: "/procedures", key: "procedures" },
   { href: "/about", key: "about" },
-  { href: "/faq", key: "faq" },
 ] as const;
 
 export function Header() {

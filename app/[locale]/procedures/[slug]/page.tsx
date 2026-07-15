@@ -9,13 +9,11 @@ import {
   procedureSlugs,
   procedures,
 } from "@/lib/procedures";
-import { getFaqsBySlugs } from "@/lib/faqs";
 import { buildMetadata } from "@/lib/metadata";
 import { medicalProcedureSchema, breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { FaqAccordion } from "@/components/FaqAccordion";
 import { ProcedureCard } from "@/components/ProcedureCard";
 
 export function generateStaticParams() {
@@ -51,7 +49,6 @@ export default async function ProcedurePage({
   const procedure = getProcedure(slug);
   if (!procedure) notFound();
 
-  const faqs = getFaqsBySlugs(procedure.faqSlugs);
   const related = procedures.filter((p) => p.slug !== slug).slice(0, 3);
 
   return (
@@ -210,24 +207,6 @@ export default async function ProcedurePage({
           </aside>
         </div>
       </section>
-
-      {/* Related FAQs */}
-      {faqs.length > 0 && (
-        <section className="section">
-          <div className="container-page grid gap-10 lg:grid-cols-5">
-            <div className="lg:col-span-2">
-              <SectionHeading
-                eyebrow="FAQ"
-                title={`${procedure.shortName} questions`}
-                description="The things patients most often ask about this treatment."
-              />
-            </div>
-            <div className="lg:col-span-3">
-              <FaqAccordion items={faqs} />
-            </div>
-          </div>
-        </section>
-      )}
 
       {/* Related procedures */}
       <section className="section bg-sand/60">

@@ -57,7 +57,7 @@ app/
     layout.tsx         # fonts, next-intl provider, header/footer/whatsapp
     page.tsx           # home
     procedures/[slug]/ # data-driven procedure template
-    about · faq · contact · privacy
+    about · contact · privacy
   api/og/route.tsx     # dynamic OpenGraph image
   sitemap.ts · robots.ts
 components/             # Header, Footer, ProcedureCard, DoctorCard, …
@@ -65,10 +65,10 @@ components/             # Header, Footer, ProcedureCard, DoctorCard, …
 i18n/                  # routing.ts · navigation.ts · request.ts (next-intl)
 lib/                   # ← ALL CONTENT + CONFIG lives here
   site.ts              # single source of truth (clinic name, contact, hours, …)
-  procedures.ts faqs.ts doctors.ts
+  procedures.ts doctors.ts
   schema.ts metadata.ts image.ts
 messages/              # en.json (full) + tr/ar/ru/de.json — UI chrome translated;
-                       # deep content (procedures/faqs/doctors) is still English-only
+                       # deep content (procedures/doctors) is still English-only
 proxy.ts               # next-intl locale routing (Next 16 "proxy", not middleware)
 ```
 

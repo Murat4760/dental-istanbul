@@ -114,14 +114,14 @@ from this site's own data handling.
       TR/AR/RU/DE as of 2026-07-16 — see `messages/<locale>.json`. All five
       locales (`en`, `tr`, `ar`, `ru`, `de`) are live in
       `components/layout/LanguageSwitcher.tsx`, no more "coming soon" gating.
-- [ ] **Deep content is still English-only.** `lib/procedures.ts`,
-      `lib/faqs.ts`, `lib/doctors.ts` are plain English TypeScript with no
-      per-locale variant mechanism — so every non-English locale currently
-      shows translated nav/buttons/footer around English procedure
-      descriptions, FAQ answers and doctor bios. Fixing this properly means
-      either (a) adding a translated field per locale to each data file, or
-      (b) moving this content into `messages/<locale>.json` — a real content
-      task, not a config flip.
+- [ ] **Deep content is still English-only.** `lib/procedures.ts` and
+      `lib/doctors.ts` are plain English TypeScript with no per-locale
+      variant mechanism — so every non-English locale currently shows
+      translated nav/buttons/footer around English procedure descriptions
+      and doctor bios. Fixing this properly means either (a) adding a
+      translated field per locale to each data file, or (b) moving this
+      content into `messages/<locale>.json` — a real content task, not a
+      config flip.
 - [x] AR renders `dir="rtl"` with Noto Sans Arabic (Fraunces/Inter don't
       cover Arabic script — see the `html[lang="ar"]` override in
       `app/globals.css`). TR/RU use Inter's `latin-ext`/`cyrillic` subsets;
@@ -148,6 +148,7 @@ OG images, one `<h1>` per page, responsive with no horizontal scroll at
 system. No pricing anywhere. No contact form — WhatsApp/phone/email only, and
 the site collects no personal data of its own. No before/after photos (none
 have written consent). Real clinic interior photos wired in. Only one real
-dentist listed (no invented colleagues). No Patient Journey and no
-reviews/testimonials features — both removed entirely (2026-07-17) rather
-than left as empty placeholders. UI chrome translated into TR/AR/RU/DE.
+dentist listed (no invented colleagues). No Patient Journey, no
+reviews/testimonials, and no FAQ features — all removed entirely
+(2026-07-17) rather than left as empty placeholders. UI chrome translated
+into TR/AR/RU/DE.

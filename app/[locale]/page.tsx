@@ -12,7 +12,6 @@ import {
 } from "lucide-react";
 import { SITE, whatsappUrl } from "@/lib/site";
 import { procedures } from "@/lib/procedures";
-import { getFaqsBySlugs, homeFaqSlugs } from "@/lib/faqs";
 import { buildMetadata } from "@/lib/metadata";
 import { dentistSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
@@ -22,7 +21,6 @@ import { Media } from "@/components/ui/Media";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProcedureCard } from "@/components/ProcedureCard";
-import { FaqAccordion } from "@/components/FaqAccordion";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
@@ -207,30 +205,6 @@ export default async function HomePage({
                 <ProcedureCard procedure={p} />
               </Reveal>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── FAQ preview ──────────────────────────────────────── */}
-      <section className="section">
-        <div className="container-page grid gap-12 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <SectionHeading
-              eyebrow="Good to know"
-              title="Questions patients ask us most"
-              description="Everything you need to feel confident about treatment in Istanbul."
-            />
-            <Button
-              href="/faq"
-              variant="outline"
-              className="mt-6"
-              rightIcon={<ArrowRight className="h-4 w-4" />}
-            >
-              {t("cta.viewAll")}
-            </Button>
-          </div>
-          <div className="lg:col-span-3">
-            <FaqAccordion items={getFaqsBySlugs(homeFaqSlugs)} />
           </div>
         </div>
       </section>

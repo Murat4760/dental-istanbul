@@ -36,8 +36,6 @@ export type Procedure = {
   processSteps: ProcessStep[];
   /** Typical time on the ground in Istanbul. */
   daysInIstanbul: string;
-  /** slugs into lib/faqs.ts */
-  faqSlugs: string[];
   seo: { title: string; description: string; keywords: string[] };
   /**
    * "comingSoon" = the clinic offers this (per their own marketing) but we
@@ -94,12 +92,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "3–5 days per visit (usually two visits)",
-    faqSlugs: [
-      "implants-pain",
-      "implants-lifespan",
-      "how-many-trips",
-      "bone-graft",
-    ],
     seo: {
       title: "Dental Implants in Istanbul, Turkey",
       description:
@@ -153,7 +145,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "5–7 days",
-    faqSlugs: ["veneers-lifespan", "veneers-natural", "how-many-trips"],
     seo: {
       title: "Porcelain Veneers in Istanbul, Turkey",
       description:
@@ -207,7 +198,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "5–7 days per visit (usually two visits)",
-    faqSlugs: ["all-on-4-vs-dentures", "implants-lifespan", "how-many-trips"],
     seo: {
       title: "All-on-4 Dental Implants in Istanbul, Turkey",
       description:
@@ -261,7 +251,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "1–2 days",
-    faqSlugs: ["whitening-sensitivity", "whitening-lasts"],
     seo: {
       title: "Teeth Whitening in Istanbul, Turkey",
       description:
@@ -314,7 +303,6 @@ export const procedures: Procedure[] = [
       },
     ],
     daysInIstanbul: "3–5 days",
-    faqSlugs: ["crowns-material", "crowns-lifespan", "how-many-trips"],
     seo: {
       title: "Dental Crowns in Istanbul, Turkey",
       description:
@@ -373,7 +361,6 @@ export const procedures: Procedure[] = [
     ],
     daysInIstanbul:
       "[PLACEHOLDER: confirm — treatment plan is set in Istanbul, then monitored over several months rather than completed in one visit]",
-    faqSlugs: ["orthodontics-braces-vs-aligners", "orthodontics-duration"],
     seo: {
       title: "Orthodontics in Istanbul, Turkey",
       description:
