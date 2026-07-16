@@ -17,7 +17,9 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
         </h3>
         <p className="text-sm font-medium text-primary">{doctor.title}</p>
         <p className="mt-1 text-xs text-muted">{doctor.credentials}</p>
-        <p className="mt-3 text-sm leading-relaxed text-ink-soft">{doctor.bio}</p>
+        {!doctor.bio.startsWith("[PLACEHOLDER]") && (
+          <p className="mt-3 text-sm leading-relaxed text-ink-soft">{doctor.bio}</p>
+        )}
         <div className="mt-4 flex flex-wrap gap-1.5">
           {doctor.specialties.map((s) => (
             <span

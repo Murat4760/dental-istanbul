@@ -15,7 +15,105 @@
   "whatsapp": {
     "aria": "Chatten Sie mit uns auf WhatsApp",
     "label": "WhatsApp",
-    "prefill": "Hallo, ich möchte mich über eine Zahnbehandlung in Istanbul informieren."
+    "prefill": "Hallo, ich möchte mich über {topic} in {city} informieren.",
+    "defaultTopic": "eine Zahnbehandlung"
+  },
+  "place": {
+    "city": "Istanbul",
+    "country": "Türkei"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook"
+  },
+  "aria": {
+    "primaryNav": "Primär",
+    "mobileNav": "Mobil",
+    "footerNav": "Fußzeile",
+    "breadcrumbNav": "Breadcrumb"
+  },
+  "hours": {
+    "weekdays": "Montag – Freitag",
+    "saturday": "Samstag",
+    "sunday": "Sonntag",
+    "closed": "Geschlossen"
+  },
+  "schema": {
+    "medicalSpecialty": "Zahnmedizin",
+    "areaServed": "Internationale Patienten weltweit",
+    "bodyLocation": "Mund"
+  },
+  "og": {
+    "tagline": "Zahnmedizinische Versorgung für internationale Patienten in {city}",
+    "services": "Implantate · Veneers · All-on-4 · Kieferorthopädie",
+    "footer": "{city}, {country} · Schreiben Sie uns per WhatsApp"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die gesuchte Seite existiert nicht oder wurde verschoben. Wir bringen Sie zurück auf den richtigen Weg.",
+    "backHome": "Zur Startseite",
+    "browseProcedures": "Behandlungen ansehen"
+  },
+  "privacy": {
+    "title": "Datenschutzerklärung",
+    "metaDescription": "Wie {name} die Informationen sammelt und verwendet, die Sie bei einer Anfrage zur Behandlung angeben.",
+    "lastUpdated": "[PLACEHOLDER] Zuletzt aktualisiert: Datum hinzufügen.",
+    "whoWeAreTitle": "Wer wir sind",
+    "whoWeAreBody": "Diese Website wird von {legalName} („wir“) betrieben, einer Zahnklinik mit Sitz in {city}, {country}.",
+    "noDataTitle": "Diese Website sammelt keine personenbezogenen Daten",
+    "noDataBody": "Es gibt kein Kontaktformular, kein Angebotsformular, keine Newsletter-Anmeldung und kein Tracking auf dieser Website. Jeder Kontaktweg — WhatsApp, Telefon, E-Mail — leitet Sie direkt an die jeweilige Plattform weiter (WhatsApp, die Telefon-App Ihres Geräts, Ihr E-Mail-Programm), anstatt uns über diese Website etwas zu übermitteln. Wir erhalten, speichern oder verarbeiten keine personenbezogenen Daten dadurch, dass Sie diese Website besuchen oder die Kontaktlinks nutzen.",
+    "directContactTitle": "Wenn Sie uns direkt kontaktieren",
+    "directContactBody": "Wenn Sie uns per WhatsApp schreiben, anrufen oder eine E-Mail senden, werden alle Informationen, die Sie freiwillig teilen (z. B. Name, Kontaktdaten oder Fotos), von uns im Rahmen der Beantwortung Ihrer Anfrage verarbeitet, gemäß den Datenschutzbestimmungen von WhatsApp oder Ihres E-Mail-Anbieters für diesen Kanal. Wir verwenden sie nur, um Ihnen zu antworten, und verkaufen sie nicht oder nutzen sie für sachfremdes Marketing.",
+    "cookiesTitle": "Cookies & Tracking",
+    "cookiesBody": "Diese Website verwendet keine Analyse-, Werbe- oder Tracking-Cookies und nutzt keinen lokalen Speicher oder Sitzungsspeicher zur Speicherung personenbezogener Daten.",
+    "questionsTitle": "Fragen",
+    "questionsBody": "Wenn Sie eine Frage zu dieser Richtlinie haben, kontaktieren Sie uns unter:"
+  },
+  "about": {
+    "metaTitle": "Über {name}",
+    "metaDescription": "Lernen Sie das Team hinter {name} kennen — ein registrierter Zahnarzt, der Implantate, Veneers und Smile-Makeover für internationale Patienten in {city} anbietet.",
+    "eyebrowAboutUs": "Über uns",
+    "heroTitle": "Vertrauenswürdige Zahnmedizin, tausende Kilometer von zu Hause entfernt",
+    "storyParagraph": "[PLACEHOLDER] Ein Absatz über die Geschichte, Philosophie und Einrichtungen der Klinik — Gründungsjahr, Anzahl der betreuten internationalen Patienten, eingesetzte Technologie und was die Patientenerfahrung besonders macht. Nur echte, verifizierbare Fakten verwenden.",
+    "receptionAlt": "Empfang von {name} in {city}",
+    "eyebrowOurClinic": "Unsere Klinik",
+    "clinicTitle": "Ein Blick in {name}",
+    "clinicDescription": "Ein Blick in unsere Klinik in {district}, {city}.",
+    "galleryAlt": "Behandlungsraum bei {name}",
+    "eyebrowOurTeam": "Unser Team",
+    "teamTitle": "Lernen Sie unsere Zahnärzte kennen",
+    "teamDescription": "[PLACEHOLDER] Durch die echten, verifizierbaren Zahnärzte der Klinik ersetzen — Namen, Qualifikationen, Zulassungsnummern und Fotos."
+  },
+  "contact": {
+    "metaTitle": "Kontaktieren Sie uns",
+    "metaDescription": "Kontaktieren Sie {name} in {city}. Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — kein Formular, keine Wartezeit.",
+    "eyebrow": "Kontakt",
+    "heroTitle": "Lassen Sie uns Ihr Lächeln planen",
+    "heroDescription": "Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — wir antworten schnell, meist noch am selben Tag.",
+    "fastestWay": "Der schnellste Weg, uns zu erreichen",
+    "mapAlt": "Karte mit dem Standort von {name} in {city}",
+    "mapPlaceholder": "[PLACEHOLDER] Klinikkarte einbetten"
+  },
+  "proceduresPage": {
+    "metaTitle": "Zahnbehandlungen in {city}, {country}",
+    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen für internationale Patienten in {city} — Implantate, Veneers, All-on-4, Kronen, Kieferorthopädie und Zahnaufhellung.",
+    "heroTitle": "Zahnbehandlungen in {city}, {country}"
+  },
+  "home": {
+    "metaTitle": "{name} — Zahnimplantate, Veneers & Smile-Makeover in {city}",
+    "badge": "Zahnmedizinische Versorgung in {city}, {country}",
+    "heroTitlePrefix": "Ein selbstbewusstes neues Lächeln, entstanden in",
+    "heroDescription": "Implantate, Veneers, All-on-4 und komplette Smile-Makeover, angeboten von einem registrierten Zahnarzt für internationale Patienten.",
+    "heroImageAlt": "Empfang von {name} in {city}",
+    "proceduresTitle": "Behandlungen, auf die wir spezialisiert sind",
+    "ctaTitle": "Beginnen Sie mit einem unverbindlichen Gespräch",
+    "benefit1": "Ihr Behandlungsplan wird klar erklärt, bevor Sie sich entscheiden",
+    "benefit2": "Kein Druck, keine Verpflichtung",
+    "benefit3": "Hinweise zum Timing und was Sie bei Ihrem Besuch erwartet"
+  },
+  "ctaBand": {
+    "defaultTitle": "Bereit, Ihre Lächeln-Reise zu beginnen?",
+    "defaultSubtitle": "Schreiben Sie uns per WhatsApp oder rufen Sie uns an — kein Formular, keine Wartezeit."
   },
   "contactCard": {
     "title": "Schreiben Sie uns direkt",
@@ -62,7 +160,9 @@
     "getInTouch": "Kontaktieren Sie uns",
     "askAbout": "Fragen zu {name}",
     "contactDescription": "Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — unser Team antwortet schnell, meist noch am selben Tag.",
-    "comingSoon": "Demnächst"
+    "comingSoon": "Demnächst",
+    "comingSoonTitle": "Diese Seite wird noch fertiggestellt.",
+    "comingSoonBody": "Wir bieten {name} an — genaue Preise, Zeitrahmen und Fotos werden derzeit mit unserem Team abgestimmt, bevor diese Seite vollständig ist. Kontaktieren Sie uns, und wir antworten direkt."
   },
   "categories": {
     "Restorative": "Restaurativ",

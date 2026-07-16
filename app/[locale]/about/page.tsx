@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SITE } from "@/lib/site";
-import { doctors } from "@/lib/doctors";
+import { getLocalizedDoctors } from "@/lib/doctors";
 import { buildMetadata } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Media } from "@/components/ui/Media";
@@ -9,23 +9,34 @@ import { Reveal } from "@/components/ui/Reveal";
 import { DoctorCard } from "@/components/DoctorCard";
 import { CTABand } from "@/components/CTABand";
 
-const GALLERY = [
-  { src: "/images/clinic/treatment-room-1.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-2.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-3.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-4.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-5.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-6.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-7.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-8.jpg", alt: "Treatment room at Rama Dental Clinic" },
-  { src: "/images/clinic/treatment-room-9.jpg", alt: "Treatment room at Rama Dental Clinic" },
+const GALLERY_SRC = [
+  "/images/clinic/treatment-room-1.jpg",
+  "/images/clinic/treatment-room-2.jpg",
+  "/images/clinic/treatment-room-3.jpg",
+  "/images/clinic/treatment-room-4.jpg",
+  "/images/clinic/treatment-room-5.jpg",
+  "/images/clinic/treatment-room-6.jpg",
+  "/images/clinic/treatment-room-7.jpg",
+  "/images/clinic/treatment-room-8.jpg",
+  "/images/clinic/treatment-room-9.jpg",
 ];
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "about" });
+  const place = await getTranslations({ locale, namespace: "place" });
   return buildMetadata({
-    title: `About ${SITE.name}`,
-    description: `Meet the team behind ${SITE.name} — a registered dentist providing implants, veneers and smile makeovers for international patients in Istanbul.`,
+    title: t("metaTitle", { name: SITE.name }),
+    description: t("metaDescription", {
+      name: SITE.name,
+      city: place("city"),
+    }),
     path: "/about",
+    locale,
   });
 }
 
@@ -36,6 +47,9 @@ export default async function AboutPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "about" });
+  const place = await getTranslations({ locale, namespace: "place" });
+  const doctors = getLocalizedDoctors(locale);
 
   return (
     <>
@@ -44,22 +58,19 @@ export default async function AboutPage({
           <div>
             <SectionHeading
               as="h1"
-              eyebrow="About us"
-              title="Trusted dental care, thousands of miles from home"
+              eyebrow={t("eyebrowAboutUs")}
+              title={t("heroTitle")}
               description={SITE.description}
             />
             <p className="mt-5 text-pretty leading-relaxed text-ink-soft">
-              [PLACEHOLDER] A paragraph about the clinic&rsquo;s story, philosophy
-              and facilities — years established, the number of international
-              patients cared for, the technology used, and what makes the
-              patient experience different. Keep to real, verifiable facts.
+              {t("storyParagraph")}
             </p>
           </div>
           <Media
             src="/images/clinic/reception.jpg"
             aspect="4 / 3"
             tone="teal"
-            alt={`Reception at ${SITE.name} in ${SITE.city}`}
+            alt={t("receptionAlt", { name: SITE.name, city: place("city") })}
             className="shadow-card"
           />
         </div>
@@ -68,17 +79,20 @@ export default async function AboutPage({
       <section className="section">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Our clinic"
-            title="Inside Rama Dental Clinic"
-            description="A look at our clinic in Beylikdüzü, Istanbul."
+            eyebrow={t("eyebrowOurClinic")}
+            title={t("clinicTitle", { name: SITE.name })}
+            description={t("clinicDescription", {
+              district: SITE.address.district,
+              city: place("city"),
+            })}
           />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {GALLERY.map((photo) => (
+            {GALLERY_SRC.map((src) => (
               <Media
-                key={photo.src}
-                src={photo.src}
+                key={src}
+                src={src}
                 aspect="4 / 3"
-                alt={photo.alt}
+                alt={t("galleryAlt", { name: SITE.name })}
               />
             ))}
           </div>
@@ -88,9 +102,9 @@ export default async function AboutPage({
       <section className="section bg-sand/60">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Our team"
-            title="Meet the dentists"
-            description="[PLACEHOLDER] Replace with the clinic's real, verifiable dentists — names, credentials, registration numbers and photos."
+            eyebrow={t("eyebrowOurTeam")}
+            title={t("teamTitle")}
+            description={t("teamDescription")}
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {doctors.map((d, i) => (

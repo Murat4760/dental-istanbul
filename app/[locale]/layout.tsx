@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Fraunces, Inter, Noto_Sans_Arabic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { ALLOW_INDEXING, SITE, SITE_URL } from "@/lib/site";
 import { Header } from "@/components/layout/Header";
@@ -59,6 +59,7 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const t = await getTranslations({ locale, namespace: "common" });
   const dir = locale === "ar" ? "rtl" : "ltr";
 
   return (
@@ -77,7 +78,7 @@ export default async function LocaleLayout({
             href="#main"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
           >
-            Skip to content
+            {t("skipToContent")}
           </a>
           <Header />
           <main id="main" className="flex-1">

@@ -38,7 +38,7 @@ export async function Footer() {
                 href={SITE.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram"
+                aria-label={t("social.instagram")}
                 className="grid h-10 w-10 place-items-center rounded-full border border-canvas/15 text-canvas/70 transition-colors hover:border-accent hover:text-accent"
               >
                 <InstagramIcon className="h-[18px] w-[18px]" />
@@ -49,7 +49,7 @@ export async function Footer() {
                 href={SITE.socials.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Facebook"
+                aria-label={t("social.facebook")}
                 className="grid h-10 w-10 place-items-center rounded-full border border-canvas/15 text-canvas/70 transition-colors hover:border-accent hover:text-accent"
               >
                 <FacebookIcon className="h-[18px] w-[18px]" />
@@ -59,7 +59,7 @@ export async function Footer() {
         </div>
 
         {/* Quick links */}
-        <nav className="md:col-span-2" aria-label="Footer">
+        <nav className="md:col-span-2" aria-label={t("aria.footerNav")}>
           <h2 className="text-xs font-semibold uppercase tracking-[0.16em] text-canvas/50">
             {t("footer.quickLinks")}
           </h2>
@@ -105,7 +105,7 @@ export async function Footer() {
             <li className="flex gap-3">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
               <span>
-                {SITE.address.district}, {SITE.address.city}, {SITE.country}
+                {SITE.address.district}, {t("place.city")}, {t("place.country")}
               </span>
             </li>
             <li className="flex gap-3">
@@ -125,8 +125,8 @@ export async function Footer() {
               {SITE.hoursConfirmed ? (
                 <span>
                   {SITE.hours.map((h) => (
-                    <span key={h.days} className="block">
-                      {h.days}: {h.open === "Closed" ? "Closed" : `${h.open}–${h.close}`}
+                    <span key={h.daysKey} className="block">
+                      {t(`hours.${h.daysKey}`)}: {h.open === "" ? t("hours.closed") : `${h.open}–${h.close}`}
                     </span>
                   ))}
                 </span>

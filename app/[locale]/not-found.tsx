@@ -1,8 +1,12 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Arc } from "@/components/ui/Arc";
 import { Button } from "@/components/ui/Button";
 
-export default function NotFound() {
+export default async function NotFound() {
+  const locale = await getLocale();
+  const t = await getTranslations({ locale, namespace: "notFound" });
+
   return (
     <section className="section">
       <div className="container-page flex min-h-[55vh] flex-col items-center justify-center text-center">
@@ -16,16 +20,13 @@ export default function NotFound() {
           />
         </div>
         <h1 className="mt-6 font-display text-3xl font-semibold text-ink">
-          Page not found
+          {t("title")}
         </h1>
-        <p className="mt-3 max-w-md text-ink-soft">
-          The page you&rsquo;re looking for doesn&rsquo;t exist or may have moved.
-          Let&rsquo;s get you back on track.
-        </p>
+        <p className="mt-3 max-w-md text-ink-soft">{t("description")}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button href="/">Back to home</Button>
+          <Button href="/">{t("backHome")}</Button>
           <Button href="/procedures" variant="outline">
-            Browse procedures
+            {t("browseProcedures")}
           </Button>
         </div>
       </div>

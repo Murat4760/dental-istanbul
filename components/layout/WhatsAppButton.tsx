@@ -4,7 +4,10 @@ import { whatsappUrl } from "@/lib/site";
 /** Floating WhatsApp CTA, bottom-right on every page. Number comes from env. */
 export async function WhatsAppButton() {
   const t = await getTranslations("whatsapp");
-  const href = whatsappUrl(t("prefill"));
+  const place = await getTranslations("place");
+  const href = whatsappUrl(
+    t("prefill", { topic: t("defaultTopic"), city: place("city") }),
+  );
 
   return (
     <a

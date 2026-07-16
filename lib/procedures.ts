@@ -8,13 +8,16 @@
  *
  * No prices: this site does not advertise dental prices. Booking runs
  * through WhatsApp/phone/email instead of a quote request.
- * No before/after photos: no case has written patient consent on file yet
- * (2026-07-14 intake form) — never add real or placeholder result photos
- * here without it.
+ * No before/after photos: dropped as a feature entirely (2026-07-16 decision)
+ * — not pursuing consent or a legal read on domestic-vs-abroad publishing.
+ * Never add real or placeholder result photos here.
  */
 
 import type { Locale } from "@/i18n/routing";
 import { proceduresTr } from "./procedures.tr";
+import { proceduresAr } from "./procedures.ar";
+import { proceduresRu } from "./procedures.ru";
+import { proceduresDe } from "./procedures.de";
 
 export type ProcessStep = { title: string; description: string };
 
@@ -395,6 +398,9 @@ export type ProcedureOverride = Partial<
 
 const overrides: Partial<Record<Locale, Record<string, ProcedureOverride>>> = {
   tr: proceduresTr,
+  ar: proceduresAr,
+  ru: proceduresRu,
+  de: proceduresDe,
 };
 
 function mergeProcedure(base: Procedure, locale: string): Procedure {

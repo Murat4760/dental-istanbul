@@ -13,9 +13,10 @@
  */
 
 export type OpeningHour = {
-  /** Human label, e.g. "Monday – Friday" */
-  days: string;
-  /** "09:00" or "Closed" */
+  /** Key into the `hours` messages namespace, e.g. "weekdays" — translated
+   *  per locale rather than stored as a literal English label. */
+  daysKey: "weekdays" | "saturday" | "sunday";
+  /** "09:00", or "" when closed (render via the translated `hours.closed`). */
   open: string;
   /** "19:00" or "" */
   close: string;
@@ -63,9 +64,9 @@ export const SITE = {
   // honest "hours pending" note instead of these placeholder times.
   hoursConfirmed: false,
   hours: [
-    { days: "Monday – Friday", open: "09:00", close: "19:00" },
-    { days: "Saturday", open: "09:00", close: "17:00" },
-    { days: "Sunday", open: "Closed", close: "" },
+    { daysKey: "weekdays", open: "09:00", close: "19:00" },
+    { daysKey: "saturday", open: "09:00", close: "17:00" },
+    { daysKey: "sunday", open: "", close: "" },
   ] as OpeningHour[],
 
   // ─── Socials ───────────────────────────────────────────────────────────────

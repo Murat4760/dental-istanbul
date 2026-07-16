@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { SITE } from "@/lib/site";
 import { getLocalizedProcedures } from "@/lib/procedures";
 import { buildMetadata } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -8,12 +7,19 @@ import { Reveal } from "@/components/ui/Reveal";
 import { ProcedureCard } from "@/components/ProcedureCard";
 import { CTABand } from "@/components/CTABand";
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "proceduresPage" });
+  const place = await getTranslations({ locale, namespace: "place" });
   return buildMetadata({
-    title: `Dental Procedures in ${SITE.city}, ${SITE.country}`,
-    description:
-      "Explore our dental treatments for international patients in Istanbul — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening.",
+    title: t("metaTitle", { city: place("city"), country: place("country") }),
+    description: t("metaDescription", { city: place("city") }),
     path: "/procedures",
+    locale,
     keywords: [
       "dental procedures Turkey",
       "dental treatments Istanbul",
@@ -32,6 +38,7 @@ export default async function ProceduresPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const place = await getTranslations({ locale, namespace: "place" });
 
   return (
     <>
@@ -40,12 +47,10 @@ export default async function ProceduresPage({
           <SectionHeading
             as="h1"
             eyebrow={t("procedurePage.treatmentsEyebrow")}
-            title={
-              <>
-                Dental procedures in {SITE.city},{" "}
-                <span className="text-primary">{SITE.country}</span>
-              </>
-            }
+            title={t("proceduresPage.heroTitle", {
+              city: place("city"),
+              country: place("country"),
+            })}
             description={t("procedurePage.gridDescription")}
           />
         </div>

@@ -5,10 +5,10 @@ import type { Procedure } from "@/lib/procedures";
 
 export function ProcedureCard({
   procedure,
-  comingSoonLabel = "Coming soon",
+  comingSoonLabel,
 }: {
   procedure: Procedure;
-  comingSoonLabel?: string;
+  comingSoonLabel: string;
 }) {
   return (
     <Link

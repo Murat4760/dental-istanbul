@@ -15,7 +15,105 @@
   "whatsapp": {
     "aria": "WhatsApp'tan bizimle sohbet edin",
     "label": "WhatsApp",
-    "prefill": "Merhaba, İstanbul'da diş tedavisi hakkında bilgi almak istiyorum."
+    "prefill": "Merhaba, {city}'da {topic} hakkında bilgi almak istiyorum.",
+    "defaultTopic": "diş tedavisi"
+  },
+  "place": {
+    "city": "İstanbul",
+    "country": "Türkiye"
+  },
+  "social": {
+    "instagram": "Instagram",
+    "facebook": "Facebook"
+  },
+  "aria": {
+    "primaryNav": "Ana",
+    "mobileNav": "Mobil",
+    "footerNav": "Alt Bilgi",
+    "breadcrumbNav": "İçerik yolu"
+  },
+  "hours": {
+    "weekdays": "Pazartesi – Cuma",
+    "saturday": "Cumartesi",
+    "sunday": "Pazar",
+    "closed": "Kapalı"
+  },
+  "schema": {
+    "medicalSpecialty": "Diş Hekimliği",
+    "areaServed": "Uluslararası hastalar, dünya genelinde",
+    "bodyLocation": "Ağız"
+  },
+  "og": {
+    "tagline": "{city}'de uluslararası hastalar için diş sağlığı hizmeti",
+    "services": "İmplant · Veneer · All-on-4 · Ortodonti",
+    "footer": "{city}, {country} · WhatsApp'tan yazın"
+  },
+  "notFound": {
+    "title": "Sayfa bulunamadı",
+    "description": "Aradığınız sayfa mevcut değil veya taşınmış olabilir. Sizi doğru yere yönlendirelim.",
+    "backHome": "Ana sayfaya dön",
+    "browseProcedures": "Tedavilere göz atın"
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "metaDescription": "{name}, tedavi hakkında bilgi alırken paylaştığınız bilgileri nasıl topluyor ve kullanıyor.",
+    "lastUpdated": "[PLACEHOLDER] Son güncelleme: tarih ekleyin.",
+    "whoWeAreTitle": "Biz kimiz",
+    "whoWeAreBody": "Bu web sitesi, {city}, {country} merkezli bir diş kliniği olan {legalName} (“biz”) tarafından işletilmektedir.",
+    "noDataTitle": "Bu web sitesi kişisel veri toplamaz",
+    "noDataBody": "Bu sitede iletişim formu, teklif formu, bülten kaydı veya takip sistemi bulunmamaktadır. WhatsApp, telefon, e-posta gibi her iletişim yolu, bu web sitesi üzerinden bize bir şey göndermek yerine sizi doğrudan ilgili platforma (WhatsApp, telefonunuzun arama uygulaması, e-posta istemciniz) yönlendirir. Bu sitede gezinmeniz veya iletişim bağlantılarını kullanmanız sonucunda hiçbir kişisel veriyi almıyor, saklamıyor veya işlemiyoruz.",
+    "directContactTitle": "Bizimle doğrudan iletişime geçerseniz",
+    "directContactBody": "Bize WhatsApp'tan yazar, arar veya e-posta gönderirseniz, paylaşmayı tercih ettiğiniz bilgiler (adınız, iletişim bilgileriniz veya fotoğraflarınız gibi) talebinize yanıt vermenin bir parçası olarak, ilgili kanalın (WhatsApp veya e-posta sağlayıcınızın) gizlilik şartları kapsamında tarafımızca işlenir. Bu bilgileri yalnızca size yanıt vermek için kullanır, satmayız veya ilgisiz pazarlama amaçlarıyla kullanmayız.",
+    "cookiesTitle": "Çerezler ve takip",
+    "cookiesBody": "Bu site analitik, reklam veya takip çerezleri kullanmaz; kişisel veri saklamak için yerel/oturum depolamasını kullanmaz.",
+    "questionsTitle": "Sorularınız",
+    "questionsBody": "Bu politika hakkında bir sorunuz varsa bize şu adresten ulaşabilirsiniz:"
+  },
+  "about": {
+    "metaTitle": "{name} Hakkında",
+    "metaDescription": "{name} arkasındaki ekiple tanışın — {city}'de uluslararası hastalara implant, veneer ve gülüş tasarımı sunan kayıtlı bir diş hekimi.",
+    "eyebrowAboutUs": "Hakkımızda",
+    "heroTitle": "Evinizden binlerce kilometre uzakta, güvenilir diş sağlığı hizmeti",
+    "storyParagraph": "[PLACEHOLDER] Kliniğin hikayesi, felsefesi ve olanakları hakkında bir paragraf — kuruluş yılı, bakımı yapılan uluslararası hasta sayısı, kullanılan teknoloji ve hasta deneyimini farklı kılan unsurlar. Yalnızca gerçek, doğrulanabilir bilgilere bağlı kalın.",
+    "receptionAlt": "{name} resepsiyonu, {city}",
+    "eyebrowOurClinic": "Kliniğimiz",
+    "clinicTitle": "{name} içeriden",
+    "clinicDescription": "{district}, {city}'deki kliniğimize bir bakış.",
+    "galleryAlt": "{name} tedavi odası",
+    "eyebrowOurTeam": "Ekibimiz",
+    "teamTitle": "Diş hekimlerimizle tanışın",
+    "teamDescription": "[PLACEHOLDER] Kliniğin gerçek, doğrulanabilir diş hekimleriyle değiştirin — isimler, unvanlar, sicil numaraları ve fotoğraflar."
+  },
+  "contact": {
+    "metaTitle": "Bize Ulaşın",
+    "metaDescription": "{city}'deki {name} ile iletişime geçin. WhatsApp'tan yazın, arayın veya e-posta gönderin — form yok, bekleme yok.",
+    "eyebrow": "İletişim",
+    "heroTitle": "Gülüşünüzü birlikte planlayalım",
+    "heroDescription": "WhatsApp'tan yazın, arayın veya e-posta gönderin — genellikle aynı gün içinde hızlıca yanıt veririz.",
+    "fastestWay": "Bize ulaşmanın en hızlı yolu",
+    "mapAlt": "{name} konumunu gösteren harita, {city}",
+    "mapPlaceholder": "[PLACEHOLDER] Klinik haritasını göm"
+  },
+  "proceduresPage": {
+    "metaTitle": "{city}, {country}'de Diş Tedavileri",
+    "metaDescription": "{city}'de uluslararası hastalar için diş tedavilerimizi keşfedin — implant, veneer, All-on-4, kron, ortodonti ve diş beyazlatma.",
+    "heroTitle": "{city}, {country}'de diş tedavileri"
+  },
+  "home": {
+    "metaTitle": "{name} — {city}'de Diş İmplantı, Veneer ve Gülüş Tasarımı",
+    "badge": "{city}, {country}'de diş sağlığı hizmeti",
+    "heroTitlePrefix": "Güvenle yenilenen yeni bir gülüş,",
+    "heroDescription": "Kayıtlı bir diş hekimi tarafından uluslararası hastalara sunulan implant, veneer, All-on-4 ve komple gülüş tasarımı.",
+    "heroImageAlt": "{name} resepsiyonu, {city}",
+    "proceduresTitle": "Uzmanlaştığımız tedaviler",
+    "ctaTitle": "Taahhüt gerektirmeyen bir görüşmeyle başlayın",
+    "benefit1": "Tedavi planınız, siz karar vermeden önce açıkça anlatılır",
+    "benefit2": "Baskı yok, taahhüt yok",
+    "benefit3": "Zamanlama ve ziyaretinizde neler bekleyeceğinize dair rehberlik"
+  },
+  "ctaBand": {
+    "defaultTitle": "Gülüş yolculuğunuza başlamaya hazır mısınız?",
+    "defaultSubtitle": "WhatsApp'tan yazın ya da bizi arayın — form yok, bekleme yok."
   },
   "contactCard": {
     "title": "Doğrudan bize yazın",
@@ -62,7 +160,9 @@
     "getInTouch": "Bize ulaşın",
     "askAbout": "{name} hakkında sorun",
     "contactDescription": "WhatsApp'tan yazın, arayın veya e-posta gönderin — ekibimiz genellikle aynı gün içinde hızlıca yanıt verir.",
-    "comingSoon": "Yakında"
+    "comingSoon": "Yakında",
+    "comingSoonTitle": "Bu sayfa henüz tamamlanıyor.",
+    "comingSoonBody": "{name} hizmetini sunuyoruz — kesin fiyat, süreler ve fotoğraflar ekibimizle teyit edilmeden bu sayfa tamamlanmayacak. Bizimle iletişime geçin, doğrudan yanıt verelim."
   },
   "categories": {
     "Restorative": "Onarıcı Tedaviler",

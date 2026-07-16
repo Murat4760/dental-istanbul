@@ -34,6 +34,7 @@ export async function generateMetadata({
     path: `/procedures/${slug}`,
     keywords: procedure.seo.keywords,
     ogType: "article",
+    locale,
   });
 }
 
@@ -45,6 +46,7 @@ export default async function ProcedurePage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const place = await getTranslations({ locale, namespace: "place" });
 
   const procedure = getLocalizedProcedure(slug, locale);
   if (!procedure) notFound();
@@ -53,15 +55,20 @@ export default async function ProcedurePage({
     .filter((p) => p.slug !== slug)
     .slice(0, 3);
 
+  const prefill = t("whatsapp.prefill", {
+    topic: procedure.name,
+    city: place("city"),
+  });
+
   return (
     <>
       {procedure.status !== "comingSoon" && (
-        <JsonLd data={medicalProcedureSchema(procedure)} />
+        <JsonLd data={await medicalProcedureSchema(procedure, locale)} />
       )}
       <JsonLd
         data={breadcrumbSchema([
-          { name: "Home", path: "/" },
-          { name: "Procedures", path: "/procedures" },
+          { name: t("nav.home"), path: "/" },
+          { name: t("nav.procedures"), path: "/procedures" },
           { name: procedure.name, path: `/procedures/${slug}` },
         ])}
       />
@@ -70,7 +77,7 @@ export default async function ProcedurePage({
       <section className="section pb-0">
         <div className="container-page">
           <nav
-            aria-label="Breadcrumb"
+            aria-label={t("aria.breadcrumbNav")}
             className="flex items-center gap-1.5 text-sm text-muted"
           >
             <Link href="/" className="hover:text-primary">
@@ -90,25 +97,24 @@ export default async function ProcedurePage({
               {t(`categories.${procedure.category}`)}
             </span>
             <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.03] text-ink sm:text-5xl">
-              {procedure.name} in {SITE.city},{" "}
-              <span className="text-primary">{SITE.country}</span>
+              {procedure.name} in {place("city")}, {place("country")}
             </h1>
             <p className="mt-5 text-pretty text-lg leading-relaxed text-ink-soft">
               {procedure.heroTagline} {procedure.summary}
             </p>
             {procedure.status === "comingSoon" && (
               <p className="mt-4 rounded-card border border-line bg-sand/60 px-4 py-3 text-sm text-ink-soft">
-                <strong className="text-ink">This page is still being finalised.</strong>{" "}
-                We offer {procedure.name.toLowerCase()} — exact pricing, timelines
-                and photos are being confirmed with our team before this page is
-                complete. Get in touch and we&rsquo;ll answer directly.
+                <strong className="text-ink">
+                  {t("procedurePage.comingSoonTitle")}
+                </strong>{" "}
+                {t("procedurePage.comingSoonBody", {
+                  name: procedure.name.toLowerCase(),
+                })}
               </p>
             )}
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
-                href={whatsappUrl(
-                  `Hello, I'd like to ask about ${procedure.name} in Istanbul.`,
-                )}
+                href={whatsappUrl(prefill)}
                 external
                 size="lg"
                 rightIcon={<ArrowRight className="h-4 w-4" />}
@@ -180,7 +186,7 @@ export default async function ProcedurePage({
                     <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <div>
                       <dt className="text-muted">
-                        {t("procedurePage.timeIn", { city: SITE.city })}
+                        {t("procedurePage.timeIn", { city: place("city") })}
                       </dt>
                       <dd className="font-medium text-ink">
                         {procedure.daysInIstanbul}
@@ -198,9 +204,7 @@ export default async function ProcedurePage({
                   </div>
                 </dl>
                 <Button
-                  href={whatsappUrl(
-                    `Hello, I'd like to ask about ${procedure.name} in Istanbul.`,
-                  )}
+                  href={whatsappUrl(prefill)}
                   external
                   className="mt-6 w-full"
                 >
@@ -246,9 +250,7 @@ export default async function ProcedurePage({
           <div className="rounded-card border border-line bg-surface p-6 shadow-card sm:p-8">
             <div className="flex flex-col gap-3">
               <Button
-                href={whatsappUrl(
-                  `Hello, I'd like to ask about ${procedure.name} in Istanbul.`,
-                )}
+                href={whatsappUrl(prefill)}
                 external
                 size="lg"
                 className="w-full"

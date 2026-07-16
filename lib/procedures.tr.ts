@@ -16,7 +16,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     summary:
       "Çene kemiğiyle kaynaşan titanyum implantlar, doğal dişler gibi görünen, hissettiren ve işlev gören kronları destekler.",
     whatItIs:
-      "Diş implantı, eksik bir dişin kökünün yerini almak üzere çene kemiğine yerleştirilen küçük bir titanyum vidadır. Kemikle kaynaştıktan sonra üzerine özel üretim bir kron sabitlenir. İmplantlar; kemiği koruması, komşu dişleri etkilememesi ve iyi bakımla onlarca yıl kullanılabilmesi nedeniyle tek, birkaç veya tüm dişlerin yenilenmesinde altın standarttır.",
+      "Diş implantı, eksik bir dişin kökünün yerini almak üzere çene kemiğine yerleştirilen küçük bir titanyum vidadır. Kemikle kaynaştıktan sonra üzerine özel üretim bir kron sabitlenir. İmplantlar; kemiği koruması, komşu dişleri etkilememesi ve iyi bakımla onlarca yıl kullanılabilmesi nedeniyle tek, birkaç veya tüm dişlerin yenilenmesinde yerleşik bir seçenektir.",
     whoItsFor: [
       "Bir veya daha fazla dişiniz eksik ve kalıcı bir çözüm arıyorsunuz",
       "Protez veya köprü kullanıyorsunuz ve daha sabit bir çözüm istiyorsunuz",
@@ -173,7 +173,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     summary:
       "Diş hekimi gözetiminde, lekeleri güvenli ve eşit şekilde açan profesyonel klinik içi beyazlatma.",
     whatItIs:
-      "Profesyonel beyazlatmada, diş hekimi gözetiminde kontrollü bir jel kullanılarak lekeler giderilir ve dişlerinizin doğal tonu aydınlatılır. Diş eti koruması altında ve gözetim eşliğinde uygulandığından, eczane ürünlerine göre daha güvenli ve etkilidir; sonuçlar tek bir seansta görülür.",
+      "Profesyonel beyazlatmada, diş hekimi gözetiminde kontrollü bir jel kullanılarak lekeler giderilir ve dişlerinizin doğal tonu aydınlatılır. Diş eti koruması altında ve gözetim eşliğinde uygulandığından, sonuçlar tek bir seansta görülür.",
     whoItsFor: [
       "Dişleriniz zamanla sararmış veya lekelenmiş",
       "Diş yapınızı değiştirmeden daha parlak bir gülüş istiyorsunuz",

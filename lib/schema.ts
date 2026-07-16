@@ -1,3 +1,4 @@
+import { getTranslations } from "next-intl/server";
 import { SITE, SITE_URL, absoluteUrl } from "./site";
 import type { Procedure } from "./procedures";
 
@@ -9,7 +10,9 @@ import type { Procedure } from "./procedures";
  * the clinic supplies and confirms the real value.
  */
 
-export function dentistSchema() {
+export async function dentistSchema(locale: string) {
+  const t = await getTranslations({ locale, namespace: "schema" });
+  const hours = await getTranslations({ locale, namespace: "hours" });
   return {
     "@context": "https://schema.org",
     "@type": "Dentist",
@@ -19,7 +22,7 @@ export function dentistSchema() {
     url: SITE_URL,
     telephone: SITE.phoneDisplay,
     email: SITE.email,
-    medicalSpecialty: "Dentistry",
+    medicalSpecialty: t("medicalSpecialty"),
     address: {
       "@type": "PostalAddress",
       streetAddress: SITE.address.street,
@@ -35,15 +38,15 @@ export function dentistSchema() {
     },
     areaServed: {
       "@type": "AdministrativeArea",
-      name: "International patients worldwide",
+      name: t("areaServed"),
     },
     ...(SITE.hoursConfirmed
       ? {
           openingHoursSpecification: SITE.hours
-            .filter((h) => h.open !== "Closed")
+            .filter((h) => h.open !== "")
             .map((h) => ({
               "@type": "OpeningHoursSpecification",
-              dayOfWeek: h.days,
+              dayOfWeek: hours(h.daysKey),
               opens: h.open,
               closes: h.close,
             })),
@@ -58,15 +61,17 @@ export function dentistSchema() {
   };
 }
 
-export function medicalProcedureSchema(procedure: Procedure) {
+export async function medicalProcedureSchema(procedure: Procedure, locale: string) {
+  const t = await getTranslations({ locale, namespace: "schema" });
+  const place = await getTranslations({ locale, namespace: "place" });
   return {
     "@context": "https://schema.org",
     "@type": "MedicalProcedure",
-    name: `${procedure.name} in ${SITE.city}, ${SITE.country}`,
+    name: `${procedure.name} in ${place("city")}, ${place("country")}`,
     description: procedure.summary,
     url: absoluteUrl(`/procedures/${procedure.slug}`),
     procedureType: "https://schema.org/NoncontactModuleTreatment",
-    bodyLocation: "Mouth",
+    bodyLocation: t("bodyLocation"),
     howPerformed: procedure.processSteps.map((s) => s.title).join("; "),
     provider: {
       "@type": "Dentist",

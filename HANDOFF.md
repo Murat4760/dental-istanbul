@@ -72,11 +72,11 @@ home hero and the About page gallery.
 - [x] Home hero visual — reception photo
 - [x] Clinic interior gallery (About) — 5 real photos
 - [ ] Doctor headshots
-- [ ] **Before/after photos — do not add.** No case has written patient
-      consent on file (2026-07-14 intake form). The before/after feature
-      (component, `/before-after` page, `beforeAfter` data field) was removed
-      entirely rather than left as an empty placeholder — re-add only once a
-      real, consented case exists.
+- [x] **Before/after photos — dropped permanently (2026-07-16 decision).**
+      Not just blocked on missing consent: the client decided not to pursue
+      this feature at all, so there's no outstanding consent/legal-read task
+      to track. The feature (component, `/before-after` page, `beforeAfter`
+      data field) stays removed from the codebase.
 - [ ] Map embed (Contact) — swap the placeholder for a real map once precise
       coordinates are confirmed
 - [ ] `favicon` / logo — replace `app/favicon.ico`
@@ -130,6 +130,10 @@ from this site's own data handling.
       domestic/abroad-facing properties, or something else, then either
       re-enable `tr` in the switcher or remove it from `i18n/routing.ts`
       entirely.
+      **2026-07-16 re-confirmation:** re-reviewed as part of a second audit
+      pass the same day — client confirmed this mitigation (hidden from the
+      switcher, `/tr/...` still reachable by direct URL) is acceptable for
+      now, pending the same legal read. No code change.
 - [x] **2026-07-16 unverified-claims sweep.** Removed the "Why us" section
       and both hero floating chips on the home page (asserted an unconfirmed
       team size, facility quality, and "all-inclusive packages"/hotel/
@@ -143,7 +147,16 @@ from this site's own data handling.
       dentist is confirmed on record, see §3). Reworded a "gold standard"
       superlative and a "safer/more effective than over-the-counter kits"
       comparative claim (teeth-whitening) — same class of issue as the
-      already-fixed "World-class dentistry". Dropped "free"/price-adjacent
+      already-fixed "World-class dentistry".
+      ⚠️ **Regression found and re-fixed, same day:** the later "full TR
+      content localization" commit reintroduced both of these — "altın
+      standarttır" (gold standard) in `lib/procedures.tr.ts` dental-implants
+      copy, and "eczane ürünlerine göre daha güvenli ve etkilidir"
+      (safer/more effective than pharmacy products) in the teeth-whitening
+      copy — neither existed in the English base they were translated from.
+      Fixed again in `lib/procedures.tr.ts`; worth double-checking future
+      translation commits against the English base rather than assuming a
+      prior fix holds. Dropped "free"/price-adjacent
       wording ("Free online consultation", "a free, no-obligation
       conversation") and an "affordable dental implants Turkey" SEO keyword,
       consistent with this site's own "no prices anywhere" policy
@@ -160,16 +173,48 @@ from this site's own data handling.
       **`tr` is no longer offered in `components/layout/LanguageSwitcher.tsx`**
       as of 2026-07-16 — see §6's new item above. `en`/`ar`/`ru`/`de` remain
       live.
-- [x] **Deep content (`lib/procedures.ts`) is now localized for Turkish.**
-      Added `lib/procedures.tr.ts` + `getLocalizedProcedure(s)` helpers in
-      `lib/procedures.ts` (2026-07-16) — every field (name, tagline,
-      summary, process steps, SEO) has a real Turkish translation, with
-      automatic fallback to English for anything untranslated. `ar`/`ru`/`de`
-      still show English procedure/doctor-bio content — same mechanism,
-      just needs a `lib/procedures.<locale>.ts` file per language (see the
-      code comment above `overrides` in `lib/procedures.ts`). `lib/doctors.ts`
-      bio is still `[PLACEHOLDER]` in every language — nothing real to
-      translate yet.
+- [x] **Deep content (`lib/procedures.ts`) is now localized for all 5
+      locales.** `getLocalizedProcedure(s)` helpers in `lib/procedures.ts`
+      merge a per-locale override onto the English base; every field (name,
+      tagline, summary, process steps, SEO) has a real translation in
+      `lib/procedures.tr.ts` (2026-07-16), and now also `lib/procedures.ar.ts`,
+      `lib/procedures.ru.ts`, `lib/procedures.de.ts` (2026-07-16, second
+      pass) — automatic fallback to English for anything left untranslated.
+      `lib/doctors.ts` now has the same override mechanism (`lib/doctors.<locale>.ts`,
+      `getLocalizedDoctors()`, 2026-07-16 third pass) — `title` is translated
+      in all 4 non-English locales; `bio` is still `[PLACEHOLDER]` in every
+      language (nothing real to translate yet), so `DoctorCard.tsx` hides the
+      bio paragraph entirely when the field starts with `[PLACEHOLDER]`,
+      rather than shipping visible placeholder text. Name/credentials are
+      never overridden (real identity/registration number).
+- [x] **Every remaining page/surface localized, 2026-07-16 third pass** —
+      privacy policy, 404 page, about/contact hero copy and metadata, home
+      hero/CTA copy, procedure "coming soon" notice, `CTABand`'s default
+      title/subtitle, `ProcedureCard`'s coming-soon badge default, `og:locale`
+      metadata (was hardcoded `en_US` on every page), JSON-LD
+      (`medicalSpecialty`/`areaServed`/`bodyLocation`/breadcrumb labels), the
+      dynamic OG share image, and a real functional bug: the WhatsApp prefill
+      message on procedure pages was hardcoded English regardless of locale
+      (`Hello, I'd like to ask about ${procedure.name} in Istanbul.`) — now
+      uses the translated, parameterized `whatsapp.prefill` key with the
+      actual localized procedure name. `SITE.city`/`SITE.country` now render
+      through a translated `place.city`/`place.country` messages namespace
+      everywhere they're visible; `lib/site.ts`'s `OpeningHour.days` string
+      field was replaced with a `daysKey` + `hours.*` messages namespace
+      (dormant today, `hoursConfirmed: false`, but ready without another
+      patch pass). Known limitation found and mitigated: `next/og`'s
+      `ImageResponse` (satori) cannot shape Arabic script — it throws
+      `lookupType: 5 - substFormat: 3 is not yet supported` and crashes the
+      route entirely. `app/api/og/route.tsx` now falls back to the English
+      strings specifically for `ar` rather than crash; every other page's
+      actual Arabic content is unaffected — only this one social-share-image
+      surface. Confirmed via a local production server: en/tr/ru/de OG images
+      render correctly, ar returns 200 with the English fallback instead of
+      failing; JSON-LD and `og:locale` confirmed correct per locale;
+      `notFound()` (triggered from `procedures/[slug]`) confirmed rendering
+      the translated 404 page in Arabic. `npm run build` and a full grep
+      sweep for banned advertising language across all new translations both
+      clean.
 - [x] AR renders `dir="rtl"` with Noto Sans Arabic (Fraunces/Inter don't
       cover Arabic script — see the `html[lang="ar"]` override in
       `app/globals.css`). TR/RU use Inter's `latin-ext`/`cyrillic` subsets;
@@ -198,8 +243,9 @@ the site collects no personal data of its own. No before/after photos (none
 have written consent). Real clinic interior photos wired in. Only one real
 dentist listed (no invented colleagues). No Patient Journey, no
 reviews/testimonials, and no FAQ features — all removed entirely
-(2026-07-17) rather than left as empty placeholders. UI chrome translated
-into TR/AR/RU/DE.
+(2026-07-17) rather than left as empty placeholders. UI chrome and deep
+procedure content translated into TR/AR/RU/DE (doctor bio still pending real
+content, hidden until supplied).
 
 ### 2026-07-16 re-audit (Sağlık Bakanlığı tanıtım/reklam rules)
 - Fixed a superlative-claim violation: `app/api/og/route.tsx` said "World-class
@@ -220,3 +266,30 @@ into TR/AR/RU/DE.
   unresolved, needs a legal read before publishing any case), and added asks
   for the orthodontics visit cadence, doctor headshot/logo/GPS, and a
   sanity-check on the "registered dental team" phrasing.
+
+### 2026-07-16 second re-audit (translation + compliance re-verification)
+- Re-checked Arabic specifically for "translated chrome around English
+  content" — found the UI chrome fully translated with no missing keys, but
+  confirmed deep procedure content and the doctor bio still rendered in
+  English on `/ar` (and `/ru`, `/de`; TR was believed only 3/6 procedures
+  covered, but a fresh read of `lib/procedures.tr.ts` showed all 6 were
+  actually already translated — an earlier grep pass had missed unquoted
+  object keys like `veneers`/`crowns`/`orthodontics`).
+- Found two live Sağlık Bakanlığı violations reintroduced into
+  `lib/procedures.tr.ts` only (not present in English) — see §6 above for
+  detail — and fixed both.
+- Added `lib/procedures.ar.ts`, `lib/procedures.ru.ts`, `lib/procedures.de.ts`
+  — full, faithful translations of all 6 procedures for Arabic, Russian, and
+  German, wired into the `overrides` map in `lib/procedures.ts`. Deep content
+  is now localized for all 5 locales.
+- `DoctorCard.tsx` now hides the bio paragraph while it's the
+  `[PLACEHOLDER]` string, rather than shipping visible placeholder text to
+  production. Name, title, credentials, and specialties still render.
+- Decisions confirmed with the client this pass: before/after photos dropped
+  permanently (not pursuing consent or a legal read); `tr` locale's current
+  mitigation (hidden from switcher, reachable by direct URL) accepted as
+  sufficient for now; health-tourism certificate still pending on the
+  client's end, no change; real domain/`.env` setup is the client's own task
+  going forward, not tracked here as blocking.
+- `npm run build` clean; superlative/comparative-claim grep re-check across
+  all 5 locale files clean (only false positives on German "bestätigt").

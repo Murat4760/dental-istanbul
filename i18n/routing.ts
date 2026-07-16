@@ -13,11 +13,10 @@ import { defineRouting } from "next-intl/routing";
  * re-evaluated when `tr` was added — worth revisiting before this locale
  * goes live/indexed.
  *
- * NOTE: only messages/<locale>.json (nav, buttons, footer, etc.) is
- * translated. Deep content — lib/procedures.ts, lib/doctors.ts — is still
- * English-only TypeScript with no per-locale variant, so every
- * non-English locale currently shows translated chrome around English body
- * copy until that content is localized too.
+ * Deep content in lib/procedures.ts is now localized for TR/AR/RU/DE too
+ * (see lib/procedures.<locale>.ts, 2026-07-16). lib/doctors.ts is not — the
+ * bio field is still a client-supplied placeholder in every locale, so
+ * DoctorCard hides the bio block until a real one replaces it.
  */
 export const routing = defineRouting({
   locales: ["en", "tr", "ar", "ru", "de"],

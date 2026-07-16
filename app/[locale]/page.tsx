@@ -19,11 +19,19 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 import { ProcedureCard } from "@/components/ProcedureCard";
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "home" });
+  const place = await getTranslations({ locale, namespace: "place" });
   return buildMetadata({
-    title: `${SITE.name} — Dental Implants, Veneers & Smile Makeovers in Istanbul`,
+    title: t("metaTitle", { name: SITE.name, city: place("city") }),
     description: SITE.description,
     path: "/",
+    locale,
     keywords: [
       "dental treatment Turkey",
       "dentist Istanbul",
@@ -43,10 +51,15 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const place = await getTranslations({ locale, namespace: "place" });
+  const prefill = t("whatsapp.prefill", {
+    topic: t("whatsapp.defaultTopic"),
+    city: place("city"),
+  });
 
   return (
     <>
-      <JsonLd data={dentistSchema()} />
+      <JsonLd data={await dentistSchema(locale)} />
 
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative overflow-hidden">
@@ -62,12 +75,12 @@ export default async function HomePage({
           <div>
             <span className="inline-flex items-center gap-2 rounded-full border border-line bg-surface/70 px-3 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
               <ShieldCheck className="h-3.5 w-3.5" />
-              Dental care in {SITE.city}, {SITE.country}
+              {t("home.badge", { city: place("city"), country: place("country") })}
             </span>
             <h1 className="mt-5 text-balance font-display text-4xl font-semibold leading-[1.05] text-ink sm:text-5xl md:text-6xl">
-              A confident new smile, crafted in{" "}
+              {t("home.heroTitlePrefix")}{" "}
               <span className="relative inline-block text-primary">
-                {SITE.city}
+                {place("city")}
                 <Arc
                   className="absolute -bottom-1.5 left-0 h-2.5 w-full text-accent"
                   strokeWidth={2.5}
@@ -75,12 +88,11 @@ export default async function HomePage({
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft">
-              Implants, veneers, All-on-4 and full smile makeovers, provided by
-              a registered dentist for international patients.
+              {t("home.heroDescription")}
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
-                href={whatsappUrl(t("whatsapp.prefill"))}
+                href={whatsappUrl(prefill)}
                 external
                 size="lg"
                 rightIcon={<ArrowRight className="h-4 w-4" />}
@@ -99,7 +111,7 @@ export default async function HomePage({
               src="/images/clinic/reception.jpg"
               aspect="4 / 5"
               tone="teal"
-              alt="Reception at Rama Dental Clinic in Istanbul"
+              alt={t("home.heroImageAlt", { name: SITE.name, city: place("city") })}
               className="shadow-card"
               priority
               sizes="(max-width: 1024px) 100vw, 45vw"
@@ -144,7 +156,7 @@ export default async function HomePage({
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
               eyebrow={t("procedurePage.treatmentsEyebrow")}
-              title="Procedures we specialise in"
+              title={t("home.proceduresTitle")}
               description={t("procedurePage.gridDescription")}
             />
             <Button href="/procedures" variant="ghost" rightIcon={<ArrowRight className="h-4 w-4" />}>
@@ -170,14 +182,14 @@ export default async function HomePage({
           <div>
             <SectionHeading
               eyebrow={t("procedurePage.getInTouch")}
-              title="Start with a no-obligation conversation"
+              title={t("home.ctaTitle")}
               description={t("procedurePage.contactDescription")}
             />
             <ul className="mt-8 space-y-3">
               {[
-                "Your treatment plan explained clearly before you commit",
-                "No pressure, no obligation",
-                "Guidance on timing and what to expect at your visit",
+                t("home.benefit1"),
+                t("home.benefit2"),
+                t("home.benefit3"),
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3 text-ink-soft">
                   <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-white">
@@ -191,7 +203,7 @@ export default async function HomePage({
           <div className="rounded-card border border-line bg-surface p-6 shadow-card sm:p-8">
             <div className="flex flex-col gap-3">
               <Button
-                href={whatsappUrl(t("whatsapp.prefill"))}
+                href={whatsappUrl(prefill)}
                 external
                 size="lg"
                 className="w-full"

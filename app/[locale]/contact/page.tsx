@@ -8,11 +8,22 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Media } from "@/components/ui/Media";
 import { Button } from "@/components/ui/Button";
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "contact" });
+  const place = await getTranslations({ locale, namespace: "place" });
   return buildMetadata({
-    title: "Contact Us",
-    description: `Get in touch with ${SITE.name} in Istanbul. Message us on WhatsApp, call, or email — no forms, no waiting.`,
+    title: t("metaTitle"),
+    description: t("metaDescription", {
+      name: SITE.name,
+      city: place("city"),
+    }),
     path: "/contact",
+    locale,
   });
 }
 
@@ -24,6 +35,11 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations();
+  const place = await getTranslations({ locale, namespace: "place" });
+  const prefill = t("whatsapp.prefill", {
+    topic: t("whatsapp.defaultTopic"),
+    city: place("city"),
+  });
 
   return (
     <>
@@ -31,9 +47,9 @@ export default async function ContactPage({
         <div className="container-page">
           <SectionHeading
             as="h1"
-            eyebrow="Contact"
-            title="Let's plan your smile"
-            description="Message us on WhatsApp, call, or email — we reply quickly, usually the same day."
+            eyebrow={t("contact.eyebrow")}
+            title={t("contact.heroTitle")}
+            description={t("contact.heroDescription")}
           />
         </div>
       </section>
@@ -44,7 +60,7 @@ export default async function ContactPage({
           <div>
             <div className="space-y-5">
               <a
-                href={whatsappUrl(t("whatsapp.prefill"))}
+                href={whatsappUrl(prefill)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 rounded-card border border-line bg-surface p-4 transition-colors hover:border-primary"
@@ -57,7 +73,7 @@ export default async function ContactPage({
                     {t("whatsapp.label")}
                   </span>
                   <span className="block text-sm text-muted">
-                    Fastest way to reach us
+                    {t("contact.fastestWay")}
                   </span>
                 </span>
               </a>
@@ -67,7 +83,7 @@ export default async function ContactPage({
                   <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                   <span className="text-ink-soft">
                     {SITE.address.street}, {SITE.address.district},{" "}
-                    {SITE.address.city}, {SITE.country}
+                    {place("city")}, {place("country")}
                   </span>
                 </li>
                 <li className="flex gap-3">
@@ -90,9 +106,9 @@ export default async function ContactPage({
                   {SITE.hoursConfirmed ? (
                     <span className="text-ink-soft">
                       {SITE.hours.map((h) => (
-                        <span key={h.days} className="block">
-                          {h.days}:{" "}
-                          {h.open === "Closed" ? "Closed" : `${h.open}–${h.close}`}
+                        <span key={h.daysKey} className="block">
+                          {t(`hours.${h.daysKey}`)}:{" "}
+                          {h.open === "" ? t("hours.closed") : `${h.open}–${h.close}`}
                         </span>
                       ))}
                     </span>
@@ -108,7 +124,7 @@ export default async function ContactPage({
                     href={SITE.socials.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Instagram"
+                    aria-label={t("social.instagram")}
                     className="grid h-11 w-11 place-items-center rounded-full border border-line text-ink-soft transition-colors hover:border-primary hover:text-primary"
                   >
                     <InstagramIcon className="h-[18px] w-[18px]" />
@@ -119,7 +135,7 @@ export default async function ContactPage({
                     href={SITE.socials.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label="Facebook"
+                    aria-label={t("social.facebook")}
                     className="grid h-11 w-11 place-items-center rounded-full border border-line text-ink-soft transition-colors hover:border-primary hover:text-primary"
                   >
                     <FacebookIcon className="h-[18px] w-[18px]" />
@@ -130,8 +146,8 @@ export default async function ContactPage({
               <Media
                 aspect="16 / 9"
                 tone="sand"
-                alt={`Map showing ${SITE.name} location in ${SITE.city}`}
-                label="[PLACEHOLDER] Embed clinic map"
+                alt={t("contact.mapAlt", { name: SITE.name, city: place("city") })}
+                label={t("contact.mapPlaceholder")}
               />
             </div>
           </div>
@@ -143,7 +159,7 @@ export default async function ContactPage({
             </h2>
             <p className="mt-2 text-ink-soft">{t("contactCard.body")}</p>
             <div className="mt-6 flex flex-col gap-3">
-              <Button href={whatsappUrl(t("whatsapp.prefill"))} external size="lg" className="w-full">
+              <Button href={whatsappUrl(prefill)} external size="lg" className="w-full">
                 {t("cta.whatsapp")}
               </Button>
               <a

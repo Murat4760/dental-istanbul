@@ -4,13 +4,20 @@ import { Arc } from "@/components/ui/Arc";
 import { SITE, whatsappUrl } from "@/lib/site";
 
 export async function CTABand({
-  title = "Ready to start your smile journey?",
-  subtitle = "Message us on WhatsApp or give us a call — no forms, no waiting.",
+  title,
+  subtitle,
 }: {
   title?: string;
   subtitle?: string;
 }) {
   const t = await getTranslations();
+  const place = await getTranslations("place");
+  const heading = title ?? t("ctaBand.defaultTitle");
+  const sub = subtitle ?? t("ctaBand.defaultSubtitle");
+  const prefill = t("whatsapp.prefill", {
+    topic: t("whatsapp.defaultTopic"),
+    city: place("city"),
+  });
   return (
     <section className="section">
       <div className="container-page">
@@ -21,14 +28,14 @@ export async function CTABand({
           />
           <div className="relative">
             <h2 className="mx-auto max-w-2xl text-balance font-display text-3xl font-semibold sm:text-4xl">
-              {title}
+              {heading}
             </h2>
             <p className="mx-auto mt-4 max-w-xl text-pretty text-white/75">
-              {subtitle}
+              {sub}
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button
-                href={whatsappUrl(t("whatsapp.prefill"))}
+                href={whatsappUrl(prefill)}
                 external
                 size="lg"
                 className="bg-white text-primary hover:bg-white/90"

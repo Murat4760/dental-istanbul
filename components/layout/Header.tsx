@@ -17,6 +17,10 @@ const NAV = [
 
 export function Header() {
   const t = useTranslations();
+  const prefill = t("whatsapp.prefill", {
+    topic: t("whatsapp.defaultTopic"),
+    city: t("place.city"),
+  });
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -66,7 +70,7 @@ export function Header() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-0.5 lg:flex" aria-label={t("aria.primaryNav")}>
           {NAV.map((item) => (
             <Link
               key={item.href}
@@ -93,7 +97,7 @@ export function Header() {
         <div className="flex items-center gap-2 md:gap-3">
           <LanguageSwitcher />
           <div className="hidden sm:block">
-            <Button href={whatsappUrl(t("whatsapp.prefill"))} external size="sm">
+            <Button href={whatsappUrl(prefill)} external size="sm">
               {t("cta.whatsapp")}
             </Button>
           </div>
@@ -114,7 +118,7 @@ export function Header() {
         <div className="absolute inset-x-0 top-full max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-line bg-canvas lg:hidden">
           <nav
             className="container-page flex flex-col py-4"
-            aria-label="Mobile"
+            aria-label={t("aria.mobileNav")}
           >
             {[...NAV, { href: "/contact", key: "contact" }].map((item) => (
               <Link
@@ -132,7 +136,7 @@ export function Header() {
               </Link>
             ))}
             <div className="mt-5 flex flex-col gap-3">
-              <Button href={whatsappUrl(t("whatsapp.prefill"))} external size="lg" className="w-full">
+              <Button href={whatsappUrl(prefill)} external size="lg" className="w-full">
                 {t("cta.whatsapp")}
               </Button>
               <a
