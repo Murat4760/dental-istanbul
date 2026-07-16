@@ -47,5 +47,28 @@
     "menu": "Меню",
     "close": "Закрыть",
     "skipToContent": "Перейти к содержимому"
+  },
+  "procedurePage": {
+    "whatItIs": "Что это",
+    "whoItsFor": "Кому подходит",
+    "process": "Как проходит лечение",
+    "atAGlance": "Кратко",
+    "timeIn": "Время пребывания в {city}",
+    "category": "Категория",
+    "exploreMore": "Узнать больше",
+    "relatedTreatments": "Похожие услуги",
+    "treatmentsEyebrow": "Услуги",
+    "gridDescription": "Каждое лечение планируется индивидуально под ваш случай — всё подробно объясняется до поездки, без сюрпризов.",
+    "getInTouch": "Свяжитесь с нами",
+    "askAbout": "Спросить про {name}",
+    "contactDescription": "Напишите нам в WhatsApp, позвоните или отправьте письмо — наша команда отвечает быстро, обычно в тот же день.",
+    "comingSoon": "Скоро"
+  },
+  "categories": {
+    "Restorative": "Восстановительные",
+    "Cosmetic": "Косметические",
+    "Full-arch": "Полная реставрация",
+    "Whitening": "Отбеливание",
+    "Orthodontics": "Ортодонтия"
   }
 }

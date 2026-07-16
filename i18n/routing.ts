@@ -14,8 +14,8 @@ import { defineRouting } from "next-intl/routing";
  * goes live/indexed.
  *
  * NOTE: only messages/<locale>.json (nav, buttons, footer, etc.) is
- * translated. Deep content — lib/procedures.ts, lib/faqs.ts, lib/doctors.ts —
- * is still English-only TypeScript with no per-locale variant, so every
+ * translated. Deep content — lib/procedures.ts, lib/doctors.ts — is still
+ * English-only TypeScript with no per-locale variant, so every
  * non-English locale currently shows translated chrome around English body
  * copy until that content is localized too.
  */

@@ -47,5 +47,28 @@
     "menu": "القائمة",
     "close": "إغلاق",
     "skipToContent": "الانتقال إلى المحتوى"
+  },
+  "procedurePage": {
+    "whatItIs": "ما هو",
+    "whoItsFor": "لمن يناسب",
+    "process": "خطوات العلاج",
+    "atAGlance": "نظرة سريعة",
+    "timeIn": "المدة في {city}",
+    "category": "الفئة",
+    "exploreMore": "اكتشف المزيد",
+    "relatedTreatments": "علاجات ذات صلة",
+    "treatmentsEyebrow": "العلاجات",
+    "gridDescription": "يتم التخطيط لكل علاج حسب حالتك الخاصة، مع شرح كل شيء بوضوح قبل سفرك — دون أي مفاجآت.",
+    "getInTouch": "تواصل معنا",
+    "askAbout": "استفسر عن {name}",
+    "contactDescription": "راسلونا عبر واتساب، اتصلوا، أو أرسلوا بريدًا إلكترونيًا — يرد فريقنا بسرعة، عادة في نفس اليوم.",
+    "comingSoon": "قريبًا"
+  },
+  "categories": {
+    "Restorative": "علاجات ترميمية",
+    "Cosmetic": "تجميلية",
+    "Full-arch": "الفك الكامل",
+    "Whitening": "تبييض",
+    "Orthodontics": "تقويم الأسنان"
   }
 }

@@ -25,10 +25,10 @@ export function GET() {
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 68, fontWeight: 700, lineHeight: 1.05, maxWidth: 880 }}>
-            World-class dentistry in {SITE.city}
+            Dental care for international patients in {SITE.city}
           </div>
           <div style={{ display: "flex", marginTop: 24, fontSize: 30, color: "rgba(255,255,255,0.82)" }}>
-            Implants · Veneers · All-on-4 · Smile makeovers
+            Implants · Veneers · All-on-4 · Orthodontics
           </div>
         </div>
 

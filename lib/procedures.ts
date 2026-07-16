@@ -13,6 +13,9 @@
  * here without it.
  */
 
+import type { Locale } from "@/i18n/routing";
+import { proceduresTr } from "./procedures.tr";
+
 export type ProcessStep = { title: string; description: string };
 
 export type ProcedureCategory =
@@ -57,7 +60,7 @@ export const procedures: Procedure[] = [
     summary:
       "Titanium implants that fuse with the jawbone to support crowns that look, feel and function like natural teeth.",
     whatItIs:
-      "A dental implant is a small titanium post placed into the jawbone to replace the root of a missing tooth. Once it integrates with the bone, a custom crown is fixed on top. Implants are the gold standard for replacing one, several or all teeth because they preserve bone, protect neighbouring teeth and can last decades with good care.",
+      "A dental implant is a small titanium post placed into the jawbone to replace the root of a missing tooth. Once it integrates with the bone, a custom crown is fixed on top. Implants are a well-established option for replacing one, several or all teeth because they preserve bone, protect neighbouring teeth and can last decades with good care.",
     whoItsFor: [
       "You are missing one or more teeth and want a permanent solution",
       "You wear a denture or bridge and want something more stable",
@@ -66,7 +69,7 @@ export const procedures: Procedure[] = [
     ],
     processSteps: [
       {
-        title: "Free online consultation",
+        title: "Online consultation",
         description:
           "Send photos and any recent X-rays. Our dentists review your case and send an indicative plan before you travel.",
       },
@@ -95,13 +98,12 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Dental Implants in Istanbul, Turkey",
       description:
-        "Permanent dental implants in Istanbul with a registered dental team. Free online consultation for international patients.",
+        "Permanent dental implants in Istanbul with a registered dentist. Online consultation available for international patients.",
       keywords: [
         "dental implants Turkey",
         "dental implants Istanbul",
         "dental implants abroad",
         "tooth implant Istanbul",
-        "affordable dental implants Turkey",
       ],
     },
   },
@@ -148,7 +150,7 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Porcelain Veneers in Istanbul, Turkey",
       description:
-        "Natural-looking porcelain veneers in Istanbul. Digital smile design with a registered dental team for international patients.",
+        "Natural-looking porcelain veneers in Istanbul. Digital smile design with a registered dentist for international patients.",
       keywords: [
         "veneers Turkey",
         "veneers Istanbul",
@@ -201,7 +203,7 @@ export const procedures: Procedure[] = [
     seo: {
       title: "All-on-4 Dental Implants in Istanbul, Turkey",
       description:
-        "Fixed full-arch teeth with All-on-4 implants in Istanbul, with a registered dental team for international patients.",
+        "Fixed full-arch teeth with All-on-4 implants in Istanbul, with a registered dentist for international patients.",
       keywords: [
         "All-on-4 Turkey",
         "All on 4 Istanbul",
@@ -221,7 +223,7 @@ export const procedures: Procedure[] = [
     summary:
       "Professional in-clinic whitening that lifts stains safely and evenly under dental supervision.",
     whatItIs:
-      "Professional whitening uses a controlled, dentist-supervised gel to lift stains and brighten the natural shade of your teeth. Because it is applied under supervision with gum protection, it is safer and more effective than over-the-counter kits, with results visible in a single appointment.",
+      "Professional whitening uses a controlled, dentist-supervised gel to lift stains and brighten the natural shade of your teeth. Because it is applied under professional supervision with gum protection, results are visible in a single appointment.",
     whoItsFor: [
       "Your teeth have yellowed or stained over time",
       "You want a brighter smile without altering tooth structure",
@@ -306,7 +308,7 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Dental Crowns in Istanbul, Turkey",
       description:
-        "Zirconia and porcelain dental crowns in Istanbul. Natural-looking results from a registered dental team, for international patients.",
+        "Zirconia and porcelain dental crowns in Istanbul. Natural-looking results from a registered dentist, for international patients.",
       keywords: [
         "dental crowns Turkey",
         "dental crowns Istanbul",
@@ -359,12 +361,11 @@ export const procedures: Procedure[] = [
           "Once treatment is complete, a retainer holds your teeth in their new position long-term.",
       },
     ],
-    daysInIstanbul:
-      "[PLACEHOLDER: confirm — treatment plan is set in Istanbul, then monitored over several months rather than completed in one visit]",
+    daysInIstanbul: "Plan set in Istanbul; monitored over following months",
     seo: {
       title: "Orthodontics in Istanbul, Turkey",
       description:
-        "Braces and clear aligners in Istanbul for international patients. Full details on this treatment are being finalised — get in touch to ask directly.",
+        "Braces and clear aligners in Istanbul for international patients, with a treatment plan set in Istanbul and progress monitored in person or remotely.",
       keywords: [
         "orthodontics Turkey",
         "braces Istanbul",
@@ -372,7 +373,6 @@ export const procedures: Procedure[] = [
         "invisalign Istanbul",
       ],
     },
-    status: "comingSoon",
   },
 ];
 
@@ -381,3 +381,42 @@ export function getProcedure(slug: string): Procedure | undefined {
 }
 
 export const procedureSlugs = procedures.map((p) => p.slug);
+
+/**
+ * Locale-aware content layer. `lib/procedures.ts` stays the English source of
+ * truth (see the file header); a locale override only needs to translate the
+ * human-readable fields, and any field/locale it doesn't cover falls back to
+ * English automatically. Add a new locale by adding one entry to `overrides`
+ * below (`lib/procedures.<locale>.ts` + one import) — no page code changes.
+ */
+export type ProcedureOverride = Partial<
+  Omit<Procedure, "slug" | "icon" | "category" | "status">
+>;
+
+const overrides: Partial<Record<Locale, Record<string, ProcedureOverride>>> = {
+  tr: proceduresTr,
+};
+
+function mergeProcedure(base: Procedure, locale: string): Procedure {
+  const override = overrides[locale as Locale]?.[base.slug];
+  if (!override) return base;
+  return {
+    ...base,
+    ...override,
+    // Merge one level deep so translating only some `seo` fields doesn't
+    // wipe the untranslated ones.
+    seo: override.seo ? { ...base.seo, ...override.seo } : base.seo,
+  };
+}
+
+export function getLocalizedProcedure(
+  slug: string,
+  locale: string,
+): Procedure | undefined {
+  const base = getProcedure(slug);
+  return base ? mergeProcedure(base, locale) : undefined;
+}
+
+export function getLocalizedProcedures(locale: string): Procedure[] {
+  return procedures.map((p) => mergeProcedure(p, locale));
+}

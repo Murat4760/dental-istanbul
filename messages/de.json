@@ -47,5 +47,28 @@
     "menu": "Menü",
     "close": "Schließen",
     "skipToContent": "Zum Inhalt springen"
+  },
+  "procedurePage": {
+    "whatItIs": "Was es ist",
+    "whoItsFor": "Für wen es geeignet ist",
+    "process": "Der Ablauf",
+    "atAGlance": "Auf einen Blick",
+    "timeIn": "Aufenthaltsdauer in {city}",
+    "category": "Kategorie",
+    "exploreMore": "Mehr entdecken",
+    "relatedTreatments": "Ähnliche Behandlungen",
+    "treatmentsEyebrow": "Behandlungen",
+    "gridDescription": "Jede Behandlung wird individuell auf Ihren Fall abgestimmt geplant — alles wird vor Ihrer Anreise klar erklärt, ohne Überraschungen.",
+    "getInTouch": "Kontaktieren Sie uns",
+    "askAbout": "Fragen zu {name}",
+    "contactDescription": "Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — unser Team antwortet schnell, meist noch am selben Tag.",
+    "comingSoon": "Demnächst"
+  },
+  "categories": {
+    "Restorative": "Restaurativ",
+    "Cosmetic": "Ästhetisch",
+    "Full-arch": "Vollbogen",
+    "Whitening": "Zahnaufhellung",
+    "Orthodontics": "Kieferorthopädie"
   }
 }

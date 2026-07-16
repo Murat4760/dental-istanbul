@@ -34,8 +34,14 @@ data edit, not a rebuild.
       (2026-07-14 intake form: no accreditations held, not a HealthTürkiye
       member, no international health-tourism authorisation, no complication
       insurance — do not claim any of these anywhere on the site)
-- [ ] Confirm whether **Orthodontics** (advertised in the Instagram bio) should
-      be added as a 6th procedure in `lib/procedures.ts` — not added yet
+- [x] **Orthodontics** — added as a 6th procedure in `lib/procedures.ts`
+      (2026-07-16, was previously gated `status: "comingSoon"`). Now live like
+      the other 5: full `MedicalProcedure` schema, no "coming soon" badge.
+      `daysInIstanbul` uses truthful qualitative copy ("plan set in Istanbul;
+      monitored over following months") rather than a fabricated day count,
+      since it's genuinely a multi-month, not fixed-visit, treatment. Still
+      open: real number of in-person visits / remote check-in cadence — ask
+      the client (see the updated intake-form HTML).
 
 ## 2. Treatments — `lib/procedures.ts`
 - [x] No prices anywhere on this site (deliberate — see §6). `priceFrom` /
@@ -103,25 +109,67 @@ from this site's own data handling.
       search-indexed yet, but the abroad-facing marketing framing ("for
       international patients" copy) is otherwise live as-is — confirm this
       is fine to keep once the certificate lands, or scope down before
-      indexing. `tr` was added as a locale on 2026-07-16 on explicit
-      request, which reopens the domestic/abroad-facing separation question
-      the original `i18n/routing.ts` comment raised — worth a real answer,
-      not just a flag, before this locale is indexed.
+      indexing.
+- [ ] **2026-07-16 update — `tr` locale hidden from the switcher, not resolved.**
+      A web search on 2026-07-16 confirmed the *Sağlık Hizmetlerinde Tanıtım
+      ve Bilgilendirme Faaliyetleri Hakkında Yönetmelik* took effect
+      12 Kasım 2025: promotion aimed at people living in Turkey is banned
+      outright, and package/discount/campaign advertising for health
+      tourism is only permitted for clinics holding the *Uluslararası
+      Sağlık Turizmi Yetki Belgesi*, and only on a **separate**,
+      non-Turkish-language platform not accessible from Turkey. Rama Dental
+      doesn't hold that certificate, and `tr` lives on this same
+      domain/property rather than a separate one — real tension with both
+      provisions, independent of translation quality. As an interim,
+      reversible mitigation, `tr` was removed from the public
+      `components/layout/LanguageSwitcher.tsx` dropdown (routing, messages,
+      and `lib/procedures.tr.ts` all stay intact in the codebase — a direct
+      `/tr/...` link still works, it's just not offered as a choice). This
+      is a business/legal call, not a code fix — decide with legal counsel
+      whether to pursue the certificate, restructure into separate
+      domestic/abroad-facing properties, or something else, then either
+      re-enable `tr` in the switcher or remove it from `i18n/routing.ts`
+      entirely.
+- [x] **2026-07-16 unverified-claims sweep.** Removed the "Why us" section
+      and both hero floating chips on the home page (asserted an unconfirmed
+      team size, facility quality, and "all-inclusive packages"/hotel/
+      transfer logistics — the exact category of claim the Nov 2025
+      regulation restricts without the health-tourism certificate, see
+      above). Fixed `SITE.description`, which named specific patient-origin
+      countries ("Turkey, France, Germany, Bulgaria and Iran") never
+      confirmed by the intake form — this was live on the About page, in
+      page metadata, and in the `Dentist` JSON-LD. Changed every "a
+      registered dental team" reference to "a registered dentist" (only one
+      dentist is confirmed on record, see §3). Reworded a "gold standard"
+      superlative and a "safer/more effective than over-the-counter kits"
+      comparative claim (teeth-whitening) — same class of issue as the
+      already-fixed "World-class dentistry". Dropped "free"/price-adjacent
+      wording ("Free online consultation", "a free, no-obligation
+      conversation") and an "affordable dental implants Turkey" SEO keyword,
+      consistent with this site's own "no prices anywhere" policy
+      (`lib/procedures.ts` header comment).
 - [ ] Confirm no medical claim on the site overstates outcomes
 
 ## 7. Languages
 - [x] UI chrome (nav, buttons, footer, language switcher) translated into
-      TR/AR/RU/DE as of 2026-07-16 — see `messages/<locale>.json`. All five
-      locales (`en`, `tr`, `ar`, `ru`, `de`) are live in
-      `components/layout/LanguageSwitcher.tsx`, no more "coming soon" gating.
-- [ ] **Deep content is still English-only.** `lib/procedures.ts` and
-      `lib/doctors.ts` are plain English TypeScript with no per-locale
-      variant mechanism — so every non-English locale currently shows
-      translated nav/buttons/footer around English procedure descriptions
-      and doctor bios. Fixing this properly means either (a) adding a
-      translated field per locale to each data file, or (b) moving this
-      content into `messages/<locale>.json` — a real content task, not a
-      config flip.
+      TR/AR/RU/DE as of 2026-07-16 — see `messages/<locale>.json`. Also fixed
+      2026-07-16: several section headings on the procedures pages ("What it
+      is", "Who it's for", "The process", "Home" breadcrumb, "Coming soon")
+      were hardcoded English JSX literals that never went through
+      `next-intl`'s `t()` — now wired up in all 5 locales.
+      **`tr` is no longer offered in `components/layout/LanguageSwitcher.tsx`**
+      as of 2026-07-16 — see §6's new item above. `en`/`ar`/`ru`/`de` remain
+      live.
+- [x] **Deep content (`lib/procedures.ts`) is now localized for Turkish.**
+      Added `lib/procedures.tr.ts` + `getLocalizedProcedure(s)` helpers in
+      `lib/procedures.ts` (2026-07-16) — every field (name, tagline,
+      summary, process steps, SEO) has a real Turkish translation, with
+      automatic fallback to English for anything untranslated. `ar`/`ru`/`de`
+      still show English procedure/doctor-bio content — same mechanism,
+      just needs a `lib/procedures.<locale>.ts` file per language (see the
+      code comment above `overrides` in `lib/procedures.ts`). `lib/doctors.ts`
+      bio is still `[PLACEHOLDER]` in every language — nothing real to
+      translate yet.
 - [x] AR renders `dir="rtl"` with Noto Sans Arabic (Fraunces/Inter don't
       cover Arabic script — see the `html[lang="ar"]` override in
       `app/globals.css`). TR/RU use Inter's `latin-ext`/`cyrillic` subsets;
@@ -152,3 +200,23 @@ dentist listed (no invented colleagues). No Patient Journey, no
 reviews/testimonials, and no FAQ features — all removed entirely
 (2026-07-17) rather than left as empty placeholders. UI chrome translated
 into TR/AR/RU/DE.
+
+### 2026-07-16 re-audit (Sağlık Bakanlığı tanıtım/reklam rules)
+- Fixed a superlative-claim violation: `app/api/og/route.tsx` said "World-class
+  dentistry" — banned language, and it shipped on every page's share/OG image
+  (highest-visibility surface on the site). Replaced with neutral copy
+  matching `SITE.description`.
+- Confirmed still-clean on everything checked previously (no reviews, no
+  before/after, no pricing, no fabricated stats/`aggregateRating`) plus the
+  mandatory "results vary, consult a professional" disclaimer already present
+  in `messages/*.json` `footer.disclaimer` and rendered in `Footer.tsx`.
+- Orthodontics flipped to live — see §1 above.
+- The client's local intake-form HTML
+  (`1 - Projects/Agency/Clients/Rama Dental Clinic - Eksik Bilgi Formu.html`)
+  was updated to v2: dropped the patient-reviews ask entirely (testimonials
+  can't be published even with consent under the Nov 2025 update — collecting
+  consent data for it was pointless), strengthened the before/after note
+  (domestic-facing sharing is restricted and `tr` is now a live locale —
+  unresolved, needs a legal read before publishing any case), and added asks
+  for the orthodontics visit cadence, doctor headshot/logo/GPS, and a
+  sanity-check on the "registered dental team" phrasing.

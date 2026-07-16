@@ -5,9 +5,9 @@ import { Clock, Tag, Check, ArrowRight, ChevronRight, Phone, Mail } from "lucide
 import { Link } from "@/i18n/navigation";
 import { SITE, whatsappUrl } from "@/lib/site";
 import {
-  getProcedure,
+  getLocalizedProcedure,
+  getLocalizedProcedures,
   procedureSlugs,
-  procedures,
 } from "@/lib/procedures";
 import { buildMetadata } from "@/lib/metadata";
 import { medicalProcedureSchema, breadcrumbSchema } from "@/lib/schema";
@@ -25,8 +25,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const procedure = getProcedure(slug);
+  const { locale, slug } = await params;
+  const procedure = getLocalizedProcedure(slug, locale);
   if (!procedure) return {};
   return buildMetadata({
     title: procedure.seo.title,
@@ -46,10 +46,12 @@ export default async function ProcedurePage({
   setRequestLocale(locale);
   const t = await getTranslations();
 
-  const procedure = getProcedure(slug);
+  const procedure = getLocalizedProcedure(slug, locale);
   if (!procedure) notFound();
 
-  const related = procedures.filter((p) => p.slug !== slug).slice(0, 3);
+  const related = getLocalizedProcedures(locale)
+    .filter((p) => p.slug !== slug)
+    .slice(0, 3);
 
   return (
     <>
@@ -72,7 +74,7 @@ export default async function ProcedurePage({
             className="flex items-center gap-1.5 text-sm text-muted"
           >
             <Link href="/" className="hover:text-primary">
-              Home
+              {t("nav.home")}
             </Link>
             <ChevronRight className="h-3.5 w-3.5" />
             <Link href="/procedures" className="hover:text-primary">
@@ -85,7 +87,7 @@ export default async function ProcedurePage({
           <div className="mt-6 max-w-3xl">
             <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
               <span className="h-px w-6 bg-accent" aria-hidden="true" />
-              {procedure.category}
+              {t(`categories.${procedure.category}`)}
             </span>
             <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.03] text-ink sm:text-5xl">
               {procedure.name} in {SITE.city},{" "}
@@ -126,14 +128,14 @@ export default async function ProcedurePage({
         <div className="container-page grid gap-10 lg:grid-cols-3">
           <div className="lg:col-span-2">
             <h2 className="font-display text-2xl font-semibold text-ink">
-              What it is
+              {t("procedurePage.whatItIs")}
             </h2>
             <p className="mt-4 text-pretty leading-relaxed text-ink-soft">
               {procedure.whatItIs}
             </p>
 
             <h2 className="mt-12 font-display text-2xl font-semibold text-ink">
-              Who it&rsquo;s for
+              {t("procedurePage.whoItsFor")}
             </h2>
             <ul className="mt-4 grid gap-3 sm:grid-cols-2">
               {procedure.whoItsFor.map((item) => (
@@ -147,7 +149,7 @@ export default async function ProcedurePage({
             </ul>
 
             <h2 className="mt-12 font-display text-2xl font-semibold text-ink">
-              The process
+              {t("procedurePage.process")}
             </h2>
             <ol className="mt-6 space-y-5">
               {procedure.processSteps.map((step, i) => (
@@ -171,13 +173,15 @@ export default async function ProcedurePage({
             <div className="lg:sticky lg:top-28">
               <div className="rounded-card border border-line bg-surface p-6 shadow-card">
                 <h2 className="font-display text-lg font-semibold text-ink">
-                  At a glance
+                  {t("procedurePage.atAGlance")}
                 </h2>
                 <dl className="mt-5 space-y-5 text-sm">
                   <div className="flex items-start gap-3">
                     <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <div>
-                      <dt className="text-muted">Time in {SITE.city}</dt>
+                      <dt className="text-muted">
+                        {t("procedurePage.timeIn", { city: SITE.city })}
+                      </dt>
                       <dd className="font-medium text-ink">
                         {procedure.daysInIstanbul}
                       </dd>
@@ -186,9 +190,9 @@ export default async function ProcedurePage({
                   <div className="flex items-start gap-3">
                     <Tag className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <div>
-                      <dt className="text-muted">Category</dt>
+                      <dt className="text-muted">{t("procedurePage.category")}</dt>
                       <dd className="font-medium text-ink">
-                        {procedure.category}
+                        {t(`categories.${procedure.category}`)}
                       </dd>
                     </div>
                   </div>
@@ -211,10 +215,17 @@ export default async function ProcedurePage({
       {/* Related procedures */}
       <section className="section bg-sand/60">
         <div className="container-page">
-          <SectionHeading eyebrow="Explore more" title="Related treatments" />
+          <SectionHeading
+            eyebrow={t("procedurePage.exploreMore")}
+            title={t("procedurePage.relatedTreatments")}
+          />
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {related.map((p) => (
-              <ProcedureCard key={p.slug} procedure={p} />
+              <ProcedureCard
+                key={p.slug}
+                procedure={p}
+                comingSoonLabel={t("procedurePage.comingSoon")}
+              />
             ))}
           </div>
         </div>
@@ -225,9 +236,11 @@ export default async function ProcedurePage({
         <div className="container-page grid items-start gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
-              eyebrow="Get in touch"
-              title={`Ask about ${procedure.shortName.toLowerCase()}`}
-              description="Message us on WhatsApp, call, or email — our team replies quickly, usually the same day."
+              eyebrow={t("procedurePage.getInTouch")}
+              title={t("procedurePage.askAbout", {
+                name: procedure.shortName.toLowerCase(),
+              })}
+              description={t("procedurePage.contactDescription")}
             />
           </div>
           <div className="rounded-card border border-line bg-surface p-6 shadow-card sm:p-8">

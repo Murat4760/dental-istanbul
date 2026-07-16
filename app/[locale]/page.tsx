@@ -2,16 +2,13 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import {
   ShieldCheck,
-  Award,
-  MessageCircleHeart,
-  PackageCheck,
   ArrowRight,
   Mail,
   Phone,
   Check,
 } from "lucide-react";
 import { SITE, whatsappUrl } from "@/lib/site";
-import { procedures } from "@/lib/procedures";
+import { getLocalizedProcedures } from "@/lib/procedures";
 import { buildMetadata } from "@/lib/metadata";
 import { dentistSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
@@ -37,29 +34,6 @@ export function generateMetadata(): Metadata {
     ],
   });
 }
-
-const WHY = [
-  {
-    icon: ShieldCheck,
-    title: "Safety-first care",
-    body: "Modern facilities and a registered, qualified dental team.",
-  },
-  {
-    icon: Award,
-    title: "Experienced specialists",
-    body: "A dedicated team focused on implants, cosmetic and full-arch dentistry for international patients.",
-  },
-  {
-    icon: MessageCircleHeart,
-    title: "Clear communication",
-    body: "Your treatment plan explained clearly before anything begins — no pressure, no surprises.",
-  },
-  {
-    icon: PackageCheck,
-    title: "All-inclusive packages",
-    body: "Treatment, hotel, and transfers coordinated for you, with an English-speaking patient manager.",
-  },
-];
 
 export default async function HomePage({
   params,
@@ -101,9 +75,8 @@ export default async function HomePage({
               </span>
             </h1>
             <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft">
-              Implants, veneers, All-on-4 and full smile makeovers with a
-              registered dental team, in a modern clinic built around
-              international patients.
+              Implants, veneers, All-on-4 and full smile makeovers, provided by
+              a registered dentist for international patients.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Button
@@ -131,20 +104,6 @@ export default async function HomePage({
               priority
               sizes="(max-width: 1024px) 100vw, 45vw"
             />
-            <div className="absolute -left-3 top-8 hidden rounded-xl border border-line bg-surface/95 px-4 py-3 shadow-card backdrop-blur sm:block">
-              <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-                <PackageCheck className="h-4 w-4 text-primary" />
-                All-inclusive packages
-              </div>
-              <p className="mt-0.5 text-xs text-muted">Treatment · hotel · transfers</p>
-            </div>
-            <div className="absolute -bottom-4 right-2 rounded-xl border border-line bg-surface/95 px-4 py-3 shadow-card backdrop-blur">
-              <div className="flex items-center gap-2 text-sm font-semibold text-ink">
-                <Check className="h-4 w-4 text-primary" />
-                English-speaking team
-              </div>
-              <p className="mt-0.5 text-xs text-muted">A coordinator by your side</p>
-            </div>
           </div>
         </div>
 
@@ -158,51 +117,47 @@ export default async function HomePage({
         */}
       </section>
 
-      {/* ── Why us ───────────────────────────────────────────── */}
-      <section className="section">
-        <div className="container-page">
-          <SectionHeading
-            eyebrow={`Why ${SITE.shortName}`}
-            title="Care you can trust, thousands of miles from home"
-            description="Choosing a clinic abroad is a big decision. Here's what makes it a confident one."
-          />
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {WHY.map((card, i) => (
-              <Reveal key={card.title} delay={i * 60}>
-                <div className="h-full rounded-card border border-line bg-surface p-6">
-                  <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary-tint text-primary">
-                    <card.icon className="h-6 w-6" strokeWidth={1.75} />
-                  </span>
-                  <h3 className="mt-5 font-display text-lg font-semibold text-ink">
-                    {card.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-soft">
-                    {card.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
+      {/*
+        "Why us" section removed 2026-07-16: every card asserted something
+        not confirmed by the 2026-07-14 intake form (facility quality, team
+        size/experience, package/hotel/transfer logistics, staff roles) or
+        risked Sağlık Bakanlığı ad-compliance exposure. Re-add once the
+        clinic supplies real, verifiable differentiators — do not invent
+        replacements. Was:
+        <section className="section">
+          <div className="container-page">
+            <SectionHeading
+              eyebrow={`Why ${SITE.shortName}`}
+              title="Care you can trust, thousands of miles from home"
+              description="Choosing a clinic abroad is a big decision. Here's what makes it a confident one."
+            />
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {WHY.map((card, i) => ( ... ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      */}
 
       {/* ── Procedures ───────────────────────────────────────── */}
       <section className="section bg-sand/60">
         <div className="container-page">
           <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
             <SectionHeading
-              eyebrow="Treatments"
+              eyebrow={t("procedurePage.treatmentsEyebrow")}
               title="Procedures we specialise in"
-              description="Each treatment is planned around your case, with everything explained clearly before you travel."
+              description={t("procedurePage.gridDescription")}
             />
             <Button href="/procedures" variant="ghost" rightIcon={<ArrowRight className="h-4 w-4" />}>
               {t("cta.viewProcedures")}
             </Button>
           </div>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {procedures.map((p, i) => (
+            {getLocalizedProcedures(locale).map((p, i) => (
               <Reveal key={p.slug} delay={i * 50}>
-                <ProcedureCard procedure={p} />
+                <ProcedureCard
+                  procedure={p}
+                  comingSoonLabel={t("procedurePage.comingSoon")}
+                />
               </Reveal>
             ))}
           </div>
@@ -214,9 +169,9 @@ export default async function HomePage({
         <div className="container-page grid items-start gap-12 lg:grid-cols-2">
           <div>
             <SectionHeading
-              eyebrow="Get in touch"
-              title="Start with a free, no-obligation conversation"
-              description="Message us on WhatsApp, call, or email — our team replies quickly, usually the same day."
+              eyebrow={t("procedurePage.getInTouch")}
+              title="Start with a no-obligation conversation"
+              description={t("procedurePage.contactDescription")}
             />
             <ul className="mt-8 space-y-3">
               {[

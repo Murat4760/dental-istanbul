@@ -2,15 +2,15 @@
 
 /*
  * Design System — "Warm Clinical"
- * Palette:   canvas #FBFAF8 · ink #0F1B1A · primary(teal) #0E5C57 · accent(terracotta) #C46A3F · muted #7C8B88
+ * Palette:   canvas #FAF0F1 (bordo-tinted) · ink #0F1B1A · primary(teal) #0E5C57 · accent(terracotta) #C46A3F · muted #7C8B88
  * Type:      Fraunces (display) + Inter (body)
  * Radii:     button full · card 12 · input 8
  * Signature: recurring thin arc / tooth-crown motif (see components/ui/Arc.tsx)
  */
 
 @theme {
-  --color-canvas: #fbfaf8;
-  --color-surface: #ffffff;
+  --color-canvas: #faf0f1;
+  --color-surface: #fdf7f8;
   --color-sand: #f4f1ea;
   --color-ink: #0f1b1a;
   --color-ink-soft: #3a4644;

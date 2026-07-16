@@ -3,7 +3,13 @@ import { Link } from "@/i18n/navigation";
 import { Icon } from "@/components/ui/Icon";
 import type { Procedure } from "@/lib/procedures";
 
-export function ProcedureCard({ procedure }: { procedure: Procedure }) {
+export function ProcedureCard({
+  procedure,
+  comingSoonLabel = "Coming soon",
+}: {
+  procedure: Procedure;
+  comingSoonLabel?: string;
+}) {
   return (
     <Link
       href={`/procedures/${procedure.slug}`}
@@ -15,7 +21,7 @@ export function ProcedureCard({ procedure }: { procedure: Procedure }) {
         </span>
         {procedure.status === "comingSoon" ? (
           <span className="rounded-full bg-sand px-2.5 py-1 text-[0.65rem] font-semibold uppercase tracking-wide text-ink-soft">
-            Coming soon
+            {comingSoonLabel}
           </span>
         ) : (
           <ArrowUpRight className="h-5 w-5 text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent" />

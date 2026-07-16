@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { SITE } from "@/lib/site";
-import { procedures } from "@/lib/procedures";
+import { getLocalizedProcedures } from "@/lib/procedures";
 import { buildMetadata } from "@/lib/metadata";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
@@ -12,7 +12,7 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: `Dental Procedures in ${SITE.city}, ${SITE.country}`,
     description:
-      "Explore our dental treatments for international patients in Istanbul — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening, with all-inclusive packages.",
+      "Explore our dental treatments for international patients in Istanbul — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening.",
     path: "/procedures",
     keywords: [
       "dental procedures Turkey",
@@ -31,7 +31,7 @@ export default async function ProceduresPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
-  await getTranslations();
+  const t = await getTranslations();
 
   return (
     <>
@@ -39,23 +39,26 @@ export default async function ProceduresPage({
         <div className="container-page">
           <SectionHeading
             as="h1"
-            eyebrow="Treatments"
+            eyebrow={t("procedurePage.treatmentsEyebrow")}
             title={
               <>
                 Dental procedures in {SITE.city},{" "}
                 <span className="text-primary">{SITE.country}</span>
               </>
             }
-            description="Each treatment is planned around your individual case, with everything explained clearly before you travel — no surprises."
+            description={t("procedurePage.gridDescription")}
           />
         </div>
       </section>
 
       <section className="section">
         <div className="container-page grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {procedures.map((p, i) => (
+          {getLocalizedProcedures(locale).map((p, i) => (
             <Reveal key={p.slug} delay={i * 50}>
-              <ProcedureCard procedure={p} />
+              <ProcedureCard
+                procedure={p}
+                comingSoonLabel={t("procedurePage.comingSoon")}
+              />
             </Reveal>
           ))}
         </div>

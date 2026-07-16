@@ -51,28 +51,30 @@ export function LanguageSwitcher() {
           role="listbox"
           className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-line bg-surface p-1 shadow-card"
         >
-          {routing.locales.map((loc) => {
-            const isCurrent = loc === locale;
-            return (
-              <li key={loc}>
-                <Link
-                  href={pathname}
-                  locale={loc}
-                  aria-current={isCurrent}
-                  onClick={() => setOpen(false)}
-                  className={cn(
-                    "flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm",
-                    isCurrent
-                      ? "bg-primary-tint font-medium text-primary"
-                      : "text-ink-soft hover:bg-sand",
-                  )}
-                >
-                  <span>{t(loc)}</span>
-                  {isCurrent && <Check className="h-4 w-4" />}
-                </Link>
-              </li>
-            );
-          })}
+          {routing.locales
+            .filter((loc) => loc !== "tr")
+            .map((loc) => {
+              const isCurrent = loc === locale;
+              return (
+                <li key={loc}>
+                  <Link
+                    href={pathname}
+                    locale={loc}
+                    aria-current={isCurrent}
+                    onClick={() => setOpen(false)}
+                    className={cn(
+                      "flex w-full items-center justify-between rounded-lg px-3 py-2 text-sm",
+                      isCurrent
+                        ? "bg-primary-tint font-medium text-primary"
+                        : "text-ink-soft hover:bg-sand",
+                    )}
+                  >
+                    <span>{t(loc)}</span>
+                    {isCurrent && <Check className="h-4 w-4" />}
+                  </Link>
+                </li>
+              );
+            })}
         </ul>
       )}
     </div>

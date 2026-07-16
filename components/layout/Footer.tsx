@@ -1,9 +1,9 @@
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
-import { procedures } from "@/lib/procedures";
+import { getLocalizedProcedures } from "@/lib/procedures";
 import { Arc } from "@/components/ui/Arc";
 
 const NAV = [
@@ -14,7 +14,9 @@ const NAV = [
 
 export async function Footer() {
   const t = await getTranslations();
+  const locale = await getLocale();
   const year = new Date().getFullYear();
+  const procedures = getLocalizedProcedures(locale);
 
   return (
     <footer className="mt-auto bg-ink text-canvas/80">

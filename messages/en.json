@@ -47,5 +47,28 @@
     "menu": "Menu",
     "close": "Close",
     "skipToContent": "Skip to content"
+  },
+  "procedurePage": {
+    "whatItIs": "What it is",
+    "whoItsFor": "Who it's for",
+    "process": "The process",
+    "atAGlance": "At a glance",
+    "timeIn": "Time in {city}",
+    "category": "Category",
+    "exploreMore": "Explore more",
+    "relatedTreatments": "Related treatments",
+    "treatmentsEyebrow": "Treatments",
+    "gridDescription": "Each treatment is planned around your individual case, with everything explained clearly before you travel — no surprises.",
+    "getInTouch": "Get in touch",
+    "askAbout": "Ask about {name}",
+    "contactDescription": "Message us on WhatsApp, call, or email — our team replies quickly, usually the same day.",
+    "comingSoon": "Coming soon"
+  },
+  "categories": {
+    "Restorative": "Restorative",
+    "Cosmetic": "Cosmetic",
+    "Full-arch": "Full-arch",
+    "Whitening": "Whitening",
+    "Orthodontics": "Orthodontics"
   }
 }

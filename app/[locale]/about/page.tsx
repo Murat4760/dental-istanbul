@@ -14,12 +14,17 @@ const GALLERY = [
   { src: "/images/clinic/treatment-room-2.jpg", alt: "Treatment room at Rama Dental Clinic" },
   { src: "/images/clinic/treatment-room-3.jpg", alt: "Treatment room at Rama Dental Clinic" },
   { src: "/images/clinic/treatment-room-4.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-5.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-6.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-7.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-8.jpg", alt: "Treatment room at Rama Dental Clinic" },
+  { src: "/images/clinic/treatment-room-9.jpg", alt: "Treatment room at Rama Dental Clinic" },
 ];
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
     title: `About ${SITE.name}`,
-    description: `Meet the team behind ${SITE.name} — a registered dental team providing implants, veneers and smile makeovers for international patients in Istanbul.`,
+    description: `Meet the team behind ${SITE.name} — a registered dentist providing implants, veneers and smile makeovers for international patients in Istanbul.`,
     path: "/about",
   });
 }
