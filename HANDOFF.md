@@ -631,3 +631,41 @@ content, hidden until supplied).
   new procedure pages, Ferhat's photo and singular team wording, contact
   page hours (10:00–20:00, no longer "pending") and the Directions
   button's actual generated URL, footer icon gradient/glow classes.
+
+### 2026-07-18 (later) removed Crowns procedure, dropped "All-on-4" wording
+- Murad: "diş kaplamaları sil, zirkonyum yanındaki all on 4 sil" — delete
+  the Crowns procedure, and remove the "All-on-4" text sitting next to
+  "Zirkonyum" in the other procedure's name.
+- **Crowns procedure deleted entirely** from `lib/procedures.ts` and all
+  4 locale overlays (`.tr/.ar/.ru/.de.ts`) — no other code changes
+  needed, confirmed the "related procedures" grid on each procedure page
+  is fully dynamic (`getLocalizedProcedures(locale)`, no hardcoded slug
+  references anywhere), so removing one array entry was a clean,
+  self-contained deletion. `/procedures/crowns` now correctly 404s.
+- **"All-on-4" wording dropped** from the zirconia procedure's name,
+  keeping only "Zirconia"/"Zirkonyum"/etc: EN "Zirconia All-on-4
+  Implants" → "Zirconia Implants" (shortName "Zirconia All-on-4" →
+  "Zirconia"), same pattern in TR/AR/RU/DE. Also fixed body copy that
+  still used "All-on-4" as the grammatical subject of the opening
+  sentence in EN and TR (missed in the original rename pass) — now
+  reads "This treatment replaces..." / "Bu tedavi..." instead. Updated
+  the 4 repeated `messages/*.json` keys per locale (services strip,
+  proceduresPage.metaDescription, home.heroDescription, footer.about)
+  that listed both "crowns" and "All-on-4" — both removed from all 5.
+  One extra catch: `ar.json`'s footer.about used a transliteration
+  ("أول-أون-4") that the earlier bulk find/replace for the literal
+  string "All-on-4" hadn't matched — fixed separately.
+- **Kept intentionally**: the `seo.keywords` arrays still include
+  "All-on-4 Turkey/Türkiye/etc." as a search term (people type it) —
+  same precedent as keeping "veneer" keywords alongside "lamine" in an
+  earlier pass. This is invisible `<meta name="keywords">` metadata,
+  not visible page copy — confirmed nothing "All-on-4" renders on the
+  page itself anymore, only in that one meta tag.
+- Not touched: the URL slug stays `all-on-4` (no redirect, no URL
+  churn) — only the displayed name changed. Flag to Murad if the slug
+  should change too; wasn't part of the request as I read it.
+- `npm run build` clean (35 static procedure paths now, down from 40 —
+  7 procedures × 5 locales, confirms exactly one procedure removed).
+  Verified against a running server: `/procedures/crowns` → 404,
+  `/procedures/all-on-4` H1 reads "Zirkonyum İmplant" with zero visible
+  "All-on-4" text on the page.

@@ -45,7 +45,7 @@
   },
   "og": {
     "tagline": "Dental care in {city}",
-    "services": "Implants · Veneers · Zirconia All-on-4 · Orthodontics",
+    "services": "Implants · Veneers · Zirconia · Orthodontics",
     "footer": "{city}, {country} · Message us on WhatsApp"
   },
   "notFound": {
@@ -97,14 +97,14 @@
   },
   "proceduresPage": {
     "metaTitle": "Dental Procedures in {city}, {country}",
-    "metaDescription": "Explore our dental treatments in {city} — implants, veneers, Zirconia All-on-4, crowns, orthodontics and teeth whitening.",
+    "metaDescription": "Explore our dental treatments in {city} — implants, veneers, zirconia implants, orthodontics and teeth whitening.",
     "heroTitle": "Dental procedures in {city}, {country}"
   },
   "home": {
     "metaTitle": "{name} — Dental Implants, Veneers & Smile Makeovers in {city}",
     "badge": "Dental care in {city}, {country}",
     "heroTitlePrefix": "Dental implants, veneers and smile makeovers in",
-    "heroDescription": "Implants, veneers, Zirconia All-on-4 and full smile makeovers, provided by a professional team and an expert dentist.",
+    "heroDescription": "Implants, veneers, zirconia implants and full smile makeovers, provided by a professional team and an expert dentist.",
     "heroImageAlt": "Reception at {name} in {city}",
     "proceduresTitle": "Procedures we specialise in",
     "ctaTitle": "Book an appointment for a free consultation"
@@ -119,7 +119,7 @@
   },
   "footer": {
     "polyclinicLabel": "Oral & Dental Health Polyclinic",
-    "about": "Dental care — implants, veneers, Zirconia All-on-4 and smile makeovers in Istanbul.",
+    "about": "Dental care — implants, veneers, zirconia implants and smile makeovers in Istanbul.",
     "quickLinks": "Quick links",
     "procedures": "Popular procedures",
     "contact": "Contact",

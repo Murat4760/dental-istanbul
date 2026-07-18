@@ -45,7 +45,7 @@
   },
   "og": {
     "tagline": "Zahnmedizinische Versorgung in {city}",
-    "services": "Implantate · Veneers · Zirkon All-on-4 · Kieferorthopädie",
+    "services": "Implantate · Veneers · Zirkon · Kieferorthopädie",
     "footer": "{city}, {country} · Schreiben Sie uns per WhatsApp"
   },
   "notFound": {
@@ -97,14 +97,14 @@
   },
   "proceduresPage": {
     "metaTitle": "Zahnbehandlungen in {city}, {country}",
-    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen in {city} — Implantate, Veneers, Zirkon All-on-4, Kronen, Kieferorthopädie und Zahnaufhellung.",
+    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen in {city} — Implantate, Veneers, Zirkon-Implantate, Kieferorthopädie und Zahnaufhellung.",
     "heroTitle": "Zahnbehandlungen in {city}, {country}"
   },
   "home": {
     "metaTitle": "{name} — Zahnimplantate, Veneers & Smile-Makeover in {city}",
     "badge": "Zahnmedizinische Versorgung in {city}, {country}",
     "heroTitlePrefix": "Zahnimplantate, Veneers und Zahnästhetik in",
-    "heroDescription": "Implantate, Veneers, Zirkon All-on-4 und komplette Smile-Makeover, angeboten von einem professionellen Team und einem erfahrenen Zahnarzt.",
+    "heroDescription": "Implantate, Veneers, Zirkon-Implantate und komplette Smile-Makeover, angeboten von einem professionellen Team und einem erfahrenen Zahnarzt.",
     "heroImageAlt": "Empfang von {name} in {city}",
     "proceduresTitle": "Behandlungen, auf die wir spezialisiert sind",
     "ctaTitle": "Vereinbaren Sie einen Termin für eine kostenlose Beratung"
@@ -119,7 +119,7 @@
   },
   "footer": {
     "polyclinicLabel": "Zahnarztpraxis für Mund- und Zahngesundheit",
-    "about": "Zahnmedizinische Versorgung — Implantate, Veneers, Zirkon All-on-4 und Smile-Makeover in Istanbul.",
+    "about": "Zahnmedizinische Versorgung — Implantate, Veneers, Zirkon-Implantate und Smile-Makeover in Istanbul.",
     "quickLinks": "Schnellzugriff",
     "procedures": "Beliebte Behandlungen",
     "contact": "Kontakt",

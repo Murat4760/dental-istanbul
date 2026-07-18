@@ -170,15 +170,15 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "all-on-4",
-    name: "Zirconia All-on-4 Implants",
-    shortName: "Zirconia All-on-4",
+    name: "Zirconia Implants",
+    shortName: "Zirconia",
     category: "Full-arch",
     icon: "Grip",
     heroTagline: "A full arch of fixed teeth on just four implants.",
     summary:
       "A fixed full-arch restoration supported by four implants — a stable alternative to removable dentures, often in a short timeframe.",
     whatItIs:
-      "All-on-4 replaces a full arch of missing or failing teeth with a fixed bridge anchored on four strategically placed implants. Because it uses the available bone efficiently, many patients avoid extensive grafting and can leave with a fixed temporary bridge on the same visit, followed by a permanent bridge after healing.",
+      "This treatment replaces a full arch of missing or failing teeth with a fixed zirconia bridge anchored on four strategically placed implants. Because it uses the available bone efficiently, many patients avoid extensive grafting and can leave with a fixed temporary bridge on the same visit, followed by a permanent bridge after healing.",
     whoItsFor: [
       "You are missing most or all teeth in an arch, or they are failing",
       "You wear a full denture and want a fixed, stable solution",
@@ -209,9 +209,9 @@ export const procedures: Procedure[] = [
     ],
     daysInIstanbul: "5–7 days per visit (usually two visits)",
     seo: {
-      title: "Zirconia All-on-4 Dental Implants in Istanbul, Turkey",
+      title: "Zirconia Dental Implants in Istanbul, Turkey",
       description:
-        "Fixed full-arch teeth with zirconia All-on-4 implants in Istanbul, with a registered dentist.",
+        "Fixed full-arch teeth with zirconia implants in Istanbul, with a registered dentist.",
       keywords: [
         "All-on-4 Turkey",
         "All on 4 Istanbul",
@@ -269,57 +269,6 @@ export const procedures: Procedure[] = [
         "teeth whitening Turkey",
         "teeth whitening Istanbul",
         "laser teeth whitening Istanbul",
-      ],
-    },
-  },
-  {
-    slug: "crowns",
-    name: "Dental Crowns",
-    shortName: "Crowns",
-    category: "Restorative",
-    icon: "Crown",
-    heroTagline: "Restore strength and shape to damaged teeth.",
-    summary:
-      "Custom caps that cover and protect a weak, cracked or heavily filled tooth while restoring its natural look.",
-    whatItIs:
-      "A crown is a custom-made cap that covers a damaged or heavily restored tooth to restore its shape, strength and appearance. Modern all-ceramic and zirconia crowns are strong and closely match natural teeth, making them suitable for both back and front teeth.",
-    whoItsFor: [
-      "You have a cracked, worn or heavily filled tooth",
-      "You've had root canal treatment and need to protect the tooth",
-      "You want to improve the shape or colour of a single tooth",
-      "You need a crown as part of a bridge or on an implant",
-    ],
-    processSteps: [
-      {
-        title: "Assessment",
-        description:
-          "The tooth is examined and any decay treated so the crown sits on a healthy foundation.",
-      },
-      {
-        title: "Preparation & scan",
-        description:
-          "The tooth is shaped and a precise digital impression is taken for the lab.",
-      },
-      {
-        title: "Temporary crown",
-        description:
-          "A temporary protects the tooth while your permanent crown is crafted.",
-      },
-      {
-        title: "Fitting",
-        description:
-          "The final crown is checked for fit, colour and bite, then cemented in place.",
-      },
-    ],
-    daysInIstanbul: "3–5 days",
-    seo: {
-      title: "Dental Crowns in Istanbul, Turkey",
-      description:
-        "Zirconia and porcelain dental crowns in Istanbul. Natural-looking results from a registered dentist.",
-      keywords: [
-        "dental crowns Turkey",
-        "dental crowns Istanbul",
-        "zirconia crowns Turkey",
       ],
     },
   },

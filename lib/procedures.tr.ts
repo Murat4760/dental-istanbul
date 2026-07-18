@@ -116,13 +116,13 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   },
 
   "all-on-4": {
-    name: "Zirkonyum All-on-4 İmplant",
-    shortName: "Zirkonyum All-on-4",
+    name: "Zirkonyum İmplant",
+    shortName: "Zirkonyum",
     heroTagline: "Yalnızca dört implant üzerinde sabit, tam bir diş dizisi.",
     summary:
       "Dört implantla desteklenen sabit tam ark restorasyonu — çıkarılabilir protezlere kıyasla daha sabit bir alternatif, çoğunlukla kısa bir sürede.",
     whatItIs:
-      "All-on-4, eksik veya işlevini yitirmiş bir tam diş dizisini, stratejik olarak yerleştirilmiş dört implanta sabitlenen bir köprüyle yeniler. Mevcut kemiği verimli şekilde kullandığından, birçok hasta kapsamlı kemik greftinden kaçınabilir ve aynı ziyarette sabit geçici bir köprüyle kliniğimizden ayrılıp, iyileşme sonrası kalıcı köprüsüne kavuşabilir.",
+      "Bu tedavi, eksik veya işlevini yitirmiş bir tam diş dizisini, stratejik olarak yerleştirilmiş dört implanta sabitlenen bir zirkonyum köprüyle yeniler. Mevcut kemiği verimli şekilde kullandığından, birçok hasta kapsamlı kemik greftinden kaçınabilir ve aynı ziyarette sabit geçici bir köprüyle kliniğimizden ayrılıp, iyileşme sonrası kalıcı köprüsüne kavuşabilir.",
     whoItsFor: [
       "Bir çenenizdeki dişlerin çoğu veya tamamı eksik ya da işlevini yitirmiş durumda",
       "Tam protez kullanıyorsunuz ve sabit, dayanıklı bir çözüm istiyorsunuz",
@@ -153,9 +153,9 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     ],
     daysInIstanbul: "Her ziyaret için 5-7 gün (genellikle iki ziyaret)",
     seo: {
-      title: "İstanbul'da Zirkonyum All-on-4 Diş İmplantı",
+      title: "İstanbul'da Zirkonyum Diş İmplantı",
       description:
-        "İstanbul'da zirkonyum All-on-4 implantlarıyla sabit tam ark diş tedavisi, kayıtlı bir diş hekimiyle.",
+        "İstanbul'da zirkonyum implantlarla sabit tam ark diş tedavisi, kayıtlı bir diş hekimiyle.",
       keywords: [
         "All-on-4 Türkiye",
         "All-on-4 İstanbul",
@@ -211,55 +211,6 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
         "diş beyazlatma Türkiye",
         "diş beyazlatma İstanbul",
         "İstanbul lazer diş beyazlatma",
-      ],
-    },
-  },
-
-  crowns: {
-    name: "Diş Kaplamaları (Kron)",
-    shortName: "Kron",
-    heroTagline: "Hasarlı dişlere dayanıklılık ve şeklini yeniden kazandırır.",
-    summary:
-      "Zayıflamış, çatlamış veya çok fazla dolgulu bir dişi kaplayıp koruyan, doğal görünümünü geri kazandıran özel üretim kaplamalar.",
-    whatItIs:
-      "Kron, hasarlı veya çok fazla restore edilmiş bir dişi kaplayarak şeklini, dayanıklılığını ve görünümünü yeniden kazandıran özel üretim bir kaplamadır. Modern tam seramik ve zirkonyum kronlar dayanıklıdır ve doğal dişlere çok yakın görünür; bu da onları hem arka hem ön dişler için uygun kılar.",
-    whoItsFor: [
-      "Çatlak, aşınmış veya çok fazla dolgulu bir dişiniz var",
-      "Kanal tedavisi oldunuz ve dişi korumanız gerekiyor",
-      "Tek bir dişin şeklini veya rengini iyileştirmek istiyorsunuz",
-      "Bir köprünün parçası olarak veya implant üzerinde kron ihtiyacınız var",
-    ],
-    processSteps: [
-      {
-        title: "Değerlendirme",
-        description:
-          "Diş muayene edilir ve varsa çürükler tedavi edilerek kronun sağlıklı bir zemin üzerine oturması sağlanır.",
-      },
-      {
-        title: "Hazırlık ve tarama",
-        description:
-          "Diş şekillendirilir ve laboratuvar için hassas bir dijital ölçü alınır.",
-      },
-      {
-        title: "Geçici kron",
-        description:
-          "Kalıcı kronunuz hazırlanırken geçici bir kron dişinizi korur.",
-      },
-      {
-        title: "Yerleştirme",
-        description:
-          "Kalıcı kron uyum, renk ve ısırma açısından kontrol edilip yerine yapıştırılır.",
-      },
-    ],
-    daysInIstanbul: "3-5 gün",
-    seo: {
-      title: "İstanbul'da Diş Kaplaması (Kron)",
-      description:
-        "İstanbul'da zirkonyum ve porselen diş kronları. Kayıtlı bir diş hekiminden doğal görünümlü sonuçlar.",
-      keywords: [
-        "diş kaplaması Türkiye",
-        "diş kaplaması İstanbul",
-        "zirkonyum kron Türkiye",
       ],
     },
   },

@@ -114,13 +114,13 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   },
 
   "all-on-4": {
-    name: "Zirkon All-on-4-Implantate",
-    shortName: "Zirkon All-on-4",
+    name: "Zirkon-Implantate",
+    shortName: "Zirkon",
     heroTagline: "Ein vollständiger Zahnbogen auf nur vier Implantaten.",
     summary:
       "Eine feste Vollbogen-Versorgung auf vier Implantaten — eine stabile Alternative zu herausnehmbaren Prothesen, oft in kurzer Zeit.",
     whatItIs:
-      "All-on-4 ersetzt einen vollständigen Bogen fehlender oder geschädigter Zähne durch eine feste Brücke, die auf vier strategisch platzierten Implantaten verankert ist. Da der vorhandene Knochen effizient genutzt wird, können viele Patienten auf einen umfangreichen Knochenaufbau verzichten und die Klinik noch am selben Tag mit einer festsitzenden provisorischen Brücke verlassen, gefolgt von einer definitiven Brücke nach der Einheilung.",
+      "Diese Behandlung ersetzt einen vollständigen Bogen fehlender oder geschädigter Zähne durch eine feste Zirkonbrücke, die auf vier strategisch platzierten Implantaten verankert ist. Da der vorhandene Knochen effizient genutzt wird, können viele Patienten auf einen umfangreichen Knochenaufbau verzichten und die Klinik noch am selben Tag mit einer festsitzenden provisorischen Brücke verlassen, gefolgt von einer definitiven Brücke nach der Einheilung.",
     whoItsFor: [
       "Ihnen fehlen die meisten oder alle Zähne eines Kiefers, oder diese sind stark geschädigt",
       "Sie tragen eine Vollprothese und möchten eine feste, stabile Lösung",
@@ -151,9 +151,9 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     ],
     daysInIstanbul: "5–7 Tage pro Besuch (in der Regel zwei Besuche)",
     seo: {
-      title: "Zirkon All-on-4-Implantate in Istanbul, Türkei",
+      title: "Zirkon-Implantate in Istanbul, Türkei",
       description:
-        "Feste Vollbogen-Zähne mit Zirkon-All-on-4-Implantaten in Istanbul, bei einem registrierten Zahnarzt.",
+        "Feste Vollbogen-Zähne mit Zirkon-Implantaten in Istanbul, bei einem registrierten Zahnarzt.",
       keywords: [
         "All-on-4 Türkei",
         "All-on-4 Istanbul",
@@ -209,54 +209,6 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
         "Zahnaufhellung Türkei",
         "Zahnaufhellung Istanbul",
         "Laser-Zahnaufhellung Istanbul",
-      ],
-    },
-  },
-
-  crowns: {
-    name: "Zahnkronen",
-    shortName: "Kronen",
-    heroTagline: "Kraft und Form für geschädigte Zähne wiederherstellen.",
-    summary:
-      "Individuell angefertigte Kappen, die einen geschwächten, gerissenen oder stark gefüllten Zahn abdecken und schützen und dabei sein natürliches Aussehen wiederherstellen.",
-    whatItIs:
-      "Eine Krone ist eine individuell angefertigte Kappe, die einen beschädigten oder stark restaurierten Zahn bedeckt, um Form, Stabilität und Aussehen wiederherzustellen. Moderne Vollkeramik- und Zirkonkronen sind stabil und ähneln natürlichen Zähnen sehr, weshalb sie sich sowohl für Seiten- als auch Frontzähne eignen.",
-    whoItsFor: [
-      "Sie haben einen gerissenen, abgenutzten oder stark gefüllten Zahn",
-      "Sie hatten eine Wurzelbehandlung und müssen den Zahn schützen",
-      "Sie möchten Form oder Farbe eines einzelnen Zahns verbessern",
-      "Sie benötigen eine Krone als Teil einer Brücke oder auf einem Implantat",
-    ],
-    processSteps: [
-      {
-        title: "Beurteilung",
-        description:
-          "Der Zahn wird untersucht, und eventuelle Karies wird behandelt, damit die Krone auf einer gesunden Grundlage sitzt.",
-      },
-      {
-        title: "Vorbereitung & Scan",
-        description:
-          "Der Zahn wird beschliffen, und für das Labor wird ein präziser digitaler Abdruck genommen.",
-      },
-      {
-        title: "Provisorische Krone",
-        description: "Ein Provisorium schützt den Zahn, während Ihre definitive Krone angefertigt wird.",
-      },
-      {
-        title: "Eingliederung",
-        description:
-          "Die endgültige Krone wird auf Passform, Farbe und Biss geprüft und dann fest zementiert.",
-      },
-    ],
-    daysInIstanbul: "3–5 Tage",
-    seo: {
-      title: "Zahnkronen in Istanbul, Türkei",
-      description:
-        "Zirkon- und Keramikkronen in Istanbul. Natürlich aussehende Ergebnisse von einem registrierten Zahnarzt.",
-      keywords: [
-        "Zahnkronen Türkei",
-        "Zahnkronen Istanbul",
-        "Zirkonkronen Türkei",
       ],
     },
   },
