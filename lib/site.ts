@@ -56,7 +56,8 @@ export const SITE = {
   // (NEXT_PUBLIC_WHATSAPP_NUMBER) — see .env.local.
   phoneDisplay: "+90 506 774 34 34",
   phoneHref: "tel:+905067743434",
-  email: "info@ramadent.com",
+  // Client requested 2026-07-18: use this address instead of info@ramadent.com.
+  email: "ramadentallclinic@gmail.com",
 
   // ─── Opening hours (display + schema use this) ─────────────────────────────
   // Confirmed by the client 2026-07-18: weekdays + Saturday 10:00-20:00,
