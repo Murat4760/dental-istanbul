@@ -1,10 +1,10 @@
+import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { Link } from "@/i18n/navigation";
 import { SITE } from "@/lib/site";
 import { getLocalizedProcedures } from "@/lib/procedures";
-import { Arc } from "@/components/ui/Arc";
 
 const NAV = [
   { href: "/procedures", key: "procedures" },
@@ -23,11 +23,14 @@ export async function Footer() {
       <div className="container-page grid gap-12 py-16 md:grid-cols-12">
         {/* Brand */}
         <div className="md:col-span-4">
-          <Link href="/" className="inline-flex items-center gap-2 text-canvas">
-            <span className="font-display text-2xl font-semibold tracking-tight">
-              {SITE.shortName}
-            </span>
-            <Arc className="h-3 w-8 text-accent" strokeWidth={2} />
+          <Link href="/" className="inline-flex items-center" aria-label={SITE.name}>
+            <Image
+              src="/logo.svg"
+              alt={SITE.name}
+              width={306}
+              height={82}
+              className="h-10 w-auto"
+            />
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-canvas/60">
             {t("footer.about")}

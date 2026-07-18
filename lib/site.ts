@@ -30,7 +30,7 @@ export const SITE = {
   name: "Rama Dental Clinic",
   shortName: "Rama Dental",
   legalName: "RAMADENT AĞIZ VE DİŞ SAĞLIĞI HİZMETLERİ LİMİTED ŞİRKETİ",
-  tagline: "Your Smile, Our Expertise",
+  tagline: "Registered dental care in Istanbul",
   description:
     "Dental care for international patients in Istanbul — dental implants, veneers and orthodontics.",
 

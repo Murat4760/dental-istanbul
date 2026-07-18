@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Menu, X, Phone } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
@@ -56,17 +57,14 @@ export function Header() {
       )}
     >
       <div className="container-page flex h-16 items-center justify-between md:h-20">
-        <Link
-          href="/"
-          className="group flex items-center gap-2"
-          aria-label={SITE.name}
-        >
-          <span className="font-display text-xl font-semibold tracking-tight text-ink md:text-2xl">
-            {SITE.shortName}
-          </span>
-          <Arc
-            className="h-2.5 w-7 text-accent transition-transform duration-300 group-hover:-translate-y-0.5"
-            strokeWidth={2}
+        <Link href="/" className="flex items-center" aria-label={SITE.name}>
+          <Image
+            src="/logo.svg"
+            alt={SITE.name}
+            width={306}
+            height={82}
+            priority
+            className="h-9 w-auto md:h-11"
           />
         </Link>
 

@@ -73,7 +73,7 @@
     "metaTitle": "About {name}",
     "metaDescription": "Meet the team behind {name} — a registered dentist providing implants, veneers and smile makeovers for international patients in {city}.",
     "eyebrowAboutUs": "About us",
-    "heroTitle": "Trusted dental care, thousands of miles from home",
+    "heroTitle": "Our approach to patient care",
     "storyParagraph": "[PLACEHOLDER] A paragraph about the clinic's story, philosophy and facilities — years established, the number of international patients cared for, the technology used, and what makes the patient experience different. Keep to real, verifiable facts.",
     "receptionAlt": "Reception at {name} in {city}",
     "eyebrowOurClinic": "Our clinic",
@@ -88,7 +88,7 @@
     "metaTitle": "Contact Us",
     "metaDescription": "Get in touch with {name} in {city}. Message us on WhatsApp, call, or email — no forms, no waiting.",
     "eyebrow": "Contact",
-    "heroTitle": "Let's plan your smile",
+    "heroTitle": "Get in touch with our team",
     "heroDescription": "Message us on WhatsApp, call, or email — we reply quickly, usually the same day.",
     "fastestWay": "Fastest way to reach us",
     "mapAlt": "Map showing {name} location in {city}",
@@ -102,7 +102,7 @@
   "home": {
     "metaTitle": "{name} — Dental Implants, Veneers & Smile Makeovers in {city}",
     "badge": "Dental care in {city}, {country}",
-    "heroTitlePrefix": "A confident new smile, crafted in",
+    "heroTitlePrefix": "Dental implants, veneers and smile makeovers in",
     "heroDescription": "Implants, veneers, All-on-4 and full smile makeovers, provided by a registered dentist for international patients.",
     "heroImageAlt": "Reception at {name} in {city}",
     "proceduresTitle": "Procedures we specialise in",
@@ -112,7 +112,7 @@
     "benefit3": "Guidance on timing and what to expect at your visit"
   },
   "ctaBand": {
-    "defaultTitle": "Ready to start your smile journey?",
+    "defaultTitle": "Have questions about your treatment?",
     "defaultSubtitle": "Message us on WhatsApp or give us a call — no forms, no waiting."
   },
   "contactCard": {

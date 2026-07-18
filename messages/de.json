@@ -73,7 +73,7 @@
     "metaTitle": "Über {name}",
     "metaDescription": "Lernen Sie das Team hinter {name} kennen — ein registrierter Zahnarzt, der Implantate, Veneers und Smile-Makeover für internationale Patienten in {city} anbietet.",
     "eyebrowAboutUs": "Über uns",
-    "heroTitle": "Vertrauenswürdige Zahnmedizin, tausende Kilometer von zu Hause entfernt",
+    "heroTitle": "Unser Ansatz in der Patientenversorgung",
     "storyParagraph": "[PLACEHOLDER] Ein Absatz über die Geschichte, Philosophie und Einrichtungen der Klinik — Gründungsjahr, Anzahl der betreuten internationalen Patienten, eingesetzte Technologie und was die Patientenerfahrung besonders macht. Nur echte, verifizierbare Fakten verwenden.",
     "receptionAlt": "Empfang von {name} in {city}",
     "eyebrowOurClinic": "Unsere Klinik",
@@ -88,7 +88,7 @@
     "metaTitle": "Kontaktieren Sie uns",
     "metaDescription": "Kontaktieren Sie {name} in {city}. Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — kein Formular, keine Wartezeit.",
     "eyebrow": "Kontakt",
-    "heroTitle": "Lassen Sie uns Ihr Lächeln planen",
+    "heroTitle": "Kontaktieren Sie unser Team",
     "heroDescription": "Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — wir antworten schnell, meist noch am selben Tag.",
     "fastestWay": "Der schnellste Weg, uns zu erreichen",
     "mapAlt": "Karte mit dem Standort von {name} in {city}",
@@ -102,7 +102,7 @@
   "home": {
     "metaTitle": "{name} — Zahnimplantate, Veneers & Smile-Makeover in {city}",
     "badge": "Zahnmedizinische Versorgung in {city}, {country}",
-    "heroTitlePrefix": "Ein selbstbewusstes neues Lächeln, entstanden in",
+    "heroTitlePrefix": "Zahnimplantate, Veneers und Zahnästhetik in",
     "heroDescription": "Implantate, Veneers, All-on-4 und komplette Smile-Makeover, angeboten von einem registrierten Zahnarzt für internationale Patienten.",
     "heroImageAlt": "Empfang von {name} in {city}",
     "proceduresTitle": "Behandlungen, auf die wir spezialisiert sind",
@@ -112,7 +112,7 @@
     "benefit3": "Hinweise zum Timing und was Sie bei Ihrem Besuch erwartet"
   },
   "ctaBand": {
-    "defaultTitle": "Bereit, Ihre Lächeln-Reise zu beginnen?",
+    "defaultTitle": "Haben Sie Fragen zu Ihrer Behandlung?",
     "defaultSubtitle": "Schreiben Sie uns per WhatsApp oder rufen Sie uns an — kein Formular, keine Wartezeit."
   },
   "contactCard": {
