@@ -2,16 +2,21 @@
 
 type IconProps = { className?: string };
 
-/** `brand`: renders Instagram's own gradient instead of `currentColor`. */
+/**
+ * `brand`: renders Instagram's own gradient instead of `currentColor`.
+ * `gradientId`: override when rendering more than one `brand` instance on
+ * the same page (SVG ids must be unique per document).
+ */
 export function InstagramIcon({
   className,
   brand,
-}: IconProps & { brand?: boolean }) {
+  gradientId = "instagram-gradient",
+}: IconProps & { brand?: boolean; gradientId?: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
       fill="none"
-      stroke={brand ? "url(#instagram-gradient)" : "currentColor"}
+      stroke={brand ? `url(#${gradientId})` : "currentColor"}
       strokeWidth="1.75"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -20,7 +25,7 @@ export function InstagramIcon({
     >
       {brand && (
         <defs>
-          <linearGradient id="instagram-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+          <linearGradient id={gradientId} x1="0%" y1="100%" x2="100%" y2="0%">
             <stop offset="0%" stopColor="#FFDC80" />
             <stop offset="30%" stopColor="#F56040" />
             <stop offset="60%" stopColor="#C13584" />

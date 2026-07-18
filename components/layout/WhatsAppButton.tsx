@@ -1,26 +1,39 @@
 import { MapPin } from "lucide-react";
 import { getTranslations } from "next-intl/server";
-import { whatsappUrl, directionsUrl } from "@/lib/site";
+import { whatsappUrl, directionsUrl, SITE } from "@/lib/site";
+import { InstagramIcon } from "@/components/ui/SocialIcons";
 
-/** Floating WhatsApp + Get Directions CTAs, bottom-right on every page. */
+/** Floating Instagram + Get Directions + WhatsApp CTAs, bottom-right on every page. */
 export async function WhatsAppButton() {
   const t = await getTranslations("whatsapp");
   const place = await getTranslations("place");
   const contactT = await getTranslations("contact");
+  const socialT = await getTranslations("social");
   const href = whatsappUrl(
     t("prefill", { topic: t("defaultTopic"), city: place("city") }),
   );
 
   return (
     <div className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-3">
+      {SITE.socials.instagram && (
+        <a
+          href={SITE.socials.instagram}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={socialT("instagram")}
+          className="grid place-items-center rounded-full border border-line-strong bg-surface p-3.5 shadow-[0_10px_24px_-10px_rgba(219,80,120,0.5)] transition-transform duration-300 hover:scale-105 active:scale-95"
+        >
+          <InstagramIcon brand gradientId="instagram-gradient-float" className="h-6 w-6" />
+        </a>
+      )}
       <a
         href={directionsUrl()}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={contactT("getDirections")}
-        className="grid h-11 w-11 place-items-center rounded-full border border-line-strong bg-surface text-primary shadow-[0_10px_24px_-10px_rgba(110,51,56,0.5)] transition-transform duration-300 hover:scale-105 active:scale-95"
+        className="grid place-items-center rounded-full border border-line-strong bg-surface p-3.5 text-primary shadow-[0_10px_24px_-10px_rgba(110,51,56,0.5)] transition-transform duration-300 hover:scale-105 active:scale-95"
       >
-        <MapPin className="h-5 w-5" />
+        <MapPin className="h-6 w-6" />
       </a>
       <a
         href={href}
