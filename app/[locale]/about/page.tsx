@@ -50,6 +50,8 @@ export default async function AboutPage({
   const t = await getTranslations({ locale, namespace: "about" });
   const place = await getTranslations({ locale, namespace: "place" });
   const doctors = getLocalizedDoctors(locale);
+  const storyParagraph = t("storyParagraph");
+  const teamDescription = t("teamDescription");
 
   return (
     <>
@@ -62,9 +64,11 @@ export default async function AboutPage({
               title={t("heroTitle")}
               description={SITE.description}
             />
-            <p className="mt-5 text-pretty leading-relaxed text-ink-soft">
-              {t("storyParagraph")}
-            </p>
+            {!storyParagraph.startsWith("[PLACEHOLDER]") && (
+              <p className="mt-5 text-pretty leading-relaxed text-ink-soft">
+                {storyParagraph}
+              </p>
+            )}
           </div>
           <Media
             src="/images/clinic/reception.jpg"
@@ -104,7 +108,7 @@ export default async function AboutPage({
           <SectionHeading
             eyebrow={t("eyebrowOurTeam")}
             title={t("teamTitle")}
-            description={t("teamDescription")}
+            description={teamDescription.startsWith("[PLACEHOLDER]") ? undefined : teamDescription}
           />
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {doctors.map((d, i) => (
