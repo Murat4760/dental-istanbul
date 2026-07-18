@@ -29,11 +29,19 @@ export type ProcedureCategory =
   | "Orthodontics"
   | "Periodontal";
 
+/** schema.org MedicalProcedureType — only these three are real enum members. */
+export type ProcedureType =
+  | "SurgicalProcedure"
+  | "NoninvasiveProcedure"
+  | "PercutaneousProcedure";
+
 export type Procedure = {
   slug: string;
   name: string;
   shortName: string;
   category: ProcedureCategory;
+  /** schema.org MedicalProcedure.procedureType — drives the JSON-LD. */
+  procedureType: ProcedureType;
   /** lucide-react icon name */
   icon: string;
   heroTagline: string;
@@ -73,6 +81,7 @@ export const procedures: Procedure[] = [
     name: "Dental Implants",
     shortName: "Implants",
     category: "Restorative",
+    procedureType: "SurgicalProcedure",
     specialty: "Oral and Maxillofacial Surgery",
     icon: "Anchor",
     heroTagline: "Permanent, natural-looking replacements for missing teeth.",
@@ -132,6 +141,7 @@ export const procedures: Procedure[] = [
     name: "Porcelain Veneers",
     shortName: "Veneers",
     category: "Cosmetic",
+    procedureType: "NoninvasiveProcedure",
     specialty: "Restorative Dentistry",
     icon: "Sparkles",
     heroTagline: "A brighter, even smile — designed around your face.",
@@ -187,6 +197,7 @@ export const procedures: Procedure[] = [
     name: "Zirconia Implants",
     shortName: "Zirconia",
     category: "Full-arch",
+    procedureType: "SurgicalProcedure",
     specialty: "Prosthodontics",
     icon: "Grip",
     heroTagline: "A full arch of fixed teeth on just four implants.",
@@ -243,6 +254,7 @@ export const procedures: Procedure[] = [
     name: "Teeth Whitening",
     shortName: "Whitening",
     category: "Whitening",
+    procedureType: "NoninvasiveProcedure",
     specialty: "Restorative Dentistry",
     icon: "Sun",
     heroTagline: "A noticeably brighter smile in a single visit.",
@@ -297,6 +309,7 @@ export const procedures: Procedure[] = [
     name: "Orthodontics",
     shortName: "Orthodontics",
     category: "Orthodontics",
+    procedureType: "NoninvasiveProcedure",
     specialty: "Orthodontics",
     icon: "Smile",
     heroTagline: "Straighter teeth with braces or clear aligners.",
@@ -357,6 +370,7 @@ export const procedures: Procedure[] = [
     name: "Root Canal Treatment",
     shortName: "Root Canal",
     category: "Restorative",
+    procedureType: "NoninvasiveProcedure",
     specialty: "Endodontics",
     icon: "Syringe",
     heroTagline: "Save a damaged or infected tooth instead of losing it.",
@@ -417,6 +431,7 @@ export const procedures: Procedure[] = [
     name: "Gum Treatment",
     shortName: "Gum Treatment",
     category: "Periodontal",
+    procedureType: "NoninvasiveProcedure",
     specialty: "Periodontology",
     icon: "Shield",
     heroTagline: "Healthier gums, treated before problems progress.",

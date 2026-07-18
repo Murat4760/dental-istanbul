@@ -4,10 +4,11 @@ import type { Procedure } from "./procedures";
 
 /**
  * JSON-LD builders. Rendered via <JsonLd> on the relevant pages.
- * No aggregateRating, no openingHoursSpecification, no priceRange: none of
- * these are real, client-confirmed figures — don't emit fabricated
- * structured data for a medical/dental business. Add each back only once
- * the clinic supplies and confirms the real value.
+ * No aggregateRating, no priceRange: neither is a real, client-confirmed
+ * figure — don't emit fabricated structured data for a medical/dental
+ * business. Add each back only once the clinic supplies and confirms the
+ * real value. (openingHoursSpecification IS emitted below — hours were
+ * confirmed by the client 2026-07-18, see lib/site.ts.)
  */
 
 export async function dentistSchema(locale: string) {
@@ -70,7 +71,7 @@ export async function medicalProcedureSchema(procedure: Procedure, locale: strin
     name: `${procedure.name} in ${place("city")}, ${place("country")}`,
     description: procedure.summary,
     url: absoluteUrl(`/procedures/${procedure.slug}`),
-    procedureType: "https://schema.org/NoncontactModuleTreatment",
+    procedureType: `https://schema.org/${procedure.procedureType}`,
     bodyLocation: t("bodyLocation"),
     howPerformed: procedure.processSteps.map((s) => s.title).join("; "),
     provider: {

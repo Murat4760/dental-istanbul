@@ -70,7 +70,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     specialty: "Restoratif Diş Tedavisi",
     heroTagline: "Yüzünüze özel tasarlanmış, daha parlak ve düzgün bir gülüş.",
     summary:
-      "Diş renginizi, hizanızı ve oranlarınızı yeniden şekillendirmek için diş yüzeyine yapıştırılan ultra ince porselen kaplamalar.",
+      "Diş renginizi, diziliminizi ve oranlarınızı yeniden şekillendirmek için diş yüzeyine yapıştırılan ultra ince porselen kaplamalar.",
     whatItIs:
       "Lamineler, dişlerin ön yüzeyine yapıştırılan ince, özel üretim porselen kaplamalardır. Renk bozuklukları, kırıklar, boşluklar ve hafif diziliş bozukluklarını düzelterek doğal ve düzgün bir gülüş oluşturur. Modern porselen oldukça dayanıklıdır ve ışığı doğal mine gibi yansıtır; bu sayede sonuç 'yapay' değil, doğal görünür.",
     whoItsFor: [
