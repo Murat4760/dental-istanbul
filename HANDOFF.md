@@ -331,3 +331,27 @@ content, hidden until supplied).
   logo/exterior photo, trust stats, complication insurance company, and
   Facebook. This is a re-submission that left the same critical items blank,
   not new information — no code or content changes made this pass.
+
+### 2026-07-18 clinic photos replaced with architect renders
+- Client supplied `R.A.M.A DENT GÖRSEL TESLİM_2.pdf`, a delivery sheet from a
+  design firm ("DENTAL MİMARLIK") containing 8 photorealistic 3D interior
+  renders: reception/lobby x3, a private consultation room, treatment rooms
+  x4 — all showing RAMA-branded signage/wall art, no patients, no
+  pricing/result claims visible.
+- Replaced all 14 previous clinic photos (1 reception + 13 treatment-room)
+  with these 8. `reception.jpg` keeps its filename (used as the homepage
+  hero and About-page hero, both `priority`-loaded); `GALLERY_SRC` in
+  `app/[locale]/about/page.tsx` trimmed from 13 to 7 entries
+  (`reception-2.jpg`, `reception-3.jpg`, `consultation-room.jpg`,
+  `treatment-room-1.jpg`..`treatment-room-4.jpg`). Build verified clean
+  across all locales. Committed `85b05f0`, pushed to `main` (auto-deploys).
+- **Unresolved, needs client confirmation, not a code issue:** the wall
+  signage in these renders reads "R.A.M.A DENT" — the *previous* reception
+  photo (a real phone photo, now removed) showed the actual installed sign
+  reading "R.A.M.A DENTAL CLINIC". Unclear whether the renders depict the
+  same already-built space (design firm's own marketing shots of the
+  finished result) or an earlier/alternate design concept. If it's the
+  latter, publishing them as the clinic's real interior would be a
+  misleading-representation problem under the Sağlık Bakanlığı yönetmelik,
+  separate from the superlative/testimonial rules already tracked — flag to
+  client before treating this as final.
