@@ -146,6 +146,7 @@
     "skipToContent": "İçeriğe geç"
   },
   "procedurePage": {
+    "heroTitle": "{city}, {country}'de {name}",
     "whatItIs": "Nedir",
     "whoItsFor": "Kimler İçin Uygun",
     "process": "Süreç",

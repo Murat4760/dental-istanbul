@@ -89,7 +89,7 @@ export default async function HomePage({
             <p className="mt-6 max-w-xl text-pretty text-lg leading-relaxed text-ink-soft">
               {t("home.heroDescription")}
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 pr-20 sm:flex-row sm:pr-0">
               <Button
                 href={whatsappUrl(prefill)}
                 external

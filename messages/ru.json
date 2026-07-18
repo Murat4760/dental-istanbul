@@ -146,6 +146,7 @@
     "skipToContent": "Перейти к содержимому"
   },
   "procedurePage": {
+    "heroTitle": "{name} в {city}, {country}",
     "whatItIs": "Что это",
     "whoItsFor": "Кому подходит",
     "process": "Как проходит лечение",

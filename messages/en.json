@@ -146,6 +146,7 @@
     "skipToContent": "Skip to content"
   },
   "procedurePage": {
+    "heroTitle": "{name} in {city}, {country}",
     "whatItIs": "What it is",
     "whoItsFor": "Who it's for",
     "process": "The process",

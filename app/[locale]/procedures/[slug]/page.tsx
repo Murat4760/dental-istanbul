@@ -107,7 +107,11 @@ export default async function ProcedurePage({
                 )}
               </span>
               <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.03] text-ink sm:text-5xl">
-                {procedure.name} in {place("city")}, {place("country")}
+                {t("procedurePage.heroTitle", {
+                  name: procedure.name,
+                  city: place("city"),
+                  country: place("country"),
+                })}
               </h1>
               <p className="mt-5 text-pretty text-lg leading-relaxed text-ink-soft">
                 {procedure.heroTagline} {procedure.summary}
@@ -122,7 +126,7 @@ export default async function ProcedurePage({
                   })}
                 </p>
               )}
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-3 pr-20 sm:flex-row sm:pr-0">
                 <Button
                   href={whatsappUrl(prefill)}
                   external

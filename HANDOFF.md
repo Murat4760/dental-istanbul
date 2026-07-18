@@ -722,3 +722,44 @@ content, hidden until supplied).
 - `npm run build` clean; all 5 `messages/*.json` re-validated as
   parseable JSON; every change spot-verified against a running
   production server before shipping.
+
+### 2026-07-18 (latest) end-to-end mobile check — found and fixed 2 real bugs
+- Murad asked for a full mobile QA pass. Ran Playwright against the
+  live production site at iPhone-13 viewport (390×844) across the
+  homepage + all 7 procedure pages + about/contact — checked for
+  horizontal overflow, broken images, console errors, and visually
+  screenshotted every page. Zero overflow, zero broken images, zero
+  console errors — but found two real, pre-existing-pattern bugs via
+  screenshots that numeric checks alone would have missed:
+  1. **Floating button stack (Instagram/Directions/WhatsApp,
+     `components/layout/WhatsAppButton.tsx`) visually overlapped the
+     hero's WhatsApp/phone CTA buttons** on every single page at this
+     viewport size — the hero buttons `flex-col` stretch to full
+     container width on mobile and ran directly under the fixed
+     bottom-right icon stack, right where users land on first
+     scroll/load. Fixed by adding `pr-20 sm:pr-0` to both hero CTA
+     button containers (`app/[locale]/page.tsx` and
+     `.../procedures/[slug]/page.tsx`) — reserves a mobile-only safe
+     zone matching the floating stack's actual footprint (measured:
+     54px wide + 20px offset = 74px from the right edge). Re-verified
+     with a `getBoundingClientRect()` intersection check against the
+     floating stack across all 8 pages: zero overlaps after the fix.
+  2. **Procedure page `<h1>` had a hardcoded English "in"**:
+     `{procedure.name} in {place("city")}, {place("country")}` —
+     produced ungrammatical output in every non-English locale (TR:
+     "Diş İmplantları in İstanbul, Türkiye" — English "in" sitting
+     inside a Turkish sentence, since Turkish needs a locative suffix
+     attached to the city, not a standalone preposition). The exact
+     same city+country pattern was already solved correctly elsewhere
+     in this codebase (`proceduresPage.heroTitle`, e.g. TR: "{city},
+     {country}'de Diş Tedavileri") — this one H1 was just missed when
+     that fix was made. Added a matching `procedurePage.heroTitle` key
+     to all 5 `messages/*.json` (TR restructures word order per proper
+     grammar: "{city}, {country}'de {name}"; EN/RU/DE keep the simple
+     prefix form; AR uses "في"), and switched the H1 to
+     `t("procedurePage.heroTitle", {...})`. The `<title>` metadata tag
+     was unaffected — it already read from `procedure.seo.title`,
+     which is per-locale translated data, not a hardcoded template.
+  - Build clean; re-verified locally post-fix with Playwright: all 7
+    H1s render correct grammar with zero literal " in ", zero overlaps
+    across all 8 pages, mobile menu open/close still works.

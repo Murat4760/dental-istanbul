@@ -146,6 +146,7 @@
     "skipToContent": "الانتقال إلى المحتوى"
   },
   "procedurePage": {
+    "heroTitle": "{name} في {city}، {country}",
     "whatItIs": "ما هو",
     "whoItsFor": "لمن يناسب",
     "process": "خطوات العلاج",
