@@ -109,12 +109,12 @@ export function absoluteUrl(path = "/"): string {
 }
 
 /**
- * Google Maps directions link built from the full postal address (not
- * SITE.geo, which is still an approximate district-centre placeholder —
- * see the comment on `geo` above). A text-address search routes correctly
- * regardless of the pin's precision.
+ * The clinic's actual Google Maps pin (shared link), used for every
+ * "Get Directions" button site-wide. Precise — not derived from the
+ * approximate SITE.geo placeholder or a text-address search.
  */
+const DIRECTIONS_URL = "https://maps.app.goo.gl/5xnjVXZ1UWqCY5Ly8";
+
 export function directionsUrl(): string {
-  const fullAddress = `${SITE.address.street}, ${SITE.address.district}, ${SITE.address.city}, ${SITE.address.postalCode}, ${SITE.address.country}`;
-  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`;
+  return DIRECTIONS_URL;
 }
