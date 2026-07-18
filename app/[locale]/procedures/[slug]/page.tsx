@@ -14,6 +14,7 @@ import { medicalProcedureSchema, breadcrumbSchema } from "@/lib/schema";
 import { JsonLd } from "@/components/JsonLd";
 import { Button } from "@/components/ui/Button";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Media } from "@/components/ui/Media";
 import { ProcedureCard } from "@/components/ProcedureCard";
 
 export function generateStaticParams() {
@@ -91,40 +92,50 @@ export default async function ProcedurePage({
             <span className="text-ink-soft">{procedure.name}</span>
           </nav>
 
-          <div className="mt-6 max-w-3xl">
-            <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-              <span className="h-px w-6 bg-accent" aria-hidden="true" />
-              {t(`categories.${procedure.category}`)}
-            </span>
-            <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.03] text-ink sm:text-5xl">
-              {procedure.name} in {place("city")}, {place("country")}
-            </h1>
-            <p className="mt-5 text-pretty text-lg leading-relaxed text-ink-soft">
-              {procedure.heroTagline} {procedure.summary}
-            </p>
-            {procedure.status === "comingSoon" && (
-              <p className="mt-4 rounded-card border border-line bg-sand/60 px-4 py-3 text-sm text-ink-soft">
-                <strong className="text-ink">
-                  {t("procedurePage.comingSoonTitle")}
-                </strong>{" "}
-                {t("procedurePage.comingSoonBody", {
-                  name: procedure.name.toLowerCase(),
-                })}
+          <div className="mt-6 grid items-center gap-10 lg:grid-cols-2">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                <span className="h-px w-6 bg-accent" aria-hidden="true" />
+                {t(`categories.${procedure.category}`)}
+              </span>
+              <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.03] text-ink sm:text-5xl">
+                {procedure.name} in {place("city")}, {place("country")}
+              </h1>
+              <p className="mt-5 text-pretty text-lg leading-relaxed text-ink-soft">
+                {procedure.heroTagline} {procedure.summary}
               </p>
-            )}
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button
-                href={whatsappUrl(prefill)}
-                external
-                size="lg"
-                rightIcon={<ArrowRight className="h-4 w-4" />}
-              >
-                {t("cta.whatsapp")}
-              </Button>
-              <Button href={SITE.phoneHref} size="lg" variant="outline">
-                {SITE.phoneDisplay}
-              </Button>
+              {procedure.status === "comingSoon" && (
+                <p className="mt-4 rounded-card border border-line bg-sand/60 px-4 py-3 text-sm text-ink-soft">
+                  <strong className="text-ink">
+                    {t("procedurePage.comingSoonTitle")}
+                  </strong>{" "}
+                  {t("procedurePage.comingSoonBody", {
+                    name: procedure.name.toLowerCase(),
+                  })}
+                </p>
+              )}
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <Button
+                  href={whatsappUrl(prefill)}
+                  external
+                  size="lg"
+                  rightIcon={<ArrowRight className="h-4 w-4" />}
+                >
+                  {t("cta.whatsapp")}
+                </Button>
+                <Button href={SITE.phoneHref} size="lg" variant="outline">
+                  {SITE.phoneDisplay}
+                </Button>
+              </div>
             </div>
+            <Media
+              src={procedure.photoUrl}
+              aspect="4 / 3"
+              tone="accent"
+              alt={procedure.name}
+              label="[PLACEHOLDER] Treatment photo"
+              className="shadow-card"
+            />
           </div>
         </div>
       </section>

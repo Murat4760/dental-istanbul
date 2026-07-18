@@ -75,7 +75,7 @@ export function Header() {
               href={item.href}
               aria-current={isActive(item.href) ? "page" : undefined}
               className={cn(
-                "relative rounded-full px-3 py-2 text-sm font-medium transition-colors",
+                "relative rounded-full px-5 py-3 text-base font-semibold transition-colors",
                 isActive(item.href)
                   ? "text-primary"
                   : "text-ink-soft hover:text-ink",
