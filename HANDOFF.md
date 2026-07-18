@@ -293,3 +293,38 @@ content, hidden until supplied).
   going forward, not tracked here as blocking.
 - `npm run build` clean; superlative/comparative-claim grep re-check across
   all 5 locale files clean (only false positives on German "bestätigt").
+
+### 2026-07-18 clinic photos added + third re-audit
+- Added 4 new interior photos from the client (`treatment-room-10.jpg`
+  through `treatment-room-13.jpg`) to `public/images/clinic/`, resized to
+  2000px wide and compressed to match the existing set's ~150-250KB band.
+  All 4 are empty-room/equipment shots plus RAMA-branded wall art — no
+  patients, no pricing signage, no result claims, so no compliance concern
+  from the photos themselves. Wired into `GALLERY_SRC` in
+  `app/[locale]/about/page.tsx`, bringing the About gallery to 13 photos.
+- Re-ran the full grep sweep (superlatives/comparatives, price mentions,
+  before-after/testimonial leftovers) across `lib/`, `messages/`, `app/`,
+  `components/` — clean, only false positives (CSS grid classnames matching
+  "#1", `Arc.tsx`'s comment about a slider "handle", `procedures.ts` comments
+  documenting the *absence* of prices/before-after).
+- Confirmed still intact: footer disclaimer (`footer.disclaimer` in
+  `messages/en.json`, rendered in `Footer.tsx`), `tr` locale hidden from
+  `LanguageSwitcher.tsx`'s public dropdown, and no `before-after`/`reviews`
+  routes or components present anywhere in the tree.
+- No changes needed to the Eksik Bilgi Formu — these 4 photos are additional
+  treatment-room shots, not the doctor headshot/logo/exterior photo the form
+  is still waiting on.
+
+### 2026-07-18 client intake re-submission cross-check
+- Client sent a new form export, `klinik-bilgileri-2026-07-18.txt`. Cross-checked
+  every field against `lib/site.ts` and `lib/doctors.ts`: **no new data.** Every
+  populated field (legal name, street, district "Kavaklı, Beylikdüzü", postal
+  code 34520, phone, email, doctor name/title/Sicil No 20190201022/51734,
+  Instagram handle) already matches what's live in code exactly.
+- Every blank field on this export remains open, unchanged from the existing
+  "❌ Missing / Pending" list: Uluslararası Sağlık Turizmi Yetki Belgesi / Yetki
+  belge no, HealthTürkiye membership, confirmed working hours, precise GPS
+  coordinates, Dr. Ramazani's bio, a second dentist, doctor headshot, clinic
+  logo/exterior photo, trust stats, complication insurance company, and
+  Facebook. This is a re-submission that left the same critical items blank,
+  not new information — no code or content changes made this pass.

@@ -19,6 +19,10 @@ const GALLERY_SRC = [
   "/images/clinic/treatment-room-7.jpg",
   "/images/clinic/treatment-room-8.jpg",
   "/images/clinic/treatment-room-9.jpg",
+  "/images/clinic/treatment-room-10.jpg",
+  "/images/clinic/treatment-room-11.jpg",
+  "/images/clinic/treatment-room-12.jpg",
+  "/images/clinic/treatment-room-13.jpg",
 ];
 
 export async function generateMetadata({
