@@ -82,8 +82,11 @@ home hero and the About page gallery.
 - [ ] `favicon` / logo — replace `app/favicon.ico`
 
 ## 5. Environment variables (Vercel)
-- [ ] `NEXT_PUBLIC_SITE_URL` — the production domain
-- [ ] `NEXT_PUBLIC_WHATSAPP_NUMBER` — intl format, digits only
+- [x] `NEXT_PUBLIC_SITE_URL` — `https://www.ramadent.com`, added to Vercel
+      production 2026-07-18 (was missing entirely, canonical/OG/sitemap URLs
+      were silently falling back to `localhost:3000` on the live domain)
+- [x] `NEXT_PUBLIC_WHATSAPP_NUMBER` — `905067743434`, added same pass (was
+      missing entirely, every WhatsApp CTA button was broken on production)
 - [ ] `NEXT_PUBLIC_CLOUDINARY_CLOUD` — optional, if using Cloudinary for images
 - [ ] `NEXT_PUBLIC_ALLOW_INDEXING` — leave unset/false until go-live content is confirmed
 
