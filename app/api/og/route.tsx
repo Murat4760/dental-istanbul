@@ -33,7 +33,7 @@ export async function GET(request: Request) {
           width: "100%",
           height: "100%",
           padding: "72px",
-          background: "linear-gradient(135deg, #0E5C57 0%, #0A4A46 100%)",
+          background: "linear-gradient(135deg, #6E3338 0%, #58292D 100%)",
           color: "#ffffff",
           fontFamily: "sans-serif",
         }}
@@ -52,7 +52,7 @@ export async function GET(request: Request) {
         </div>
 
         <div style={{ display: "flex", alignItems: "center" }}>
-          <div style={{ width: 64, height: 8, borderRadius: 9999, background: "#C46A3F" }} />
+          <div style={{ width: 64, height: 8, borderRadius: 9999, background: "#C9A66B" }} />
           <div style={{ display: "flex", marginLeft: 20, fontSize: 26, color: "rgba(255,255,255,0.9)" }}>
             {t("footer", { city: place("city"), country: place("country") })}
           </div>

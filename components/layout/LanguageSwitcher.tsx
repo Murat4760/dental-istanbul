@@ -52,7 +52,6 @@ export function LanguageSwitcher() {
           className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-xl border border-line bg-surface p-1 shadow-card"
         >
           {routing.locales
-            .filter((loc) => loc !== "tr")
             .map((loc) => {
               const isCurrent = loc === locale;
               return (

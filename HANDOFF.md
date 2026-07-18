@@ -355,3 +355,70 @@ content, hidden until supplied).
   misleading-representation problem under the Sağlık Bakanlığı yönetmelik,
   separate from the superlative/testimonial rules already tracked — flag to
   client before treating this as final.
+
+### 2026-07-18 bordo/rose-gold rebrand + public `tr` locale + legal-baseline review
+- **Color system recolored** to match the clinic's actual installed signage
+  and the renders above (previously teal/terracotta, invented, no
+  relationship to the real space). `app/globals.css` `@theme` block:
+  `--color-primary` → `#6E3338` (bordo/rosewood, was `#0E5C57`),
+  `--color-primary-dark` → `#58292D`, `--color-primary-tint` → `#F1EBEB`,
+  `--color-accent` → `#C9A66B` (rose-gold, was `#C46A3F`),
+  `--color-accent-dark` → `#A18556`, `--color-accent-tint` → `#FAF6F0`,
+  `--shadow-lift` recolored to match. Values are designer-tuned estimates —
+  literal pixel-sampling from the render JPGs came back washed out from
+  lighting gradients in the crops tried.
+- **Real accessibility fix, not just restyling:** `components/ui/Button.tsx`'s
+  `primary` variant was `bg-accent text-white`. Rose-gold `#C9A66B` is a
+  *light* color (relative luminance 0.41) — white text on it computes to a
+  2.3:1 contrast ratio, under the WCAG 3:1 floor for UI components. Changed
+  to `bg-accent text-ink` (~7.3:1, safe). The `secondary` variant
+  (`bg-primary text-white`) needed no change — bordo on white is ~9.6:1.
+  Also updated the variant's hardcoded shadow rgba to match the new accent.
+- `app/api/og/route.tsx` — updated the two places colors are hardcoded
+  outside the token system (Satori/Edge renderer can't read CSS vars): the
+  gradient background and the small accent-colored rule.
+- Verified: `npm run build` clean; grepped `app/`, `components/`, `lib/` for
+  the old hex values (`#0E5C57`, `#0A4A46`, `#C46A3F`, `#A8542E`,
+  `#E7F0EE`, `#F6ECE4`) — zero leftovers; ran a local production server and
+  confirmed the compiled CSS has the new token values and the accent button
+  renders with `text-ink`.
+- **`tr` made public in the language switcher** —
+  `components/layout/LanguageSwitcher.tsx` previously filtered `tr` out of
+  the visible locale list (direct-URL-only). Removed the filter. No other
+  code changes needed: `i18n/routing.ts` already registers `tr` as a full
+  locale, `proxy.ts` has no locale gating, and `lib/metadata.ts`/
+  `app/sitemap.ts` already emit `/tr` in hreflang/sitemap alternates
+  regardless of switcher visibility — so this doesn't change indexing
+  exposure, which stays fully controlled by the separate
+  `NEXT_PUBLIC_ALLOW_INDEXING` flag (still off). Re-ran the compliance grep
+  sweep (superlatives/pricing/scarcity language) against `messages/tr.json`
+  before flipping — clean, one benign false-positive ("kesin fiyat" in
+  coming-soon placeholder copy means "confirmed pricing," not a price
+  claim). Updated the reasoning comment in `i18n/routing.ts` explaining why
+  now: the domestic/abroad separation concern that originally justified
+  hiding `tr` is specifically part of the health-tourism regulatory regime
+  (Yetki Belgesi + HealthTürkiye), which this clinic isn't in yet — flagged
+  to revisit if/when that certification lands.
+- **Legal-baseline research this session** (see also the vault's own
+  compliance doc for the client-facing version): researched what a
+  *normal, non-health-tourism* Turkish dental clinic website must comply
+  with, since the health-tourism-specific regime is stalled on the
+  client's own paperwork and therefore not currently binding. Findings:
+  - Baseline domestic-clinic advertising rules (Sağlık Hizmetlerinde
+    Tanıtım ve Bilgilendirme Yönetmeliği, 12 Kasım 2025, + TDB guidance)
+    are already fully met by this codebase: no superlatives/guarantee
+    language, no testimonials, no pricing/campaigns/scarcity CTAs
+    (re-confirmed by grep this session), mandatory disclaimer present,
+    before/after dropped entirely (exceeds what the regulation would
+    technically permit with proper consent — client's own stricter call).
+  - KVKK: confirmed a non-issue right now. Grepped for `QuoteForm` usage
+    across `app/` and `components/` — it's defined in
+    `components/QuoteForm.tsx` but never imported/rendered on any live
+    page. `/privacy` accurately discloses zero data collection, no
+    analytics/tracking. This only becomes relevant if a form or analytics
+    is ever wired up in the future — not before.
+  - TDB's website-content guideline lists Oda sicil no, TDB sicil no,
+    graduation date, and university as content a dentist's site "may
+    include" (verebilir) — permissive, not mandatory. Not a compliance
+    gap; optional enrichment only if the client volunteers it.
+- Committed and pushed to `main` (auto-deploys via Vercel).
