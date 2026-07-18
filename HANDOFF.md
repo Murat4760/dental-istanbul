@@ -458,3 +458,67 @@ content, hidden until supplied).
   redirects, all page routes) not re-run this pass; `npm run build`
   passed clean across all locale × route combinations first, which is the
   broader signal.
+
+### 2026-07-18 stopped targeting international/tourist patients site-wide
+- Murad: "don't target the uluslararası [international] ... tourists."
+  This was much bigger than one field — the entire site's positioning was
+  built around dental tourism. Full inventory found and fixed across
+  **all 5 locales**:
+  - `lib/site.ts`: `description` said "Dental care for international
+    patients in Istanbul" — now just "Dental care in Istanbul."
+  - `messages/<locale>.json`, all 5: `schema.areaServed` said
+    "International patients worldwide" (a real JSON-LD correctness bug
+    too — wrong value for a LocalBusiness/Dentist schema's service-area
+    field) → now "Istanbul, Turkey" per locale. Also fixed:
+    `og.tagline`, `about.metaDescription`, `about.storyParagraph`
+    (a placeholder that was *prompting* Murad to eventually write an
+    international-patient-count stat), `proceduresPage.metaDescription`,
+    `home.heroDescription`, `footer.about` — all dropped their
+    "for international patients" clause.
+  - **`home.heroTitlePrefix` in `messages/tr.json` specifically** — this
+    is the single biggest catch: it wasn't even a faithful translation of
+    the neutral English original, it was independently authored as
+    "Uluslararası hastalar için diş sağlığı hizmeti," ("Dental care for
+    international patients,") — the literal H1 on the homepage, and as
+    of the previous pass today, the homepage is now served at `/` by
+    default. Rewrote to "İmplant, veneer ve gülüş tasarımı," matching the
+    EN/AR/RU/DE pattern (none of which had this problem — only TR's hero
+    had diverged from the neutral base).
+  - `procedurePage.timeIn` ("Time in {city}" / "{city}'de Geçirilecek
+    Süre" / etc.) — a sidebar UI label literally framing procedure
+    duration as time-spent-in-the-city (trip-planning language). Changed
+    to neutral "Typical duration" per locale; removed the now-unused
+    `city` param from the `t()` call in
+    `app/[locale]/procedures/[slug]/page.tsx` (verified `place()` is
+    still used elsewhere in that file, so no unused-import fallout).
+  - `procedurePage.gridDescription` — "before you travel" / "seyahat
+    etmeden önce" / "قبل سفرك" / "до поездки" / "vor Ihrer Anreise" → all
+    changed to "in advance"/equivalent.
+  - `lib/procedures.ts` + all 4 translation overlays (`.tr.ts`, `.ar.ts`,
+    `.ru.ts`, `.de.ts`) — for all 6 procedures: `seo.description` dropped
+    "for international patients"; `seo.keywords` dropped the "X abroad"
+    variant (e.g. "dental implants abroad" / "yurt dışında diş implantı")
+    while keeping the legitimate local-SEO keywords ("dental implants
+    Turkey/Istanbul"). The dental-implants `processSteps` had a literal
+    fly-in-tourist itinerary baked in — "before you travel" →
+    "ahead of your first appointment," "on arrival" → "at your first
+    visit," "return to their hotel" → "go home." Orthodontics' fitting
+    step similarly changed "during your visit to Istanbul" → "at your
+    fitting appointment."
+  - Full re-sweep after editing (English + native-script terms per
+    locale: uluslararası/yurt dışı, دولي/بالخارج, иностранн/за границ,
+    international/im Ausland) — clean across `lib/` and `messages/`
+    except one internal code comment (not user-facing) documenting a
+    past before/after-photo decision.
+  - All 5 `messages/*.json` re-validated as parseable JSON after editing.
+    `npm run build` clean (exit 0, zero warnings). Verified against a
+    running production server: JSON-LD `areaServed` now reads
+    `{"@type":"AdministrativeArea","name":"İstanbul, Türkiye"}` on the
+    live homepage; the `/` (Turkish default) H1 now renders "İmplant,
+    veneer ve gülüş tasarımı, İstanbul" instead of the old
+    international-patient headline; procedure page sidebar shows "Typical
+    duration" correctly.
+  - Not done this pass (out of scope for a copy audit): `daysInIstanbul`
+    as a TypeScript field/property name still says "Istanbul" internally
+    — left as-is since it's not user-facing (the displayed label is now
+    neutral) and renaming it is a pure refactor with no behavior change.

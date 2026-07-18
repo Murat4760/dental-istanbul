@@ -27,17 +27,17 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
       {
         title: "Online-Beratung",
         description:
-          "Senden Sie Fotos und aktuelle Röntgenbilder. Unsere Zahnärzte prüfen Ihren Fall und schicken vor Ihrer Reise einen vorläufigen Plan.",
+          "Senden Sie Fotos und aktuelle Röntgenbilder. Unsere Zahnärzte prüfen Ihren Fall und schicken vor Ihrem ersten Termin einen vorläufigen Plan.",
       },
       {
         title: "Untersuchung & 3D-Scan",
         description:
-          "Bei Ihrer Ankunft bestätigen ein DVT-Scan und eine klinische Untersuchung den Plan und die Implantatpositionen.",
+          "Bei Ihrem ersten Termin bestätigen ein DVT-Scan und eine klinische Untersuchung den Plan und die Implantatpositionen.",
       },
       {
         title: "Implantation",
         description:
-          "Das Implantat wird unter örtlicher Betäubung in einem einzigen Termin gesetzt. Die meisten Patienten kehren am selben Tag ins Hotel zurück.",
+          "Das Implantat wird unter örtlicher Betäubung in einem einzigen Termin gesetzt. Die meisten Patienten fahren am selben Tag nach Hause.",
       },
       {
         title: "Einheilung & Osseointegration",
@@ -54,11 +54,10 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     seo: {
       title: "Zahnimplantate in Istanbul, Türkei",
       description:
-        "Dauerhafte Zahnimplantate in Istanbul bei einem registrierten Zahnarzt. Online-Beratung für internationale Patienten verfügbar.",
+        "Dauerhafte Zahnimplantate in Istanbul bei einem registrierten Zahnarzt. Online-Beratung vor Ihrem ersten Termin verfügbar.",
       keywords: [
         "Zahnimplantate Türkei",
         "Zahnimplantate Istanbul",
-        "Zahnimplantate im Ausland",
         "Zahnimplantation Istanbul",
       ],
     },
@@ -104,13 +103,12 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     seo: {
       title: "Keramik-Veneers in Istanbul, Türkei",
       description:
-        "Natürlich aussehende Keramik-Veneers in Istanbul. Digitales Smile-Design bei einem registrierten Zahnarzt für internationale Patienten.",
+        "Natürlich aussehende Keramik-Veneers in Istanbul. Digitales Smile-Design bei einem registrierten Zahnarzt.",
       keywords: [
         "Veneers Türkei",
         "Veneers Istanbul",
         "Keramik-Veneers Türkei",
         "Hollywood-Lächeln Istanbul",
-        "Zahnveneers im Ausland",
       ],
     },
   },
@@ -155,13 +153,12 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     seo: {
       title: "All-on-4-Implantate in Istanbul, Türkei",
       description:
-        "Feste Vollbogen-Zähne mit All-on-4-Implantaten in Istanbul, bei einem registrierten Zahnarzt für internationale Patienten.",
+        "Feste Vollbogen-Zähne mit All-on-4-Implantaten in Istanbul, bei einem registrierten Zahnarzt.",
       keywords: [
         "All-on-4 Türkei",
         "All-on-4 Istanbul",
         "Vollmund-Implantate Türkei",
         "festsitzender Zahnersatz Istanbul",
-        "Vollbogen-Implantate im Ausland",
       ],
     },
   },
@@ -206,11 +203,10 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     seo: {
       title: "Zahnaufhellung in Istanbul, Türkei",
       description:
-        "Professionelle Zahnaufhellung in der Klinik in Istanbul. Sichere, zahnärztlich überwachte Aufhellung für internationale Patienten, mit Ergebnis am selben Tag.",
+        "Professionelle Zahnaufhellung in der Klinik in Istanbul. Sichere, zahnärztlich überwachte Aufhellung mit Ergebnis am selben Tag.",
       keywords: [
         "Zahnaufhellung Türkei",
         "Zahnaufhellung Istanbul",
-        "professionelles Bleaching im Ausland",
         "Laser-Zahnaufhellung Istanbul",
       ],
     },
@@ -255,12 +251,11 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     seo: {
       title: "Zahnkronen in Istanbul, Türkei",
       description:
-        "Zirkon- und Keramikkronen in Istanbul. Natürlich aussehende Ergebnisse von einem registrierten Zahnarzt für internationale Patienten.",
+        "Zirkon- und Keramikkronen in Istanbul. Natürlich aussehende Ergebnisse von einem registrierten Zahnarzt.",
       keywords: [
         "Zahnkronen Türkei",
         "Zahnkronen Istanbul",
         "Zirkonkronen Türkei",
-        "Kronen im Ausland",
       ],
     },
   },
@@ -293,7 +288,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
       {
         title: "Eingliederung",
         description:
-          "Brackets werden während Ihres Besuchs in Istanbul auf Ihre Zähne geklebt, oder Ihr erstes Set durchsichtiger Aligner wird ausgegeben.",
+          "Brackets werden bei Ihrem Eingliederungstermin auf Ihre Zähne geklebt, oder Ihr erstes Set durchsichtiger Aligner wird ausgegeben.",
       },
       {
         title: "Laufende Anpassung",
@@ -310,7 +305,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     seo: {
       title: "Kieferorthopädie in Istanbul, Türkei",
       description:
-        "Brackets und durchsichtige Aligner in Istanbul für internationale Patienten, mit einem in Istanbul erstellten Behandlungsplan und persönlicher oder ferner Überwachung.",
+        "Brackets und durchsichtige Aligner in Istanbul, mit einem in Istanbul erstellten Behandlungsplan und persönlicher oder ferner Überwachung.",
       keywords: [
         "Kieferorthopädie Türkei",
         "Zahnspange Istanbul",

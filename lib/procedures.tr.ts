@@ -27,7 +27,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
       {
         title: "Online danışmanlık",
         description:
-          "Fotoğraflarınızı ve varsa güncel röntgenlerinizi gönderin. Diş hekimlerimiz durumunuzu inceleyip seyahat etmeden önce size ön bir tedavi planı gönderir.",
+          "Fotoğraflarınızı ve varsa güncel röntgenlerinizi gönderin. Diş hekimlerimiz durumunuzu inceleyip ilk randevunuzdan önce size ön bir tedavi planı gönderir.",
       },
       {
         title: "Muayene ve 3D tarama",
@@ -37,7 +37,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
       {
         title: "İmplantın yerleştirilmesi",
         description:
-          "İmplant, lokal anestezi altında tek bir seansta yerleştirilir. Hastaların çoğu aynı gün otellerine dönebilir.",
+          "İmplant, lokal anestezi altında tek bir seansta yerleştirilir. Hastaların çoğu aynı gün evine dönebilir.",
       },
       {
         title: "İyileşme ve kaynaşma (osseointegrasyon)",
@@ -54,11 +54,10 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     seo: {
       title: "İstanbul'da Diş İmplantı Tedavisi",
       description:
-        "İstanbul'da kayıtlı bir diş hekimiyle kalıcı diş implantları. Uluslararası hastalar için online danışmanlık imkânı.",
+        "İstanbul'da kayıtlı bir diş hekimiyle kalıcı diş implantları. İlk ziyaretinizden önce online danışmanlık imkânı.",
       keywords: [
         "diş implantı Türkiye",
         "diş implantı İstanbul",
-        "yurt dışında diş implantı",
         "İstanbul'da diş implantı",
       ],
     },
@@ -104,13 +103,12 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     seo: {
       title: "İstanbul'da Porselen Veneer (Lamina Diş)",
       description:
-        "İstanbul'da doğal görünümlü porselen veneerler. Uluslararası hastalar için kayıtlı bir diş hekimiyle dijital gülüş tasarımı.",
+        "İstanbul'da doğal görünümlü porselen veneerler. Kayıtlı bir diş hekimiyle dijital gülüş tasarımı.",
       keywords: [
         "veneer Türkiye",
         "veneer İstanbul",
         "porselen veneer Türkiye",
         "Hollywood gülüş İstanbul",
-        "yurt dışında diş veneeri",
       ],
     },
   },
@@ -155,13 +153,12 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     seo: {
       title: "İstanbul'da All-on-4 Diş İmplantı",
       description:
-        "İstanbul'da All-on-4 implantlarıyla sabit tam ark diş tedavisi, uluslararası hastalar için kayıtlı bir diş hekimiyle.",
+        "İstanbul'da All-on-4 implantlarıyla sabit tam ark diş tedavisi, kayıtlı bir diş hekimiyle.",
       keywords: [
         "All-on-4 Türkiye",
         "All-on-4 İstanbul",
         "tüm ağız diş implantı Türkiye",
         "sabit protez İstanbul",
-        "yurt dışında tam ark implant",
       ],
     },
   },
@@ -206,11 +203,10 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     seo: {
       title: "İstanbul'da Diş Beyazlatma",
       description:
-        "İstanbul'da profesyonel klinik içi diş beyazlatma. Uluslararası hastalar için güvenli, diş hekimi gözetiminde beyazlatma, aynı gün sonuç.",
+        "İstanbul'da profesyonel klinik içi diş beyazlatma. Güvenli, diş hekimi gözetiminde beyazlatma, aynı gün sonuç.",
       keywords: [
         "diş beyazlatma Türkiye",
         "diş beyazlatma İstanbul",
-        "yurt dışında profesyonel beyazlatma",
         "İstanbul lazer diş beyazlatma",
       ],
     },
@@ -256,12 +252,11 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     seo: {
       title: "İstanbul'da Diş Kaplaması (Kron)",
       description:
-        "İstanbul'da zirkonyum ve porselen diş kronları. Uluslararası hastalar için kayıtlı bir diş hekiminden doğal görünümlü sonuçlar.",
+        "İstanbul'da zirkonyum ve porselen diş kronları. Kayıtlı bir diş hekiminden doğal görünümlü sonuçlar.",
       keywords: [
         "diş kaplaması Türkiye",
         "diş kaplaması İstanbul",
         "zirkonyum kron Türkiye",
-        "yurt dışında kron",
       ],
     },
   },
@@ -294,7 +289,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
       {
         title: "Yerleştirme",
         description:
-          "İstanbul ziyaretiniz sırasında braketler dişlerinize yapıştırılır veya ilk şeffaf plak setiniz verilir.",
+          "Randevunuzda braketler dişlerinize yapıştırılır veya ilk şeffaf plak setiniz verilir.",
       },
       {
         title: "Devam eden ayarlamalar",
@@ -311,7 +306,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     seo: {
       title: "İstanbul'da Ortodonti Tedavisi",
       description:
-        "Uluslararası hastalar için İstanbul'da braket ve şeffaf plak tedavisi; plan İstanbul'da belirlenir, ilerleme yüz yüze veya uzaktan takip edilir.",
+        "İstanbul'da braket ve şeffaf plak tedavisi; plan İstanbul'da belirlenir, ilerleme yüz yüze veya uzaktan takip edilir.",
       keywords: [
         "ortodonti Türkiye",
         "braket İstanbul",

@@ -40,11 +40,11 @@
   },
   "schema": {
     "medicalSpecialty": "Zahnmedizin",
-    "areaServed": "Internationale Patienten weltweit",
+    "areaServed": "Istanbul, Türkei",
     "bodyLocation": "Mund"
   },
   "og": {
-    "tagline": "Zahnmedizinische Versorgung für internationale Patienten in {city}",
+    "tagline": "Zahnmedizinische Versorgung in {city}",
     "services": "Implantate · Veneers · All-on-4 · Kieferorthopädie",
     "footer": "{city}, {country} · Schreiben Sie uns per WhatsApp"
   },
@@ -71,10 +71,10 @@
   },
   "about": {
     "metaTitle": "Über {name}",
-    "metaDescription": "Lernen Sie das Team hinter {name} kennen — ein registrierter Zahnarzt, der Implantate, Veneers und Smile-Makeover für internationale Patienten in {city} anbietet.",
+    "metaDescription": "Lernen Sie das Team hinter {name} kennen — ein registrierter Zahnarzt, der Implantate, Veneers und Smile-Makeover in {city} anbietet.",
     "eyebrowAboutUs": "Über uns",
     "heroTitle": "Unser Ansatz in der Patientenversorgung",
-    "storyParagraph": "[PLACEHOLDER] Ein Absatz über die Geschichte, Philosophie und Einrichtungen der Klinik — Gründungsjahr, Anzahl der betreuten internationalen Patienten, eingesetzte Technologie und was die Patientenerfahrung besonders macht. Nur echte, verifizierbare Fakten verwenden.",
+    "storyParagraph": "[PLACEHOLDER] Ein Absatz über die Geschichte, Philosophie und Einrichtungen der Klinik — Gründungsjahr, eingesetzte Technologie und was die Patientenerfahrung besonders macht. Nur echte, verifizierbare Fakten verwenden.",
     "receptionAlt": "Empfang von {name} in {city}",
     "eyebrowOurClinic": "Unsere Klinik",
     "clinicTitle": "Ein Blick in {name}",
@@ -96,14 +96,14 @@
   },
   "proceduresPage": {
     "metaTitle": "Zahnbehandlungen in {city}, {country}",
-    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen für internationale Patienten in {city} — Implantate, Veneers, All-on-4, Kronen, Kieferorthopädie und Zahnaufhellung.",
+    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen in {city} — Implantate, Veneers, All-on-4, Kronen, Kieferorthopädie und Zahnaufhellung.",
     "heroTitle": "Zahnbehandlungen in {city}, {country}"
   },
   "home": {
     "metaTitle": "{name} — Zahnimplantate, Veneers & Smile-Makeover in {city}",
     "badge": "Zahnmedizinische Versorgung in {city}, {country}",
     "heroTitlePrefix": "Zahnimplantate, Veneers und Zahnästhetik in",
-    "heroDescription": "Implantate, Veneers, All-on-4 und komplette Smile-Makeover, angeboten von einem registrierten Zahnarzt für internationale Patienten.",
+    "heroDescription": "Implantate, Veneers, All-on-4 und komplette Smile-Makeover, angeboten von einem registrierten Zahnarzt.",
     "heroImageAlt": "Empfang von {name} in {city}",
     "proceduresTitle": "Behandlungen, auf die wir spezialisiert sind",
     "ctaTitle": "Beginnen Sie mit einem unverbindlichen Gespräch",
@@ -120,7 +120,7 @@
     "body": "Kein Formular, keine Wartezeit — WhatsApp ist der schnellste Weg, uns zu erreichen, oder rufen Sie an bzw. schreiben Sie eine E-Mail, wenn Sie das bevorzugen."
   },
   "footer": {
-    "about": "Zahnmedizinische Versorgung für internationale Patienten — Implantate, Veneers, All-on-4 und Smile-Makeover in Istanbul.",
+    "about": "Zahnmedizinische Versorgung — Implantate, Veneers, All-on-4 und Smile-Makeover in Istanbul.",
     "quickLinks": "Schnellzugriff",
     "procedures": "Beliebte Behandlungen",
     "contact": "Kontakt",
@@ -151,12 +151,12 @@
     "whoItsFor": "Für wen es geeignet ist",
     "process": "Der Ablauf",
     "atAGlance": "Auf einen Blick",
-    "timeIn": "Aufenthaltsdauer in {city}",
+    "timeIn": "Behandlungsdauer",
     "category": "Kategorie",
     "exploreMore": "Mehr entdecken",
     "relatedTreatments": "Ähnliche Behandlungen",
     "treatmentsEyebrow": "Behandlungen",
-    "gridDescription": "Jede Behandlung wird individuell auf Ihren Fall abgestimmt geplant — alles wird vor Ihrer Anreise klar erklärt, ohne Überraschungen.",
+    "gridDescription": "Jede Behandlung wird individuell auf Ihren Fall abgestimmt geplant — alles wird im Voraus klar erklärt, ohne Überraschungen.",
     "getInTouch": "Kontaktieren Sie uns",
     "askAbout": "Fragen zu {name}",
     "contactDescription": "Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — unser Team antwortet schnell, meist noch am selben Tag.",

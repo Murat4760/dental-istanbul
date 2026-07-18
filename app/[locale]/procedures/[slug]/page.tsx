@@ -186,7 +186,7 @@ export default async function ProcedurePage({
                     <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <div>
                       <dt className="text-muted">
-                        {t("procedurePage.timeIn", { city: place("city") })}
+                        {t("procedurePage.timeIn")}
                       </dt>
                       <dd className="font-medium text-ink">
                         {procedure.daysInIstanbul}

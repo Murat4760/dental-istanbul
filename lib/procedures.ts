@@ -74,17 +74,17 @@ export const procedures: Procedure[] = [
       {
         title: "Online consultation",
         description:
-          "Send photos and any recent X-rays. Our dentists review your case and send an indicative plan before you travel.",
+          "Send photos and any recent X-rays. Our dentists review your case and send an indicative plan ahead of your first appointment.",
       },
       {
         title: "Examination & 3D scan",
         description:
-          "On arrival, a CBCT scan and clinical exam confirm the plan and implant positions.",
+          "At your first visit, a CBCT scan and clinical exam confirm the plan and implant positions.",
       },
       {
         title: "Implant placement",
         description:
-          "The implant is placed under local anaesthetic in a single appointment. Most patients return to their hotel the same day.",
+          "The implant is placed under local anaesthetic in a single appointment. Most patients go home the same day.",
       },
       {
         title: "Healing & osseointegration",
@@ -101,11 +101,10 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Dental Implants in Istanbul, Turkey",
       description:
-        "Permanent dental implants in Istanbul with a registered dentist. Online consultation available for international patients.",
+        "Permanent dental implants in Istanbul with a registered dentist. Online consultation available before your first visit.",
       keywords: [
         "dental implants Turkey",
         "dental implants Istanbul",
-        "dental implants abroad",
         "tooth implant Istanbul",
       ],
     },
@@ -153,13 +152,12 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Porcelain Veneers in Istanbul, Turkey",
       description:
-        "Natural-looking porcelain veneers in Istanbul. Digital smile design with a registered dentist for international patients.",
+        "Natural-looking porcelain veneers in Istanbul. Digital smile design with a registered dentist.",
       keywords: [
         "veneers Turkey",
         "veneers Istanbul",
         "porcelain veneers Turkey",
         "Hollywood smile Istanbul",
-        "dental veneers abroad",
       ],
     },
   },
@@ -206,13 +204,12 @@ export const procedures: Procedure[] = [
     seo: {
       title: "All-on-4 Dental Implants in Istanbul, Turkey",
       description:
-        "Fixed full-arch teeth with All-on-4 implants in Istanbul, with a registered dentist for international patients.",
+        "Fixed full-arch teeth with All-on-4 implants in Istanbul, with a registered dentist.",
       keywords: [
         "All-on-4 Turkey",
         "All on 4 Istanbul",
         "full mouth dental implants Turkey",
         "fixed dentures Istanbul",
-        "full arch implants abroad",
       ],
     },
   },
@@ -259,11 +256,10 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Teeth Whitening in Istanbul, Turkey",
       description:
-        "Professional in-clinic teeth whitening in Istanbul. Safe, dentist-supervised brightening for international patients, with same-day results.",
+        "Professional in-clinic teeth whitening in Istanbul. Safe, dentist-supervised brightening with same-day results.",
       keywords: [
         "teeth whitening Turkey",
         "teeth whitening Istanbul",
-        "professional whitening abroad",
         "laser teeth whitening Istanbul",
       ],
     },
@@ -311,12 +307,11 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Dental Crowns in Istanbul, Turkey",
       description:
-        "Zirconia and porcelain dental crowns in Istanbul. Natural-looking results from a registered dentist, for international patients.",
+        "Zirconia and porcelain dental crowns in Istanbul. Natural-looking results from a registered dentist.",
       keywords: [
         "dental crowns Turkey",
         "dental crowns Istanbul",
         "zirconia crowns Turkey",
-        "crowns abroad",
       ],
     },
   },
@@ -351,7 +346,7 @@ export const procedures: Procedure[] = [
       {
         title: "Fitting",
         description:
-          "Braces are bonded to your teeth, or your first set of clear aligners is issued, during your visit to Istanbul.",
+          "Braces are bonded to your teeth, or your first set of clear aligners is issued, at your fitting appointment.",
       },
       {
         title: "Ongoing adjustment",
@@ -368,7 +363,7 @@ export const procedures: Procedure[] = [
     seo: {
       title: "Orthodontics in Istanbul, Turkey",
       description:
-        "Braces and clear aligners in Istanbul for international patients, with a treatment plan set in Istanbul and progress monitored in person or remotely.",
+        "Braces and clear aligners in Istanbul, with a treatment plan set in Istanbul and progress monitored in person or remotely.",
       keywords: [
         "orthodontics Turkey",
         "braces Istanbul",

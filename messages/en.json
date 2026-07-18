@@ -40,11 +40,11 @@
   },
   "schema": {
     "medicalSpecialty": "Dentistry",
-    "areaServed": "International patients worldwide",
+    "areaServed": "Istanbul, Turkey",
     "bodyLocation": "Mouth"
   },
   "og": {
-    "tagline": "Dental care for international patients in {city}",
+    "tagline": "Dental care in {city}",
     "services": "Implants · Veneers · All-on-4 · Orthodontics",
     "footer": "{city}, {country} · Message us on WhatsApp"
   },
@@ -71,10 +71,10 @@
   },
   "about": {
     "metaTitle": "About {name}",
-    "metaDescription": "Meet the team behind {name} — a registered dentist providing implants, veneers and smile makeovers for international patients in {city}.",
+    "metaDescription": "Meet the team behind {name} — a registered dentist providing implants, veneers and smile makeovers in {city}.",
     "eyebrowAboutUs": "About us",
     "heroTitle": "Our approach to patient care",
-    "storyParagraph": "[PLACEHOLDER] A paragraph about the clinic's story, philosophy and facilities — years established, the number of international patients cared for, the technology used, and what makes the patient experience different. Keep to real, verifiable facts.",
+    "storyParagraph": "[PLACEHOLDER] A paragraph about the clinic's story, philosophy and facilities — years established, the technology used, and what makes the patient experience different. Keep to real, verifiable facts.",
     "receptionAlt": "Reception at {name} in {city}",
     "eyebrowOurClinic": "Our clinic",
     "clinicTitle": "Inside {name}",
@@ -96,14 +96,14 @@
   },
   "proceduresPage": {
     "metaTitle": "Dental Procedures in {city}, {country}",
-    "metaDescription": "Explore our dental treatments for international patients in {city} — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening.",
+    "metaDescription": "Explore our dental treatments in {city} — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening.",
     "heroTitle": "Dental procedures in {city}, {country}"
   },
   "home": {
     "metaTitle": "{name} — Dental Implants, Veneers & Smile Makeovers in {city}",
     "badge": "Dental care in {city}, {country}",
     "heroTitlePrefix": "Dental implants, veneers and smile makeovers in",
-    "heroDescription": "Implants, veneers, All-on-4 and full smile makeovers, provided by a registered dentist for international patients.",
+    "heroDescription": "Implants, veneers, All-on-4 and full smile makeovers, provided by a registered dentist.",
     "heroImageAlt": "Reception at {name} in {city}",
     "proceduresTitle": "Procedures we specialise in",
     "ctaTitle": "Start with a no-obligation conversation",
@@ -120,7 +120,7 @@
     "body": "No forms, no waiting — WhatsApp is the fastest way to reach us, or call or email if you prefer."
   },
   "footer": {
-    "about": "Dental care for international patients — implants, veneers, All-on-4 and smile makeovers in Istanbul.",
+    "about": "Dental care — implants, veneers, All-on-4 and smile makeovers in Istanbul.",
     "quickLinks": "Quick links",
     "procedures": "Popular procedures",
     "contact": "Contact",
@@ -151,12 +151,12 @@
     "whoItsFor": "Who it's for",
     "process": "The process",
     "atAGlance": "At a glance",
-    "timeIn": "Time in {city}",
+    "timeIn": "Typical duration",
     "category": "Category",
     "exploreMore": "Explore more",
     "relatedTreatments": "Related treatments",
     "treatmentsEyebrow": "Treatments",
-    "gridDescription": "Each treatment is planned around your individual case, with everything explained clearly before you travel — no surprises.",
+    "gridDescription": "Each treatment is planned around your individual case, with everything explained clearly in advance — no surprises.",
     "getInTouch": "Get in touch",
     "askAbout": "Ask about {name}",
     "contactDescription": "Message us on WhatsApp, call, or email — our team replies quickly, usually the same day.",

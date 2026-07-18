@@ -40,11 +40,11 @@
   },
   "schema": {
     "medicalSpecialty": "Diş Hekimliği",
-    "areaServed": "Uluslararası hastalar, dünya genelinde",
+    "areaServed": "İstanbul, Türkiye",
     "bodyLocation": "Ağız"
   },
   "og": {
-    "tagline": "{city}'de uluslararası hastalar için diş sağlığı hizmeti",
+    "tagline": "{city}'de diş sağlığı hizmeti",
     "services": "İmplant · Veneer · All-on-4 · Ortodonti",
     "footer": "{city}, {country} · WhatsApp'tan yazın"
   },
@@ -71,10 +71,10 @@
   },
   "about": {
     "metaTitle": "{name} Hakkında",
-    "metaDescription": "{name} arkasındaki ekiple tanışın — {city}'de uluslararası hastalara implant, veneer ve gülüş tasarımı sunan kayıtlı bir diş hekimi.",
+    "metaDescription": "{name} arkasındaki ekiple tanışın — {city}'de implant, veneer ve gülüş tasarımı sunan kayıtlı bir diş hekimi.",
     "eyebrowAboutUs": "Hakkımızda",
     "heroTitle": "Hasta bakımına yaklaşımımız",
-    "storyParagraph": "[PLACEHOLDER] Kliniğin hikayesi, felsefesi ve olanakları hakkında bir paragraf — kuruluş yılı, bakımı yapılan uluslararası hasta sayısı, kullanılan teknoloji ve hasta deneyimini farklı kılan unsurlar. Yalnızca gerçek, doğrulanabilir bilgilere bağlı kalın.",
+    "storyParagraph": "[PLACEHOLDER] Kliniğin hikayesi, felsefesi ve olanakları hakkında bir paragraf — kuruluş yılı, kullanılan teknoloji ve hasta deneyimini farklı kılan unsurlar. Yalnızca gerçek, doğrulanabilir bilgilere bağlı kalın.",
     "receptionAlt": "{name} resepsiyonu, {city}",
     "eyebrowOurClinic": "Kliniğimiz",
     "clinicTitle": "{name} içeriden",
@@ -96,14 +96,14 @@
   },
   "proceduresPage": {
     "metaTitle": "{city}, {country}'de Diş Tedavileri",
-    "metaDescription": "{city}'de uluslararası hastalar için diş tedavilerimizi keşfedin — implant, veneer, All-on-4, kron, ortodonti ve diş beyazlatma.",
+    "metaDescription": "{city}'de diş tedavilerimizi keşfedin — implant, veneer, All-on-4, kron, ortodonti ve diş beyazlatma.",
     "heroTitle": "{city}, {country}'de diş tedavileri"
   },
   "home": {
     "metaTitle": "{name} — {city}'de Diş İmplantı, Veneer ve Gülüş Tasarımı",
     "badge": "{city}, {country}'de diş sağlığı hizmeti",
-    "heroTitlePrefix": "Uluslararası hastalar için diş sağlığı hizmeti,",
-    "heroDescription": "Kayıtlı bir diş hekimi tarafından uluslararası hastalara sunulan implant, veneer, All-on-4 ve komple gülüş tasarımı.",
+    "heroTitlePrefix": "İmplant, veneer ve gülüş tasarımı,",
+    "heroDescription": "Kayıtlı bir diş hekimi tarafından sunulan implant, veneer, All-on-4 ve komple gülüş tasarımı.",
     "heroImageAlt": "{name} resepsiyonu, {city}",
     "proceduresTitle": "Uzmanlaştığımız tedaviler",
     "ctaTitle": "Taahhüt gerektirmeyen bir görüşmeyle başlayın",
@@ -120,7 +120,7 @@
     "body": "Form yok, bekleme yok — bize ulaşmanın en hızlı yolu WhatsApp; tercih ederseniz arayabilir veya e-posta gönderebilirsiniz."
   },
   "footer": {
-    "about": "Uluslararası hastalar için diş sağlığı hizmeti — İstanbul'da implant, veneer, All-on-4 ve gülüş tasarımı.",
+    "about": "Diş sağlığı hizmeti — İstanbul'da implant, veneer, All-on-4 ve gülüş tasarımı.",
     "quickLinks": "Hızlı Bağlantılar",
     "procedures": "Popüler Tedaviler",
     "contact": "İletişim",
@@ -151,12 +151,12 @@
     "whoItsFor": "Kimler İçin Uygun",
     "process": "Süreç",
     "atAGlance": "Genel Bakış",
-    "timeIn": "{city}'de Geçirilecek Süre",
+    "timeIn": "Tahmini Süre",
     "category": "Kategori",
     "exploreMore": "Daha fazlası",
     "relatedTreatments": "İlgili tedaviler",
     "treatmentsEyebrow": "Tedaviler",
-    "gridDescription": "Her tedavi, sizin özel durumunuza göre planlanır; seyahat etmeden önce her şey açıkça anlatılır — sürpriz yoktur.",
+    "gridDescription": "Her tedavi, sizin özel durumunuza göre planlanır; önceden her şey açıkça anlatılır — sürpriz yoktur.",
     "getInTouch": "Bize ulaşın",
     "askAbout": "{name} hakkında sorun",
     "contactDescription": "WhatsApp'tan yazın, arayın veya e-posta gönderin — ekibimiz genellikle aynı gün içinde hızlıca yanıt verir.",

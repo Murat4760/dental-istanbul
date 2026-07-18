@@ -32,7 +32,7 @@ export const SITE = {
   legalName: "RAMADENT AĞIZ VE DİŞ SAĞLIĞI HİZMETLERİ LİMİTED ŞİRKETİ",
   tagline: "Registered dental care in Istanbul",
   description:
-    "Dental care for international patients in Istanbul — dental implants, veneers and orthodontics.",
+    "Dental care in Istanbul — dental implants, veneers and orthodontics.",
 
   // ─── Location (city locked to Istanbul) ────────────────────────────────────
   city: "Istanbul",
