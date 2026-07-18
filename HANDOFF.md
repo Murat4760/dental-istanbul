@@ -422,3 +422,39 @@ content, hidden until supplied).
     include" (verebilir) — permissive, not mandatory. Not a compliance
     gap; optional enrichment only if the client volunteers it.
 - Committed and pushed to `main` (auto-deploys via Vercel).
+
+### 2026-07-18 tr made default route + canvas/tints deepened
+- **`tr` is now `defaultLocale`** in `i18n/routing.ts` (was `en`) — with
+  `localePrefix: "as-needed"` this flips which locale owns the un-prefixed
+  root: `/` now serves Turkish, `/en` is explicit. Verified against a
+  running production server (not just build output, which lists every
+  locale's static params regardless of prefix behavior and doesn't reveal
+  this on its own): `/` → `lang="tr"`, `x-middleware-rewrite: /tr`,
+  hreflang `x-default` points at `/`; `/en` → `lang="en"`; `/tr` now
+  307-redirects to `/` (its own old prefix is gone).
+- **Caught and fixed before it shipped:** `i18n/request.ts` was using
+  `routing.defaultLocale` as the *content-fallback base* too — every
+  locale's missing/untranslated keys silently fall back to whichever
+  locale is `defaultLocale`. Flipping `defaultLocale` to `tr` would have
+  silently changed that fallback from audited English to Turkish for
+  every other locale on any future untranslated key — a real footgun, not
+  what "make tr default" should mean. Fixed by decoupling: `request.ts`
+  now hardcodes `CONTENT_BASE_LOCALE = "en"` independent of
+  `routing.defaultLocale`, so English stays the fallback base regardless
+  of which locale owns the URL root. `lib/metadata.ts`/`app/sitemap.ts`
+  correctly keep reading `routing.defaultLocale` generically (that's a
+  routing concern, meant to track the change).
+- **Canvas/surface/tints deepened** — `app/globals.css`: canvas
+  `#FAF0F1`→`#F2D9DB`, surface `#FDF7F8`→`#F8E9EA`, primary-tint
+  `#F1EBEB`→`#E2D6D7`, accent-tint `#FAF6F0`→`#F4EDE1`. The bordo/rose-gold
+  recolor earlier today only touched primary/accent — the base page
+  background was still ~95% white with a barely-perceptible tint, so the
+  site still read as "white" overall. Pushed noticeably warmer/stronger
+  while keeping dark `ink` text safely >15:1 contrast on all of them (still
+  light backgrounds, just no longer near-white). Verified via compiled CSS
+  on a running production server, not just source diff.
+- Local verification only ran against one locale/route sample each
+  (`/`, `/en`, `/tr`) — full cross-locale re-check (ar/ru/de root
+  redirects, all page routes) not re-run this pass; `npm run build`
+  passed clean across all locale × route combinations first, which is the
+  broader signal.

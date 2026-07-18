@@ -2,7 +2,7 @@
 
 /*
  * Design System — "Warm Clinical"
- * Palette:   canvas #FAF0F1 (bordo-tinted) · ink #0F1B1A · primary(bordo) #6E3338 · accent(rose-gold) #C9A66B · muted #7C8B88
+ * Palette:   canvas #F2D9DB (bordo-tinted) · ink #0F1B1A · primary(bordo) #6E3338 · accent(rose-gold) #C9A66B · muted #7C8B88
  * Type:      Fraunces (display) + Inter (body)
  * Radii:     button full · card 12 · input 8
  * Signature: recurring thin arc / tooth-crown motif (see components/ui/Arc.tsx)
@@ -11,20 +11,27 @@
  * to match the clinic's actual installed signage and architect-delivered
  * interior renders (previously the palette had no relationship to the real
  * space). Values are designer-tuned estimates, not literal pixel-picks.
+ *
+ * 2026-07-18 (later same day): canvas/surface/tints deepened — they were
+ * still ~95% white despite the recolor above (only a faint tint), so the
+ * site read as "white with a rose hint" rather than actually colored.
+ * Pushed noticeably warmer/stronger while keeping dark ink text safely
+ * readable on all of them (still >15:1 contrast — these stay light
+ * backgrounds, just no longer near-white).
  */
 
 @theme {
-  --color-canvas: #faf0f1;
-  --color-surface: #fdf7f8;
+  --color-canvas: #f2d9db;
+  --color-surface: #f8e9ea;
   --color-sand: #f4f1ea;
   --color-ink: #0f1b1a;
   --color-ink-soft: #3a4644;
   --color-primary: #6e3338;
   --color-primary-dark: #58292d;
-  --color-primary-tint: #f1ebeb;
+  --color-primary-tint: #e2d6d7;
   --color-accent: #c9a66b;
   --color-accent-dark: #a18556;
-  --color-accent-tint: #faf6f0;
+  --color-accent-tint: #f4ede1;
   --color-muted: #7c8b88;
   --color-line: rgba(15, 27, 26, 0.08);
   --color-line-strong: rgba(15, 27, 26, 0.14);

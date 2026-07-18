@@ -1,10 +1,16 @@
 import { defineRouting } from "next-intl/routing";
 
 /**
- * EN is the base; the UI chrome (nav/buttons/footer) is now translated into
- * TR/AR/RU/DE too — see messages/<locale>.json. `as-needed` keeps English at
- * `/` (no `/en` prefix) for the primary market while `/tr`, `/ar`, `/ru`,
- * `/de` are explicit.
+ * EN is the content base (see i18n/request.ts — untranslated keys in any
+ * locale fall back to messages/en.json, which stays true regardless of
+ * `defaultLocale` below). The UI chrome (nav/buttons/footer) is translated
+ * into TR/AR/RU/DE too — see messages/<locale>.json.
+ *
+ * 2026-07-18: `defaultLocale` set to `tr` — `as-needed` now keeps Turkish at
+ * `/` (no `/tr` prefix), with `/en`, `/ar`, `/ru`, `/de` explicit. This is a
+ * routing/URL decision only (which locale owns the un-prefixed root) and is
+ * deliberately decoupled from the content-fallback base above, which stays
+ * English on purpose — see i18n/request.ts for why.
  *
  * `tr` was added on explicit request (2026-07-16), overriding the earlier
  * design note that this is an abroad-facing health-tourism property and
@@ -28,7 +34,7 @@ import { defineRouting } from "next-intl/routing";
  */
 export const routing = defineRouting({
   locales: ["en", "tr", "ar", "ru", "de"],
-  defaultLocale: "en",
+  defaultLocale: "tr",
   localePrefix: "as-needed",
 });
 

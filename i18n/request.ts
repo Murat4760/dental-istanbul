@@ -8,13 +8,18 @@ export default getRequestConfig(async ({ requestLocale }) => {
     ? requested
     : routing.defaultLocale;
 
-  // English is the base catalogue. Non-English locales overlay their (currently
-  // empty) message file on top, so scaffolded locales render gracefully in
-  // English until translated — filling messages/<locale>.json overrides per key.
-  const base = (await import(`../messages/${routing.defaultLocale}.json`))
+  // English is the base catalogue — hardcoded here, deliberately NOT tied to
+  // routing.defaultLocale (which is "tr", a routing/URL decision about which
+  // locale owns the un-prefixed root, not a content decision). Any locale's
+  // missing/untranslated keys must fall back to audited English text, never
+  // silently to whichever locale happens to own "/". Non-English locales
+  // overlay their message file on top — scaffolded locales render gracefully
+  // in English until translated, filling messages/<locale>.json per key.
+  const CONTENT_BASE_LOCALE = "en";
+  const base = (await import(`../messages/${CONTENT_BASE_LOCALE}.json`))
     .default;
   const overlay =
-    locale === routing.defaultLocale
+    locale === CONTENT_BASE_LOCALE
       ? {}
       : (await import(`../messages/${locale}.json`)).default;
 
