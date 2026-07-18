@@ -64,13 +64,13 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   },
 
   veneers: {
-    name: "Porselen Veneer (Lamina)",
-    shortName: "Veneer",
+    name: "Porselen Lamine",
+    shortName: "Lamine",
     heroTagline: "Yüzünüze özel tasarlanmış, daha parlak ve düzgün bir gülüş.",
     summary:
       "Diş renginizi, hizanızı ve oranlarınızı yeniden şekillendirmek için diş yüzeyine yapıştırılan ultra ince porselen kaplamalar.",
     whatItIs:
-      "Veneerler, dişlerin ön yüzeyine yapıştırılan ince, özel üretim porselen kaplamalardır. Renk bozuklukları, kırıklar, boşluklar ve hafif diziliş bozukluklarını düzelterek doğal ve düzgün bir gülüş oluşturur. Modern porselen oldukça dayanıklıdır ve ışığı doğal mine gibi yansıtır; bu sayede sonuç 'yapay' değil, doğal görünür.",
+      "Lamineler, dişlerin ön yüzeyine yapıştırılan ince, özel üretim porselen kaplamalardır. Renk bozuklukları, kırıklar, boşluklar ve hafif diziliş bozukluklarını düzelterek doğal ve düzgün bir gülüş oluşturur. Modern porselen oldukça dayanıklıdır ve ışığı doğal mine gibi yansıtır; bu sayede sonuç 'yapay' değil, doğal görünür.",
     whoItsFor: [
       "Gülüşünüzün rengini, şeklini veya diş aralarını iyileştirmek istiyorsunuz",
       "Ön dişleriniz kırık, aşınmış veya hafif çarpık",
@@ -89,33 +89,35 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
           "Minimum düzeyde mine yüzeyi hazırlanır ve hassas bir dijital ölçü alınır.",
       },
       {
-        title: "Geçici veneerler",
+        title: "Geçici laminalar",
         description:
-          "Kalıcı veneerleriniz laboratuvarımızda hazırlanırken, geçici veneerlerle şekil ve rengi deneme imkânı bulursunuz.",
+          "Kalıcı laminalarınız laboratuvarımızda hazırlanırken, geçici laminalarla şekil ve rengi deneme imkânı bulursunuz.",
       },
       {
-        title: "Kalıcı veneerlerin yapıştırılması",
+        title: "Kalıcı laminaların yapıştırılması",
         description:
-          "Porselen veneerleriniz yapıştırılır, parlatılır ve rahat, doğal bir ısırma için ayarlanır.",
+          "Porselen laminalarınız yapıştırılır, parlatılır ve rahat, doğal bir ısırma için ayarlanır.",
       },
     ],
     daysInIstanbul: "5-7 gün",
     seo: {
-      title: "İstanbul'da Porselen Veneer (Lamina Diş)",
+      title: "İstanbul'da Porselen Lamine (Diş Laminesi)",
       description:
-        "İstanbul'da doğal görünümlü porselen veneerler. Kayıtlı bir diş hekimiyle dijital gülüş tasarımı.",
+        "İstanbul'da doğal görünümlü porselen lamine. Kayıtlı bir diş hekimiyle dijital gülüş tasarımı.",
       keywords: [
+        "lamine diş Türkiye",
+        "lamine diş İstanbul",
+        "porselen lamine Türkiye",
         "veneer Türkiye",
         "veneer İstanbul",
-        "porselen veneer Türkiye",
         "Hollywood gülüş İstanbul",
       ],
     },
   },
 
   "all-on-4": {
-    name: "All-on-4 İmplant",
-    shortName: "All-on-4",
+    name: "Zirkonyum All-on-4 İmplant",
+    shortName: "Zirkonyum All-on-4",
     heroTagline: "Yalnızca dört implant üzerinde sabit, tam bir diş dizisi.",
     summary:
       "Dört implantla desteklenen sabit tam ark restorasyonu — çıkarılabilir protezlere kıyasla daha sabit bir alternatif, çoğunlukla kısa bir sürede.",
@@ -151,12 +153,13 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     ],
     daysInIstanbul: "Her ziyaret için 5-7 gün (genellikle iki ziyaret)",
     seo: {
-      title: "İstanbul'da All-on-4 Diş İmplantı",
+      title: "İstanbul'da Zirkonyum All-on-4 Diş İmplantı",
       description:
-        "İstanbul'da All-on-4 implantlarıyla sabit tam ark diş tedavisi, kayıtlı bir diş hekimiyle.",
+        "İstanbul'da zirkonyum All-on-4 implantlarıyla sabit tam ark diş tedavisi, kayıtlı bir diş hekimiyle.",
       keywords: [
         "All-on-4 Türkiye",
         "All-on-4 İstanbul",
+        "zirkonyum All-on-4 Türkiye",
         "tüm ağız diş implantı Türkiye",
         "sabit protez İstanbul",
       ],
@@ -272,7 +275,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     whoItsFor: [
       "Dişleriniz sıkışık, aralıklı veya düzensiz dizilmiş",
       "Kapanış bozukluğunuz var (üst çene öne çıkıklığı, alt çene öne çıkıklığı veya çapraz kapanış)",
-      "Beyazlatma veya veneer denediniz ama asıl sorun diş dizilimi",
+      "Beyazlatma veya lamine denediniz ama asıl sorun diş dizilimi",
       "Gülüşünüzü düzeltmek için cerrahi olmayan, uzun vadeli bir yol istiyorsunuz",
     ],
     processSteps: [
@@ -312,6 +315,111 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
         "braket İstanbul",
         "şeffaf plak Türkiye",
         "İstanbul invisalign",
+      ],
+    },
+  },
+
+  "root-canal": {
+    name: "Kanal Tedavisi",
+    shortName: "Kanal Tedavisi",
+    heroTagline: "Kaybetmek yerine hasarlı veya iltihaplı dişinizi kurtarın.",
+    summary:
+      "Diş içindeki iltihaplı veya hasarlı pulpayı temizleyip, boşluğu şekillendirip dolduran ve dişinizi kurtaran bir tedavi.",
+    whatItIs:
+      "Kanal tedavisi, genellikle derin çürük, çatlak veya aynı diş üzerinde tekrarlanan işlemlerden kaynaklanan, dişin içindeki sinir ve damarları barındıran yumuşak dokunun (pulpa) iltihaplanması veya hasar görmesi durumunda uygulanır. Boşluk temizlenir, şekillendirilir ve bir dolgu maddesiyle doldurulur; ardından dişi korumak ve güçlendirmek için genellikle bir kron yerleştirilir. Aksi halde çekilmesi gerekebilecek bir dişi kurtarmanın yerleşik bir yoludur.",
+    whoItsFor: [
+      "Özellikle sıcak veya soğuk yiyeceklerle artan, sürekli diş ağrınız var",
+      "Bir dişiniz çatlak, derin çürük veya daha önce birden fazla kez tedavi edilmiş",
+      "Belirli bir dişin yanındaki diş etinde şişlik veya hassasiyet fark ediyorsunuz",
+      "Diş hekiminiz röntgende iltihaplı veya hasarlı pulpa tespit etti",
+    ],
+    processSteps: [
+      {
+        title: "Muayene ve röntgen",
+        description:
+          "Diş hekiminiz dişi inceler ve hasarın veya iltihabın boyutunu doğrulamak için röntgen çeker.",
+      },
+      {
+        title: "Lokal anestezi",
+        description:
+          "İşlem boyunca konforlu olması için bölge uyuşturulur.",
+      },
+      {
+        title: "Kanalın temizlenmesi",
+        description:
+          "İltihaplı veya hasarlı pulpa çıkarılır, dişin içi temizlenir ve şekillendirilir.",
+      },
+      {
+        title: "Dolgu ve kapama",
+        description:
+          "Temizlenen boşluk yeniden iltihaplanmayı önlemek için doldurulur ve kapatılır.",
+      },
+      {
+        title: "Kron (gerekirse)",
+        description:
+          "Dişi uzun vadede korumak ve güçlendirmek için genellikle ardından bir kron takılır.",
+      },
+    ],
+    daysInIstanbul: "1-2 ziyaret (karmaşık vakalarda daha fazla olabilir)",
+    seo: {
+      title: "İstanbul'da Kanal Tedavisi",
+      description:
+        "İstanbul'da kayıtlı bir diş hekimiyle kanal tedavisi — hasarlı veya iltihaplı dişinizi kurtarın.",
+      keywords: [
+        "kanal tedavisi Türkiye",
+        "kanal tedavisi İstanbul",
+        "endodonti Türkiye",
+        "İstanbul'da kanal tedavisi",
+      ],
+    },
+  },
+
+  "gum-treatment": {
+    name: "Diş Eti Tedavisi",
+    shortName: "Diş Eti Tedavisi",
+    heroTagline: "Sorunlar ilerlemeden önce daha sağlıklı diş etleri.",
+    summary:
+      "Diş eti çizgisinin altındaki plak ve tartarı temizleyen ve diş eti hastalığının ilerlemesini önlemeye yardımcı olan profesyonel derin temizlik ve bakım.",
+    whatItIs:
+      "Diş eti (periodontal) tedavisi, diş eti çizgisinin üstünde ve altında biriken plak ve tartarı temizleyerek iltihaplanma, kanama veya erken evre diş eti hastalığını ele alır. Temel tedavi, diş kökü yüzeylerinin kapsamlı bir şekilde temizlenmesi olan küretaj ve kök yüzeyi düzleştirmedir; bu, diş etlerinin yeniden tutunmasına ve iyileşmesine yardımcı olur. Tedavi edilmediğinde diş eti hastalığı ilerleyebilir ve dişlerinizi destekleyen kemiği etkileyebilir, bu yüzden erken tedavi önemlidir.",
+    whoItsFor: [
+      "Fırçalarken veya diş ipi kullanırken diş etleriniz kanıyor",
+      "Diş etlerinizde şişlik, kızarıklık veya hassasiyet fark ediyorsunuz",
+      "Geçmeyen sürekli bir ağız kokunuz veya kötü bir tat var",
+      "Diş hekiminiz normalden derin diş eti cepleri ölçtü",
+    ],
+    processSteps: [
+      {
+        title: "Muayene",
+        description:
+          "Diş hekiminiz diş etlerinizi kontrol eder, her diş çevresindeki cep derinliğini ölçer ve destekleyici kemiği kontrol etmek için röntgen çekebilir.",
+      },
+      {
+        title: "Küretaj ve kök yüzeyi düzleştirme",
+        description:
+          "Plak ve tartar diş eti çizgisinin üstünden ve altından dikkatlice temizlenir, kök yüzeyleri düzleştirilir.",
+      },
+      {
+        title: "İyileşme",
+        description:
+          "Diş etlerine temizlenen diş yüzeylerine yeniden tutunması ve iyileşmesi için zaman tanınır.",
+      },
+      {
+        title: "Kontrol ve bakım",
+        description:
+          "Bir kontrol randevusu diş etlerinizin iyi iyileştiğini doğrular ve sağlıklı kalmaları için rehberlik sağlar.",
+      },
+    ],
+    daysInIstanbul: "Yaklaşık bir hafta arayla 1-2 ziyaret",
+    seo: {
+      title: "İstanbul'da Diş Eti Tedavisi",
+      description:
+        "İstanbul'da kayıtlı bir diş hekimiyle profesyonel diş eti (periodontal) tedavisi.",
+      keywords: [
+        "diş eti tedavisi Türkiye",
+        "diş eti tedavisi İstanbul",
+        "periodontal tedavi Türkiye",
+        "İstanbul diş eti hastalığı tedavisi",
       ],
     },
   },

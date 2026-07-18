@@ -45,7 +45,7 @@
   },
   "og": {
     "tagline": "{city}'de diş sağlığı hizmeti",
-    "services": "İmplant · Veneer · All-on-4 · Ortodonti",
+    "services": "İmplant · Lamine · Zirkonyum All-on-4 · Ortodonti",
     "footer": "{city}, {country} · WhatsApp'tan yazın"
   },
   "notFound": {
@@ -71,7 +71,7 @@
   },
   "about": {
     "metaTitle": "{name} Hakkında",
-    "metaDescription": "{name} arkasındaki ekiple tanışın — {city}'de implant, veneer ve gülüş tasarımı sunan kayıtlı bir diş hekimi.",
+    "metaDescription": "{name} arkasındaki ekiple tanışın — {city}'de implant, lamine ve gülüş tasarımı sunan profesyonel bir ekip ve uzman hekimimiz.",
     "eyebrowAboutUs": "Hakkımızda",
     "heroTitle": "Hasta bakımına yaklaşımımız",
     "storyParagraph": "[PLACEHOLDER] Kliniğin hikayesi, felsefesi ve olanakları hakkında bir paragraf — kuruluş yılı, kullanılan teknoloji ve hasta deneyimini farklı kılan unsurlar. Yalnızca gerçek, doğrulanabilir bilgilere bağlı kalın.",
@@ -81,7 +81,7 @@
     "clinicDescription": "{district}, {city}'deki kliniğimize bir bakış.",
     "galleryAlt": "{name} tedavi odası",
     "eyebrowOurTeam": "Ekibimiz",
-    "teamTitle": "Diş hekimlerimizle tanışın",
+    "teamTitle": "Diş hekimimizle tanışın",
     "teamDescription": "[PLACEHOLDER] Kliniğin gerçek, doğrulanabilir diş hekimleriyle değiştirin — isimler, unvanlar, sicil numaraları ve fotoğraflar."
   },
   "contact": {
@@ -92,24 +92,22 @@
     "heroDescription": "WhatsApp'tan yazın, arayın veya e-posta gönderin — genellikle aynı gün içinde hızlıca yanıt veririz.",
     "fastestWay": "Bize ulaşmanın en hızlı yolu",
     "mapAlt": "{name} konumunu gösteren harita, {city}",
-    "mapPlaceholder": "[PLACEHOLDER] Klinik haritasını göm"
+    "mapPlaceholder": "[PLACEHOLDER] Klinik haritasını göm",
+    "getDirections": "Yol Tarifi Al"
   },
   "proceduresPage": {
     "metaTitle": "{city}, {country}'de Diş Tedavileri",
-    "metaDescription": "{city}'de diş tedavilerimizi keşfedin — implant, veneer, All-on-4, kron, ortodonti ve diş beyazlatma.",
+    "metaDescription": "{city}'de diş tedavilerimizi keşfedin — implant, lamine, Zirkonyum All-on-4, kron, ortodonti ve diş beyazlatma.",
     "heroTitle": "{city}, {country}'de diş tedavileri"
   },
   "home": {
-    "metaTitle": "{name} — {city}'de Diş İmplantı, Veneer ve Gülüş Tasarımı",
+    "metaTitle": "{name} — {city}'de Diş İmplantı, Lamine ve Gülüş Tasarımı",
     "badge": "{city}, {country}'de diş sağlığı hizmeti",
-    "heroTitlePrefix": "İmplant, veneer ve gülüş tasarımı,",
-    "heroDescription": "Kayıtlı bir diş hekimi tarafından sunulan implant, veneer, All-on-4 ve komple gülüş tasarımı.",
+    "heroTitlePrefix": "İmplant, lamine ve gülüş tasarımı,",
+    "heroDescription": "Profesyonel bir ekip ve uzman hekimimizle; implant, lamine, Zirkonyum All-on-4 ve komple gülüş tasarımı hizmetleri sunuyoruz.",
     "heroImageAlt": "{name} resepsiyonu, {city}",
     "proceduresTitle": "Uzmanlaştığımız tedaviler",
-    "ctaTitle": "Taahhüt gerektirmeyen bir görüşmeyle başlayın",
-    "benefit1": "Tedavi planınız, siz karar vermeden önce açıkça anlatılır",
-    "benefit2": "Baskı yok, taahhüt yok",
-    "benefit3": "Zamanlama ve ziyaretinizde neler bekleyeceğinize dair rehberlik"
+    "ctaTitle": "Ücretsiz muayene için randevu alın"
   },
   "ctaBand": {
     "defaultTitle": "Tedaviniz hakkında sorularınız mı var?",
@@ -120,7 +118,8 @@
     "body": "Form yok, bekleme yok — bize ulaşmanın en hızlı yolu WhatsApp; tercih ederseniz arayabilir veya e-posta gönderebilirsiniz."
   },
   "footer": {
-    "about": "Diş sağlığı hizmeti — İstanbul'da implant, veneer, All-on-4 ve gülüş tasarımı.",
+    "polyclinicLabel": "Ağız ve Diş Sağlığı Polikliniği",
+    "about": "Diş sağlığı hizmeti — İstanbul'da implant, lamine, Zirkonyum All-on-4 ve gülüş tasarımı.",
     "quickLinks": "Hızlı Bağlantılar",
     "procedures": "Popüler Tedaviler",
     "contact": "İletişim",
@@ -151,7 +150,6 @@
     "whoItsFor": "Kimler İçin Uygun",
     "process": "Süreç",
     "atAGlance": "Genel Bakış",
-    "timeIn": "Tahmini Süre",
     "category": "Kategori",
     "exploreMore": "Daha fazlası",
     "relatedTreatments": "İlgili tedaviler",
@@ -169,6 +167,7 @@
     "Cosmetic": "Estetik",
     "Full-arch": "Tam Ağız",
     "Whitening": "Beyazlatma",
-    "Orthodontics": "Ortodonti"
+    "Orthodontics": "Ortodonti",
+    "Periodontal": "Diş Eti Tedavisi"
   }
 }

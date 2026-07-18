@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Clock, Tag, Check, ArrowRight, ChevronRight, Phone, Mail } from "lucide-react";
+import { Tag, Check, ArrowRight, ChevronRight, Phone, Mail } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { SITE, whatsappUrl } from "@/lib/site";
 import {
@@ -182,17 +182,6 @@ export default async function ProcedurePage({
                   {t("procedurePage.atAGlance")}
                 </h2>
                 <dl className="mt-5 space-y-5 text-sm">
-                  <div className="flex items-start gap-3">
-                    <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                    <div>
-                      <dt className="text-muted">
-                        {t("procedurePage.timeIn")}
-                      </dt>
-                      <dd className="font-medium text-ink">
-                        {procedure.daysInIstanbul}
-                      </dd>
-                    </div>
-                  </div>
                   <div className="flex items-start gap-3">
                     <Tag className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
                     <div>

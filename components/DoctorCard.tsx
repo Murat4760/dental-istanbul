@@ -5,7 +5,8 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
   return (
     <div className="overflow-hidden rounded-card border border-line bg-surface">
       <Media
-        aspect="4 / 3"
+        src={doctor.photoUrl}
+        aspect="16 / 9"
         tone="teal"
         alt={`Portrait of ${doctor.name}`}
         label="[PLACEHOLDER] Doctor photo"

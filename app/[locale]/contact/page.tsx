@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
-import { SITE, whatsappUrl } from "@/lib/site";
+import { SITE, whatsappUrl, directionsUrl } from "@/lib/site";
 import { buildMetadata } from "@/lib/metadata";
 import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -149,6 +149,16 @@ export default async function ContactPage({
                 alt={t("contact.mapAlt", { name: SITE.name, city: place("city") })}
                 label={t("contact.mapPlaceholder")}
               />
+
+              <Button
+                href={directionsUrl()}
+                external
+                variant="outline"
+                className="w-full"
+                leftIcon={<MapPin className="h-4 w-4" />}
+              >
+                {t("contact.getDirections")}
+              </Button>
             </div>
           </div>
 

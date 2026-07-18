@@ -45,7 +45,7 @@
   },
   "og": {
     "tagline": "Zahnmedizinische Versorgung in {city}",
-    "services": "Implantate · Veneers · All-on-4 · Kieferorthopädie",
+    "services": "Implantate · Veneers · Zirkon All-on-4 · Kieferorthopädie",
     "footer": "{city}, {country} · Schreiben Sie uns per WhatsApp"
   },
   "notFound": {
@@ -71,7 +71,7 @@
   },
   "about": {
     "metaTitle": "Über {name}",
-    "metaDescription": "Lernen Sie das Team hinter {name} kennen — ein registrierter Zahnarzt, der Implantate, Veneers und Smile-Makeover in {city} anbietet.",
+    "metaDescription": "Lernen Sie das Team hinter {name} kennen — ein professionelles Team und ein erfahrener Zahnarzt, der Implantate, Veneers und Smile-Makeover in {city} anbietet.",
     "eyebrowAboutUs": "Über uns",
     "heroTitle": "Unser Ansatz in der Patientenversorgung",
     "storyParagraph": "[PLACEHOLDER] Ein Absatz über die Geschichte, Philosophie und Einrichtungen der Klinik — Gründungsjahr, eingesetzte Technologie und was die Patientenerfahrung besonders macht. Nur echte, verifizierbare Fakten verwenden.",
@@ -81,7 +81,7 @@
     "clinicDescription": "Ein Blick in unsere Klinik in {district}, {city}.",
     "galleryAlt": "Behandlungsraum bei {name}",
     "eyebrowOurTeam": "Unser Team",
-    "teamTitle": "Lernen Sie unsere Zahnärzte kennen",
+    "teamTitle": "Lernen Sie unseren Zahnarzt kennen",
     "teamDescription": "[PLACEHOLDER] Durch die echten, verifizierbaren Zahnärzte der Klinik ersetzen — Namen, Qualifikationen, Zulassungsnummern und Fotos."
   },
   "contact": {
@@ -92,24 +92,22 @@
     "heroDescription": "Schreiben Sie uns per WhatsApp, rufen Sie an oder senden Sie eine E-Mail — wir antworten schnell, meist noch am selben Tag.",
     "fastestWay": "Der schnellste Weg, uns zu erreichen",
     "mapAlt": "Karte mit dem Standort von {name} in {city}",
-    "mapPlaceholder": "[PLACEHOLDER] Klinikkarte einbetten"
+    "mapPlaceholder": "[PLACEHOLDER] Klinikkarte einbetten",
+    "getDirections": "Route anzeigen"
   },
   "proceduresPage": {
     "metaTitle": "Zahnbehandlungen in {city}, {country}",
-    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen in {city} — Implantate, Veneers, All-on-4, Kronen, Kieferorthopädie und Zahnaufhellung.",
+    "metaDescription": "Entdecken Sie unsere Zahnbehandlungen in {city} — Implantate, Veneers, Zirkon All-on-4, Kronen, Kieferorthopädie und Zahnaufhellung.",
     "heroTitle": "Zahnbehandlungen in {city}, {country}"
   },
   "home": {
     "metaTitle": "{name} — Zahnimplantate, Veneers & Smile-Makeover in {city}",
     "badge": "Zahnmedizinische Versorgung in {city}, {country}",
     "heroTitlePrefix": "Zahnimplantate, Veneers und Zahnästhetik in",
-    "heroDescription": "Implantate, Veneers, All-on-4 und komplette Smile-Makeover, angeboten von einem registrierten Zahnarzt.",
+    "heroDescription": "Implantate, Veneers, Zirkon All-on-4 und komplette Smile-Makeover, angeboten von einem professionellen Team und einem erfahrenen Zahnarzt.",
     "heroImageAlt": "Empfang von {name} in {city}",
     "proceduresTitle": "Behandlungen, auf die wir spezialisiert sind",
-    "ctaTitle": "Beginnen Sie mit einem unverbindlichen Gespräch",
-    "benefit1": "Ihr Behandlungsplan wird klar erklärt, bevor Sie sich entscheiden",
-    "benefit2": "Kein Druck, keine Verpflichtung",
-    "benefit3": "Hinweise zum Timing und was Sie bei Ihrem Besuch erwartet"
+    "ctaTitle": "Vereinbaren Sie einen Termin für eine kostenlose Beratung"
   },
   "ctaBand": {
     "defaultTitle": "Haben Sie Fragen zu Ihrer Behandlung?",
@@ -120,7 +118,8 @@
     "body": "Kein Formular, keine Wartezeit — WhatsApp ist der schnellste Weg, uns zu erreichen, oder rufen Sie an bzw. schreiben Sie eine E-Mail, wenn Sie das bevorzugen."
   },
   "footer": {
-    "about": "Zahnmedizinische Versorgung — Implantate, Veneers, All-on-4 und Smile-Makeover in Istanbul.",
+    "polyclinicLabel": "Zahnarztpraxis für Mund- und Zahngesundheit",
+    "about": "Zahnmedizinische Versorgung — Implantate, Veneers, Zirkon All-on-4 und Smile-Makeover in Istanbul.",
     "quickLinks": "Schnellzugriff",
     "procedures": "Beliebte Behandlungen",
     "contact": "Kontakt",
@@ -151,7 +150,6 @@
     "whoItsFor": "Für wen es geeignet ist",
     "process": "Der Ablauf",
     "atAGlance": "Auf einen Blick",
-    "timeIn": "Behandlungsdauer",
     "category": "Kategorie",
     "exploreMore": "Mehr entdecken",
     "relatedTreatments": "Ähnliche Behandlungen",
@@ -169,6 +167,7 @@
     "Cosmetic": "Ästhetisch",
     "Full-arch": "Vollbogen",
     "Whitening": "Zahnaufhellung",
-    "Orthodontics": "Kieferorthopädie"
+    "Orthodontics": "Kieferorthopädie",
+    "Periodontal": "Parodontologie"
   }
 }

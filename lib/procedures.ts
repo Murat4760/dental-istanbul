@@ -26,7 +26,8 @@ export type ProcedureCategory =
   | "Cosmetic"
   | "Full-arch"
   | "Whitening"
-  | "Orthodontics";
+  | "Orthodontics"
+  | "Periodontal";
 
 export type Procedure = {
   slug: string;
@@ -43,6 +44,12 @@ export type Procedure = {
   /** Typical time on the ground in Istanbul. */
   daysInIstanbul: string;
   seo: { title: string; description: string; keywords: string[] };
+  /**
+   * Generic illustrative photo of the treatment/equipment/setting — NOT a
+   * patient result photo (before/after results stay banned, see file header
+   * comment). Placeholder rendered by <Media> until a real one is supplied.
+   */
+  photoUrl?: string;
   /**
    * "comingSoon" = the clinic offers this (per their own marketing) but we
    * don't yet have their specific details confirmed — shows a "Coming soon"
@@ -163,8 +170,8 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "all-on-4",
-    name: "All-on-4 Implants",
-    shortName: "All-on-4",
+    name: "Zirconia All-on-4 Implants",
+    shortName: "Zirconia All-on-4",
     category: "Full-arch",
     icon: "Grip",
     heroTagline: "A full arch of fixed teeth on just four implants.",
@@ -202,12 +209,13 @@ export const procedures: Procedure[] = [
     ],
     daysInIstanbul: "5–7 days per visit (usually two visits)",
     seo: {
-      title: "All-on-4 Dental Implants in Istanbul, Turkey",
+      title: "Zirconia All-on-4 Dental Implants in Istanbul, Turkey",
       description:
-        "Fixed full-arch teeth with All-on-4 implants in Istanbul, with a registered dentist.",
+        "Fixed full-arch teeth with zirconia All-on-4 implants in Istanbul, with a registered dentist.",
       keywords: [
         "All-on-4 Turkey",
         "All on 4 Istanbul",
+        "zirconia All-on-4 Turkey",
         "full mouth dental implants Turkey",
         "fixed dentures Istanbul",
       ],
@@ -369,6 +377,115 @@ export const procedures: Procedure[] = [
         "braces Istanbul",
         "clear aligners Turkey",
         "invisalign Istanbul",
+      ],
+    },
+  },
+  {
+    slug: "root-canal",
+    name: "Root Canal Treatment",
+    shortName: "Root Canal",
+    category: "Restorative",
+    icon: "Syringe",
+    heroTagline: "Save a damaged or infected tooth instead of losing it.",
+    summary:
+      "A procedure that removes infected or damaged pulp from inside a tooth, then cleans, shapes and seals the space to save the natural tooth.",
+    whatItIs:
+      "Root canal treatment removes infected or inflamed pulp — the soft tissue inside a tooth containing nerves and blood vessels — usually caused by deep decay, a crack, or repeated dental work on the same tooth. The space is cleaned, shaped and sealed with a filling material, and a crown is often placed afterward to protect and strengthen the tooth. It's a well-established way to save a tooth that would otherwise need to be extracted.",
+    whoItsFor: [
+      "You have persistent tooth pain, especially with hot or cold foods",
+      "A tooth is cracked, deeply decayed, or has been treated multiple times before",
+      "You notice swelling or tenderness in the gum near a specific tooth",
+      "Your dentist has identified infected or damaged pulp on an X-ray",
+    ],
+    processSteps: [
+      {
+        title: "Examination & X-ray",
+        description:
+          "Your dentist examines the tooth and takes an X-ray to confirm the extent of the damage or infection.",
+      },
+      {
+        title: "Local anaesthetic",
+        description:
+          "The area is numbed so the procedure is comfortable throughout.",
+      },
+      {
+        title: "Cleaning the canal",
+        description:
+          "The infected or damaged pulp is removed, and the inside of the tooth is cleaned and shaped.",
+      },
+      {
+        title: "Filling & sealing",
+        description:
+          "The cleaned space is filled and sealed to prevent reinfection.",
+      },
+      {
+        title: "Crown (if needed)",
+        description:
+          "A crown is often fitted afterward to protect and strengthen the tooth long-term.",
+      },
+    ],
+    daysInIstanbul: "1–2 visits (occasionally more for complex cases)",
+    seo: {
+      title: "Root Canal Treatment in Istanbul, Turkey",
+      description:
+        "Root canal treatment in Istanbul with a registered dentist — save a damaged or infected tooth.",
+      keywords: [
+        "root canal Turkey",
+        "root canal Istanbul",
+        "root canal treatment Istanbul",
+        "endodontic treatment Turkey",
+      ],
+    },
+  },
+  {
+    slug: "gum-treatment",
+    name: "Gum Treatment",
+    shortName: "Gum Treatment",
+    category: "Periodontal",
+    icon: "Shield",
+    heroTagline: "Healthier gums, treated before problems progress.",
+    summary:
+      "Professional deep cleaning and gum care that removes plaque and tartar below the gumline and helps prevent gum disease from progressing.",
+    whatItIs:
+      "Gum (periodontal) treatment addresses inflammation, bleeding or early gum disease by removing plaque and tartar that builds up above and below the gumline. The core treatment is scaling and root planing — a thorough clean of the tooth root surfaces — which helps gums reattach and heal. Left untreated, gum disease can progress and affect the bone supporting your teeth, so early treatment matters.",
+    whoItsFor: [
+      "Your gums bleed when you brush or floss",
+      "You notice swelling, redness or tenderness in your gums",
+      "You have persistent bad breath or a bad taste that doesn't go away",
+      "Your dentist has measured deeper-than-normal gum pockets",
+    ],
+    processSteps: [
+      {
+        title: "Examination",
+        description:
+          "Your dentist checks your gums, measures pocket depth around each tooth, and may take X-rays to check the supporting bone.",
+      },
+      {
+        title: "Scaling & root planing",
+        description:
+          "Plaque and tartar are carefully removed from above and below the gumline, and the root surfaces are smoothed.",
+      },
+      {
+        title: "Healing",
+        description:
+          "Gums are given time to heal and reattach to the cleaned tooth surfaces.",
+      },
+      {
+        title: "Review & maintenance",
+        description:
+          "A follow-up check confirms the gums are healing well, with guidance on keeping them healthy going forward.",
+      },
+    ],
+    daysInIstanbul: "1–2 visits, spaced about a week apart",
+    seo: {
+      title: "Gum Treatment in Istanbul, Turkey",
+      description:
+        "Professional gum (periodontal) treatment in Istanbul with a registered dentist.",
+      keywords: [
+        "gum treatment Turkey",
+        "gum treatment Istanbul",
+        "periodontal treatment Turkey",
+        "gum disease treatment Istanbul",
       ],
     },
   },

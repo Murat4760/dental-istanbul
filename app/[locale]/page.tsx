@@ -5,7 +5,6 @@ import {
   ArrowRight,
   Mail,
   Phone,
-  Check,
 } from "lucide-react";
 import { SITE, whatsappUrl } from "@/lib/site";
 import { getLocalizedProcedures } from "@/lib/procedures";
@@ -185,20 +184,6 @@ export default async function HomePage({
               title={t("home.ctaTitle")}
               description={t("procedurePage.contactDescription")}
             />
-            <ul className="mt-8 space-y-3">
-              {[
-                t("home.benefit1"),
-                t("home.benefit2"),
-                t("home.benefit3"),
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3 text-ink-soft">
-                  <span className="mt-0.5 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary text-white">
-                    <Check className="h-3 w-3" />
-                  </span>
-                  {item}
-                </li>
-              ))}
-            </ul>
           </div>
           <div className="rounded-card border border-line bg-surface p-6 shadow-card sm:p-8">
             <div className="flex flex-col gap-3">

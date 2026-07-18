@@ -59,13 +59,12 @@ export const SITE = {
   email: "info@ramadent.com",
 
   // ─── Opening hours (display + schema use this) ─────────────────────────────
-  // Not confirmed with the client — the 2026-07-14 intake form left this
-  // blank. `hoursConfirmed: false` means every consumer must render an
-  // honest "hours pending" note instead of these placeholder times.
-  hoursConfirmed: false,
+  // Confirmed by the client 2026-07-18: weekdays + Saturday 10:00-20:00,
+  // closed Sunday.
+  hoursConfirmed: true,
   hours: [
-    { daysKey: "weekdays", open: "09:00", close: "19:00" },
-    { daysKey: "saturday", open: "09:00", close: "17:00" },
+    { daysKey: "weekdays", open: "10:00", close: "20:00" },
+    { daysKey: "saturday", open: "10:00", close: "20:00" },
     { daysKey: "sunday", open: "", close: "" },
   ] as OpeningHour[],
 
@@ -106,4 +105,15 @@ export function whatsappUrl(message?: string): string {
 /** Absolute URL for a path, used for canonical / OG / sitemap. */
 export function absoluteUrl(path = "/"): string {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/**
+ * Google Maps directions link built from the full postal address (not
+ * SITE.geo, which is still an approximate district-centre placeholder —
+ * see the comment on `geo` above). A text-address search routes correctly
+ * regardless of the pin's precision.
+ */
+export function directionsUrl(): string {
+  const fullAddress = `${SITE.address.street}, ${SITE.address.district}, ${SITE.address.city}, ${SITE.address.postalCode}, ${SITE.address.country}`;
+  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(fullAddress)}`;
 }

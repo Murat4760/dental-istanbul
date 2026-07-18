@@ -114,8 +114,8 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   },
 
   "all-on-4": {
-    name: "All-on-4-Implantate",
-    shortName: "All-on-4",
+    name: "Zirkon All-on-4-Implantate",
+    shortName: "Zirkon All-on-4",
     heroTagline: "Ein vollständiger Zahnbogen auf nur vier Implantaten.",
     summary:
       "Eine feste Vollbogen-Versorgung auf vier Implantaten — eine stabile Alternative zu herausnehmbaren Prothesen, oft in kurzer Zeit.",
@@ -151,12 +151,13 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
     ],
     daysInIstanbul: "5–7 Tage pro Besuch (in der Regel zwei Besuche)",
     seo: {
-      title: "All-on-4-Implantate in Istanbul, Türkei",
+      title: "Zirkon All-on-4-Implantate in Istanbul, Türkei",
       description:
-        "Feste Vollbogen-Zähne mit All-on-4-Implantaten in Istanbul, bei einem registrierten Zahnarzt.",
+        "Feste Vollbogen-Zähne mit Zirkon-All-on-4-Implantaten in Istanbul, bei einem registrierten Zahnarzt.",
       keywords: [
         "All-on-4 Türkei",
         "All-on-4 Istanbul",
+        "Zirkon All-on-4 Türkei",
         "Vollmund-Implantate Türkei",
         "festsitzender Zahnersatz Istanbul",
       ],
@@ -311,6 +312,111 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
         "Zahnspange Istanbul",
         "durchsichtige Aligner Türkei",
         "Invisalign Istanbul",
+      ],
+    },
+  },
+
+  "root-canal": {
+    name: "Wurzelkanalbehandlung",
+    shortName: "Wurzelkanalbehandlung",
+    heroTagline: "Retten Sie einen geschädigten oder infizierten Zahn, statt ihn zu verlieren.",
+    summary:
+      "Ein Verfahren, das infiziertes oder geschädigtes Gewebe aus dem Inneren eines Zahns entfernt und den Raum anschließend reinigt, formt und versiegelt, um den natürlichen Zahn zu erhalten.",
+    whatItIs:
+      "Die Wurzelkanalbehandlung entfernt infiziertes oder entzündetes Pulpagewebe — das weiche Gewebe im Zahninneren, das Nerven und Blutgefäße enthält —, meist verursacht durch tiefe Karies, einen Riss oder wiederholte zahnärztliche Eingriffe am selben Zahn. Der Raum wird gereinigt, geformt und mit einem Füllmaterial versiegelt; anschließend wird häufig eine Krone gesetzt, um den Zahn zu schützen und zu stärken. Es ist eine bewährte Methode, einen Zahn zu retten, der sonst gezogen werden müsste.",
+    whoItsFor: [
+      "Sie haben anhaltende Zahnschmerzen, besonders bei heißen oder kalten Speisen",
+      "Ein Zahn ist gerissen, tief kariös oder wurde bereits mehrfach behandelt",
+      "Sie bemerken Schwellungen oder Druckempfindlichkeit am Zahnfleisch nahe einem bestimmten Zahn",
+      "Ihr Zahnarzt hat auf einem Röntgenbild infiziertes oder geschädigtes Pulpagewebe festgestellt",
+    ],
+    processSteps: [
+      {
+        title: "Untersuchung & Röntgen",
+        description:
+          "Ihr Zahnarzt untersucht den Zahn und macht ein Röntgenbild, um das Ausmaß der Schädigung oder Infektion zu bestätigen.",
+      },
+      {
+        title: "Lokalanästhesie",
+        description:
+          "Der Bereich wird betäubt, damit die Behandlung durchgehend angenehm verläuft.",
+      },
+      {
+        title: "Reinigung des Kanals",
+        description:
+          "Das infizierte oder geschädigte Pulpagewebe wird entfernt, das Zahninnere gereinigt und geformt.",
+      },
+      {
+        title: "Füllung & Versiegelung",
+        description:
+          "Der gereinigte Raum wird gefüllt und versiegelt, um eine erneute Infektion zu verhindern.",
+      },
+      {
+        title: "Krone (falls nötig)",
+        description:
+          "Anschließend wird oft eine Krone gesetzt, um den Zahn langfristig zu schützen und zu stärken.",
+      },
+    ],
+    daysInIstanbul: "1-2 Termine (bei komplexen Fällen ggf. mehr)",
+    seo: {
+      title: "Wurzelkanalbehandlung in Istanbul, Türkei",
+      description:
+        "Wurzelkanalbehandlung in Istanbul bei einem registrierten Zahnarzt — retten Sie Ihren geschädigten oder infizierten Zahn.",
+      keywords: [
+        "Wurzelkanalbehandlung Türkei",
+        "Wurzelkanalbehandlung Istanbul",
+        "Endodontie Türkei",
+        "Wurzelbehandlung Istanbul",
+      ],
+    },
+  },
+
+  "gum-treatment": {
+    name: "Zahnfleischbehandlung",
+    shortName: "Zahnfleischbehandlung",
+    heroTagline: "Gesünderes Zahnfleisch, behandelt bevor Probleme fortschreiten.",
+    summary:
+      "Professionelle Tiefenreinigung und Pflege, die Plaque und Zahnstein unterhalb des Zahnfleischrands entfernt und hilft, das Fortschreiten von Zahnfleischerkrankungen zu verhindern.",
+    whatItIs:
+      "Die Zahnfleisch- (parodontale) Behandlung behandelt Entzündungen, Zahnfleischbluten oder frühe Zahnfleischerkrankungen durch Entfernung von Plaque und Zahnstein, der sich ober- und unterhalb des Zahnfleischrands ansammelt. Die zentrale Behandlung ist das Scaling und die Wurzelglättung — eine gründliche Reinigung der Zahnwurzeloberflächen —, die dem Zahnfleisch hilft, sich wieder anzulegen und zu heilen. Unbehandelt kann eine Zahnfleischerkrankung fortschreiten und den Knochen beeinträchtigen, der Ihre Zähne stützt, weshalb eine frühzeitige Behandlung wichtig ist.",
+    whoItsFor: [
+      "Ihr Zahnfleisch blutet beim Zähneputzen oder bei der Verwendung von Zahnseide",
+      "Sie bemerken Schwellungen, Rötungen oder Druckempfindlichkeit am Zahnfleisch",
+      "Sie haben anhaltenden Mundgeruch oder einen schlechten Geschmack, der nicht verschwindet",
+      "Ihr Zahnarzt hat tiefere als normale Zahnfleischtaschen gemessen",
+    ],
+    processSteps: [
+      {
+        title: "Untersuchung",
+        description:
+          "Ihr Zahnarzt kontrolliert Ihr Zahnfleisch, misst die Taschentiefe um jeden Zahn und macht gegebenenfalls Röntgenbilder, um den stützenden Knochen zu überprüfen.",
+      },
+      {
+        title: "Scaling & Wurzelglättung",
+        description:
+          "Plaque und Zahnstein werden sorgfältig ober- und unterhalb des Zahnfleischrands entfernt, die Wurzeloberflächen geglättet.",
+      },
+      {
+        title: "Heilung",
+        description:
+          "Dem Zahnfleisch wird Zeit gegeben, zu heilen und sich wieder an die gereinigten Zahnoberflächen anzulegen.",
+      },
+      {
+        title: "Kontrolle & Erhaltung",
+        description:
+          "Eine Nachkontrolle bestätigt, dass das Zahnfleisch gut verheilt, mit Hinweisen zur weiteren Pflege.",
+      },
+    ],
+    daysInIstanbul: "1-2 Termine, im Abstand von etwa einer Woche",
+    seo: {
+      title: "Zahnfleischbehandlung in Istanbul, Türkei",
+      description:
+        "Professionelle Zahnfleisch- (parodontale) Behandlung in Istanbul bei einem registrierten Zahnarzt.",
+      keywords: [
+        "Zahnfleischbehandlung Türkei",
+        "Zahnfleischbehandlung Istanbul",
+        "Parodontalbehandlung Türkei",
+        "Zahnfleischerkrankung Behandlung Istanbul",
       ],
     },
   },

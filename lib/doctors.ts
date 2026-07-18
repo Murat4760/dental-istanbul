@@ -19,6 +19,7 @@ export type Doctor = {
   credentials: string;
   specialties: string[];
   bio: string;
+  photoUrl?: string;
 };
 
 // Only one dentist is confirmed via the 2026-07-14 intake form. Do not add
@@ -32,6 +33,9 @@ export const doctors: Doctor[] = [
     credentials: "Diş Hekimi — Sicil No: 20190201022/51734",
     specialties: [],
     bio: "[PLACEHOLDER] A short professional biography — years of experience, university, memberships, and areas of focus. Keep to real, verifiable facts.",
+    // Client-supplied 2026-07-18: Ferhat at the clinic reception, next to
+    // the installed R.A.M.A DENTAL CLINIC sign.
+    photoUrl: "/images/doctors/ferhat-ramazani.jpg",
   },
 ];
 

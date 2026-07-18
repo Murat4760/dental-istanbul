@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { getLocale, getTranslations } from "next-intl/server";
 import { MapPin, Clock, Phone, Mail } from "lucide-react";
-import { InstagramIcon, FacebookIcon } from "@/components/ui/SocialIcons";
+import { InstagramIcon, FacebookIcon, WhatsAppIcon } from "@/components/ui/SocialIcons";
 import { Link } from "@/i18n/navigation";
-import { SITE } from "@/lib/site";
+import { SITE, whatsappUrl, directionsUrl } from "@/lib/site";
 import { getLocalizedProcedures } from "@/lib/procedures";
 
 const NAV = [
@@ -32,32 +32,60 @@ export async function Footer() {
               className="h-10 w-auto"
             />
           </Link>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-canvas/60">
+          <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-canvas/50">
+            {t("footer.polyclinicLabel")}
+          </p>
+          <p className="mt-3 max-w-xs text-sm leading-relaxed text-canvas/60">
             {t("footer.about")}
           </p>
-          <div className="mt-6 flex gap-3">
+          <div className="mt-6 flex flex-col items-start gap-3">
             {SITE.socials.instagram && (
               <a
                 href={SITE.socials.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={t("social.instagram")}
-                className="grid h-10 w-10 place-items-center rounded-full border border-canvas/15 text-canvas/70 transition-colors hover:border-accent hover:text-accent"
+                className="grid h-11 w-11 place-items-center rounded-full border border-canvas/15 text-canvas/70 shadow-[0_0_18px_-4px_rgba(219,80,120,0.55)] transition-colors hover:border-accent"
               >
-                <InstagramIcon className="h-[18px] w-[18px]" />
+                <InstagramIcon brand className="h-5 w-5" />
               </a>
             )}
-            {SITE.socials.facebook && (
+            <div className="flex gap-3">
               <a
-                href={SITE.socials.facebook}
+                href={whatsappUrl(
+                  t("whatsapp.prefill", {
+                    topic: t("whatsapp.defaultTopic"),
+                    city: t("place.city"),
+                  }),
+                )}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label={t("social.facebook")}
-                className="grid h-10 w-10 place-items-center rounded-full border border-canvas/15 text-canvas/70 transition-colors hover:border-accent hover:text-accent"
+                aria-label={t("whatsapp.label")}
+                className="grid h-11 w-11 place-items-center rounded-full border border-canvas/15 text-[#25D366] shadow-[0_0_18px_-4px_rgba(37,211,102,0.55)] transition-colors hover:border-[#25D366]"
               >
-                <FacebookIcon className="h-[18px] w-[18px]" />
+                <WhatsAppIcon className="h-5 w-5" />
               </a>
-            )}
+              <a
+                href={directionsUrl()}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t("contact.getDirections")}
+                className="grid h-11 w-11 place-items-center rounded-full border border-canvas/15 text-canvas/70 shadow-[0_0_18px_-4px_rgba(110,51,56,0.55)] transition-colors hover:border-primary hover:text-primary"
+              >
+                <MapPin className="h-5 w-5" />
+              </a>
+              {SITE.socials.facebook && (
+                <a
+                  href={SITE.socials.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("social.facebook")}
+                  className="grid h-11 w-11 place-items-center rounded-full border border-canvas/15 text-canvas/70 transition-colors hover:border-accent hover:text-accent"
+                >
+                  <FacebookIcon className="h-5 w-5" />
+                </a>
+              )}
+            </div>
           </div>
         </div>
 

@@ -45,7 +45,7 @@
   },
   "og": {
     "tagline": "Dental care in {city}",
-    "services": "Implants · Veneers · All-on-4 · Orthodontics",
+    "services": "Implants · Veneers · Zirconia All-on-4 · Orthodontics",
     "footer": "{city}, {country} · Message us on WhatsApp"
   },
   "notFound": {
@@ -71,7 +71,7 @@
   },
   "about": {
     "metaTitle": "About {name}",
-    "metaDescription": "Meet the team behind {name} — a registered dentist providing implants, veneers and smile makeovers in {city}.",
+    "metaDescription": "Meet the team behind {name} — a professional team and an expert dentist providing implants, veneers and smile makeovers in {city}.",
     "eyebrowAboutUs": "About us",
     "heroTitle": "Our approach to patient care",
     "storyParagraph": "[PLACEHOLDER] A paragraph about the clinic's story, philosophy and facilities — years established, the technology used, and what makes the patient experience different. Keep to real, verifiable facts.",
@@ -81,7 +81,7 @@
     "clinicDescription": "A look at our clinic in {district}, {city}.",
     "galleryAlt": "Treatment room at {name}",
     "eyebrowOurTeam": "Our team",
-    "teamTitle": "Meet the dentists",
+    "teamTitle": "Meet our dentist",
     "teamDescription": "[PLACEHOLDER] Replace with the clinic's real, verifiable dentists — names, credentials, registration numbers and photos."
   },
   "contact": {
@@ -92,24 +92,22 @@
     "heroDescription": "Message us on WhatsApp, call, or email — we reply quickly, usually the same day.",
     "fastestWay": "Fastest way to reach us",
     "mapAlt": "Map showing {name} location in {city}",
-    "mapPlaceholder": "[PLACEHOLDER] Embed clinic map"
+    "mapPlaceholder": "[PLACEHOLDER] Embed clinic map",
+    "getDirections": "Get Directions"
   },
   "proceduresPage": {
     "metaTitle": "Dental Procedures in {city}, {country}",
-    "metaDescription": "Explore our dental treatments in {city} — implants, veneers, All-on-4, crowns, orthodontics and teeth whitening.",
+    "metaDescription": "Explore our dental treatments in {city} — implants, veneers, Zirconia All-on-4, crowns, orthodontics and teeth whitening.",
     "heroTitle": "Dental procedures in {city}, {country}"
   },
   "home": {
     "metaTitle": "{name} — Dental Implants, Veneers & Smile Makeovers in {city}",
     "badge": "Dental care in {city}, {country}",
     "heroTitlePrefix": "Dental implants, veneers and smile makeovers in",
-    "heroDescription": "Implants, veneers, All-on-4 and full smile makeovers, provided by a registered dentist.",
+    "heroDescription": "Implants, veneers, Zirconia All-on-4 and full smile makeovers, provided by a professional team and an expert dentist.",
     "heroImageAlt": "Reception at {name} in {city}",
     "proceduresTitle": "Procedures we specialise in",
-    "ctaTitle": "Start with a no-obligation conversation",
-    "benefit1": "Your treatment plan explained clearly before you commit",
-    "benefit2": "No pressure, no obligation",
-    "benefit3": "Guidance on timing and what to expect at your visit"
+    "ctaTitle": "Book an appointment for a free consultation"
   },
   "ctaBand": {
     "defaultTitle": "Have questions about your treatment?",
@@ -120,7 +118,8 @@
     "body": "No forms, no waiting — WhatsApp is the fastest way to reach us, or call or email if you prefer."
   },
   "footer": {
-    "about": "Dental care — implants, veneers, All-on-4 and smile makeovers in Istanbul.",
+    "polyclinicLabel": "Oral & Dental Health Polyclinic",
+    "about": "Dental care — implants, veneers, Zirconia All-on-4 and smile makeovers in Istanbul.",
     "quickLinks": "Quick links",
     "procedures": "Popular procedures",
     "contact": "Contact",
@@ -151,7 +150,6 @@
     "whoItsFor": "Who it's for",
     "process": "The process",
     "atAGlance": "At a glance",
-    "timeIn": "Typical duration",
     "category": "Category",
     "exploreMore": "Explore more",
     "relatedTreatments": "Related treatments",
@@ -169,6 +167,7 @@
     "Cosmetic": "Cosmetic",
     "Full-arch": "Full-arch",
     "Whitening": "Whitening",
-    "Orthodontics": "Orthodontics"
+    "Orthodontics": "Orthodontics",
+    "Periodontal": "Periodontal"
   }
 }

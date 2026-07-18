@@ -522,3 +522,112 @@ content, hidden until supplied).
     as a TypeScript field/property name still says "Istanbul" internally
     — left as-is since it's not user-facing (the displayed label is now
     neutral) and renaming it is a pure refactor with no behavior change.
+
+### 2026-07-18 large content/data/UI batch — first real client photo, hours confirmed, 2 new procedures
+- **Business data now real, not placeholder:** `lib/site.ts` — hours
+  confirmed by the client: weekdays + Saturday 10:00–20:00, Sunday closed,
+  `hoursConfirmed` flipped to `true`. This automatically activates
+  `openingHoursSpecification` in `lib/schema.ts`'s JSON-LD (previously
+  omitted entirely) and switches the contact page/footer off their
+  "hours pending" branch.
+- **First real doctor photo supplied.** Copied client's photo (Ferhat at
+  reception, next to the installed sign) to
+  `public/images/doctors/ferhat-ramazani.jpg` (file was actually JPEG
+  despite a `.png` name — saved with the correct extension). Added
+  `photoUrl?: string` to the `Doctor` type, wired into
+  `components/DoctorCard.tsx` via `<Media src={doctor.photoUrl}>`.
+  Changed the card's `aspect` from `4/3` to `16/9` to match the photo's
+  real ~1.88:1 ratio and keep both Ferhat and the sign in frame — `Media`
+  already uses `object-cover` (crops, never stretches), so no distortion
+  risk existed, this was purely a framing choice. Also fixed
+  `about.teamTitle` in all 5 locales from plural ("meet our dentists") to
+  singular ("meet our dentist") — there's only one confirmed real dentist.
+- **Dropped "registered dentist" phrasing** from `home.heroDescription`
+  and `about.metaDescription` in all 5 locales, replaced with "a
+  professional team, an expert dentist" (client's exact TR wording,
+  translated). General instruction to make intro copy warmer/more
+  professional applied to these same strings — no new claims, same
+  compliance constraints.
+- **Removed the homepage benefits checklist** (`home.benefit1/2/3` —
+  "your plan explained before you commit / no pressure, no obligation /
+  timing guidance") entirely from `app/[locale]/page.tsx` and all 5
+  `messages/*.json`, along with the now-unused `Check` icon import.
+  Rewrote `home.ctaTitle` from a "no-obligation conversation" framing to
+  "Book an appointment for a free consultation" in all 5 locales — noting
+  for the record that "free consultation" is a standard, generally
+  accepted dental-marketing CTA distinct from discounting actual
+  treatment prices, consistent with every other compliance judgment call
+  logged in this file.
+- **Removed the "Typical duration" / day-range display entirely, in two
+  places, site-wide:** the procedure detail page's sidebar fact (already
+  planned) **and** — caught during implementation, not in the original
+  ask — the same `daysInIstanbul` value was *also* being shown directly
+  on every `ProcedureCard` (homepage/grid card), which the plan had
+  missed. Removed both, matching the resolved "remove site-wide" decision.
+  The `daysInIstanbul` field itself stays in the data (harmless, unused).
+- **Terminology:** "veneer" → "lamine" throughout `lib/procedures.tr.ts`
+  and `messages/tr.json` (TR only — this was a colloquial-term
+  correction, not a translation gap elsewhere) — kept the working
+  "veneer Türkiye/İstanbul" SEO keywords alongside new "lamine"
+  variants rather than deleting live search terms. "All-on-4" renamed to
+  "Zirconia All-on-4" / "Zirkonyum All-on-4" / "All-on-4 بالزركونيوم" /
+  "Циркониевый All-on-4" / "Zirkon All-on-4" across all 5 locales (both
+  `lib/procedures.*.ts` and the 4 repeated `messages/*.json` keys) — kept
+  the `slug: "all-on-4"` unchanged, no URL/redirect impact. Note: this
+  combo (All-on-4 restoration in zirconia) is a standard real
+  dental-tourism service name, not a naming collision with the separate
+  "Crowns" procedure that also legitimately uses zirconia as a material.
+- **Two new procedures added**, full parity with the existing 6 across
+  all 5 locales — `lib/procedures.ts` (+ `procedures.tr/ar/ru/de.ts`):
+  - `root-canal` ("Root Canal Treatment") — category `Restorative`,
+    icon `Syringe`. Content researched (Delta Dental, Cleveland Clinic,
+    Mayo Clinic step-by-step guides) and written fresh to match this
+    site's existing tone/structure — not copied verbatim from any source.
+  - `gum-treatment` ("Gum Treatment") — new category `Periodontal` added
+    to the `ProcedureCategory` union and to the `categories` namespace in
+    all 5 `messages/*.json`. Icon `Shield`. Content researched (American
+    Academy of Periodontology, Cleveland Clinic phased-treatment guides).
+  - Both swept against the same compliance bar as the original 6: no
+    superlatives, no guarantees, no pricing, no fabricated stats.
+- **Procedure cards** (`components/ProcedureCard.tsx`) redesigned:
+  ~2x bigger (padding, icon chip, type scale), stronger border
+  (`border-2 border-primary/15`) for a defined "boxed" look, background
+  switched from `bg-surface` to the dusty-pink `bg-canvas` token. Added a
+  new optional `photoUrl?: string` field to the `Procedure` type and a
+  `<Media>` image slot at the top of every card (real photo once
+  supplied, branded placeholder until then) — explicitly a generic
+  illustrative photo of the treatment/equipment, **not** a patient result
+  photo (before/after stays banned, see file header comment in
+  `lib/procedures.ts`).
+- **Header logo** enlarged `h-9 md:h-11` → `h-12 md:h-16`. **Footer** gets
+  a new descriptor line under its logo — "Ağız ve Diş Sağlığı
+  Polikliniği" / "Oral & Dental Health Polyclinic" / equivalent per
+  locale — new `footer.polyclinicLabel` key in all 5 `messages/*.json`.
+- **New "Get Directions" button** on the contact page, plus a matching
+  Maps icon added to the footer's social row. New `directionsUrl()`
+  helper in `lib/site.ts` builds a Google Maps directions link from the
+  **full** postal address (street + district + city + postcode +
+  country) — deliberately not `SITE.geo`, which is still flagged as an
+  approximate district-centroid placeholder; a text-address search
+  routes correctly regardless of pin precision.
+- **Footer social icons** reworked: added a WhatsApp glyph (extracted
+  from `WhatsAppButton.tsx`) and the new Maps icon to
+  `components/ui/SocialIcons.tsx`/`Footer.tsx`. Instagram now stacked
+  above WhatsApp+Maps(+Facebook), icon containers bumped `h-10`→`h-11`,
+  Instagram switched from monochrome to its own brand gradient (new
+  `brand` prop on `InstagramIcon`, inline SVG `linearGradient`), and
+  WhatsApp/Maps/Instagram all get a static soft box-shadow glow in their
+  own brand color. This layout interpretation (stacked, not just
+  reordered inline) was a judgment call on an ambiguous instruction —
+  flag to Murad if he meant something else.
+- **Verification:** `npm run build` clean (TypeScript passed, 71 static
+  paths including the 2 new procedures × 5 locales); all 5
+  `messages/*.json` re-validated as parseable JSON after every edit;
+  full compliance grep re-sweep (superlatives/guarantees/pricing/scarcity,
+  native-script terms per locale) across every changed/new string —
+  clean, only benign false-positive substring matches (e.g. Russian
+  "improve" containing "лучш"). Spot-verified against a running
+  production server: TR homepage H1/hero/CTA, procedure cards and both
+  new procedure pages, Ferhat's photo and singular team wording, contact
+  page hours (10:00–20:00, no longer "pending") and the Directions
+  button's actual generated URL, footer icon gradient/glow classes.
