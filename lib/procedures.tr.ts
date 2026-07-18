@@ -12,6 +12,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   "dental-implants": {
     name: "Diş İmplantları",
     shortName: "İmplantlar",
+    specialty: "Ağız, Diş ve Çene Cerrahisi",
     heroTagline: "Eksik dişler için kalıcı, doğal görünümlü çözümler.",
     summary:
       "Çene kemiğiyle kaynaşan titanyum implantlar, doğal dişler gibi görünen, hissettiren ve işlev gören kronları destekler.",
@@ -64,8 +65,9 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   },
 
   veneers: {
-    name: "Porselen Lamine",
+    name: "Lamine",
     shortName: "Lamine",
+    specialty: "Restoratif Diş Tedavisi",
     heroTagline: "Yüzünüze özel tasarlanmış, daha parlak ve düzgün bir gülüş.",
     summary:
       "Diş renginizi, hizanızı ve oranlarınızı yeniden şekillendirmek için diş yüzeyine yapıştırılan ultra ince porselen kaplamalar.",
@@ -101,13 +103,13 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
     ],
     daysInIstanbul: "5-7 gün",
     seo: {
-      title: "İstanbul'da Porselen Lamine (Diş Laminesi)",
+      title: "İstanbul'da Lamine (Diş Laminesi)",
       description:
-        "İstanbul'da doğal görünümlü porselen lamine. Kayıtlı bir diş hekimiyle dijital gülüş tasarımı.",
+        "İstanbul'da doğal görünümlü lamine. Kayıtlı bir diş hekimiyle dijital gülüş tasarımı.",
       keywords: [
         "lamine diş Türkiye",
         "lamine diş İstanbul",
-        "porselen lamine Türkiye",
+        "lamine Türkiye",
         "veneer Türkiye",
         "veneer İstanbul",
         "Hollywood gülüş İstanbul",
@@ -118,6 +120,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   "all-on-4": {
     name: "Zirkonyum İmplant",
     shortName: "Zirkonyum",
+    specialty: "Protetik Diş Tedavisi",
     heroTagline: "Yalnızca dört implant üzerinde sabit, tam bir diş dizisi.",
     summary:
       "Dört implantla desteklenen sabit tam ark restorasyonu — çıkarılabilir protezlere kıyasla daha sabit bir alternatif, çoğunlukla kısa bir sürede.",
@@ -169,6 +172,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   "teeth-whitening": {
     name: "Diş Beyazlatma",
     shortName: "Beyazlatma",
+    specialty: "Restoratif Diş Tedavisi",
     heroTagline: "Tek seansta fark edilir derecede daha parlak bir gülüş.",
     summary:
       "Diş hekimi gözetiminde, lekeleri güvenli ve eşit şekilde açan profesyonel klinik içi beyazlatma.",
@@ -218,6 +222,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   orthodontics: {
     name: "Ortodonti",
     shortName: "Ortodonti",
+    specialty: "Ortodonti",
     heroTagline: "Braket veya şeffaf plaklarla daha düzgün dişler.",
     summary:
       "Takip edilen bir tedavi planı boyunca dişleri kademeli olarak daha düzgün ve dengeli bir konuma taşıyan geleneksel braketler veya şeffaf plaklar.",
@@ -273,6 +278,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   "root-canal": {
     name: "Kanal Tedavisi",
     shortName: "Kanal Tedavisi",
+    specialty: "Endodonti",
     heroTagline: "Kaybetmek yerine hasarlı veya iltihaplı dişinizi kurtarın.",
     summary:
       "Diş içindeki iltihaplı veya hasarlı pulpayı temizleyip, boşluğu şekillendirip dolduran ve dişinizi kurtaran bir tedavi.",
@@ -328,6 +334,7 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   "gum-treatment": {
     name: "Diş Eti Tedavisi",
     shortName: "Diş Eti Tedavisi",
+    specialty: "Periodontoloji",
     heroTagline: "Sorunlar ilerlemeden önce daha sağlıklı diş etleri.",
     summary:
       "Diş eti çizgisinin altındaki plak ve tartarı temizleyen ve diş eti hastalığının ilerlemesini önlemeye yardımcı olan profesyonel derin temizlik ve bakım.",

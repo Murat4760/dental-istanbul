@@ -669,3 +669,56 @@ content, hidden until supplied).
   Verified against a running server: `/procedures/crowns` → 404,
   `/procedures/all-on-4` H1 reads "Zirkonyum İmplant" with zero visible
   "All-on-4" text on the page.
+
+### 2026-07-18 (later still) real procedure photos, specialty labels, Lamine/gridDescription copy
+- Murad supplied 7 real photos in `~/Desktop/dental photos/`, one per
+  remaining procedure, already named to match (`implant.png`,
+  `lamine.jpeg`, `zirkonum.jpeg`, `disbeyazlatma.jpeg`,
+  `ortodonti.jpeg`, `kanaltedavi.jpeg`, `diseti.jpeg`) — copied into
+  `public/images/procedures/<slug>.{png,jpg}` and wired into
+  `photoUrl` on all 7 EN procedure objects in `lib/procedures.ts`.
+- **No-crop, no-stretch requirement**: added a new `photoAspect?: string`
+  field to the `Procedure` type, set to each image's *exact native pixel
+  ratio* (e.g. `"722 / 511"` for the 722×511 implants photo). Confirmed
+  via `components/ui/Media.tsx` that `aspect` is a raw CSS
+  `aspect-ratio` value with no parsing, and that `object-cover` only
+  crops when the box ratio differs from the image's own ratio — setting
+  the box to the exact native ratio means zero cropping on either axis.
+  `app/[locale]/procedures/[slug]/page.tsx`'s hero `<Media>` now reads
+  `aspect={procedure.photoAspect ?? "4 / 3"}` instead of a hardcoded
+  `"4 / 3"` for every procedure. Verified per-page: all 7 rendered
+  `aspect-ratio` values match the source images exactly.
+- **Specialty labels**: researched (web) which recognized Turkish
+  dental specialty each procedure actually belongs to — Ağız Diş Çene
+  Cerrahisi (implants), Restoratif Diş Tedavisi (veneers, whitening —
+  confirmed both genuinely fall under this specialty, not force-
+  diversified for appearance), Protetik Diş Tedavisi (zirconia
+  All-on-4-style bridge — distinct from implants since this branding
+  centers on the prosthesis, a judgment call flagged for Murad),
+  Ortodonti, Endodonti, Periodontoloji. Added `specialty: string` to the
+  `Procedure` type (translated per locale like `name`), and display it
+  next to the existing category eyebrow on the procedure hero
+  (`app/[locale]/procedures/[slug]/page.tsx`). **Caught during
+  implementation**: for the orthodontics procedure, `category` and
+  `specialty` are literally the same word ("Ortodonti") — added a guard
+  so the specialty segment doesn't render when it's identical to the
+  already-shown category label, avoiding a visible "Ortodonti ·
+  Ortodonti" duplicate. Verified live: 6 of 7 pages show both segments,
+  orthodontics correctly shows just one.
+- **"Porselen Lamine" → "Lamine"** (TR only): dropped "Porselen" from
+  `name`/`seo.title`/`seo.description` in `lib/procedures.tr.ts`, kept
+  a "lamine Türkiye" SEO keyword replacing "porselen lamine Türkiye".
+  Left the body process-step text ("Porselen laminalarınız
+  yapıştırılır...") untouched — that's a factual material descriptor,
+  not the procedure's name, so out of scope for this rename. Verified
+  live: zero "Porselen" on the page outside that one body sentence.
+- **`procedurePage.gridDescription` rewrite** (TR only): replaced the
+  old "planned around your case, explained in advance, no surprises"
+  sentence with Murad's exact new wording — "Her tedavi itina ile
+  incelenip kişiye özel uygulanmaktadır." Scoped to TR only since this
+  instruction quoted and replaced Turkish text specifically; flag to
+  Murad if he wants the same idea mirrored into EN/AR/RU/DE.
+  Verified live on `/procedures`.
+- `npm run build` clean; all 5 `messages/*.json` re-validated as
+  parseable JSON; every change spot-verified against a running
+  production server before shipping.

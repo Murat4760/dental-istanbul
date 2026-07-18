@@ -12,6 +12,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   "dental-implants": {
     name: "زراعة الأسنان",
     shortName: "الزراعة",
+    specialty: "جراحة الفم والوجه والفكين",
     heroTagline: "حلول دائمة وطبيعية المظهر للأسنان المفقودة.",
     summary:
       "زرعات من التيتانيوم تندمج مع عظم الفك لدعم تيجان تبدو وتشعر وتعمل مثل الأسنان الطبيعية.",
@@ -66,6 +67,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   veneers: {
     name: "قشور الأسنان الخزفية (فينير)",
     shortName: "فينير",
+    specialty: "طب الأسنان الترميمي",
     heroTagline: "ابتسامة أكثر إشراقًا وتناسقًا، مصممة خصيصًا لملامح وجهك.",
     summary:
       "قشور خزفية فائقة النحافة تُلصق على السطح الأمامي للأسنان لإعادة تشكيل اللون والاصطفاف والتناسب.",
@@ -116,6 +118,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   "all-on-4": {
     name: "زراعة زركونيوم",
     shortName: "زركونيوم",
+    specialty: "طب الأسنان التعويضي",
     heroTagline: "قوس كامل من الأسنان الثابتة على أربع زرعات فقط.",
     summary:
       "ترميم ثابت لقوس كامل مدعوم بأربع زرعات — بديل أكثر ثباتًا لأطقم الأسنان المتحركة، وغالبًا في وقت قصير نسبيًا.",
@@ -167,6 +170,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   "teeth-whitening": {
     name: "تبييض الأسنان",
     shortName: "التبييض",
+    specialty: "طب الأسنان الترميمي",
     heroTagline: "ابتسامة أكثر إشراقًا بشكل ملحوظ في زيارة واحدة.",
     summary:
       "تبييض احترافي داخل العيادة يزيل التصبغات بأمان وبشكل متساوٍ تحت إشراف طبيب أسنان.",
@@ -216,6 +220,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   orthodontics: {
     name: "تقويم الأسنان",
     shortName: "التقويم",
+    specialty: "تقويم الأسنان",
     heroTagline: "أسنان أكثر استقامة بالتقويم المعدني أو الشفاف.",
     summary:
       "تقويم معدني تقليدي أو تقويم شفاف يحرك الأسنان تدريجيًا إلى وضع أكثر استقامة وتناسقًا ضمن خطة علاج تحت المتابعة.",
@@ -271,6 +276,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   "root-canal": {
     name: "علاج قناة الجذر",
     shortName: "علاج العصب",
+    specialty: "علاج اللبية",
     heroTagline: "أنقذ سنك التالف أو الملتهب بدلاً من فقدانه.",
     summary:
       "إجراء يزيل اللب الملتهب أو التالف من داخل السن، ثم ينظف ويشكل ويغلق الفراغ لإنقاذ السن الطبيعي.",
@@ -326,6 +332,7 @@ export const proceduresAr: Record<string, ProcedureOverride> = {
   "gum-treatment": {
     name: "علاج اللثة",
     shortName: "علاج اللثة",
+    specialty: "طب اللثة",
     heroTagline: "لثة أكثر صحة، تُعالَج قبل تفاقم المشاكل.",
     summary:
       "تنظيف عميق احترافي ورعاية تزيل البلاك والجير أسفل خط اللثة وتساعد على منع تفاقم أمراض اللثة.",

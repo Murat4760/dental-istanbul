@@ -51,6 +51,14 @@ export type Procedure = {
    */
   photoUrl?: string;
   /**
+   * CSS aspect-ratio value matching photoUrl's exact native pixel
+   * dimensions (e.g. "722 / 511"), so <Media>'s object-cover box crops
+   * nothing — the box ratio equals the image ratio exactly.
+   */
+  photoAspect?: string;
+  /** The recognized Turkish dental specialty this procedure falls under. */
+  specialty: string;
+  /**
    * "comingSoon" = the clinic offers this (per their own marketing) but we
    * don't yet have their specific details confirmed — shows a "Coming soon"
    * badge instead of presenting unconfirmed specifics as settled fact, and
@@ -65,6 +73,7 @@ export const procedures: Procedure[] = [
     name: "Dental Implants",
     shortName: "Implants",
     category: "Restorative",
+    specialty: "Oral and Maxillofacial Surgery",
     icon: "Anchor",
     heroTagline: "Permanent, natural-looking replacements for missing teeth.",
     summary:
@@ -115,12 +124,15 @@ export const procedures: Procedure[] = [
         "tooth implant Istanbul",
       ],
     },
+    photoUrl: "/images/procedures/dental-implants.png",
+    photoAspect: "722 / 511",
   },
   {
     slug: "veneers",
     name: "Porcelain Veneers",
     shortName: "Veneers",
     category: "Cosmetic",
+    specialty: "Restorative Dentistry",
     icon: "Sparkles",
     heroTagline: "A brighter, even smile — designed around your face.",
     summary:
@@ -167,12 +179,15 @@ export const procedures: Procedure[] = [
         "Hollywood smile Istanbul",
       ],
     },
+    photoUrl: "/images/procedures/veneers.jpg",
+    photoAspect: "722 / 314",
   },
   {
     slug: "all-on-4",
     name: "Zirconia Implants",
     shortName: "Zirconia",
     category: "Full-arch",
+    specialty: "Prosthodontics",
     icon: "Grip",
     heroTagline: "A full arch of fixed teeth on just four implants.",
     summary:
@@ -220,12 +235,15 @@ export const procedures: Procedure[] = [
         "fixed dentures Istanbul",
       ],
     },
+    photoUrl: "/images/procedures/all-on-4.jpg",
+    photoAspect: "714 / 370",
   },
   {
     slug: "teeth-whitening",
     name: "Teeth Whitening",
     shortName: "Whitening",
     category: "Whitening",
+    specialty: "Restorative Dentistry",
     icon: "Sun",
     heroTagline: "A noticeably brighter smile in a single visit.",
     summary:
@@ -271,12 +289,15 @@ export const procedures: Procedure[] = [
         "laser teeth whitening Istanbul",
       ],
     },
+    photoUrl: "/images/procedures/teeth-whitening.jpg",
+    photoAspect: "720 / 459",
   },
   {
     slug: "orthodontics",
     name: "Orthodontics",
     shortName: "Orthodontics",
     category: "Orthodontics",
+    specialty: "Orthodontics",
     icon: "Smile",
     heroTagline: "Straighter teeth with braces or clear aligners.",
     summary:
@@ -328,12 +349,15 @@ export const procedures: Procedure[] = [
         "invisalign Istanbul",
       ],
     },
+    photoUrl: "/images/procedures/orthodontics.jpg",
+    photoAspect: "720 / 427",
   },
   {
     slug: "root-canal",
     name: "Root Canal Treatment",
     shortName: "Root Canal",
     category: "Restorative",
+    specialty: "Endodontics",
     icon: "Syringe",
     heroTagline: "Save a damaged or infected tooth instead of losing it.",
     summary:
@@ -385,12 +409,15 @@ export const procedures: Procedure[] = [
         "endodontic treatment Turkey",
       ],
     },
+    photoUrl: "/images/procedures/root-canal.jpg",
+    photoAspect: "720 / 339",
   },
   {
     slug: "gum-treatment",
     name: "Gum Treatment",
     shortName: "Gum Treatment",
     category: "Periodontal",
+    specialty: "Periodontology",
     icon: "Shield",
     heroTagline: "Healthier gums, treated before problems progress.",
     summary:
@@ -437,6 +464,8 @@ export const procedures: Procedure[] = [
         "gum disease treatment Istanbul",
       ],
     },
+    photoUrl: "/images/procedures/gum-treatment.jpg",
+    photoAspect: "720 / 451",
   },
 ];
 

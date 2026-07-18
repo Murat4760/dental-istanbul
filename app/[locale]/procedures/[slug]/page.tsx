@@ -97,6 +97,14 @@ export default async function ProcedurePage({
               <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
                 <span className="h-px w-6 bg-accent" aria-hidden="true" />
                 {t(`categories.${procedure.category}`)}
+                {procedure.specialty !== t(`categories.${procedure.category}`) && (
+                  <>
+                    <span className="text-muted" aria-hidden="true">
+                      ·
+                    </span>
+                    {procedure.specialty}
+                  </>
+                )}
               </span>
               <h1 className="mt-3 text-balance font-display text-4xl font-semibold leading-[1.03] text-ink sm:text-5xl">
                 {procedure.name} in {place("city")}, {place("country")}
@@ -130,7 +138,7 @@ export default async function ProcedurePage({
             </div>
             <Media
               src={procedure.photoUrl}
-              aspect="4 / 3"
+              aspect={procedure.photoAspect ?? "4 / 3"}
               tone="accent"
               alt={procedure.name}
               label="[PLACEHOLDER] Treatment photo"

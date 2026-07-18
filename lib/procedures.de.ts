@@ -12,6 +12,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   "dental-implants": {
     name: "Zahnimplantate",
     shortName: "Implantate",
+    specialty: "Mund-, Kiefer- und Gesichtschirurgie",
     heroTagline: "Dauerhafter, natürlich aussehender Ersatz für fehlende Zähne.",
     summary:
       "Titanimplantate, die mit dem Kieferknochen verwachsen, um Kronen zu tragen, die wie natürliche Zähne aussehen, sich anfühlen und funktionieren.",
@@ -66,6 +67,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   veneers: {
     name: "Keramik-Veneers",
     shortName: "Veneers",
+    specialty: "Konservierende Zahnheilkunde",
     heroTagline: "Ein strahlenderes, ebenmäßigeres Lächeln — abgestimmt auf Ihr Gesicht.",
     summary:
       "Hauchdünne Keramikschalen, die auf die Vorderseite Ihrer Zähne geklebt werden, um Farbe, Ausrichtung und Proportionen neu zu gestalten.",
@@ -116,6 +118,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   "all-on-4": {
     name: "Zirkon-Implantate",
     shortName: "Zirkon",
+    specialty: "Prothetische Zahnheilkunde",
     heroTagline: "Ein vollständiger Zahnbogen auf nur vier Implantaten.",
     summary:
       "Eine feste Vollbogen-Versorgung auf vier Implantaten — eine stabile Alternative zu herausnehmbaren Prothesen, oft in kurzer Zeit.",
@@ -167,6 +170,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   "teeth-whitening": {
     name: "Zahnaufhellung",
     shortName: "Aufhellung",
+    specialty: "Konservierende Zahnheilkunde",
     heroTagline: "Ein spürbar strahlenderes Lächeln in nur einem Termin.",
     summary:
       "Professionelle Aufhellung in der Klinik, die Verfärbungen sicher und gleichmäßig unter zahnärztlicher Aufsicht entfernt.",
@@ -216,6 +220,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   orthodontics: {
     name: "Kieferorthopädie",
     shortName: "Kieferorthopädie",
+    specialty: "Kieferorthopädie",
     heroTagline: "Geradere Zähne mit Brackets oder Alignern.",
     summary:
       "Traditionelle Brackets oder durchsichtige Aligner, die Zähne im Rahmen eines begleiteten Behandlungsplans schrittweise in eine geradere, gleichmäßigere Position bewegen.",
@@ -271,6 +276,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   "root-canal": {
     name: "Wurzelkanalbehandlung",
     shortName: "Wurzelkanalbehandlung",
+    specialty: "Endodontie",
     heroTagline: "Retten Sie einen geschädigten oder infizierten Zahn, statt ihn zu verlieren.",
     summary:
       "Ein Verfahren, das infiziertes oder geschädigtes Gewebe aus dem Inneren eines Zahns entfernt und den Raum anschließend reinigt, formt und versiegelt, um den natürlichen Zahn zu erhalten.",
@@ -326,6 +332,7 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   "gum-treatment": {
     name: "Zahnfleischbehandlung",
     shortName: "Zahnfleischbehandlung",
+    specialty: "Parodontologie",
     heroTagline: "Gesünderes Zahnfleisch, behandelt bevor Probleme fortschreiten.",
     summary:
       "Professionelle Tiefenreinigung und Pflege, die Plaque und Zahnstein unterhalb des Zahnfleischrands entfernt und hilft, das Fortschreiten von Zahnfleischerkrankungen zu verhindern.",
