@@ -763,3 +763,54 @@ content, hidden until supplied).
   - Build clean; re-verified locally post-fix with Playwright: all 7
     H1s render correct grammar with zero literal " in ", zero overlaps
     across all 8 pages, mobile menu open/close still works.
+
+### 2026-07-19 recast "all-on-4" as Zirconia Crowns, dropped implant framing entirely
+- Murad: "fix zirkonyum it shouldnt say zirkonyum implant it should say
+  zirkonyum kaplama and adjust the description of it too nothin bout a
+  implant in zirkonyum" — the `"all-on-4"` procedure was written
+  entirely as a 4-implant zirconia bridge (name "Zirconia
+  Implants"/"Zirkonyum İmplant", category "Full-arch", procedureType
+  "SurgicalProcedure"). Murad confirmed the treatment this page should
+  represent is a zirconia crown (kaplama) bonded over a prepared
+  natural tooth — no implant involved at all.
+- Confirmed with Murad this needed to go beyond Turkish: the identical
+  implant framing existed in EN/TR/AR/RU/DE plus the site-wide
+  hero/meta copy in `messages/*.json`. Fixed everywhere so the site
+  stays internally consistent across languages, not just in Turkish.
+- Rewrote the `"all-on-4"` entry in `lib/procedures.ts` + all 4 locale
+  overlays (`.tr/.ar/.ru/.de.ts`): name → "Zirconia Crowns"/"Zirkonyum
+  Kaplama"/etc., `category` "Full-arch" → "Restorative", `procedureType`
+  "SurgicalProcedure" → "NoninvasiveProcedure", `icon` "Grip" →
+  "Crown". heroTagline/summary/whatItIs/whoItsFor/processSteps/seo all
+  rewritten around a full-coverage ceramic crown (for heavily
+  worn/cracked teeth, large old fillings, post-root-canal protection,
+  or damage/discoloration beyond what a veneer fixes) — zero implant
+  mentions anywhere. TR summary written to Murad's requested style,
+  mirroring the `teeth-whitening` entry's "Diş hekimi gözetiminde..."
+  construction.
+- Fixed the matching "zirconia implant(s)"/"zirkonyum implant" mentions
+  in `messages/*.json` (metaDescription, heroDescription, footer.about,
+  and `ru.json`'s `services` line, which uniquely spelled out
+  "циркониевые импланты" instead of a bare "Zirconia"-style word like
+  the other locales).
+- **Not touched**: the URL slug stays `all-on-4` (renaming would need
+  redirects and wasn't asked for) — only the content changed, so the
+  slug no longer conceptually matches the displayed name. Flag to
+  Murad if he wants the slug renamed too.
+- Worth noting for future sessions: a separate, broader "Crowns"
+  procedure existed on this site until 2026-07-18 and was deliberately
+  deleted at Murad's request (see the "removed Crowns procedure" entry
+  above). This rewrite is narrower in scope (zirconia material
+  specifically, tied to the existing zirconia/all-on-4 slug) — it
+  isn't a revival of that deleted general Crowns page, but the two are
+  adjacent enough to flag if Murad ever wants a broader crowns
+  offering back.
+- `npm run build` clean (still 35 static procedure paths — one entry
+  rewritten, none added/removed). Verified against a running
+  production server (`npm run start`): `/tr/procedures/all-on-4`
+  renders "Zirkonyum Kaplama" throughout with zero "implant" text; the
+  only remaining "implant" hits on that page belong to the unrelated
+  `dental-implants` procedure's own copy. Committed, pushed to `main`,
+  confirmed the resulting Vercel deployment reached `READY`, and
+  confirmed the live production domain (ramadent.com) serves the new
+  copy.
