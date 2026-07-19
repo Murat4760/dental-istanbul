@@ -194,56 +194,57 @@ export const procedures: Procedure[] = [
   },
   {
     slug: "all-on-4",
-    name: "Zirconia Implants",
+    name: "Zirconia Crowns",
     shortName: "Zirconia",
-    category: "Full-arch",
-    procedureType: "SurgicalProcedure",
+    category: "Restorative",
+    procedureType: "NoninvasiveProcedure",
     specialty: "Prosthodontics",
-    icon: "Grip",
-    heroTagline: "A full arch of fixed teeth on just four implants.",
+    icon: "Crown",
+    heroTagline:
+      "A full-coverage, tooth-colored crown that restores a damaged tooth's strength and shape.",
     summary:
-      "A fixed full-arch restoration supported by four implants — a stable alternative to removable dentures, often in a short timeframe.",
+      "A durable zirconia cap bonded over a prepared tooth to restore its strength, shape, and natural color — a solid option when a tooth is too worn, cracked, or discolored for a veneer alone.",
     whatItIs:
-      "This treatment replaces a full arch of missing or failing teeth with a fixed zirconia bridge anchored on four strategically placed implants. Because it uses the available bone efficiently, many patients avoid extensive grafting and can leave with a fixed temporary bridge on the same visit, followed by a permanent bridge after healing.",
+      "A zirconia crown is a custom-made ceramic cap that covers the entire visible portion of a tooth, rebuilding it after significant wear, a large old filling, a crack, or a root canal. Unlike a veneer, which bonds only to the front surface, a crown fully encases the tooth for added strength while still matching the color and translucency of natural enamel.",
     whoItsFor: [
-      "You are missing most or all teeth in an arch, or they are failing",
-      "You wear a full denture and want a fixed, stable solution",
-      "You want to avoid the palate coverage and movement of dentures",
-      "You are looking for full-arch results with fewer implants",
+      "A tooth is heavily worn, cracked, or has a large old filling",
+      "You've had a root canal and the tooth needs long-term protection",
+      "Discoloration or damage is too extensive for a veneer to correct",
+      "You want a durable, natural-looking, full-coverage restoration",
     ],
     processSteps: [
       {
-        title: "Consultation & planning",
+        title: "Consultation & scan",
         description:
-          "A CBCT scan and exam confirm bone volume and the ideal implant positions for your arch.",
+          "We review your goals and any existing X-rays, and your dentist inspects the tooth to confirm a crown is the right fit before your visit.",
       },
       {
-        title: "Implant placement",
+        title: "Preparation & digital impression",
         description:
-          "Four implants are placed and, in most cases, a fixed temporary bridge is fitted the same day.",
+          "The tooth is gently reshaped to make room for the crown, then a precise digital scan captures its exact shape.",
       },
       {
-        title: "Healing",
+        title: "Temporary crown",
         description:
-          "The implants integrate over a few months while you wear the fixed temporary bridge.",
+          "A temporary crown protects the tooth while your permanent zirconia crown is crafted in the lab.",
       },
       {
-        title: "Permanent bridge",
+        title: "Permanent crown fitted",
         description:
-          "On your return visit, the final, custom bridge is fitted for long-term function and aesthetics.",
+          "Your zirconia crown is bonded in place, polished, and adjusted for a comfortable, natural bite.",
       },
     ],
-    daysInIstanbul: "5–7 days per visit (usually two visits)",
+    daysInIstanbul: "3–5 days",
     seo: {
-      title: "Zirconia Dental Implants in Istanbul, Turkey",
+      title: "Zirconia Crowns in Istanbul, Turkey",
       description:
-        "Fixed full-arch teeth with zirconia implants in Istanbul, with a registered dentist.",
+        "Durable, natural-looking zirconia crowns in Istanbul with a registered dentist.",
       keywords: [
-        "All-on-4 Turkey",
-        "All on 4 Istanbul",
-        "zirconia All-on-4 Turkey",
-        "full mouth dental implants Turkey",
-        "fixed dentures Istanbul",
+        "zirconia crowns Turkey",
+        "zirconia crown Istanbul",
+        "dental crown Turkey",
+        "porcelain crown Istanbul",
+        "ceramic crown Turkey",
       ],
     },
     photoUrl: "/images/procedures/all-on-4.jpg",

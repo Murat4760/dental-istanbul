@@ -118,53 +118,54 @@ export const proceduresTr: Record<string, ProcedureOverride> = {
   },
 
   "all-on-4": {
-    name: "Zirkonyum İmplant",
+    name: "Zirkonyum Kaplama",
     shortName: "Zirkonyum",
     specialty: "Protetik Diş Tedavisi",
-    heroTagline: "Yalnızca dört implant üzerinde sabit, tam bir diş dizisi.",
+    heroTagline:
+      "Dişin gücünü ve şeklini yeniden kazandıran, diş renginde tam kaplama.",
     summary:
-      "Dört implantla desteklenen sabit tam ark restorasyonu — çıkarılabilir protezlere kıyasla daha sabit bir alternatif, çoğunlukla kısa bir sürede.",
+      "Diş hekimi gözetiminde uygulanan, hazırlanan bir dişin üzerine yapıştırılan dayanıklı bir zirkonyum kaplama; beyaz ve estetik bir görünüşe sahip olabilirsiniz.",
     whatItIs:
-      "Bu tedavi, eksik veya işlevini yitirmiş bir tam diş dizisini, stratejik olarak yerleştirilmiş dört implanta sabitlenen bir zirkonyum köprüyle yeniler. Mevcut kemiği verimli şekilde kullandığından, birçok hasta kapsamlı kemik greftinden kaçınabilir ve aynı ziyarette sabit geçici bir köprüyle kliniğimizden ayrılıp, iyileşme sonrası kalıcı köprüsüne kavuşabilir.",
+      "Zirkonyum kaplama, bir dişin görünen tüm yüzeyini saran, özel üretim bir seramik kapaktır; ciddi aşınma, büyük bir eski dolgu, çatlak veya kanal tedavisi sonrasında dişi yeniden yapılandırır. Yalnızca ön yüzeye yapıştırılan laminenin aksine, kaplama dişi tamamen sarar ve ek dayanıklılık sağlarken doğal minenin rengini ve ışık geçirgenliğini taklit eder.",
     whoItsFor: [
-      "Bir çenenizdeki dişlerin çoğu veya tamamı eksik ya da işlevini yitirmiş durumda",
-      "Tam protez kullanıyorsunuz ve sabit, dayanıklı bir çözüm istiyorsunuz",
-      "Protezlerin damak kaplaması ve hareket etmesinden kaçınmak istiyorsunuz",
-      "Daha az implantla tam ark sonuçları arıyorsunuz",
+      "Bir dişiniz ciddi şekilde aşınmış, çatlamış veya büyük eski bir dolguya sahip",
+      "Kanal tedavisi geçirdiniz ve dişin uzun vadeli korunmaya ihtiyacı var",
+      "Renk bozukluğu veya hasar, laminenin düzeltebileceğinden daha kapsamlı",
+      "Dayanıklı, doğal görünümlü, tam kaplama bir restorasyon istiyorsunuz",
     ],
     processSteps: [
       {
-        title: "Danışmanlık ve planlama",
+        title: "Danışmanlık ve tarama",
         description:
-          "CBCT taraması ve muayene, kemik hacmini ve çeneniz için ideal implant pozisyonlarını belirler.",
+          "Hedeflerinizi ve varsa mevcut röntgenlerinizi inceliyoruz; diş hekiminiz kaplamanın uygun olup olmadığını randevunuzdan önce değerlendirir.",
       },
       {
-        title: "İmplantların yerleştirilmesi",
+        title: "Hazırlık ve dijital ölçü",
         description:
-          "Dört implant yerleştirilir ve çoğu durumda aynı gün sabit geçici bir köprü takılır.",
+          "Kaplamaya yer açmak için diş hafifçe şekillendirilir, ardından hassas bir dijital tarama ile tam ölçüsü alınır.",
       },
       {
-        title: "İyileşme",
+        title: "Geçici kaplama",
         description:
-          "Sabit geçici köprünüzü kullandığınız birkaç ay boyunca implantlar kemikle kaynaşır.",
+          "Kalıcı zirkonyum kaplamanız laboratuvarda hazırlanırken, geçici bir kaplama dişinizi korur.",
       },
       {
-        title: "Kalıcı köprü",
+        title: "Kalıcı kaplamanın yapıştırılması",
         description:
-          "Dönüş ziyaretinizde, uzun vadeli işlev ve estetik için özel üretim kalıcı köprünüz takılır.",
+          "Zirkonyum kaplamanız yapıştırılır, parlatılır ve rahat, doğal bir ısırma için ayarlanır.",
       },
     ],
-    daysInIstanbul: "Her ziyaret için 5-7 gün (genellikle iki ziyaret)",
+    daysInIstanbul: "3-5 gün",
     seo: {
-      title: "İstanbul'da Zirkonyum Diş İmplantı",
+      title: "İstanbul'da Zirkonyum Kaplama",
       description:
-        "İstanbul'da zirkonyum implantlarla sabit tam ark diş tedavisi, kayıtlı bir diş hekimiyle.",
+        "İstanbul'da dayanıklı, doğal görünümlü zirkonyum kaplama, kayıtlı bir diş hekimiyle.",
       keywords: [
-        "All-on-4 Türkiye",
-        "All-on-4 İstanbul",
-        "zirkonyum All-on-4 Türkiye",
-        "tüm ağız diş implantı Türkiye",
-        "sabit protez İstanbul",
+        "zirkonyum kaplama Türkiye",
+        "zirkonyum kaplama İstanbul",
+        "diş kaplama Türkiye",
+        "porselen kaplama İstanbul",
+        "seramik kaplama Türkiye",
       ],
     },
   },

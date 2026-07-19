@@ -116,53 +116,54 @@ export const proceduresDe: Record<string, ProcedureOverride> = {
   },
 
   "all-on-4": {
-    name: "Zirkon-Implantate",
+    name: "Zirkonkronen",
     shortName: "Zirkon",
     specialty: "Prothetische Zahnheilkunde",
-    heroTagline: "Ein vollständiger Zahnbogen auf nur vier Implantaten.",
+    heroTagline:
+      "Eine zahnfarbene Vollkrone, die Kraft und Form eines geschädigten Zahns wiederherstellt.",
     summary:
-      "Eine feste Vollbogen-Versorgung auf vier Implantaten — eine stabile Alternative zu herausnehmbaren Prothesen, oft in kurzer Zeit.",
+      "Eine langlebige Zirkonkrone, die über einem präparierten Zahn befestigt wird, um seine Kraft, Form und natürliche Farbe wiederherzustellen — eine solide Lösung, wenn ein Zahn zu abgenutzt, gerissen oder verfärbt für ein Veneer allein ist.",
     whatItIs:
-      "Diese Behandlung ersetzt einen vollständigen Bogen fehlender oder geschädigter Zähne durch eine feste Zirkonbrücke, die auf vier strategisch platzierten Implantaten verankert ist. Da der vorhandene Knochen effizient genutzt wird, können viele Patienten auf einen umfangreichen Knochenaufbau verzichten und die Klinik noch am selben Tag mit einer festsitzenden provisorischen Brücke verlassen, gefolgt von einer definitiven Brücke nach der Einheilung.",
+      "Eine Zirkonkrone ist eine individuell angefertigte Keramikkappe, die den gesamten sichtbaren Teil eines Zahns bedeckt und ihn nach starkem Verschleiß, einer großen alten Füllung, einem Riss oder einer Wurzelbehandlung wiederaufbaut. Anders als ein Veneer, das nur auf der Vorderfläche haftet, umschließt eine Krone den Zahn vollständig für zusätzliche Stabilität und ahmt dabei weiterhin Farbe und Transluzenz des natürlichen Zahnschmelzes nach.",
     whoItsFor: [
-      "Ihnen fehlen die meisten oder alle Zähne eines Kiefers, oder diese sind stark geschädigt",
-      "Sie tragen eine Vollprothese und möchten eine feste, stabile Lösung",
-      "Sie möchten eine Gaumenbedeckung und Bewegung der Prothese vermeiden",
-      "Sie suchen ein Vollbogen-Ergebnis mit weniger Implantaten",
+      "Ein Zahn ist stark abgenutzt, gerissen oder hat eine große alte Füllung",
+      "Sie hatten eine Wurzelbehandlung und der Zahn braucht langfristigen Schutz",
+      "Verfärbung oder Schäden sind zu ausgeprägt, um mit einem Veneer korrigiert zu werden",
+      "Sie möchten eine langlebige, natürlich aussehende Vollkronen-Versorgung",
     ],
     processSteps: [
       {
-        title: "Beratung & Planung",
+        title: "Beratung & Scan",
         description:
-          "Ein DVT-Scan und eine Untersuchung bestätigen das Knochenvolumen und die idealen Implantatpositionen für Ihren Kieferbogen.",
+          "Wir besprechen Ihre Ziele und vorhandene Röntgenbilder, und Ihr Zahnarzt prüft den Zahn, um vor Ihrem Besuch zu bestätigen, dass eine Krone die richtige Lösung ist.",
       },
       {
-        title: "Implantation",
+        title: "Präparation & digitaler Abdruck",
         description:
-          "Vier Implantate werden gesetzt, und in den meisten Fällen wird noch am selben Tag eine festsitzende provisorische Brücke eingesetzt.",
+          "Der Zahn wird leicht beschliffen, um Platz für die Krone zu schaffen, dann erfasst ein präziser digitaler Scan seine genaue Form.",
       },
       {
-        title: "Einheilung",
+        title: "Provisorische Krone",
         description:
-          "Die Implantate verwachsen über einige Monate mit dem Knochen, während Sie die festsitzende provisorische Brücke tragen.",
+          "Eine provisorische Krone schützt den Zahn, während Ihre permanente Zirkonkrone im Labor gefertigt wird.",
       },
       {
-        title: "Definitive Brücke",
+        title: "Einsetzen der permanenten Krone",
         description:
-          "Bei Ihrem Folgebesuch wird die endgültige, individuell angefertigte Brücke für langfristige Funktion und Ästhetik eingesetzt.",
+          "Ihre Zirkonkrone wird befestigt, poliert und für einen komfortablen, natürlichen Biss angepasst.",
       },
     ],
-    daysInIstanbul: "5–7 Tage pro Besuch (in der Regel zwei Besuche)",
+    daysInIstanbul: "3–5 Tage",
     seo: {
-      title: "Zirkon-Implantate in Istanbul, Türkei",
+      title: "Zirkonkronen in Istanbul, Türkei",
       description:
-        "Feste Vollbogen-Zähne mit Zirkon-Implantaten in Istanbul, bei einem registrierten Zahnarzt.",
+        "Langlebige, natürlich aussehende Zirkonkronen in Istanbul, bei einem registrierten Zahnarzt.",
       keywords: [
-        "All-on-4 Türkei",
-        "All-on-4 Istanbul",
-        "Zirkon All-on-4 Türkei",
-        "Vollmund-Implantate Türkei",
-        "festsitzender Zahnersatz Istanbul",
+        "Zirkonkronen Türkei",
+        "Zirkonkrone Istanbul",
+        "Zahnkrone Türkei",
+        "Porzellankrone Istanbul",
+        "Keramikkrone Türkei",
       ],
     },
   },

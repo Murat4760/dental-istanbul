@@ -97,14 +97,14 @@
   },
   "proceduresPage": {
     "metaTitle": "{city}, {country}'de Diş Tedavileri",
-    "metaDescription": "{city}'de diş tedavilerimizi keşfedin — implant, lamine, zirkonyum implant, ortodonti ve diş beyazlatma.",
+    "metaDescription": "{city}'de diş tedavilerimizi keşfedin — implant, lamine, zirkonyum kaplama, ortodonti ve diş beyazlatma.",
     "heroTitle": "{city}, {country}'de diş tedavileri"
   },
   "home": {
     "metaTitle": "{name} — {city}'de Diş İmplantı, Lamine ve Gülüş Tasarımı",
     "badge": "{city}, {country}'de diş sağlığı hizmeti",
     "heroTitlePrefix": "İmplant, lamine ve gülüş tasarımı,",
-    "heroDescription": "Profesyonel bir ekip ve uzman hekimimizle; implant, lamine, zirkonyum implant ve komple gülüş tasarımı hizmetleri sunuyoruz.",
+    "heroDescription": "Profesyonel bir ekip ve uzman hekimimizle; implant, lamine, zirkonyum kaplama ve komple gülüş tasarımı hizmetleri sunuyoruz.",
     "heroImageAlt": "{name} resepsiyonu, {city}",
     "proceduresTitle": "Uzmanlaştığımız tedaviler",
     "ctaTitle": "Ücretsiz muayene için randevu alın"
@@ -119,7 +119,7 @@
   },
   "footer": {
     "polyclinicLabel": "Ağız ve Diş Sağlığı Polikliniği",
-    "about": "Diş sağlığı hizmeti — İstanbul'da implant, lamine, zirkonyum implant ve gülüş tasarımı.",
+    "about": "Diş sağlığı hizmeti — İstanbul'da implant, lamine, zirkonyum kaplama ve gülüş tasarımı.",
     "quickLinks": "Hızlı Bağlantılar",
     "procedures": "Popüler Tedaviler",
     "contact": "İletişim",
